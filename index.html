@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#0b1033">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="El Rosco">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" href="icons/icon-192.png">
+<title>El Rosco</title>
+<style>
+:root{
+  --bg1:#0b1033;--bg2:#151d5c;--card:#1b2470;--card2:#232e8a;--line:#3443b5;
+  --txt:#f3f5ff;--mut:#aab3e8;--blue:#2f6bff;--blue2:#5b8cff;--ok:#1fbf5b;--bad:#ef3b3b;
+  --gold:#ffc83d;--cyan:#38e1ff;--warn:#ff9d2e;
+  --r:16px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%}
+body{background:radial-gradient(120% 80% at 50% 0%,var(--bg2),var(--bg1) 70%);background-color:var(--bg1);color:var(--txt);
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Rounded","Segoe UI",Roboto,system-ui,sans-serif;
+  -webkit-user-select:none;user-select:none;overscroll-behavior:none}
+#app{max-width:520px;margin:0 auto;min-height:100%;padding:calc(env(safe-area-inset-top) + 12px) 16px calc(env(safe-area-inset-bottom) + 16px);display:flex;flex-direction:column}
+.screen{display:none;flex-direction:column;gap:14px;flex:1}
+.screen.on{display:flex}
+h1{margin:6px 0 0;font-size:40px;letter-spacing:-1px;text-align:center;font-weight:900}
+h1 span{color:var(--gold)}
+h2{margin:0;font-size:22px;font-weight:800}
+h3{margin:0 0 6px;font-size:15px;color:var(--mut);font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+p{margin:0;line-height:1.45}
+.mut{color:var(--mut)}
+.card{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:var(--r);padding:16px}
+button{font:inherit;color:inherit;border:0;cursor:pointer;border-radius:14px;padding:14px 16px;font-weight:800;font-size:17px;background:var(--card2);border:1px solid var(--line);transition:transform .08s}
+button:active{transform:scale(.97)}
+button:disabled{opacity:.4}
+.btn-main{background:linear-gradient(180deg,#ffd75e,#f2a900);color:#231a00;border:0;font-size:20px;padding:18px;box-shadow:0 6px 0 #a57300}
+.btn-main:active{box-shadow:0 2px 0 #a57300;transform:translateY(4px)}
+.btn-ok{background:var(--ok);border-color:transparent;color:#fff}
+.btn-bad{background:var(--bad);border-color:transparent;color:#fff}
+.btn-pass{background:var(--blue);border-color:transparent;color:#fff}
+.row{display:flex;gap:10px}.row>*{flex:1}
+.top{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.icon{width:46px;height:46px;padding:0;flex:0 0 46px;font-size:20px;display:grid;place-items:center}
+.chips{display:flex;gap:8px}
+.chip{flex:1;padding:12px 6px;font-size:15px;background:transparent}
+.chip.sel{background:var(--blue);border-color:var(--blue2)}
+.stat{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.stat:last-child{border:0}
+/* timer pill */
+.timer{font-variant-numeric:tabular-nums;font-weight:900;font-size:30px;padding:6px 14px;border-radius:12px;background:#0007;min-width:96px;text-align:center}
+.timer.low{color:var(--warn)}.timer.crit{color:var(--bad);animation:pulse .5s infinite alternate}
+@keyframes pulse{to{transform:scale(1.08)}}
+.bank{font-weight:800;color:var(--gold);font-size:18px}
+.bump{animation:bump .5s}
+@keyframes bump{40%{transform:scale(1.35)}}
+/* prompt area */
+.q{font-size:21px;font-weight:700;line-height:1.35;min-height:2.7em}
+.tag{display:inline-block;font-size:13px;font-weight:900;letter-spacing:.08em;padding:4px 10px;border-radius:999px;background:var(--blue);margin-bottom:8px}
+.tag.c{background:#7d3cff}
+input.ans{width:100%;font:inherit;font-size:22px;font-weight:700;padding:14px;border-radius:14px;border:2px solid var(--line);background:#0a0f33;color:var(--txt);text-align:center;outline:none;-webkit-user-select:text;user-select:text}
+input.ans:focus{border-color:var(--cyan)}
+.shake{animation:shake .35s}
+@keyframes shake{25%{transform:translateX(-8px)}50%{transform:translateX(8px)}75%{transform:translateX(-4px)}}
+.reveal{text-align:center;font-size:22px;font-weight:900;color:var(--gold);min-height:1.3em;text-transform:uppercase;letter-spacing:.04em}
+.opts{display:grid;gap:10px}
+.opts button{text-align:left;font-size:18px;display:flex;gap:12px;align-items:center}
+.opts b{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#0006;flex:0 0 30px;font-size:15px}
+.opts .right{background:var(--ok)}.opts .wrong{background:var(--bad)}
+.clues{display:grid;gap:8px}
+.clue{padding:12px 14px;border-radius:12px;background:#0005;font-size:18px;font-weight:600;animation:in .3s}
+.clue.hid{opacity:.35;font-style:italic}
+@keyframes in{from{opacity:0;transform:translateY(6px)}}
+.tiles{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.tile{width:36px;height:44px;border-radius:8px;background:var(--gold);color:#231a00;display:grid;place-items:center;font-weight:900;font-size:22px;box-shadow:0 3px 0 #a57300}
+.syl{color:var(--cyan);font-weight:900}
+/* rosco */
+.rwrap{position:relative;width:min(100%,370px);aspect-ratio:1;margin:0 auto}
+.rwrap svg{width:100%;height:100%;display:block}
+.rl circle{fill:var(--blue);stroke:#9db7ff;stroke-width:1.5;transition:fill .25s}
+.rl text{fill:#fff;font-weight:900;font-size:15px;text-anchor:middle;dominant-baseline:central;font-family:inherit}
+.rl.ok circle{fill:var(--ok);stroke:#9ff5bf}.rl.bad circle{fill:var(--bad);stroke:#ffb0b0}
+.rl.cur circle{fill:#fff;stroke:var(--gold);stroke-width:3}.rl.cur text{fill:#0b1033}
+.rl.cur{animation:cur 1s infinite alternate;transform-box:fill-box;transform-origin:center}
+@keyframes cur{to{transform:scale(1.18)}}
+.center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none}
+.center .big{font-size:54px;font-weight:900;font-variant-numeric:tabular-nums;line-height:1}
+.center .big.low{color:var(--warn)}.center .big.crit{color:var(--bad)}
+.center .sub{display:flex;gap:14px;margin-top:8px;font-weight:800;font-size:17px}
+.dot{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:4px;vertical-align:-1px}
+.dok{background:var(--ok)}.dbad{background:var(--bad)}.dpen{background:var(--blue)}
+/* overlay */
+.ov{position:fixed;inset:0;background:rgba(5,8,30,.94);display:none;flex-direction:column;align-items:center;justify-content:center;gap:18px;z-index:10;padding:24px;text-align:center}
+.ov.on{display:flex}
+.count{font-size:140px;font-weight:900;color:var(--gold);animation:pop .9s}
+@keyframes pop{0%{transform:scale(.3);opacity:0}30%{transform:scale(1.1);opacity:1}100%{transform:scale(1)}}
+/* config */
+.cfg label{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.07);font-weight:600}
+.cfg label:last-child{border:0}
+.cfg input[type=range]{width:46%;accent-color:var(--gold)}
+.cfg select{font:inherit;background:#0a0f33;color:var(--txt);border:1px solid var(--line);border-radius:10px;padding:8px}
+.cfg .v{font-variant-numeric:tabular-nums;color:var(--gold);min-width:46px;text-align:right;font-weight:800}
+.sw{appearance:none;-webkit-appearance:none;width:52px;height:30px;border-radius:999px;background:#0a0f33;border:1px solid var(--line);position:relative;flex:0 0 52px;transition:.2s}
+.sw:checked{background:var(--ok)}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:.2s}
+.sw:checked::after{left:25px}
+.list{display:grid;gap:8px}
+.res-letters{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:6px;font-size:14px}
+.res-letters div{padding:6px 8px;border-radius:8px;background:#0005}
+.res-letters .o{border-left:4px solid var(--ok)}.res-letters .x{border-left:4px solid var(--bad)}.res-letters .p{border-left:4px solid var(--blue)}
+.score{font-size:64px;font-weight:900;color:var(--gold);text-align:center;line-height:1}
+.spacer{flex:1}
+.small{font-size:13px}
+.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom) + 24px);transform:translateX(-50%);background:#000c;padding:10px 16px;border-radius:12px;font-weight:700;z-index:20;display:none}
+.confetti{position:fixed;inset:0;pointer-events:none;z-index:30}
+</style>
+</head>
+<body>
+<div id="app">
+
+<!-- HOME -->
+<section class="screen on" id="s-home">
+  <h1>El <span>Rosco</span></h1>
+  <p class="mut" style="text-align:center">Gana segundos en los juegos previos y gástalos en el rosco final</p>
+  <div class="card">
+    <h3>Dificultad</h3>
+    <div class="chips" id="home-lvl"></div>
+    <p class="mut small" style="margin-top:10px" id="home-avail"></p>
+  </div>
+  <div class="card">
+    <h3>Modo</h3>
+    <div class="chips" id="home-mode"></div>
+    <p class="mut small" style="margin-top:10px" id="home-mode-txt"></p>
+  </div>
+  <button class="btn-main" id="b-play">▶ Nueva partida</button>
+  <div class="row">
+    <button id="b-cfg">⚙️ Ajustes</button>
+    <button id="b-hist">🏆 Historial</button>
+  </div>
+  <button id="b-help">❓ Cómo se juega</button>
+  <div class="spacer"></div>
+</section>
+
+<!-- INTRO PREVIO -->
+<section class="screen" id="s-intro">
+  <div class="top"><span class="mut" id="intro-step"></span><span class="bank" id="intro-bank"></span></div>
+  <div class="spacer"></div>
+  <div style="font-size:72px;text-align:center" id="intro-ico"></div>
+  <h2 style="text-align:center;font-size:30px" id="intro-title"></h2>
+  <div class="card"><p id="intro-rules"></p></div>
+  <div class="spacer"></div>
+  <button class="btn-main" id="b-intro-go">¡Vamos!</button>
+  <button id="b-intro-quit">Abandonar partida</button>
+</section>
+
+<!-- PREVIO -->
+<section class="screen" id="s-prev">
+  <div class="top">
+    <button class="icon" id="b-prev-pause">⏸</button>
+    <div class="timer" id="prev-timer">0:00</div>
+    <div class="bank" id="prev-bank">+0s</div>
+  </div>
+  <div class="mut small" id="prev-name" style="text-align:center;font-weight:800;letter-spacing:.08em;text-transform:uppercase"></div>
+  <div id="prev-body" style="display:flex;flex-direction:column;gap:14px"></div>
+</section>
+
+<!-- RESUMEN PREVIO -->
+<section class="screen" id="s-psum">
+  <div class="spacer"></div>
+  <h2 style="text-align:center" id="psum-title"></h2>
+  <div class="score" id="psum-score"></div>
+  <p class="mut" style="text-align:center" id="psum-txt"></p>
+  <div class="card"><div id="psum-total" style="text-align:center;font-size:20px;font-weight:800"></div></div>
+  <div class="spacer"></div>
+  <button class="btn-main" id="b-psum-next">Siguiente</button>
+</section>
+
+<!-- ROSCO -->
+<section class="screen" id="s-rosco">
+  <div class="top">
+    <button class="icon" id="b-r-pause">⏸</button>
+    <span class="mut small" id="r-mode"></span>
+    <button class="icon" id="b-r-stop" title="Plantarse">🏳️</button>
+  </div>
+  <div class="rwrap">
+    <svg viewBox="0 0 300 300" id="r-svg"></svg>
+    <div class="center"><div class="big" id="r-time">0</div>
+      <div class="sub"><span><i class="dot dok"></i><span id="r-ok">0</span></span><span><i class="dot dbad"></i><span id="r-bad">0</span></span></div></div>
+  </div>
+  <div class="card">
+    <span class="tag" id="r-tag"></span>
+    <div class="q" id="r-def"></div>
+  </div>
+  <div id="r-ans"></div>
+</section>
+
+<!-- RESULTADO -->
+<section class="screen" id="s-res">
+  <h2 style="text-align:center" id="res-title"></h2>
+  <div class="score" id="res-score"></div>
+  <p class="mut" style="text-align:center">puntos</p>
+  <div class="card" id="res-stats"></div>
+  <div class="card"><h3>Respuestas</h3><div class="res-letters" id="res-letters"></div></div>
+  <button class="btn-main" id="b-res-home">Volver al inicio</button>
+</section>
+
+<!-- AJUSTES -->
+<section class="screen" id="s-cfg">
+  <div class="top"><h2>Ajustes</h2><button class="icon" id="b-cfg-close">✕</button></div>
+  <div class="card cfg">
+    <h3>Tiempos</h3>
+    <label>Tiempo base del rosco <span><input type="range" id="c-tRosco" min="40" max="300" step="5"> <span class="v" id="v-tRosco"></span></span></label>
+    <label>Duración de cada juego previo <span><input type="range" id="c-tPrevio" min="20" max="150" step="5"> <span class="v" id="v-tPrevio"></span></span></label>
+    <label>Segundos por acierto en previos <span><input type="range" id="c-segAcierto" min="1" max="15" step="1"> <span class="v" id="v-segAcierto"></span></span></label>
+    <label>Penalización por error en el rosco <span><input type="range" id="c-penal" min="0" max="15" step="1"> <span class="v" id="v-penal"></span></span></label>
+    <label>Pausa al decir «paso» (rosco) <input type="checkbox" class="sw" id="c-pausaPaso"></label>
+  </div>
+  <div class="card cfg">
+    <h3>Juegos previos</h3>
+    <label>Cuántos por partida <span><input type="range" id="c-nPrevios" min="0" max="4" step="1"> <span class="v" id="v-nPrevios"></span></span></label>
+    <label>❓ Una de cuatro <input type="checkbox" class="sw" id="c-g-cuatro"></label>
+    <label>🔎 La pista <input type="checkbox" class="sw" id="c-g-pista"></label>
+    <label>🔗 Palabras encadenadas <input type="checkbox" class="sw" id="c-g-encadenadas"></label>
+    <label>🔀 Letras desordenadas <input type="checkbox" class="sw" id="c-g-anagramas"></label>
+  </div>
+  <div class="card cfg">
+    <h3>Respuestas escritas</h3>
+    <label>Tolerancia a errores de tipeo
+      <select id="c-tolerancia"><option value="0">Estricta</option><option value="1">Normal (1 letra)</option><option value="2">Generosa (2 letras)</option></select></label>
+  </div>
+  <div class="card cfg">
+    <h3>Sonido y alertas</h3>
+    <label>Sonido <input type="checkbox" class="sw" id="c-sonido"></label>
+    <label>Volumen <span><input type="range" id="c-vol" min="0" max="1" step="0.05"> <span class="v" id="v-vol"></span></span></label>
+    <label>Tic-tac del reloj <input type="checkbox" class="sw" id="c-tictac"></label>
+    <label>Alerta en los últimos segundos <span><input type="range" id="c-alerta" min="0" max="20" step="1"> <span class="v" id="v-alerta"></span></span></label>
+    <label>Vibración (Android) <input type="checkbox" class="sw" id="c-vibrar"></label>
+    <button id="b-test-sound" style="margin-top:8px">🔊 Probar sonidos</button>
+  </div>
+  <div class="card">
+    <h3>Banco de juegos</h3>
+    <p class="mut small" id="cfg-bank"></p>
+    <div class="row" style="margin-top:10px"><button id="b-reset-bank">Reiniciar roscos jugados</button></div>
+    <div class="row" style="margin-top:10px"><button id="b-preset">Restaurar valores del nivel</button></div>
+  </div>
+  <p class="mut small" style="text-align:center" id="cfg-ver"></p>
+</section>
+
+<!-- HISTORIAL -->
+<section class="screen" id="s-hist">
+  <div class="top"><h2>Historial</h2><button class="icon" id="b-hist-close">✕</button></div>
+  <div class="card" id="hist-best"></div>
+  <div class="list" id="hist-list"></div>
+  <button id="b-hist-clear">Borrar historial</button>
+</section>
+
+<!-- AYUDA -->
+<section class="screen" id="s-help">
+  <div class="top"><h2>Cómo se juega</h2><button class="icon" id="b-help-close">✕</button></div>
+  <div class="card"><h3>La partida</h3><p>Primero juegas algunos <b>juegos previos</b>, elegidos al azar. Cada acierto suma segundos a tu <b>bolsa de tiempo</b>. Al final llega <b>el rosco</b>: una definición por cada letra, con el tiempo base más todo lo que ganaste.</p></div>
+  <div class="card"><h3>El rosco</h3><p>«Empieza con» o «Contiene» la letra. Si no sabes, di <b>«paso»</b> y la letra vuelve en la siguiente vuelta. Termina cuando respondes todas o se acaba el tiempo. Completarlo sin errores es el gran premio.</p></div>
+  <div class="card"><h3>Modos</h3><p><b>Solo:</b> escribes la respuesta; se aceptan tildes omitidas y pequeños errores según la tolerancia.<br><br><b>Presentador:</b> otra persona tiene el celular, lee en voz alta y marca ✓ o ✗. Con «Ver respuesta» puede revisar sin que el jugador mire.</p></div>
+  <div class="card"><h3>Instalar en el iPhone</h3><p>Abre la página en Safari → botón Compartir → «Agregar a pantalla de inicio». Funciona sin internet. Si no escuchas sonidos, revisa el interruptor de silencio del iPhone.</p></div>
+</section>
+
+</div>
+
+<div class="ov" id="ov-count"><div class="count" id="count-n">3</div></div>
+<div class="ov" id="ov-pause">
+  <div style="font-size:64px">⏸</div><h2>Pausa</h2>
+  <p class="mut">El reloj está detenido</p>
+  <button class="btn-main" id="b-resume" style="min-width:220px">Continuar</button>
+  <button id="b-pause-quit" style="min-width:220px">Abandonar partida</button>
+</div>
+<div class="toast" id="toast"></div>
+<canvas class="confetti" id="confetti"></canvas>
+
+<script src="data.js"></script>
+<script>
+"use strict";
+const APP_VERSION = '1.0.0';
+const $ = s => document.querySelector(s);
+const LET = 'ABCDEFGHIJLMNÑOPQRSTUVXYZ'.split('');
+const B = window.BANCO;
+
+/* ---------- almacenamiento ---------- */
+const LS = {
+  get(k, d){ try{ const v = localStorage.getItem('rosco.'+k); return v ? JSON.parse(v) : d; }catch(e){ return d; } },
+  set(k, v){ try{ localStorage.setItem('rosco.'+k, JSON.stringify(v)); }catch(e){} }
+};
+const PRESET = {
+  1:{tRosco:160,tPrevio:75,segAcierto:6,penal:0,tolerancia:2},
+  2:{tRosco:130,tPrevio:60,segAcierto:5,penal:0,tolerancia:1},
+  3:{tRosco:100,tPrevio:50,segAcierto:4,penal:3,tolerancia:1}
+};
+const DEF = Object.assign({nivel:2,modo:'solo',nPrevios:3,pausaPaso:false,
+  g:{cuatro:true,pista:true,encadenadas:true,anagramas:true},
+  sonido:true,vol:.8,tictac:true,alerta:10,vibrar:true}, PRESET[2]);
+let cfg = Object.assign({}, DEF, LS.get('cfg', {}));
+cfg.g = Object.assign({}, DEF.g, cfg.g||{});
+const saveCfg = () => LS.set('cfg', cfg);
+let used = LS.get('used', {});           // id -> true
+const markUsed = id => { used[id] = true; LS.set('used', used); };
+
+/* ---------- utilidades ---------- */
+const shuffle = a => { a = a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.random()*(i+1)|0; [a[i],a[j]]=[a[j],a[i]]; } return a; };
+const norm = s => (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]/g,'');
+function lev(a,b){ const m=a.length,n=b.length; if(!m) return n; if(!n) return m;
+  let p=Array.from({length:n+1},(_,i)=>i);
+  for(let i=1;i<=m;i++){ const c=[i]; for(let j=1;j<=n;j++) c[j]=Math.min(p[j]+1,c[j-1]+1,p[j-1]+(a[i-1]===b[j-1]?0:1)); p=c; }
+  return p[n]; }
+function matches(input, answers){
+  const n = norm(input); if(!n) return false;
+  return answers.some(r => { const m = norm(r); if(n===m) return true;
+    const tol = m.length >= 8 ? +cfg.tolerancia : m.length >= 5 ? Math.min(1, +cfg.tolerancia) : 0;
+    return tol > 0 && lev(n, m) <= tol; });
+}
+const fmt = s => { s = Math.max(0, Math.ceil(s)); return Math.floor(s/60)+':'+String(s%60).padStart(2,'0'); };
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function toast(t){ const el=$('#toast'); el.textContent=t; el.style.display='block'; clearTimeout(toast.t); toast.t=setTimeout(()=>el.style.display='none',1800); }
+function vib(p){ if(cfg.vibrar && navigator.vibrate) try{ navigator.vibrate(p); }catch(e){} }
+function bump(el){ el.classList.remove('bump'); void el.offsetWidth; el.classList.add('bump'); }
+function shake(el){ el.classList.remove('shake'); void el.offsetWidth; el.classList.add('shake'); }
+
+/* ---------- sonido (sintetizado, sin archivos) ---------- */
+const SFX = {
+  ctx:null, master:null,
+  init(){
+    if(!this.ctx){ const C = window.AudioContext||window.webkitAudioContext; if(!C) return;
+      this.ctx = new C(); this.master = this.ctx.createGain(); this.master.connect(this.ctx.destination); }
+    if(this.ctx.state === 'suspended') this.ctx.resume();
+    // desbloqueo iOS: buffer silencioso
+    const b = this.ctx.createBuffer(1,1,22050), s = this.ctx.createBufferSource(); s.buffer=b; s.connect(this.ctx.destination); s.start(0);
+  },
+  on(){ return cfg.sonido && this.ctx; },
+  tone(f, d, type='sine', vol=.3, when=0, slide=null){
+    if(!this.on()) return; const c=this.ctx, t=c.currentTime+when;
+    this.master.gain.value = cfg.vol;
+    const o=c.createOscillator(), g=c.createGain(); o.type=type; o.frequency.setValueAtTime(f,t);
+    if(slide) o.frequency.exponentialRampToValueAtTime(slide, t+d);
+    g.gain.setValueAtTime(.0001,t); g.gain.exponentialRampToValueAtTime(vol,t+.008); g.gain.exponentialRampToValueAtTime(.0001,t+d);
+    o.connect(g); g.connect(this.master); o.start(t); o.stop(t+d+.05);
+  },
+  noise(d, vol, f1, f2, when=0){
+    if(!this.on()) return; const c=this.ctx, t=c.currentTime+when;
+    this.master.gain.value = cfg.vol;
+    const len = Math.floor(c.sampleRate*d), buf=c.createBuffer(1,len,c.sampleRate), ch=buf.getChannelData(0);
+    for(let i=0;i<len;i++) ch[i]=Math.random()*2-1;
+    const s=c.createBufferSource(); s.buffer=buf; const f=c.createBiquadFilter(); f.type='bandpass'; f.Q.value=2;
+    f.frequency.setValueAtTime(f1,t); f.frequency.exponentialRampToValueAtTime(f2,t+d);
+    const g=c.createGain(); g.gain.setValueAtTime(.0001,t); g.gain.exponentialRampToValueAtTime(vol,t+d*.3); g.gain.exponentialRampToValueAtTime(.0001,t+d);
+    s.connect(f); f.connect(g); g.connect(this.master); s.start(t); s.stop(t+d);
+  },
+  tick(alt, level){ // level 0 normal, 1 alerta, 2 crítico
+    if(!cfg.tictac && level===0) return;
+    if(level===2){ this.tone(1760,.07,'square',.22); this.tone(1760,.07,'square',.18,.14); }
+    else if(level===1) this.tone(alt?1400:1100,.05,'square',.2);
+    else { this.noise(.03,.35,alt?3500:2200,alt?3000:1800); }
+  },
+  ok(){ this.tone(988,.12,'sine',.45); this.tone(1319,.4,'sine',.45,.1); this.tone(1976,.3,'triangle',.12,.1); },
+  bad(){ this.tone(196,.5,'sawtooth',.28,0,98); this.tone(147,.5,'square',.14,0,73); },
+  pass(){ this.noise(.35,.5,300,3500); this.tone(660,.12,'triangle',.15,.05,990); },
+  coin(){ this.tone(1319,.07,'square',.16); this.tone(1976,.28,'square',.16,.07); },
+  beep(hi){ this.tone(hi?1320:660, hi?.6:.2, 'sine', .5); if(hi) this.tone(1980,.6,'triangle',.15); },
+  alarm(){ for(let i=0;i<8;i++) this.tone(i%2?620:880,.17,'square',.3,i*.19); },
+  fanfare(){ [523,659,784,1047,0,784,1047].forEach((f,i)=>{ if(f) this.tone(f, i===6?1:.2, 'triangle', .45, i*.16); if(f) this.tone(f/2, i===6?1:.2, 'sine', .2, i*.16); }); },
+  whoosh(){ this.noise(.6,.4,200,4000); },
+  end(){ [784,659,523,392].forEach((f,i)=>this.tone(f,.3,'triangle',.4,i*.2)); }
+};
+
+/* ---------- reloj de cuenta regresiva ---------- */
+class Clock {
+  constructor(sec, onTick, onEnd){ this.left=sec; this.onTick=onTick; this.onEnd=onEnd; this.running=false; this.lastWhole=Math.ceil(sec); this.n=0; }
+  start(){ if(this.running) return; this.running=true; this.t0=performance.now(); this.iv=setInterval(()=>this.step(),100); this.onTick(this.left); }
+  step(){
+    const now=performance.now(); this.left -= (now-this.t0)/1000; this.t0=now;
+    const whole = Math.ceil(this.left);
+    if(whole < this.lastWhole){ this.lastWhole = whole;
+      if(whole > 0){ const lvl = whole <= 5 && cfg.alerta>0 ? 2 : whole <= cfg.alerta ? 1 : 0; SFX.tick(this.n++%2, lvl); if(lvl===2) vib(40); }
+    }
+    this.onTick(this.left);
+    if(this.left <= 0){ this.stop(); this.left=0; SFX.alarm(); vib([200,100,200,100,400]); this.onEnd(); }
+  }
+  stop(){ this.running=false; clearInterval(this.iv); }
+  add(s){ this.left += s; this.lastWhole = Math.ceil(this.left); this.onTick(this.left); }
+}
+function timerClass(el, left){ el.classList.toggle('crit', left<=5); el.classList.toggle('low', left>5 && left<=cfg.alerta); }
+
+/* ---------- navegación ---------- */
+function show(id){ document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('on', s.id==='s-'+id)); window.scrollTo(0,0); }
+let wakeLock=null;
+async function keepAwake(on){ try{ if(on && 'wakeLock' in navigator && !wakeLock){ wakeLock = await navigator.wakeLock.request('screen'); wakeLock.addEventListener('release',()=>wakeLock=null); } else if(!on && wakeLock){ wakeLock.release(); wakeLock=null; } }catch(e){} }
+
+/* ---------- inicio ---------- */
+const LVL = {1:'Fácil',2:'Medio',3:'Difícil'};
+function roscosDe(n){ return B.roscos.filter(r=>r.nivel===n); }
+function renderHome(){
+  $('#home-lvl').innerHTML = [1,2,3].map(n=>`<button class="chip ${cfg.nivel===n?'sel':''}" data-n="${n}">${LVL[n]}</button>`).join('');
+  $('#home-mode').innerHTML = [['solo','✍️ Solo'],['presentador','🎤 Presentador']].map(([k,t])=>`<button class="chip ${cfg.modo===k?'sel':''}" data-m="${k}">${t}</button>`).join('');
+  $('#home-mode-txt').textContent = cfg.modo==='solo' ? 'Escribes tus respuestas y el juego las corrige.' : 'Otra persona lee las definiciones y marca aciertos y errores.';
+  const all = roscosDe(cfg.nivel), free = all.filter(r=>!used[r.id]).length;
+  $('#home-avail').innerHTML = free ? `Roscos sin jugar en nivel ${LVL[cfg.nivel]}: <b>${free} de ${all.length}</b>` : `⚠️ Ya jugaste todos los roscos de nivel ${LVL[cfg.nivel]}. Pide una nueva tanda o reinicia el banco en Ajustes.`;
+  $('#home-lvl').querySelectorAll('button').forEach(b=>b.onclick=()=>{ cfg.nivel=+b.dataset.n; Object.assign(cfg, PRESET[cfg.nivel]); saveCfg(); renderHome(); });
+  $('#home-mode').querySelectorAll('button').forEach(b=>b.onclick=()=>{ cfg.modo=b.dataset.m; saveCfg(); renderHome(); });
+}
+
+/* ---------- juegos previos ---------- */
+const GAMES = {
+  cuatro:{name:'Una de cuatro',ico:'❓',rules:'Responde todas las preguntas que puedas antes de que se acabe el tiempo. Cada acierto suma segundos al rosco. Un error no resta, pero gasta tiempo.'},
+  pista:{name:'La pista',ico:'🔎',rules:'Adivina la palabra a partir de pistas que se van revelando. Cuantas menos pistas uses, más segundos ganas.'},
+  encadenadas:{name:'Palabras encadenadas',ico:'🔗',rules:'Cada respuesta empieza con la última sílaba de la anterior. Te mostramos la sílaba con la que debe empezar cada palabra.'},
+  anagramas:{name:'Letras desordenadas',ico:'🔀',rules:'Ordena las letras para formar la palabra. Hay una pista para ayudarte.'}
+};
+function pickItems(key){
+  const lvl = cfg.nivel, list = B[key];
+  let pool = list.filter(x=>x.n===lvl && !used[x.id]);
+  if(pool.length < 3) pool = pool.concat(list.filter(x=>x.n!==lvl && !used[x.id] && Math.abs(x.n-lvl)<=1));
+  if(pool.length < 3){ list.filter(x=>x.n===lvl).forEach(x=>{ delete used[x.id]; }); LS.set('used', used); pool = list.filter(x=>x.n===lvl); }
+  const same = shuffle(pool.filter(x=>x.n===lvl)), other = shuffle(pool.filter(x=>x.n!==lvl));
+  return same.concat(other);
+}
+
+let G = null; // partida actual
+function newGame(){
+  SFX.init();
+  const pool = roscosDe(cfg.nivel).filter(r=>!used[r.id]);
+  if(!pool.length){ toast('No quedan roscos en este nivel'); return; }
+  const rosco = shuffle(pool)[0];
+  const enabled = Object.keys(GAMES).filter(k=>cfg.g[k]);
+  const previos = shuffle(enabled).slice(0, cfg.nPrevios);
+  G = {rosco, previos, idx:0, earned:0, perGame:[], start:Date.now()};
+  keepAwake(true);
+  nextStage();
+}
+function nextStage(){
+  if(G.idx < G.previos.length){
+    const k = G.previos[G.idx], g = GAMES[k];
+    $('#intro-step').textContent = `Juego ${G.idx+1} de ${G.previos.length}`;
+    $('#intro-bank').textContent = `Bolsa: +${G.earned}s`;
+    $('#intro-ico').textContent = g.ico; $('#intro-title').textContent = g.name;
+    $('#intro-rules').innerHTML = esc(g.rules) + `<br><br><span class="mut">Duración: ${cfg.tPrevio}s · ${cfg.modo==='solo'?'Modo solo':'Modo presentador'}</span>`;
+    $('#b-intro-go').textContent = '¡Vamos!';
+    $('#b-intro-go').onclick = () => countdown(()=>runPrevio(k));
+    show('intro'); SFX.whoosh();
+  } else {
+    $('#intro-step').textContent = 'Gran final';
+    $('#intro-bank').textContent = `Bolsa: +${G.earned}s`;
+    $('#intro-ico').textContent = '🎯'; $('#intro-title').textContent = 'El Rosco';
+    const tot = cfg.tRosco + G.earned;
+    $('#intro-rules').innerHTML = `Tienes <b style="color:var(--gold)">${fmt(tot)}</b> para completar las 25 letras<br><span class="mut">${cfg.tRosco}s base + ${G.earned}s ganados</span><br><br>Responde o di «paso» para dejar la letra para la siguiente vuelta.${cfg.penal?`<br>Cada error resta ${cfg.penal}s.`:''}`;
+    $('#b-intro-go').textContent = '¡Al rosco!';
+    $('#b-intro-go').onclick = () => countdown(runRosco);
+    show('intro'); SFX.whoosh();
+  }
+}
+function countdown(cb){
+  const ov=$('#ov-count'), n=$('#count-n'); ov.classList.add('on'); let i=3;
+  const step=()=>{ if(i>0){ n.textContent=i; n.style.animation='none'; void n.offsetWidth; n.style.animation=''; SFX.beep(false); i--; setTimeout(step,800); }
+    else { n.textContent='¡YA!'; n.style.animation='none'; void n.offsetWidth; n.style.animation=''; SFX.beep(true); vib(120); setTimeout(()=>{ ov.classList.remove('on'); cb(); },550); } };
+  step();
+}
+
+/* panel de respuesta común a todos los juegos */
+function answerPanel(host, answers, onResult, opts={}){
+  host.innerHTML=''; let done=false;
+  const finish = r => { if(done) return; done=true; onResult(r); };
+  if(cfg.modo==='solo'){
+    host.innerHTML = `<input class="ans" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="go" placeholder="Tu respuesta">
+      <div class="row" style="margin-top:10px"><button class="btn-pass" data-a="pass">${opts.passLabel||'Paso'}</button><button class="btn-ok" data-a="go">Responder</button></div>`;
+    const inp = host.querySelector('input');
+    const submit = () => { if(done) return; const v=inp.value.trim(); if(!v){ shake(inp); return; }
+      if(matches(v, answers)) finish('ok'); else if(opts.retry){ shake(inp); SFX.bad(); inp.select(); opts.retry(); } else finish('bad'); };
+    inp.addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); submit(); } });
+    host.querySelector('[data-a=go]').onclick = submit;
+    host.querySelector('[data-a=pass]').onclick = () => finish('pass');
+    setTimeout(()=>{ try{ inp.focus({preventScroll:true}); }catch(e){ inp.focus(); } }, 30);
+  } else {
+    host.innerHTML = `<div class="reveal" data-r>&nbsp;</div>
+      <button data-a="see" style="width:100%;margin-bottom:10px">👁 Ver respuesta (presentador)</button>
+      <div class="row"><button class="btn-bad" data-a="bad">✗ Mal</button><button class="btn-pass" data-a="pass">${opts.passLabel||'Paso'}</button><button class="btn-ok" data-a="ok">✓ Bien</button></div>`;
+    const rv = host.querySelector('[data-r]'); let vis=false;
+    host.querySelector('[data-a=see]').onclick = e => { vis=!vis; rv.innerHTML = vis ? esc(answers.join(' / ')) : '&nbsp;'; e.target.textContent = vis ? '🙈 Ocultar respuesta' : '👁 Ver respuesta (presentador)'; };
+    ['ok','bad','pass'].forEach(a => host.querySelector(`[data-a=${a}]`).onclick = () => finish(a));
+  }
+}
+
+let P = null; // previo en curso
+function runPrevio(key){
+  const items = pickItems(key);
+  P = {key, items, i:0, earned:0, ok:0, bad:0, busy:false};
+  $('#prev-name').textContent = GAMES[key].ico + ' ' + GAMES[key].name;
+  $('#prev-bank').textContent = '+0s';
+  P.clock = new Clock(cfg.tPrevio, left => { $('#prev-timer').textContent = fmt(left); timerClass($('#prev-timer'), left); }, () => endPrevio());
+  show('prev'); P.clock.start(); nextItem();
+}
+function earn(s){ P.earned += s; G.earned += s; $('#prev-bank').textContent = '+'+P.earned+'s'; bump($('#prev-bank')); SFX.coin(); }
+function nextItem(){
+  if(!P || !P.clock.running) return;
+  if(P.key==='encadenadas') return renderChain();
+  if(P.i >= P.items.length){ endPrevio(); return; }
+  const it = P.items[P.i]; markUsed(it.id);
+  ({cuatro:renderCuatro, pista:renderPista, anagramas:renderAnagrama})[P.key](it);
+}
+function afterItem(res, answerText, bonus){
+  if(!P) return;
+  if(res==='ok'){ P.ok++; SFX.ok(); vib(30); earn(bonus ?? cfg.segAcierto); }
+  else if(res==='bad'){ P.bad++; SFX.bad(); vib([60,40,60]); }
+  else SFX.pass();
+  const body = $('#prev-body');
+  if(res!=='ok' && answerText){ const d=document.createElement('div'); d.className='reveal'; d.textContent = answerText; body.prepend(d); }
+  body.querySelectorAll('button,input').forEach(b=>b.disabled=true);
+  setTimeout(()=>{ P && (P.i++, nextItem()); }, res==='ok' ? 550 : 1100);
+}
+function renderCuatro(it){
+  const body=$('#prev-body');
+  body.innerHTML = `<div class="card"><div class="q">${esc(it.p)}</div></div><div class="opts">${it.o.map((o,i)=>`<button data-i="${i}"><b>${'ABCD'[i]}</b>${esc(o)}</button>`).join('')}</div>
+    <button class="btn-pass" data-a="pass">Paso</button>`;
+  body.querySelectorAll('.opts button').forEach(b=>b.onclick=()=>{
+    const i=+b.dataset.i, right = i===it.c;
+    b.classList.add(right?'right':'wrong'); body.querySelector(`[data-i="${it.c}"]`).classList.add('right');
+    afterItem(right?'ok':'bad', null);
+  });
+  body.querySelector('[data-a=pass]').onclick=()=>{ body.querySelector(`[data-i="${it.c}"]`).classList.add('right'); afterItem('pass', null); };
+}
+function renderPista(it){
+  const body=$('#prev-body'); let shown=1;
+  body.innerHTML = `<div class="clues" id="clues"></div><button data-a="more">➕ Otra pista</button><div id="pans"></div>`;
+  const draw=()=>{ $('#clues').innerHTML = it.h.map((h,i)=> i<shown ? `<div class="clue">${i+1}. ${esc(h)}</div>` : `<div class="clue hid">Pista ${i+1} · ${cfg.segAcierto + (4-i-1)*2}s</div>`).join('');
+    body.querySelector('[data-a=more]').disabled = shown>=4; };
+  draw();
+  body.querySelector('[data-a=more]').onclick=()=>{ if(shown<4){ shown++; draw(); SFX.tone(880,.08,'sine',.2); } };
+  answerPanel($('#pans'), it.r, r => afterItem(r, it.r[0], cfg.segAcierto + (4-shown)*2));
+}
+function scramble(w){ const L=norm(w).toUpperCase().split(''); let s; let n=0; do{ s=shuffle(L); n++; }while(s.join('')===L.join('') && n<20); return s; }
+function renderAnagrama(it){
+  const body=$('#prev-body');
+  body.innerHTML = `<div class="card"><div class="tiles">${scramble(it.r).map(c=>`<div class="tile">${c}</div>`).join('')}</div>
+    <p class="mut" style="text-align:center;margin-top:12px">💡 ${esc(it.h)} · ${norm(it.r).length} letras</p></div><div id="pans"></div>`;
+  answerPanel($('#pans'), [it.r], r => afterItem(r, it.r));
+}
+function renderChain(){
+  if(!P.chain || P.wi >= P.chain.w.length){
+    if(P.i >= P.items.length){ endPrevio(); return; }
+    P.chain = P.items[P.i]; P.wi = 0; markUsed(P.chain.id);
+  }
+  const c=P.chain, w=c.w[P.wi];
+  const start = P.wi===0 ? norm(w.r)[0].toUpperCase() : c.k[P.wi-1].toUpperCase();
+  const prev = P.wi>0 ? `<p class="mut">Anterior: <b>${esc(c.w[P.wi-1].r.toUpperCase())}</b></p>` : `<p class="mut">Nueva cadena</p>`;
+  const body=$('#prev-body');
+  body.innerHTML = `<div class="card">${prev}<div style="margin:10px 0 6px">Empieza con <span class="syl" style="font-size:26px">${esc(start)}</span></div><div class="q">${esc(w.d)}</div>
+    <p class="mut small">Palabra ${P.wi+1} de ${c.w.length}</p></div><div id="pans"></div>`;
+  answerPanel($('#pans'), [w.r], r => {
+    if(r==='ok'){ P.ok++; SFX.ok(); vib(30); earn(cfg.segAcierto); }
+    else { if(r==='bad'){ P.bad++; SFX.bad(); } else SFX.pass(); const d=document.createElement('div'); d.className='reveal'; d.textContent=w.r; body.prepend(d); }
+    body.querySelectorAll('button,input').forEach(b=>b.disabled=true);
+    P.wi++; if(P.wi>=c.w.length) P.i++;
+    setTimeout(()=>{ if(P && P.clock.running) renderChain(); }, r==='ok'?550:1100);
+  });
+}
+function endPrevio(){
+  if(!P) return; P.clock.stop();
+  const p=P; P=null;
+  G.perGame.push({k:p.key, ok:p.ok, bad:p.bad, s:p.earned});
+  $('#psum-title').textContent = GAMES[p.key].name;
+  $('#psum-score').textContent = '+'+p.earned+'s';
+  $('#psum-txt').textContent = `${p.ok} acierto${p.ok===1?'':'s'} · ${p.bad} error${p.bad===1?'':'es'}`;
+  $('#psum-total').innerHTML = `Bolsa acumulada: <span style="color:var(--gold)">+${G.earned}s</span>`;
+  G.idx++;
+  $('#b-psum-next').textContent = G.idx < G.previos.length ? 'Siguiente juego' : 'Ir al rosco';
+  setTimeout(()=>{ show('psum'); p.earned>0 ? SFX.fanfare() : SFX.end(); }, 900);
+}
+
+/* ---------- el rosco ---------- */
+let R = null;
+function drawRing(){
+  const cx=150, cy=150, rad=130; let h='';
+  R.state.forEach((st,i)=>{ const a = -Math.PI/2 + i*2*Math.PI/25, x=cx+rad*Math.cos(a), y=cy+rad*Math.sin(a);
+    const cls = (st==='ok'?'ok':st==='bad'?'bad':'') + (i===R.q[0] && R.clock.running ? ' cur':'');
+    h += `<g class="rl ${cls}"><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="14"/><text x="${x.toFixed(1)}" y="${(y+.5).toFixed(1)}">${LET[i]}</text></g>`; });
+  $('#r-svg').innerHTML = h;
+  $('#r-ok').textContent = R.state.filter(s=>s==='ok').length;
+  $('#r-bad').textContent = R.state.filter(s=>s==='bad').length;
+}
+function runRosco(){
+  markUsed(G.rosco.id);
+  R = {p:G.rosco.p, state:Array(25).fill('pen'), given:Array(25).fill(''), q:[...Array(25).keys()], vuelta:1, pauseT:null};
+  R.total = cfg.tRosco + G.earned;
+  $('#r-mode').textContent = `${LVL[G.rosco.nivel]} · ${cfg.modo==='solo'?'Solo':'Presentador'}`;
+  R.clock = new Clock(R.total, left => { const el=$('#r-time'); el.textContent=Math.ceil(left); timerClass(el,left); }, () => endRosco('time'));
+  show('rosco'); R.clock.start(); showLetter();
+}
+function showLetter(){
+  if(!R.q.length){ endRosco('done'); return; }
+  const i=R.q[0], p=R.p[i]; drawRing();
+  const tag=$('#r-tag'); tag.textContent = (p.t==='e'?'EMPIEZA CON ':'CONTIENE LA ') + p.l; tag.className = 'tag'+(p.t==='c'?' c':'');
+  $('#r-def').textContent = p.d;
+  answerPanel($('#r-ans'), p.r, res => onRosco(res), {passLabel:'¡Paso!'});
+}
+function onRosco(res){
+  const i=R.q[0], p=R.p[i];
+  const inp=$('#r-ans input'); if(inp) R.given[i]=inp.value.trim();
+  if(res==='ok'){ R.state[i]='ok'; R.q.shift(); SFX.ok(); vib(30); }
+  else if(res==='bad'){ R.state[i]='bad'; R.q.shift(); SFX.bad(); vib([60,40,60]); if(cfg.penal){ R.clock.add(-cfg.penal); toast(`−${cfg.penal}s`); } }
+  else { R.q.push(R.q.shift()); SFX.pass(); }
+  drawRing();
+  $('#r-ans').querySelectorAll('button,input').forEach(b=>b.disabled=true);
+  if(res==='bad'){ $('#r-def').innerHTML = `<span style="color:var(--gold);text-transform:uppercase;font-weight:900">${esc(p.r[0])}</span>`; }
+  if(!R.clock.running) return;
+  if(res==='pass' && cfg.pausaPaso){ R.clock.stop(); setTimeout(()=>{ if(R && !R.ended){ R.clock.start(); showLetter(); } }, 1500); return; }
+  setTimeout(()=>{ if(R && !R.ended && R.clock.running) showLetter(); }, res==='bad' ? 1300 : 450);
+}
+function endRosco(why){
+  if(!R || R.ended) return; R.ended=true; R.clock.stop(); keepAwake(false);
+  const ok=R.state.filter(s=>s==='ok').length, bad=R.state.filter(s=>s==='bad').length, pen=25-ok-bad;
+  const left=Math.max(0,Math.ceil(R.clock.left));
+  const full = ok===25;
+  const score = ok*10 - bad*3 + (full ? 100 + left : 0) + G.earned;
+  drawRing();
+  const rec = {fecha:Date.now(), nivel:G.rosco.nivel, rosco:G.rosco.id, modo:cfg.modo, ok, bad, pen, ganados:G.earned, sobrante:left, score, full};
+  const hist = LS.get('hist', []); hist.unshift(rec); LS.set('hist', hist.slice(0,100));
+  $('#res-title').textContent = full ? '🏆 ¡ROSCO COMPLETO!' : why==='time' ? '⏰ ¡Se acabó el tiempo!' : why==='stop' ? '🏳️ Te plantaste' : '¡Rosco terminado!';
+  $('#res-score').textContent = score;
+  $('#res-stats').innerHTML = [
+    ['✅ Aciertos', ok], ['❌ Errores', bad], ['🔵 Sin responder', pen],
+    ['⏱ Segundos ganados en previos', '+'+G.earned+'s'], ['⌛ Tiempo sobrante', fmt(left)],
+    ...G.perGame.map(g=>[GAMES[g.k].ico+' '+GAMES[g.k].name, `${g.ok} ✓ · +${g.s}s`])
+  ].map(([a,b])=>`<div class="stat"><span>${a}</span><b>${b}</b></div>`).join('');
+  $('#res-letters').innerHTML = R.p.map((p,i)=>{ const st=R.state[i];
+    const c = st==='ok'?'o':st==='bad'?'x':'p';
+    const extra = st==='bad' && R.given[i] ? ` <span class="mut">(dijiste ${esc(R.given[i])})</span>` : '';
+    return `<div class="${c}"><b>${p.l}</b> · ${esc(p.r[0])}${extra}</div>`; }).join('');
+  setTimeout(()=>{ show('res'); if(full){ SFX.fanfare(); confetti(); } else if(ok>=18){ SFX.fanfare(); } else SFX.end(); }, why==='time'?1600:600);
+  G=null;
+}
+
+/* ---------- pausa / abandonar ---------- */
+function activeClock(){ return (P && P.clock) || (R && !R.ended && R.clock) || null; }
+let pausedClock=null;
+function pause(){ const c=activeClock(); if(!c || !c.running) return; c.stop(); pausedClock=c; $('#ov-pause').classList.add('on'); }
+function resume(){ $('#ov-pause').classList.remove('on'); SFX.init(); if(pausedClock){ pausedClock.start(); pausedClock=null; } if(R && !R.ended){ const inp=$('#r-ans input'); if(inp) inp.focus(); } }
+function quit(){
+  $('#ov-pause').classList.remove('on');
+  if(P){ P.clock.stop(); P=null; } if(R){ R.clock.stop(); R.ended=true; R=null; }
+  G=null; pausedClock=null; keepAwake(false); renderHome(); show('home');
+}
+document.addEventListener('visibilitychange', ()=>{ if(document.hidden) pause(); });
+
+/* ---------- ajustes ---------- */
+const RANGES = {tRosco:v=>v+'s', tPrevio:v=>v+'s', segAcierto:v=>'+'+v+'s', penal:v=>v?'−'+v+'s':'No', nPrevios:v=>v, vol:v=>Math.round(v*100)+'%', alerta:v=>v?v+'s':'No'};
+function renderCfg(){
+  for(const k in RANGES){ const el=$('#c-'+k); el.value=cfg[k]; $('#v-'+k).textContent=RANGES[k](+cfg[k]);
+    el.oninput=()=>{ cfg[k]=+el.value; $('#v-'+k).textContent=RANGES[k](cfg[k]); saveCfg(); }; }
+  ['sonido','tictac','vibrar','pausaPaso'].forEach(k=>{ const el=$('#c-'+k); el.checked=!!cfg[k]; el.onchange=()=>{ cfg[k]=el.checked; saveCfg(); }; });
+  Object.keys(GAMES).forEach(k=>{ const el=$('#c-g-'+k); el.checked=!!cfg.g[k]; el.onchange=()=>{ cfg.g[k]=el.checked; saveCfg(); }; });
+  const t=$('#c-tolerancia'); t.value=cfg.tolerancia; t.onchange=()=>{ cfg.tolerancia=+t.value; saveCfg(); };
+  const tot=n=>roscosDe(n).length, fr=n=>roscosDe(n).filter(r=>!used[r.id]).length;
+  $('#cfg-bank').innerHTML = `Roscos sin jugar: Fácil <b>${fr(1)}/${tot(1)}</b> · Medio <b>${fr(2)}/${tot(2)}</b> · Difícil <b>${fr(3)}/${tot(3)}</b><br>Preguntas de juegos previos: ${['cuatro','pista','encadenadas','anagramas'].reduce((a,k)=>a+B[k].length,0)} (se reciclan al agotarse)`;
+  $('#cfg-ver').textContent = `Versión ${APP_VERSION} · banco v${B.version}`;
+}
+$('#b-test-sound').onclick=()=>{ SFX.init(); SFX.ok(); setTimeout(()=>SFX.bad(),700); setTimeout(()=>SFX.pass(),1400); setTimeout(()=>{SFX.tick(0,0);},2000); setTimeout(()=>{SFX.tick(1,0);},2500); setTimeout(()=>SFX.tick(0,1),3000); setTimeout(()=>SFX.tick(0,2),3500); setTimeout(()=>SFX.alarm(),4200); };
+$('#b-reset-bank').onclick=()=>{ if(confirm('¿Marcar todos los roscos y preguntas como no jugados?')){ used={}; LS.set('used',used); renderCfg(); toast('Banco reiniciado'); } };
+$('#b-preset').onclick=()=>{ Object.assign(cfg, PRESET[cfg.nivel]); saveCfg(); renderCfg(); toast('Valores de '+LVL[cfg.nivel]+' restaurados'); };
+
+/* ---------- historial ---------- */
+function renderHist(){
+  const h=LS.get('hist',[]);
+  $('#hist-best').innerHTML = '<h3>Mejores puntajes</h3>' + [1,2,3].map(n=>{ const b=h.filter(x=>x.nivel===n).sort((a,b)=>b.score-a.score)[0];
+    return `<div class="stat"><span>${LVL[n]}</span><b>${b?`${b.score} pts · ${b.ok}/25`:'—'}</b></div>`; }).join('');
+  $('#hist-list').innerHTML = h.length ? h.slice(0,40).map(x=>{ const d=new Date(x.fecha);
+    return `<div class="card" style="padding:12px 14px"><div class="top"><b>${x.full?'🏆 ':''}${x.score} pts</b><span class="mut small">${d.toLocaleDateString('es-CL')} ${d.toLocaleTimeString('es-CL',{hour:'2-digit',minute:'2-digit'})}</span></div>
+      <div class="mut small" style="margin-top:4px">${LVL[x.nivel]} · ${x.ok} ✓ · ${x.bad} ✗ · ${x.pen} sin responder · +${x.ganados}s en previos</div></div>`; }).join('') : '<p class="mut" style="text-align:center">Todavía no hay partidas</p>';
+}
+$('#b-hist-clear').onclick=()=>{ if(confirm('¿Borrar todo el historial?')){ LS.set('hist',[]); renderHist(); } };
+
+/* ---------- confeti ---------- */
+function confetti(){
+  const cv=$('#confetti'), x=cv.getContext('2d'); cv.width=innerWidth; cv.height=innerHeight;
+  const cols=['#ffc83d','#1fbf5b','#2f6bff','#ef3b3b','#38e1ff','#fff'];
+  const ps=Array.from({length:160},()=>({x:Math.random()*cv.width,y:-20-Math.random()*cv.height,vy:2+Math.random()*4,vx:-1+Math.random()*2,r:Math.random()*6.28,s:5+Math.random()*7,c:cols[Math.random()*6|0]}));
+  let f=0; (function loop(){ x.clearRect(0,0,cv.width,cv.height); ps.forEach(p=>{ p.y+=p.vy; p.x+=p.vx; p.r+=.1; x.save(); x.translate(p.x,p.y); x.rotate(p.r); x.fillStyle=p.c; x.fillRect(-p.s/2,-p.s/4,p.s,p.s/2); x.restore(); });
+    if(++f<260) requestAnimationFrame(loop); else x.clearRect(0,0,cv.width,cv.height); })();
+}
+
+/* ---------- botones ---------- */
+$('#b-play').onclick=newGame;
+$('#b-cfg').onclick=()=>{ renderCfg(); show('cfg'); };
+$('#b-cfg-close').onclick=()=>{ renderHome(); show('home'); };
+$('#b-hist').onclick=()=>{ renderHist(); show('hist'); };
+$('#b-hist-close').onclick=()=>show('home');
+$('#b-help').onclick=()=>show('help');
+$('#b-help-close').onclick=()=>show('home');
+$('#b-intro-quit').onclick=()=>{ if(confirm('¿Abandonar la partida?')) quit(); };
+$('#b-psum-next').onclick=nextStage;
+$('#b-prev-pause').onclick=pause;
+$('#b-r-pause').onclick=pause;
+$('#b-r-stop').onclick=()=>{ if(!R||R.ended) return; R.clock.stop(); if(confirm('¿Plantarte y terminar el rosco?')) endRosco('stop'); else R.clock.start(); };
+$('#b-resume').onclick=resume;
+$('#b-pause-quit').onclick=()=>{ if(confirm('¿Abandonar la partida? El rosco quedará como jugado.')) quit(); };
+$('#b-res-home').onclick=()=>{ R=null; renderHome(); show('home'); };
+document.addEventListener('touchstart', ()=>SFX.init(), {once:true});
+document.addEventListener('click', ()=>SFX.init(), {once:true});
+
+renderHome();
+if('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('sw.js').catch(()=>{});
+</script>
+</body>
+</html>
