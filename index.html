@@ -967,9 +967,20 @@ const IS_IOS = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platfo
 const IS_ANDROID = /Android/i.test(navigator.userAgent);
 const isStandalone = () => matchMedia('(display-mode: standalone)').matches || navigator.standalone===true;
 let installEvt = null;
+const UA = navigator.userAgent;
+const IN_APP = /FBAN|FBAV|FB_IAB|Instagram|WhatsApp|Line\/|Twitter|TikTok|musical_ly|Snapchat|; wv\)/i.test(UA);
+const IOS_OTHER = IS_IOS && /CriOS|FxiOS|EdgiOS|OPiOS|GSA\//.test(UA);
+function copyLinkBtn(h, msg){
+  h.hidden=false;
+  h.innerHTML = `<p style="margin-bottom:10px">${msg}</p><button class="btn-alt" id="b-copy-link" style="width:100%;font-size:15px;padding:12px">${ic('link')}Copiar enlace</button>`;
+  $('#b-copy-link').onclick = async()=>{ const url = location.origin + location.pathname;
+    try{ await navigator.clipboard.writeText(url); toast('Enlace copiado'); }catch(e){ prompt('Copia este enlace:', url); } };
+}
 function updInstall(){
   const h=$('#install-hint'); h.classList.remove('btn');
   if(isStandalone()){ h.hidden=true; return; }
+  if(IN_APP) return copyLinkBtn(h, IS_IOS ? 'Estás viendo el juego dentro de otra app. Para instalarlo, copia el enlace y ábrelo en Safari.' : 'Estás viendo el juego dentro de otra app. Para instalarlo, copia el enlace y ábrelo en Chrome.');
+  if(IOS_OTHER) return copyLinkBtn(h, 'En iPhone se instala desde Safari. Copia el enlace, ábrelo en Safari y toca Compartir → «Agregar a inicio».');
   if(installEvt){
     h.hidden=false; h.classList.add('btn');
     h.innerHTML=`<button class="btn-alt" id="b-install" style="width:100%;font-size:16px;padding:13px">${ic('plus')}Instalar la app en este teléfono</button>`;
