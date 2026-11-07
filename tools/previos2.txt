@@ -1,0 +1,422 @@
+# Juegos previos — tanda 2. Cada línea empieza con el nivel (1, 2 o 3).
+## vof
+# nivel|V o F|afirmación
+1|F|El Sol gira alrededor de la Tierra.
+1|V|Los pingüinos no pueden volar.
+1|F|Las ballenas son peces.
+1|V|El agua hierve a 100 grados a nivel del mar.
+1|F|Una semana tiene ocho días.
+1|V|Las abejas fabrican miel.
+1|F|Las zanahorias crecen colgando de los árboles.
+1|V|Chile limita con Argentina.
+1|F|Los gatos comen solo pasto.
+1|V|El corazón es un músculo.
+1|F|La nieve es caliente.
+1|V|Las vacas son mamíferos.
+1|F|Los murciélagos ponen huevos.
+1|V|Santiago es la capital de Chile.
+1|F|En Chile, el invierno es en diciembre.
+1|V|Los pulpos tienen ocho brazos.
+1|F|La Luna tiene luz propia.
+1|V|El hielo flota en el agua.
+1|F|Un año tiene diez meses.
+1|V|Las plantas necesitan luz para vivir.
+1|F|Los tiburones son mamíferos.
+1|F|Los caballos tienen cuernos.
+1|V|La sandía tiene mucha agua.
+1|F|El elefante es el animal más pequeño de la selva.
+1|V|Los dientes de leche se caen.
+1|V|Las mariposas antes de ser mariposas son orugas.
+1|F|Los peces respiran con pulmones.
+1|V|El limón es ácido.
+1|F|La Tierra es plana.
+1|V|Los perros oyen sonidos que las personas no alcanzan a oír.
+1|F|El 18 de septiembre se celebra la Navidad.
+1|V|Los pájaros tienen plumas.
+1|F|Las tortugas son animales muy rápidos.
+1|V|El Everest es la montaña más alta del mundo.
+1|F|El océano Pacífico es el más pequeño del mundo.
+1|V|La leche de vaca es blanca.
+2|V|La Isla de Pascua pertenece a Chile.
+2|F|El río Amazonas desemboca en el océano Pacífico.
+2|V|Gabriela Mistral ganó el Premio Nobel de Literatura.
+2|F|Mozart nació en Alemania.
+2|F|La Gran Muralla China se ve a simple vista desde la Luna.
+2|V|Botánicamente, el tomate es una fruta.
+2|F|El cobre es un mal conductor de la electricidad.
+2|V|Australia es a la vez un país y un continente.
+2|F|Napoleón Bonaparte nació en París.
+2|V|La sangre de los pulpos es azul.
+2|F|El río Nilo está en Sudamérica.
+2|V|Pablo Neruda nació en Parral.
+2|F|Venus es el planeta más cercano al Sol.
+2|V|El ADN tiene forma de doble hélice.
+2|F|Los camellos guardan agua en sus jorobas.
+2|F|La Mona Lisa está en el Museo del Prado.
+2|V|Chile mide más de 4.000 kilómetros de largo.
+2|F|Cristóbal Colón llegó a América en 1592.
+2|V|El kiwi, además de una fruta, es un ave de Nueva Zelanda.
+2|V|Los tiburones tienen esqueleto de cartílago, no de hueso.
+2|F|Brasil limita con Chile.
+2|V|El cerro Aconcagua está en Argentina.
+2|F|El sonido viaja más rápido que la luz.
+2|V|Los delfines pueden dormir con la mitad del cerebro.
+2|F|El Titanic se hundió en el océano Pacífico.
+2|V|La Antártida es el continente más frío.
+2|F|La capital de Brasil es Río de Janeiro.
+2|F|Beethoven compuso «Las cuatro estaciones».
+2|V|Los koalas se alimentan principalmente de hojas de eucalipto.
+2|F|El Día del Trabajador se celebra el 1 de junio.
+2|V|El agua cubre cerca del 70 % de la superficie de la Tierra.
+2|F|Las arañas son insectos.
+2|F|La palabra «árbol» es aguda.
+2|V|El oro es más denso que el hierro.
+2|V|La cueca es el baile nacional de Chile.
+2|F|El litio es un gas.
+3|V|Un año luz es una medida de distancia, no de tiempo.
+3|F|El idioma oficial de Brasil es el español.
+3|V|La palabra «murciélago» contiene las cinco vocales.
+3|F|«Cien años de soledad» la escribió Julio Cortázar.
+3|F|La Revolución Francesa comenzó en 1689.
+3|V|Mercurio no tiene lunas.
+3|F|«Don Quijote de la Mancha» lo escribió Lope de Vega.
+3|V|El grafito y el diamante están formados por el mismo elemento.
+3|F|El Canal de Panamá une el océano Atlántico con el Índico.
+3|V|La Torre Eiffel es unos centímetros más alta en verano que en invierno.
+3|F|El Partenón está en Roma.
+3|V|El chino mandarín es la lengua con más hablantes nativos del mundo.
+3|F|La fotosíntesis libera dióxido de carbono.
+3|F|«La Gioconda» y «La Mona Lisa» son cuadros distintos.
+3|F|El sistema solar tiene diez planetas.
+3|V|La palabra «esdrújula» es esdrújula.
+3|F|Shakespeare escribió «La vida es sueño».
+3|V|La sede de gobierno de Bolivia está en La Paz, pero su capital constitucional es Sucre.
+3|F|El Muro de Berlín cayó en 1991.
+3|V|Los diamantes pueden arder.
+3|F|La capital del Imperio inca era Quito.
+3|V|Marte tiene dos lunas.
+3|F|La bóveda de la Capilla Sixtina la pintó Leonardo da Vinci.
+3|V|En la Isla de Pascua se habla rapanui.
+3|F|El oxígeno es el gas más abundante del aire.
+3|V|Neil Armstrong fue el primer ser humano en pisar la Luna.
+3|F|La música del himno nacional de Chile es de Violeta Parra.
+3|V|La Vía Láctea es una galaxia espiral.
+3|F|Los osos polares viven en la Antártida.
+3|V|El tango es Patrimonio Cultural Inmaterial de la Humanidad.
+3|F|«Gracias a la vida» la escribió Víctor Jara.
+3|V|El agua salada se congela a una temperatura más baja que el agua dulce.
+3|F|Plutón sigue siendo considerado el noveno planeta del sistema solar.
+3|V|El corazón de una ballena azul puede pesar más que una persona adulta.
+3|F|El Imperio romano de Occidente cayó en el año 1453.
+3|V|Ojos del Salado es el volcán más alto del mundo.
+## refran
+# nivel|frase con ___|respuesta;alternativa
+1|Al que madruga, Dios lo ___|ayuda
+1|Más vale tarde que ___|nunca
+1|No hay mal que por bien no ___|venga
+1|Perro que ladra no ___|muerde
+1|En boca cerrada no entran ___|moscas
+1|Ojos que no ven, corazón que no ___|siente
+1|Dime con quién andas y te diré quién ___|eres
+1|Camarón que se duerme se lo lleva la ___|corriente
+1|Más vale pájaro en mano que cien ___|volando
+1|A caballo regalado no se le mira el ___|diente;colmillo
+1|El que busca, ___|encuentra
+1|No dejes para mañana lo que puedes hacer ___|hoy
+1|Del dicho al hecho hay mucho ___|trecho
+1|A mal tiempo, buena ___|cara
+1|Cuando el río suena, ___ trae|piedras
+1|Querer es ___|poder
+1|El que ríe último ríe ___|mejor
+1|Ojo por ojo, diente por ___|diente
+1|Haz el bien sin mirar a ___|quién
+1|La práctica hace al ___|maestro
+2|Al mal paso, darle ___|prisa
+2|Cría cuervos y te sacarán los ___|ojos
+2|En casa de herrero, cuchillo de ___|palo
+2|No por mucho madrugar amanece más ___|temprano
+2|El hábito no hace al ___|monje
+2|A buen entendedor, pocas ___|palabras
+2|Agua que no has de beber, déjala ___|correr
+2|Más sabe el diablo por viejo que por ___|diablo
+2|Quien mucho abarca, poco ___|aprieta
+2|Al pan, pan, y al vino, ___|vino
+2|Zapatero, a tus ___|zapatos
+2|Donde manda capitán, no manda ___|marinero
+2|Muerto el perro, se acabó la ___|rabia
+2|Más vale prevenir que ___|curar;lamentar
+2|Dios aprieta, pero no ___|ahorca
+2|Cada oveja con su ___|pareja
+2|El que con lobos anda, a aullar se ___|enseña
+2|Lo cortés no quita lo ___|valiente
+2|Aunque la mona se vista de seda, mona se ___|queda
+2|De tal palo, tal ___|astilla
+3|A falta de pan, buenas son ___|tortas
+3|Quien siembra vientos recoge ___|tempestades
+3|A otro perro con ese ___|hueso
+3|El que nace pa' maceta no pasa del ___|corredor
+3|Ves la paja en el ojo ajeno y no la ___ en el propio|viga
+3|Cuando el diablo no tiene qué hacer, con la cola mata ___|moscas
+3|A rey muerto, rey ___|puesto
+3|Las apariencias ___|engañan
+3|Genio y figura hasta la ___|sepultura
+3|Para muestra, basta un ___|botón
+3|Más vale ser cabeza de ratón que cola de ___|león
+3|Gato con guantes no caza ___|ratones
+3|Por la boca muere el ___|pez
+3|Hijo de tigre sale ___|rayado
+3|El que se fue a Sevilla perdió su ___|silla
+3|Entre bomberos no nos vamos a pisar la ___|manguera
+3|Le dijo la sartén al ___: «no me tiznes»|cazo
+3|Mucho ruido y pocas ___|nueces
+3|Al que nace para martillo, del cielo le caen los ___|clavos
+3|A la tercera va la ___|vencida
+## intrusa
+# nivel|cuatro palabras|posición de la intrusa (0-3)|explicación
+1|manzana;pera;zanahoria;uva|2|La zanahoria es una verdura; las demás son frutas.
+1|perro;gato;loro;tenedor|3|El tenedor no es un animal.
+1|rojo;azul;verde;mesa|3|Mesa no es un color.
+1|lunes;martes;enero;viernes|2|Enero es un mes; los demás son días.
+1|avión;barco;tren;nube|3|La nube no es un medio de transporte.
+1|guitarra;piano;violín;martillo|3|El martillo no es un instrumento musical.
+1|camisa;pantalón;calcetín;cuchara|3|La cuchara no es ropa.
+1|león;tigre;vaca;leopardo|2|La vaca no es un felino.
+1|tres;siete;azul;diez|2|Azul no es un número.
+1|ojo;nariz;boca;zapato|3|El zapato no es parte de la cara.
+1|sol;luna;estrella;árbol|3|El árbol no está en el cielo.
+1|pato;gallina;paloma;gato|3|El gato no es un ave.
+1|lápiz;goma;regla;sartén|3|La sartén no es un útil escolar.
+1|verano;otoño;invierno;mañana|3|Mañana no es una estación del año.
+1|tiburón;delfín;ballena;caballo|3|El caballo no vive en el mar.
+1|fútbol;tenis;básquetbol;ajedrez|3|El ajedrez no se juega con pelota.
+1|leche;queso;yogur;pan|3|El pan no es un lácteo.
+1|Santiago;Valparaíso;Concepción;Lima|3|Lima no es una ciudad chilena.
+1|hormiga;abeja;mosca;araña|3|La araña no es un insecto.
+1|cuchillo;tenedor;cuchara;almohada|3|La almohada no es un cubierto.
+2|Marte;Venus;Júpiter;Luna|3|La Luna es un satélite, no un planeta.
+2|cóndor;huemul;pudú;canguro|3|El canguro no es fauna chilena.
+2|Neruda;Mistral;Huidobro;Cervantes|3|Cervantes no es un poeta chileno.
+2|triángulo;cuadrado;círculo;cubo|3|El cubo es un cuerpo, no una figura plana.
+2|cobre;hierro;oro;madera|3|La madera no es un metal.
+2|París;Roma;Madrid;Nueva York|3|Nueva York no es una capital.
+2|violín;viola;arpa;trompeta|3|La trompeta no es un instrumento de cuerda.
+2|águila;halcón;cóndor;pingüino|3|El pingüino no vuela.
+2|Mozart;Beethoven;Bach;Picasso|3|Picasso era pintor, no compositor.
+2|cueca;tango;salsa;rugby|3|El rugby no es un baile.
+2|riñón;hígado;pulmón;rodilla|3|La rodilla no es un órgano.
+2|ballena;delfín;foca;tiburón|3|El tiburón no es un mamífero.
+2|inglés;francés;alemán;Europa|3|Europa no es un idioma.
+2|roble;pino;araucaria;helecho|3|El helecho no es un árbol.
+2|sustantivo;verbo;adjetivo;párrafo|3|El párrafo no es una clase de palabra.
+2|Atacama;Sahara;Gobi;Amazonas|3|El Amazonas no es un desierto.
+2|trigo;arroz;maíz;lenteja|3|La lenteja es una legumbre, no un cereal.
+2|rubí;esmeralda;zafiro;mármol|3|El mármol no es una piedra preciosa.
+2|ajedrez;damas;dominó;fútbol|3|El fútbol no es un juego de mesa.
+2|Andes;Alpes;Himalaya;Mediterráneo|3|El Mediterráneo es un mar, no una cordillera.
+3|Quijote;Sancho;Dulcinea;Hamlet|3|Hamlet no es un personaje del Quijote.
+3|hexágono;pentágono;octógono;cilindro|3|El cilindro no es un polígono.
+3|Zeus;Hera;Atenea;Thor|3|Thor es un dios nórdico, no griego.
+3|soneto;décima;haiku;novela|3|La novela no es una forma poética.
+3|mitosis;meiosis;fotosíntesis;citocinesis|2|La fotosíntesis no es parte de la división celular.
+3|Picasso;Dalí;Miró;Rembrandt|3|Rembrandt no es un pintor español.
+3|helio;neón;argón;hidrógeno|3|El hidrógeno no es un gas noble.
+3|Bach;Vivaldi;Händel;Chopin|3|Chopin no es un compositor del Barroco.
+3|Tokio;Pekín;Seúl;Sídney|3|Sídney no es una capital.
+3|metáfora;hipérbole;anáfora;sustantivo|3|El sustantivo no es una figura literaria.
+3|cuarzo;feldespato;mica;granito|3|El granito es una roca; los demás son minerales.
+3|fémur;tibia;peroné;húmero|3|El húmero está en el brazo; los demás, en la pierna.
+3|Mercurio;Venus;Tierra;Saturno|3|Saturno no es un planeta rocoso.
+3|aguda;grave;esdrújula;diptongo|3|El diptongo no es una clase de palabra según su acento.
+3|Bolívar;San Martín;O'Higgins;Napoleón|3|Napoleón no fue un libertador americano.
+3|Ilíada;Odisea;Eneida;Fausto|3|Fausto no es una epopeya clásica.
+3|cetáceo;sirénido;pinnípedo;salmónido|3|Los salmónidos son peces; los demás, mamíferos marinos.
+3|yen;euro;rupia;quechua|3|El quechua es un idioma, no una moneda.
+3|Danubio;Rin;Sena;Orinoco|3|El Orinoco no está en Europa.
+3|Platón;Aristóteles;Sócrates;Descartes|3|Descartes no es un filósofo griego.
+## letras
+# nivel|palabra|pista
+1|mermelada|Dulce de fruta para untar en el pan
+1|chaleco|Prenda sin mangas
+1|calcetín|Prenda que va dentro del zapato
+1|almuerzo|Comida del mediodía
+1|ventilador|Aparato que da aire fresco
+1|chinita|Insecto rojo con puntitos negros
+1|tetera|Para hervir el agua del té
+1|plumero|Para sacar el polvo de los muebles
+1|pantufla|Calzado para andar en la casa
+1|toalla|Para secarse después de la ducha
+1|cepillo|Para lavarse los dientes
+1|sartén|Para freír huevos
+1|refrigerador|Mantiene fría la comida
+1|ampolleta|Da luz en la lámpara
+1|mantel|Tela que cubre la mesa
+1|cuchillo|Cubierto para cortar
+1|caramelo|Dulce que se chupa
+1|cartero|Persona que reparte las cartas
+1|panadero|Persona que hace el pan
+1|columpio|Juego de la plaza que se mece
+2|mapamundi|Mapa de toda la Tierra en un plano
+2|acordeón|Instrumento con fuelle y teclas
+2|telaraña|Red que teje la araña
+2|maremoto|Terremoto bajo el mar
+2|estetoscopio|Lo usa el médico para escuchar el corazón
+2|carpintero|Oficio de quien trabaja la madera
+2|girasol|Flor que gira siguiendo al sol
+2|murmullo|Ruido suave de voces
+2|avalancha|Masa de nieve que cae por la ladera
+2|alfombra|Tejido grueso que cubre el piso
+2|sacacorchos|Para abrir una botella de vino
+2|trampolín|Tabla elástica para saltar a la piscina
+2|bufanda|Prenda que abriga el cuello
+2|escarabajo|Insecto de caparazón duro
+2|periodista|Persona que escribe noticias
+2|chimenea|Por donde sale el humo de la casa
+2|alcancía|Para guardar monedas
+2|invernadero|Lugar cubierto para cultivar plantas
+2|embajada|Oficina de un país en otro país
+2|maratón|Carrera de 42 kilómetros
+3|hipocampo|Caballito de mar; también, una parte del cerebro
+3|crepúsculo|Claridad del amanecer o del anochecer
+3|parsimonia|Lentitud y calma excesivas
+3|efemérides|Hechos notables que se recuerdan en su aniversario
+3|ornitología|Ciencia que estudia las aves
+3|escafandra|Traje de buzo con casco
+3|pentagrama|Cinco líneas donde se escriben las notas musicales
+3|magnolia|Árbol de grandes flores blancas y perfumadas
+3|palimpsesto|Manuscrito borrado y vuelto a escribir
+3|serendipia|Hallazgo afortunado que ocurre por casualidad
+3|idiosincrasia|Rasgos propios de una persona o de un pueblo
+3|almanaque|Calendario con datos astronómicos y efemérides
+3|equilibrista|Artista que camina sobre la cuerda floja
+3|filántropo|Persona que ayuda a los demás sin buscar nada a cambio
+3|anfiteatro|Recinto con gradas en semicírculo
+3|ventrílocuo|Persona que habla sin mover los labios
+3|criptografía|Arte de escribir con clave secreta
+3|meteorología|Ciencia que estudia el tiempo atmosférico
+3|hemeroteca|Lugar donde se guardan diarios y revistas
+3|procrastinar|Dejar para después lo que hay que hacer
+## cuatro
+# nivel|pregunta|o1;o2;o3;o4|índice correcto (0-3)
+1|¿De qué color es una frutilla madura?|Amarilla;Roja;Azul;Verde|1
+1|¿Cuántas ruedas tiene un triciclo?|2;3;4;5|1
+1|¿Qué animal dice «miau»?|Perro;Gato;Pato;Vaca|1
+1|¿Qué usamos para ver la hora?|Reloj;Cuchara;Lápiz;Peineta|0
+1|¿Dónde viven los peces?|En el agua;En los árboles;En el desierto;En las nubes|0
+1|¿Qué fruta tiene el mismo nombre que su color?|Plátano;Naranja;Uva;Kiwi|1
+1|¿En qué mes son las Fiestas Patrias en Chile?|Julio;Agosto;Septiembre;Octubre|2
+1|¿Qué se le pone a la torta de cumpleaños?|Velas;Clavos;Botones;Llaves|0
+1|¿Cuántas patas tiene un perro?|2;4;6;8|1
+1|¿Qué instrumento tiene seis cuerdas y se rasguea?|Tambor;Flauta;Guitarra;Trompeta|2
+1|¿Qué día viene después del viernes?|Jueves;Domingo;Sábado;Lunes|2
+1|¿Qué animal tiene trompa?|Elefante;Jirafa;Cebra;Oso|0
+1|¿Con qué se escribe en el cuaderno?|Tenedor;Lápiz;Martillo;Plato|1
+1|¿Qué color se forma al mezclar rojo y blanco?|Rosado;Verde;Negro;Celeste|0
+1|¿Cuál es el baile nacional de Chile?|Tango;Cueca;Samba;Salsa|1
+2|¿Qué país tiene la mayor población del mundo?|India;China;Estados Unidos;Rusia|0
+2|¿En qué ciudad está la Torre Eiffel?|Londres;Roma;París;Madrid|2
+2|¿Cuál es el río más largo de Chile?|Maipo;Loa;Biobío;Maule|1
+2|¿Cuántos lados tiene un hexágono?|5;6;7;8|1
+2|¿Quién escribió «Veinte poemas de amor y una canción desesperada»?|Gabriela Mistral;Pablo Neruda;Vicente Huidobro;Nicanor Parra|1
+2|¿Qué océano baña las costas de Chile?|Atlántico;Índico;Pacífico;Ártico|2
+2|¿Qué planeta es famoso por su Gran Mancha Roja?|Marte;Júpiter;Saturno;Venus|1
+2|¿Qué instrumento tocaba Claudio Arrau?|Violín;Piano;Guitarra;Chelo|1
+2|¿Cuántos jugadores por equipo hay en cancha en el básquetbol?|5;6;7;11|0
+2|¿Cuál es la moneda de Japón?|Yuan;Won;Yen;Rupia|2
+2|¿Qué gas exhalamos al respirar?|Dióxido de carbono;Helio;Hidrógeno;Ozono|0
+2|¿En qué región está San Pedro de Atacama?|Antofagasta;Tarapacá;Atacama;Coquimbo|0
+2|¿Cuántos grados tiene un ángulo recto?|45;90;180;360|1
+2|¿Qué animal es símbolo de Australia?|Canguro;León;Panda;Jaguar|0
+2|¿Qué pintor se cortó parte de una oreja?|Picasso;Dalí;Van Gogh;Monet|2
+3|¿En qué año llegó el ser humano a la Luna?|1965;1969;1972;1959|1
+3|¿Cuál es la capital de Nueva Zelanda?|Auckland;Wellington;Christchurch;Sídney|1
+3|¿Quién pintó el «Guernica»?|Dalí;Goya;Picasso;Velázquez|2
+3|¿Cuál es el elemento más abundante en la corteza terrestre?|Hierro;Silicio;Oxígeno;Aluminio|2
+3|¿En qué año fundó Pedro de Valdivia la ciudad de Santiago?|1536;1541;1550;1810|1
+3|¿Cuántos huesos tiene el oído medio?|1;2;3;4|2
+3|¿Qué escritor creó a Sherlock Holmes?|Agatha Christie;Arthur Conan Doyle;Edgar Allan Poe;Julio Verne|1
+3|¿Qué planeta tiene más lunas conocidas?|Júpiter;Saturno;Urano;Neptuno|1
+3|¿Quién propuso la teoría de la evolución por selección natural?|Mendel;Darwin;Lamarck;Pasteur|1
+3|¿En qué país está Machu Picchu?|Bolivia;Ecuador;Perú;Chile|2
+3|¿Qué idioma tiene más hablantes en Sudamérica después del español?|Quechua;Portugués;Guaraní;Inglés|1
+3|¿Quién compuso «Las cuatro estaciones»?|Bach;Vivaldi;Mozart;Händel|1
+3|¿Cuántos lados tiene un dodecágono?|10;11;12;20|2
+3|¿Qué metal es líquido a temperatura ambiente?|Plomo;Mercurio;Estaño;Zinc|1
+3|¿Qué chileno ganó el Premio Nobel de Literatura en 1971?|Pablo Neruda;Nicanor Parra;Gonzalo Rojas;Jorge Edwards|0
+## anagramas
+# nivel|palabra|pista
+1|zapatilla|Calzado para hacer deporte
+1|camiseta|Prenda de manga corta
+1|ciruela|Fruta morada con cuesco
+1|cereza|Fruta roja y pequeña con cuesco
+1|durazno|Fruta de piel aterciopelada
+1|espinaca|Verdura de hoja verde oscura
+1|gorrión|Pajarito café de las plazas
+1|canasta|Cesto con asa
+1|pelícano|Ave marina con una bolsa bajo el pico
+1|plancha|Para quitarle las arrugas a la ropa
+1|martes|Día que viene después del lunes
+1|violeta|Flor y color morado
+2|chimpancé|Simio muy inteligente
+2|mandarina|Cítrico pequeño y fácil de pelar
+2|orégano|Hierba aromática de la pizza
+2|estatua|Figura de piedra o de bronce
+2|torbellino|Remolino de viento
+2|alcachofa|Hortaliza de hojas carnosas
+2|diploma|Documento que certifica un título
+2|abanico|Para darse aire en el calor
+2|sacapuntas|Para afilar el lápiz
+2|horóscopo|Predicción según el signo del zodíaco
+2|espantapájaros|Muñeco del campo que asusta a las aves
+2|lavadora|Electrodoméstico que lava la ropa
+3|otorrinolaringólogo|Médico de oído, nariz y garganta
+3|electrodoméstico|Aparato eléctrico del hogar
+3|misántropo|Persona que rechaza el trato con los demás
+3|anticonstitucional|Contrario a la Constitución
+3|estratosfera|Capa de la atmósfera sobre la troposfera
+3|interrogación|Signo que encierra una pregunta
+3|electroencefalograma|Registro de la actividad eléctrica del cerebro
+3|paralelogramo|Cuadrilátero de lados opuestos paralelos
+3|anfitrión|Persona que recibe a los invitados
+3|circunferencia|Línea curva cerrada cuyos puntos están a igual distancia del centro
+3|subterráneo|Que está bajo tierra
+3|extraterrestre|Ser de otro planeta
+## pista
+# nivel|respuesta;alternativa|pista1;pista2;pista3;pista4
+1|hamaca|Se cuelga entre dos árboles;Se mece;Ideal para la siesta;Es de tela o de cuerdas tejidas
+1|regadera|Tiene muchos agujeritos;Echa agua;La necesitan las plantas;Se usa en el jardín
+1|piscina|Tiene agua;Se usa en verano;Se nada en ella;Puede ser olímpica
+1|carpa|Se arma;Lleva estacas;Se usa para acampar;Adentro se duerme en saco
+1|fogata|Se hace de noche en el campo;Da calor;Se cuentan historias alrededor;Se prende con leña
+1|lupa|Tiene un vidrio;Agranda lo que miras;La usan los detectives;Tiene mango
+1|despertador|Suena muy temprano;Marca la hora;Está en el velador;Te saca de la cama
+1|chicle|Se masca;Hace globos;No se traga;Se pega en el pelo
+2|trineo|Se desliza;Necesita nieve;Lo tiran perros o renos;El Viejito Pascuero tiene uno
+2|pasaporte|Es un documento;Tiene tu foto;Lo sellan en las fronteras;Sirve para viajar al extranjero
+2|marea|Sube y baja;La provoca la Luna;Se nota en la playa;Puede ser alta o baja
+2|termo|Mantiene la temperatura;Se lleva de paseo;Ideal para el mate o el café;Tiene tapa de rosca
+2|naipes|Son 40 o 52;Se barajan;Hay espadas, copas, oros y bastos;Sirven para jugar al truco
+2|boleto|Puede ser de papel;Se compra antes de subir;Lo controlan;Sirve para viajar en bus o tren
+2|estampilla|Es pequeña;Tiene bordes dentados;Se pega;Va en las cartas
+2|andamio|Es una estructura;Se arma junto a un edificio;Lo usan los obreros;Sirve para trabajar en altura
+3|nostalgia|Es un sentimiento;Mira hacia atrás;Duele un poco;Tristeza por lo que ya pasó
+3|horizonte|Nunca se alcanza;Se ve a lo lejos;Ahí se pone el sol;Línea donde el cielo parece juntarse con la tierra
+3|promesa|Se da;Se puede romper;Compromete;Es palabra de honor
+3|rumor|Corre;Nadie sabe de dónde viene;Puede ser falso;Se cuenta de boca en boca
+3|olvido|Es una ausencia;Le pasa a la memoria;Se cae en él;Lo contrario del recuerdo
+3|paciencia|Es una virtud;Se pierde;Requiere saber esperar;Dicen que la tienen los santos
+3|destino|Algunos creen en él;Nadie lo ve;Está escrito, dicen;Lo que ha de ocurrir
+3|nudo|Se hace;Se deshace;Se siente en la garganta;Se ata con una cuerda
+## encadenadas
+# nivel|sílabas de enlace separadas por coma|palabra=definición|palabra=definición...
+1|ca,ra,mo|boca=Parte de la cara por donde comemos|cara=Parte delantera de la cabeza|ramo=Conjunto de flores|moto=Vehículo de dos ruedas con motor
+1|do,na,ta|codo=Articulación del brazo|dona=Rosquilla dulce con un hoyo al medio|nata=Capa que se forma sobre la leche hervida|tazón=Taza grande, sin asa o con asa, para el desayuno
+1|ma,sa,co|lima=Herramienta para alisar las uñas|masa=Mezcla de harina y agua para hacer pan|saco=Bolsa grande de tela|cohete=Vehículo que viaja al espacio
+1|la,ta,co|pala=Herramienta para cavar|lata=Envase metálico de conservas|taco=Comida mexicana de tortilla rellena|copa=Vaso con pie para el vino
+2|da,ma,co|vereda=Camino para peatones a un lado de la calle|dama=Mujer distinguida; también, ficha de un juego de mesa|marisco=Animal marino comestible, como el loco o la almeja|cofre=Caja para guardar tesoros
+2|ta,ma,ta|corbata=Prenda que se anuda al cuello de la camisa|tarima=Plataforma de madera un poco elevada|maceta=Recipiente con tierra para plantas|tapiz=Tejido decorativo que se cuelga en la pared
+2|la,na,ja|canela=Especia en rama que se pone al arroz con leche|laguna=Lago pequeño|navaja=Cuchillo cuya hoja se dobla en el mango|jazmín=Flor blanca muy perfumada
+2|do,na,bo|pescado=Pez que ya se sacó del agua para comerlo|docena=Conjunto de doce|nabo=Raíz blanca comestible|bolsillo=Bolsita cosida a la ropa
+3|ca,da,to|música=Arte de combinar los sonidos|cascada=Caída de agua de un río|dato=Información concreta|tomillo=Hierba aromática de cocina
+3|lla,ra,da|pantalla=Superficie donde se ven las imágenes|llanura=Terreno extenso y plano|rapsoda=Cantor ambulante de la antigua Grecia|dádiva=Regalo o donativo
+3|fa,ge,ma|estrofa=Grupo de versos de un poema|falange=Cada hueso de los dedos|gema=Piedra preciosa|mazurca=Danza polaca que compuso Chopin
+3|ma,ja,na|teorema=Proposición que se demuestra|madeja=Hilo recogido en vueltas|jabalina=Lanza que se arroja en atletismo|nácar=Sustancia brillante del interior de las conchas

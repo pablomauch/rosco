@@ -124,6 +124,21 @@ input.ans::placeholder{color:rgba(168,155,212,.55)}
 .rwrap .center .big{font-size:min(60px,18cqw)}
 .rwrap .center .sub{font-size:min(15px,4.6cqw);margin-top:min(10px,3cqw)}
 @media (max-height:700px){.k{height:42px}.kb-act .k{height:46px}.kb-disp{min-height:48px;font-size:20px}.kb{gap:6px}}
+/* juegos nuevos */
+.vof{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.vof button{flex-direction:column;gap:8px;min-height:120px;border-radius:24px;font-size:18px;font-weight:700}
+.vof button svg.i{width:30px;height:30px;stroke-width:2}
+.vof .vf-t{border-color:rgba(47,217,154,.55);color:var(--mint)}.vof .vf-f{border-color:rgba(255,84,112,.55);color:var(--coral)}
+.vof .right{background:var(--mint);color:#032417;border-color:var(--mint)}.vof .wrong{background:var(--coral);color:#2b0610;border-color:var(--coral)}
+.refran .q{font-size:22px;line-height:1.45;text-align:center}
+.blank{display:inline-block;color:var(--lemon);letter-spacing:.08em;margin:0 4px}
+.odd-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.odd-grid button{min-height:84px;border-radius:22px;font-family:var(--display);font-size:15.5px;font-weight:600;padding:10px;line-height:1.2}
+.odd-grid .right{background:var(--mint);color:#032417;border-color:var(--mint)}.odd-grid .wrong{background:var(--coral);color:#2b0610;border-color:var(--coral)}
+.odd-why{text-align:center;font-size:15px}
+.tile.hidden{border-style:dashed;border-color:var(--hair2);background:transparent}
+.tiles .tile{width:min(36px,8.4vw);height:min(44px,10.3vw);font-size:min(19px,4.6vw)}
+.tiles{gap:min(6px,1.3vw)}
 /* rosco */
 .rwrap{position:relative;width:min(100%,360px);aspect-ratio:1;margin:0 auto}
 .rwrap svg{width:100%;height:100%;display:block;overflow:visible}
@@ -311,6 +326,10 @@ input.ans::placeholder{color:rgba(168,155,212,.55)}
 <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></symbol>
 <symbol id="i-back" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
 <symbol id="i-del" viewBox="0 0 24 24"><path d="M9 5.5h11a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H9l-6-6.5z"/><path d="M12.5 9.5l5 5M17.5 9.5l-5 5"/></symbol>
+<symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 4v16M8 20h8M5 7h14M5 7l-3 6a3 3 0 0 0 6 0zM19 7l-3 6a3 3 0 0 0 6 0z"/></symbol>
+<symbol id="i-quote" viewBox="0 0 24 24"><path d="M5 11h4v6H5zM5 11c0-3 1.5-5 4-6M14 11h4v6h-4zM14 11c0-3 1.5-5 4-6"/></symbol>
+<symbol id="i-odd" viewBox="0 0 24 24"><circle cx="7" cy="7" r="3"/><circle cx="17" cy="7" r="3"/><circle cx="7" cy="17" r="3"/><rect x="14" y="14" width="6" height="6" rx="1"/></symbol>
+<symbol id="i-type" viewBox="0 0 24 24"><rect x="3" y="7" width="5" height="10" rx="1"/><rect x="10" y="7" width="5" height="10" rx="1" stroke-dasharray="2 2"/><rect x="17" y="7" width="4" height="10" rx="1" stroke-dasharray="2 2"/></symbol>
 <symbol id="i-crown" viewBox="0 0 24 24"><path d="M4 8l4 4 4-6 4 6 4-4-1.5 10h-13z"/></symbol>
 </svg>
 <div class="splash" id="splash" role="button" aria-label="Tocar para empezar">
@@ -438,11 +457,15 @@ input.ans::placeholder{color:rgba(168,155,212,.55)}
   </div>
   <div class="card cfg">
     <h3>Juegos previos</h3>
-    <label>Cuántos por partida <span><input type="range" id="c-nPrevios" min="0" max="4" step="1"> <span class="v" id="v-nPrevios"></span></span></label>
+    <label>Cuántos por partida <span><input type="range" id="c-nPrevios" min="0" max="6" step="1"> <span class="v" id="v-nPrevios"></span></span></label>
     <label>Una de cuatro <input type="checkbox" class="sw" id="c-g-cuatro"></label>
     <label>La pista <input type="checkbox" class="sw" id="c-g-pista"></label>
     <label>Palabras encadenadas <input type="checkbox" class="sw" id="c-g-encadenadas"></label>
     <label>Letras desordenadas <input type="checkbox" class="sw" id="c-g-anagramas"></label>
+    <label>Verdadero o falso <input type="checkbox" class="sw" id="c-g-vof"></label>
+    <label>Completa el refrán <input type="checkbox" class="sw" id="c-g-refran"></label>
+    <label>La intrusa <input type="checkbox" class="sw" id="c-g-intrusa"></label>
+    <label>Letra a letra <input type="checkbox" class="sw" id="c-g-letras"></label>
   </div>
   <div class="card cfg">
     <h3>Respuestas escritas</h3>
@@ -480,7 +503,7 @@ input.ans::placeholder{color:rgba(168,155,212,.55)}
 <!-- AYUDA -->
 <section class="screen" id="s-help">
   <div class="top"><h2>Cómo se juega</h2><button class="icon" id="b-help-close" aria-label="Cerrar"><svg class="i"><use href="#i-close"/></svg></button></div>
-  <div class="card"><h3>La partida</h3><p>Primero juegas algunos <b>juegos previos</b>, elegidos al azar. Cada acierto suma segundos a tu <b>bolsa de tiempo</b>. Al final llega <b>el rosco</b>: una definición por cada letra, con el tiempo base más todo lo que ganaste.</p></div>
+  <div class="card"><h3>La partida</h3><p>Primero juegas <b>3 juegos previos</b>, sorteados entre ocho: Una de cuatro, La pista, Palabras encadenadas, Letras desordenadas, Verdadero o falso, Completa el refrán, La intrusa y Letra a letra. El sorteo prioriza los que hace más tiempo no te tocan. Cada acierto suma segundos a tu <b>bolsa de tiempo</b>. Al final llega <b>el rosco</b>: una definición por cada letra, con el tiempo base más todo lo que ganaste.</p></div>
   <div class="card"><h3>El rosco</h3><p>«Empieza con» o «Contiene» la letra. Si no sabes, di <b>«paso»</b> y la letra vuelve en la siguiente vuelta. Termina cuando respondes todas o se acaba el tiempo. Completarlo sin errores es el gran premio.</p></div>
   <div class="card"><h3>Modos</h3><p><b>Solo:</b> escribes la respuesta; se aceptan tildes omitidas y pequeños errores según la tolerancia.<br><br><b>Presentador:</b> otra persona tiene el celular, lee en voz alta y marca bien o mal. Con «Ver respuesta» puede revisar sin que el jugador mire.</p></div>
   <div class="card"><h3>Instalar en el teléfono</h3><p><b>iPhone:</b> abre la página en Safari, toca Compartir y elige «Agregar a pantalla de inicio». Si no escuchas sonidos, revisa el interruptor de silencio.<br><br><b>Android:</b> abre la página en Chrome y toca «Instalar la app» en el inicio, o usa el menú ⋮ y elige «Instalar app». Si mantienes presionado el ícono, aparecen accesos directos a Jugar solo y Jugar en familia.<br><br>Una vez instalada, el modo solo funciona sin internet.</p></div>
@@ -503,7 +526,7 @@ input.ans::placeholder{color:rgba(168,155,212,.55)}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
 "use strict";
-const APP_VERSION = '2.4.0';
+const APP_VERSION = '2.5.0';
 const $ = s => document.querySelector(s);
 const LET = 'ABCDEFGHIJLMNÑOPQRSTUVXYZ'.split('');
 const B = window.BANCO;
@@ -519,13 +542,13 @@ const PRESET = {
   3:{tRosco:100,tPrevio:50,segAcierto:4,penal:3,tolerancia:1}
 };
 const DEF = Object.assign({nivel:2,modo:'solo',nPrevios:3,pausaPaso:false,
-  g:{cuatro:true,pista:true,encadenadas:true,anagramas:true},
+  g:{cuatro:true,pista:true,encadenadas:true,anagramas:true,vof:true,refran:true,intrusa:true,letras:true},
   sonido:true,vol:.8,tictac:true,alerta:10,vibrar:true,voz:true,vozVel:1.05,nombre:''}, PRESET[2]);
 let cfg = Object.assign({}, DEF, LS.get('cfg', {}));
 cfg.g = Object.assign({}, DEF.g, cfg.g||{});
 const saveCfg = () => LS.set('cfg', cfg);
 let used = LS.get('used', {});           // id -> true
-const markUsed = id => { used[id] = true; LS.set('used', used); };
+const markUsed = id => { used._n = (used._n||0) + 1; used[id] = used._n; LS.set('used', used); };  // guarda el orden en que se vio cada pregunta
 
 /* ---------- utilidades ---------- */
 const shuffle = a => { a = a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.random()*(i+1)|0; [a[i],a[j]]=[a[j],a[i]]; } return a; };
@@ -711,15 +734,31 @@ const GAMES = {
   cuatro:{name:'Una de cuatro',ico:ic('grid'),rules:'Responde todas las preguntas que puedas antes de que se acabe el tiempo. Cada acierto suma segundos al rosco. Un error no resta, pero gasta tiempo.'},
   pista:{name:'La pista',ico:ic('search'),rules:'Adivina la palabra a partir de pistas que se van revelando. Cuantas menos pistas uses, más segundos ganas.'},
   encadenadas:{name:'Palabras encadenadas',ico:ic('link'),rules:'Cada respuesta empieza con la última sílaba de la anterior. Te mostramos la sílaba con la que debe empezar cada palabra.'},
-  anagramas:{name:'Letras desordenadas',ico:ic('shuffle'),rules:'Ordena las letras para formar la palabra. Hay una pista para ayudarte.'}
+  anagramas:{name:'Letras desordenadas',ico:ic('shuffle'),rules:'Ordena las letras para formar la palabra. Hay una pista para ayudarte.'},
+  vof:{name:'Verdadero o falso',ico:ic('scale'),rules:'Lee la afirmación y toca Verdadero o Falso lo más rápido que puedas. Cada acierto suma segundos.'},
+  refran:{name:'Completa el refrán',ico:ic('quote'),rules:'Escribe la palabra que falta en cada refrán.'},
+  intrusa:{name:'La intrusa',ico:ic('odd'),rules:'De las cuatro palabras, una no pertenece al grupo. Tócala.'},
+  letras:{name:'Letra a letra',ico:ic('type'),rules:'La palabra se va destapando letra por letra. Mientras antes la adivines, más segundos ganas.'}
 };
 function pickItems(key){
-  const lvl = cfg.nivel, list = B[key];
-  let pool = list.filter(x=>x.n===lvl && !used[x.id]);
-  if(pool.length < 3) pool = pool.concat(list.filter(x=>x.n!==lvl && !used[x.id] && Math.abs(x.n-lvl)<=1));
-  if(pool.length < 3){ list.filter(x=>x.n===lvl).forEach(x=>{ delete used[x.id]; }); LS.set('used', used); pool = list.filter(x=>x.n===lvl); }
-  const same = shuffle(pool.filter(x=>x.n===lvl)), other = shuffle(pool.filter(x=>x.n!==lvl));
-  return same.concat(other);
+  // primero lo nunca visto del nivel, luego lo nunca visto de niveles vecinos y al final lo visto hace más tiempo
+  const lvl = cfg.nivel, list = B[key] || [];
+  const byAge = arr => shuffle(arr).sort((a,b)=>(used[a.id]||0)-(used[b.id]||0));
+  const same = list.filter(x=>x.n===lvl);
+  const fresh = shuffle(same.filter(x=>!used[x.id]));
+  const near = shuffle(list.filter(x=>x.n!==lvl && Math.abs(x.n-lvl)<=1 && !used[x.id]));
+  const seen = byAge(same.filter(x=>used[x.id]));
+  return fresh.concat(fresh.length < 8 ? near : [], seen);
+}
+/* sorteo de juegos previos: prioriza los que hace más tiempo no salen */
+function pickGames(n){
+  let enabled = Object.keys(GAMES).filter(k=>cfg.g[k]); if(!enabled.length) enabled = ['cuatro'];
+  const gu = LS.get('gameUse', {}), out = [];
+  while(out.length < n){
+    const pool = shuffle(enabled.filter(k=>!out.includes(k)).length ? enabled.filter(k=>!out.includes(k)) : enabled).sort((a,b)=>(gu[a]||0)-(gu[b]||0));
+    const k = pool[0]; out.push(k); gu._n=(gu._n||0)+1; gu[k]=gu._n;
+  }
+  LS.set('gameUse', gu); return out;
 }
 
 let G = null; // partida actual
@@ -728,8 +767,7 @@ function newGame(){
   const pool = roscosDe(cfg.nivel).filter(r=>!used[r.id]);
   if(!pool.length){ toast('No quedan roscos en este nivel'); return; }
   const rosco = shuffle(pool)[0];
-  const enabled = Object.keys(GAMES).filter(k=>cfg.g[k]);
-  const previos = shuffle(enabled).slice(0, cfg.nPrevios);
+  const previos = pickGames(cfg.nPrevios);
   G = {rosco, previos, idx:0, earned:0, perGame:[], start:Date.now()};
   keepAwake(true);
   nextStage();
@@ -812,7 +850,7 @@ function answerPanel(host, answers, onResult, opts={}){
 
 let P = null; // previo en curso
 function runPrevio(key){
-  const items = pickItems(key);
+  const items = key==='vof' ? pickItems(key).slice(0,14) : pickItems(key);
   P = {key, items, i:0, earned:0, ok:0, bad:0, busy:false};
   $('#prev-name').innerHTML = GAMES[key].ico + esc(GAMES[key].name);
   $('#prev-bank').textContent = '+0s';
@@ -824,8 +862,49 @@ function nextItem(){
   if(!P || !P.clock.running) return;
   if(P.key==='encadenadas') return renderChain();
   if(P.i >= P.items.length){ endPrevio(); return; }
-  const it = P.items[P.i]; markUsed(it.id);
-  ({cuatro:renderCuatro, pista:renderPista, anagramas:renderAnagrama})[P.key](it);
+  const it = P.items[P.i]; markUsed(it.id); clearInterval(P.tick);
+  ({cuatro:renderCuatro, pista:renderPista, anagramas:renderAnagrama, vof:renderVof, refran:renderRefran, intrusa:renderIntrusa, letras:renderLetras})[P.key](it);
+}
+function renderVof(it){
+  const body=$('#prev-body');
+  body.innerHTML = `<div class="card"><div class="q" style="font-size:22px">${esc(it.p)}</div></div>
+    <div class="vof"><button class="vf-t" data-v="1">${ic('check')}Verdadero</button><button class="vf-f" data-v="0">${ic('close')}Falso</button></div>`;
+  body.querySelectorAll('.vof button').forEach(b=>b.onclick=()=>{
+    const right = (b.dataset.v==='1')===it.v;
+    b.classList.add(right?'right':'wrong'); if(!right) body.querySelector(`[data-v="${it.v?1:0}"]`).classList.add('right');
+    afterItem(right?'ok':'bad', null, Math.max(2, Math.ceil(cfg.segAcierto/2)));
+  });
+  say(it.p);
+}
+function renderRefran(it){
+  const body=$('#prev-body'), [a,b]=it.t.split('___');
+  body.innerHTML = `<div class="card refran"><div class="q">«${esc(a)}<span class="blank">${'_'.repeat(Math.max(4,norm(it.r[0]).length))}</span>${esc(b)}»</div></div><div id="pans"></div>`;
+  answerPanel($('#pans'), it.r, r => afterItem(r, `«${a}${it.r[0]}${b}»`));
+  say(a + ' ... ' + b);
+}
+function renderIntrusa(it){
+  const body=$('#prev-body'), ord=shuffle([0,1,2,3]);
+  body.innerHTML = `<div class="kicker" style="justify-content:center">¿Cuál no pertenece al grupo?</div>
+    <div class="odd-grid">${ord.map(i=>`<button data-i="${i}">${esc(it.o[i])}</button>`).join('')}</div>
+    <p class="mut odd-why" hidden></p><button class="btn-pass" data-a="pass">Paso</button>`;
+  const why = () => { const w=body.querySelector('.odd-why'); w.textContent=it.x; w.hidden=false; body.querySelector(`[data-i="${it.c}"]`).classList.add('right'); };
+  body.querySelectorAll('.odd-grid button').forEach(b=>b.onclick=()=>{ const right=+b.dataset.i===it.c; if(!right) b.classList.add('wrong'); why(); afterItem(right?'ok':'bad', null); });
+  body.querySelector('[data-a=pass]').onclick=()=>{ why(); afterItem('pass', null); };
+  say('¿Cuál no pertenece? ' + it.o.join(', '));
+}
+function renderLetras(it){
+  const body=$('#prev-body'), w=norm(it.r), L=[...w];
+  const order = shuffle(L.map((_,i)=>i).slice(1)); const shown = new Set([0]);
+  body.innerHTML = `<div class="card"><div class="tiles" id="lt"></div><p class="mut" style="text-align:center;margin-top:12px">${esc(it.h)}</p>
+    <p class="mut small" style="text-align:center;margin-top:4px" id="lt-bonus"></p></div><div id="pans"></div>`;
+  const draw = () => { $('#lt').innerHTML = L.map((c,i)=>`<div class="tile ${shown.has(i)?'':'hidden'}">${shown.has(i)?c.toUpperCase():''}</div>`).join('');
+    const hid = L.length - shown.size; $('#lt-bonus').textContent = hid ? `Si aciertas ahora: +${cfg.segAcierto + Math.min(4,hid)} s` : ''; };
+  draw();
+  P.tick = setInterval(()=>{ if(!P || !P.clock.running) return;
+    if(order.length > 1){ shown.add(order.shift()); draw(); SFX.tone(1320,.05,'sine',.12); }
+    else { clearInterval(P.tick); const pp=$('#pans [data-k=pass]') || $('#pans [data-a=pass]'); if(pp){ pp.dispatchEvent(new Event('pointerdown')); pp.click && pp.click(); } } }, 2600);
+  answerPanel($('#pans'), [it.r], r => { clearInterval(P.tick); afterItem(r, it.r, cfg.segAcierto + Math.min(4, L.length - shown.size)); });
+  say(it.h);
 }
 function afterItem(res, answerText, bonus){
   if(!P) return;
@@ -888,7 +967,7 @@ function renderChain(){
   });
 }
 function endPrevio(){
-  if(!P) return; P.clock.stop(); VOZ.stop();
+  if(!P) return; P.clock.stop(); clearInterval(P.tick); VOZ.stop();
   const p=P; P=null;
   G.perGame.push({k:p.key, ok:p.ok, bad:p.bad, s:p.earned});
   $('#psum-title').textContent = GAMES[p.key].name;

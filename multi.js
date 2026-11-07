@@ -181,8 +181,7 @@ function hStart(){
   if(playing.length < 2){ toast('Se necesitan al menos 2 jugadores'); return; }
   H.players.forEach(p=>{ const plays = playing.includes(p); p.alive=plays; p.spectator=!plays; p.secs=0; p.round=0; p.rtime=0; p.elimNow=false; p.ans=null; });
   const N = playing.length; let R = H.set.rondas; if(N>2 && R<1) R=1;
-  let enabled = Object.keys(GAMES).filter(k=>cfg.g[k]); if(!enabled.length) enabled=['cuatro'];
-  const games=[]; while(games.length<R) games.push(...shuffle(enabled)); games.length=R;
+  const games = pickGames(R);
   const elim = r => Math.floor((N-2)*(r+1)/R) - Math.floor((N-2)*r/R);
   H.plan = games.map((g,r)=>({g, elim:elim(r), qs:buildQs(g, H.set.preg)}));
   const pool = roscosDe(cfg.nivel); let free = shuffle(pool.filter(r=>!used[r.id]));
@@ -202,6 +201,10 @@ function buildQs(g, n){
   }
   for(const it of items.slice(0,n)){ markUsed(it.id);
     if(g==='cuatro') out.push({g, text:it.p, opts:it.o, c:it.c, ans:[it.o[it.c]]});
+    else if(g==='vof') out.push({g, text:it.p, opts:['Verdadero','Falso'], c:it.v?0:1, ans:[it.v?'Verdadero':'Falso']});
+    else if(g==='intrusa'){ const ord=shuffle([0,1,2,3]); out.push({g, text:'¿Cuál no pertenece al grupo?', opts:ord.map(i=>it.o[i]), c:ord.indexOf(it.c), ans:[it.o[it.c]], why:it.x}); }
+    else if(g==='refran') out.push({g, text:it.t, ans:it.r});
+    else if(g==='letras'){ const w=norm(it.r); out.push({g, word:w, hint:it.h, len:w.length, order:shuffle([...w].map((_,i)=>i).slice(1)), ans:[it.r]}); }
     else if(g==='pista') out.push({g, clues:it.h, ans:it.r});
     else out.push({g, tiles:scrambleTiles(it.r), hint:it.h, len:norm(it.r).length, ans:[it.r]});
   }
@@ -223,13 +226,18 @@ function hAskQ(q, who, onEnd, label){
   clearTimers();
   H.q=q; H.who=new Set(who.map(p=>p.pid)); H.onQEnd=onEnd; H.qLabel=label;
   H.players.forEach(p=>p.ans=null);
-  H.clues = 1;
-  const dur = (q.g==='pista' ? H.set.tPreg*1.6 : H.set.tPreg) * 1000;
+  H.clues = 1; H.shown = 1;
+  const dur = (q.g==='pista' || q.g==='letras' ? H.set.tPreg*1.6 : q.g==='vof' ? Math.max(8, H.set.tPreg*.6) : H.set.tPreg) * 1000;
   H.qStart = Date.now(); H.qEnd = H.qStart + dur; H.dur=dur;
   setPhase('q'); bc();
   if(q.g==='pista') for(let k=1;k<4;k++) later(()=>{ if(H.phase==='q' && H.q===q){ H.clues=k+1; bc(); fx(null, q.clues[k]); } }, dur*k/4);
+  if(q.g==='letras'){ const steps=q.len-2; for(let k=1;k<=steps;k++) later(()=>{ if(H.phase==='q' && H.q===q){ H.shown=k+1; bc(); } }, dur*k/(steps+1)); }
   later(hEndQ, dur);
   const t = q.g==='cuatro' ? q.text+' '+q.opts.map((o,i)=>'ABCD'[i].toLowerCase()+': '+o).join('. ')
+    : q.g==='vof' ? q.text
+    : q.g==='intrusa' ? '¿Cuál no pertenece? '+q.opts.join(', ')
+    : q.g==='refran' ? q.text.replace('___',' ... ')
+    : q.g==='letras' ? q.hint
     : q.g==='pista' ? 'Primera pista: '+q.clues[0]
     : q.g==='anagramas' ? q.hint+'. '+q.len+' letras.'
     : 'Empieza con '+q.start.toLowerCase()+'. '+q.text;
@@ -239,8 +247,8 @@ function hAnswer(pid, m){
   if(H.phase!=='q' || m.key!==H.key || !H.who.has(pid)) return;
   const p=H.players.find(x=>x.pid===pid); if(!p || p.ans) return;
   const ms = Date.now()-H.qStart, q=H.q;
-  const ok = q.g==='cuatro' ? m.v===q.c : matches(String(m.v||''), q.ans);
-  p.ans = {v:m.v, ms, ok, clues:H.clues};
+  const ok = q.opts ? m.v===q.c : matches(String(m.v||''), q.ans);
+  p.ans = {v:m.v, ms, ok, clues:H.clues, hidden: q.g==='letras' ? q.len-H.shown : 0};
   bc(); checkAllAnswered();
 }
 function checkAllAnswered(){
@@ -254,13 +262,15 @@ function hEndQ(){
   H.res = H.players.filter(p=>H.who.has(p.pid)).map(p=>{
     const a=p.ans; let pts=0, secs=0;
     if(a && a.ok){ pts = 100 + Math.round(50*Math.max(0,1-a.ms/H.dur)); secs = cfg.segAcierto;
-      if(q.g==='pista'){ pts += 25*(4-a.clues); secs += 2*(4-a.clues); } }
+      if(q.g==='pista'){ pts += 25*(4-a.clues); secs += 2*(4-a.clues); }
+      if(q.g==='letras'){ pts += 15*Math.min(4,a.hidden); secs += Math.min(4,a.hidden); }
+      if(q.g==='vof') secs = Math.max(2, Math.ceil(cfg.segAcierto/2)); }
     if(scoring){ p.round += pts; p.secs += secs; if(a && a.ok) p.rtime += a.ms; }
-    return {pid:p.pid, name:p.name, ok:!!(a&&a.ok), answered:!!a, ms:a?a.ms:null, pts, secs, given: a ? (q.g==='cuatro' ? q.opts[a.v] : a.v) : null};
+    return {pid:p.pid, name:p.name, ok:!!(a&&a.ok), answered:!!a, ms:a?a.ms:null, pts, secs, given: a ? (q.opts ? q.opts[a.v] : a.v) : null};
   }).sort((a,b)=>(b.ok-a.ok) || ((a.ms??1e9)-(b.ms??1e9)));
   setPhase('reveal'); bc();
   H.res.forEach(r=>fxTo(r.pid, r.ok?'ok':'bad'));
-  fx('whoosh', 'La respuesta era: '+q.ans[0]);
+  fx('whoosh', q.g==='intrusa' ? q.why : 'La respuesta era: '+q.ans[0]);
   later(()=>H.onQEnd(), 4200);
 }
 
@@ -384,9 +394,10 @@ function viewFor(pid){
   if(H.phase==='q'){ const q=H.q;
     v.q = {g:q.g, text:q.text, opts:q.opts, tiles:q.tiles, hint:q.hint, len:q.len, start:q.start, prev:q.prev,
       clues: q.clues ? q.clues.slice(0,H.clues) : null, nclues:4, label:H.qLabel, tie:!!H.tie,
+      mask: q.g==='letras' ? [...q.word].map((c,i)=> i===0 || q.order.slice(0,H.shown-1).includes(i) ? c.toUpperCase() : '') : null, len:q.len,
       endsIn: H.qEnd-Date.now(), canAnswer: !!(me && H.who.has(pid)), sent: !!(me && me.ans), sentV: me && me.ans ? me.ans.v : null };
   }
-  if(H.phase==='reveal'){ v.rev = {ans:H.q.ans[0], g:H.q.g, opts:H.q.opts, c:H.q.c, res:H.res, mine:H.res.find(r=>r.pid===pid)||null, label:H.qLabel}; }
+  if(H.phase==='reveal'){ v.rev = {ans: H.q.g==='refran' ? H.q.text.replace('___', H.q.ans[0]) : H.q.ans[0], why:H.q.why, g:H.q.g, opts:H.q.opts, c:H.q.c, res:H.res, mine:H.res.find(r=>r.pid===pid)||null, label:H.qLabel}; }
   if(H.phase==='tieIntro'){ v.tie = {names:H.tie.group.map(p=>p.name), inTie: H.tie.group.some(p=>p.pid===pid)}; }
   if(H.D){ const D=H.D;
     v.duel = {turn:D.turn, running:D.running, flash:D.flash, winner:D.winner,
@@ -550,19 +561,22 @@ const draw = {
   },
   q(v){
     const q=v.q; let h = `<div class="kicker" style="justify-content:center">${GAMES[q.g].ico}${esc(q.label||'')}</div>`;
-    if(q.g==='cuatro') h += `<div class="card"><div class="q">${esc(q.text)}</div></div>`;
+    if(q.g==='cuatro' || q.g==='vof') h += `<div class="card"><div class="q" ${q.g==='vof'?'style="font-size:22px"':''}>${esc(q.text)}</div></div>`;
+    else if(q.g==='intrusa') h += `<div class="kicker" style="justify-content:center">${esc(q.text)}</div>`;
+    else if(q.g==='refran'){ const [a,b]=q.text.split('___'); h += `<div class="card refran"><div class="q">«${esc(a)}<span class="blank">____</span>${esc(b)}»</div></div>`; }
+    else if(q.g==='letras') h += `<div class="card"><div class="tiles" id="mp-mask"></div><p class="mut" style="text-align:center;margin-top:12px">${esc(q.hint)}</p></div>`;
     else if(q.g==='pista') h += `<div class="clues" id="mp-clues"></div>`;
     else if(q.g==='anagramas') h += `<div class="card"><div class="tiles">${q.tiles.map(c=>`<div class="tile">${c}</div>`).join('')}</div><p class="mut" style="text-align:center;margin-top:12px">${esc(q.hint)}. ${q.len} letras.</p></div>`;
     else h += `<div class="card">${q.prev?`<p class="mut">Anterior: <b>${esc(q.prev.toUpperCase())}</b></p>`:'<p class="mut">Nueva cadena</p>'}<div style="margin:10px 0 6px">Empieza con <span class="syl" style="font-size:26px">${esc(q.start)}</span></div><div class="q">${esc(q.text)}</div></div>`;
     h += `<div id="mp-ans"></div><div class="card"><h3>Respuestas</h3><div id="mp-plist">${plistHTML(v,'q')}</div></div>`;
     body().innerHTML = h;
-    drawClues(v); drawAnswer(v);
+    drawClues(v); drawMask(v); drawAnswer(v);
   },
   reveal(v){
     const r=v.rev, m=r.mine;
     let h = `<div class="kicker" style="justify-content:center">${esc(r.label||'')}</div>`;
     if(m) h += `<div class="flash ${m.ok?'good':'bad'}" style="font-size:20px">${m.ok ? `¡Correcto! +${m.pts} puntos y +${m.secs} s` : m.answered ? 'Incorrecto' : 'No alcanzaste a responder'}</div>`;
-    h += `<div class="card" style="text-align:center"><h3>La respuesta era</h3><div class="reveal" style="font-size:28px">${esc(r.ans)}</div></div>`;
+    h += `<div class="card" style="text-align:center"><h3>${r.why?'La intrusa era':'La respuesta era'}</h3><div class="reveal" style="font-size:${r.ans.length>18?18:28}px">${esc(r.ans)}</div>${r.why?`<p class="mut" style="margin-top:8px">${esc(r.why)}</p>`:''}</div>`;
     h += `<div class="card"><h3>Resultados</h3><div class="plist">${r.res.map(x=>`<div class="pl ${x.pid===v.meId?'me':''}"><span class="n"><span class="mk ${x.ok?'y':x.answered?'no':''}">${x.ok?ic('check'):x.answered?ic('close'):''}</span>${esc(x.name)}</span><span class="st">${x.given!=null && !x.ok ? esc(String(x.given)).slice(0,18) : x.ok ? (x.ms/1000).toFixed(1)+'s' : ''}</span><span class="s">${x.pts?'+'+x.pts:''}</span></div>`).join('')}</div></div>`;
     body().innerHTML = h;
   },
@@ -633,7 +647,7 @@ const draw = {
 };
 const upd = {
   lobby(v){ const el=$('#mp-plist'); if(el) el.innerHTML = plistHTML(v,'lobby'); const n=$('#mp-pn'); if(n) n.textContent=v.players.filter(p=>p.online).length; if(v.host) planTxt(); },
-  q(v){ const el=$('#mp-plist'); if(el) el.innerHTML = plistHTML(v,'q'); drawClues(v);
+  q(v){ const el=$('#mp-plist'); if(el) el.innerHTML = plistHTML(v,'q'); drawClues(v); drawMask(v);
     if(v.q.sent && !$('#mp-ans .sent')) drawAnswer(v); },
   duel(v){}
 };
@@ -648,14 +662,25 @@ function drawClues(v){
   el.innerHTML = [0,1,2,3].map(i=> i<n ? `<div class="clue">${esc(v.q.clues[i])}</div>` : `<div class="clue hid">La pista ${i+1} aparece pronto</div>`).join('');
   if(n>1 && v.audio) SFX.tone(880,.08,'sine',.2);
 }
+function drawMask(v){
+  const el=$('#mp-mask'); if(!el || !v.q.mask) return;
+  const sig=v.q.mask.join(''); if(el.dataset.s===sig) return; const first=!el.dataset.s; el.dataset.s=sig;
+  el.innerHTML = v.q.mask.map(c=>`<div class="tile ${c?'':'hidden'}">${c}</div>`).join('');
+  if(!first && v.audio) SFX.tone(1320,.05,'sine',.12);
+}
+function optsHTML(q, dis){
+  if(q.g==='vof') return `<div class="vof">${q.opts.map((o,i)=>`<button class="${i?'vf-f':'vf-t'}" data-i="${i}" ${dis?'disabled':''}>${ic(i?'close':'check')}${o}</button>`).join('')}</div>`;
+  if(q.g==='intrusa') return `<div class="odd-grid">${q.opts.map((o,i)=>`<button data-i="${i}" ${dis?'disabled':''}>${esc(o)}</button>`).join('')}</div>`;
+  return `<div class="opts">${q.opts.map((o,i)=>`<button data-i="${i}" ${dis?'disabled':''}><b>${'ABCD'[i]}</b>${esc(o)}</button>`).join('')}</div>`;
+}
 function drawAnswer(v){
   const host=$('#mp-ans'), q=v.q; if(!host) return;
   if(!q.canAnswer){ host.innerHTML = `<div class="waiting">${v.me && !v.me.alive ? 'Estás mirando esta ronda' : 'Pantalla del anfitrión'}</div>`;
-    if(q.g==='cuatro') host.innerHTML += `<div class="opts">${q.opts.map((o,i)=>`<button disabled><b>${'ABCD'[i]}</b>${esc(o)}</button>`).join('')}</div>`;
+    if(q.opts) host.innerHTML += optsHTML(q, true);
     return; }
-  if(q.sent){ host.innerHTML = `<div class="waiting sent">Respuesta enviada${q.g==='cuatro'?': '+esc(q.opts[q.sentV]):q.sentV?': '+esc(q.sentV):''}<br><span class="mut small">esperando a los demás…</span></div>`; return; }
-  if(q.g==='cuatro'){
-    host.innerHTML = `<div class="opts">${q.opts.map((o,i)=>`<button data-i="${i}"><b>${'ABCD'[i]}</b>${esc(o)}</button>`).join('')}</div>`;
+  if(q.sent){ host.innerHTML = `<div class="waiting sent">Respuesta enviada${q.opts?': '+esc(q.opts[q.sentV]):q.sentV?': '+esc(q.sentV):''}<br><span class="mut small">esperando a los demás…</span></div>`; return; }
+  if(q.opts){
+    host.innerHTML = optsHTML(q, false);
     host.querySelectorAll('button').forEach(b=>b.onclick=()=>{ host.querySelectorAll('button').forEach(x=>x.disabled=true); b.style.background='var(--blue)'; CL.send({t:'ans', key:CL.key, v:+b.dataset.i}); });
   } else {
     answerPanelMP(host, val=>CL.send({t:'ans', key:CL.key, v:val}), null, null);

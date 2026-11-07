@@ -1,5 +1,5 @@
 {
-"version": 2,
+"version": 3,
 "roscos": [
 {
 "id": "F1",
@@ -5762,6 +5762,546 @@
 "Bohr"
 ],
 "c": 1
+},
+{
+"id": "q56",
+"n": 1,
+"p": "¿De qué color es una frutilla madura?",
+"o": [
+"Amarilla",
+"Roja",
+"Azul",
+"Verde"
+],
+"c": 1
+},
+{
+"id": "q57",
+"n": 1,
+"p": "¿Cuántas ruedas tiene un triciclo?",
+"o": [
+"2",
+"3",
+"4",
+"5"
+],
+"c": 1
+},
+{
+"id": "q58",
+"n": 1,
+"p": "¿Qué animal dice «miau»?",
+"o": [
+"Perro",
+"Gato",
+"Pato",
+"Vaca"
+],
+"c": 1
+},
+{
+"id": "q59",
+"n": 1,
+"p": "¿Qué usamos para ver la hora?",
+"o": [
+"Reloj",
+"Cuchara",
+"Lápiz",
+"Peineta"
+],
+"c": 0
+},
+{
+"id": "q60",
+"n": 1,
+"p": "¿Dónde viven los peces?",
+"o": [
+"En el agua",
+"En los árboles",
+"En el desierto",
+"En las nubes"
+],
+"c": 0
+},
+{
+"id": "q61",
+"n": 1,
+"p": "¿Qué fruta tiene el mismo nombre que su color?",
+"o": [
+"Plátano",
+"Naranja",
+"Uva",
+"Kiwi"
+],
+"c": 1
+},
+{
+"id": "q62",
+"n": 1,
+"p": "¿En qué mes son las Fiestas Patrias en Chile?",
+"o": [
+"Julio",
+"Agosto",
+"Septiembre",
+"Octubre"
+],
+"c": 2
+},
+{
+"id": "q63",
+"n": 1,
+"p": "¿Qué se le pone a la torta de cumpleaños?",
+"o": [
+"Velas",
+"Clavos",
+"Botones",
+"Llaves"
+],
+"c": 0
+},
+{
+"id": "q64",
+"n": 1,
+"p": "¿Cuántas patas tiene un perro?",
+"o": [
+"2",
+"4",
+"6",
+"8"
+],
+"c": 1
+},
+{
+"id": "q65",
+"n": 1,
+"p": "¿Qué instrumento tiene seis cuerdas y se rasguea?",
+"o": [
+"Tambor",
+"Flauta",
+"Guitarra",
+"Trompeta"
+],
+"c": 2
+},
+{
+"id": "q66",
+"n": 1,
+"p": "¿Qué día viene después del viernes?",
+"o": [
+"Jueves",
+"Domingo",
+"Sábado",
+"Lunes"
+],
+"c": 2
+},
+{
+"id": "q67",
+"n": 1,
+"p": "¿Qué animal tiene trompa?",
+"o": [
+"Elefante",
+"Jirafa",
+"Cebra",
+"Oso"
+],
+"c": 0
+},
+{
+"id": "q68",
+"n": 1,
+"p": "¿Con qué se escribe en el cuaderno?",
+"o": [
+"Tenedor",
+"Lápiz",
+"Martillo",
+"Plato"
+],
+"c": 1
+},
+{
+"id": "q69",
+"n": 1,
+"p": "¿Qué color se forma al mezclar rojo y blanco?",
+"o": [
+"Rosado",
+"Verde",
+"Negro",
+"Celeste"
+],
+"c": 0
+},
+{
+"id": "q70",
+"n": 1,
+"p": "¿Cuál es el baile nacional de Chile?",
+"o": [
+"Tango",
+"Cueca",
+"Samba",
+"Salsa"
+],
+"c": 1
+},
+{
+"id": "q71",
+"n": 2,
+"p": "¿Qué país tiene la mayor población del mundo?",
+"o": [
+"India",
+"China",
+"Estados Unidos",
+"Rusia"
+],
+"c": 0
+},
+{
+"id": "q72",
+"n": 2,
+"p": "¿En qué ciudad está la Torre Eiffel?",
+"o": [
+"Londres",
+"Roma",
+"París",
+"Madrid"
+],
+"c": 2
+},
+{
+"id": "q73",
+"n": 2,
+"p": "¿Cuál es el río más largo de Chile?",
+"o": [
+"Maipo",
+"Loa",
+"Biobío",
+"Maule"
+],
+"c": 1
+},
+{
+"id": "q74",
+"n": 2,
+"p": "¿Cuántos lados tiene un hexágono?",
+"o": [
+"5",
+"6",
+"7",
+"8"
+],
+"c": 1
+},
+{
+"id": "q75",
+"n": 2,
+"p": "¿Quién escribió «Veinte poemas de amor y una canción desesperada»?",
+"o": [
+"Gabriela Mistral",
+"Pablo Neruda",
+"Vicente Huidobro",
+"Nicanor Parra"
+],
+"c": 1
+},
+{
+"id": "q76",
+"n": 2,
+"p": "¿Qué océano baña las costas de Chile?",
+"o": [
+"Atlántico",
+"Índico",
+"Pacífico",
+"Ártico"
+],
+"c": 2
+},
+{
+"id": "q77",
+"n": 2,
+"p": "¿Qué planeta es famoso por su Gran Mancha Roja?",
+"o": [
+"Marte",
+"Júpiter",
+"Saturno",
+"Venus"
+],
+"c": 1
+},
+{
+"id": "q78",
+"n": 2,
+"p": "¿Qué instrumento tocaba Claudio Arrau?",
+"o": [
+"Violín",
+"Piano",
+"Guitarra",
+"Chelo"
+],
+"c": 1
+},
+{
+"id": "q79",
+"n": 2,
+"p": "¿Cuántos jugadores por equipo hay en cancha en el básquetbol?",
+"o": [
+"5",
+"6",
+"7",
+"11"
+],
+"c": 0
+},
+{
+"id": "q80",
+"n": 2,
+"p": "¿Cuál es la moneda de Japón?",
+"o": [
+"Yuan",
+"Won",
+"Yen",
+"Rupia"
+],
+"c": 2
+},
+{
+"id": "q81",
+"n": 2,
+"p": "¿Qué gas exhalamos al respirar?",
+"o": [
+"Dióxido de carbono",
+"Helio",
+"Hidrógeno",
+"Ozono"
+],
+"c": 0
+},
+{
+"id": "q82",
+"n": 2,
+"p": "¿En qué región está San Pedro de Atacama?",
+"o": [
+"Antofagasta",
+"Tarapacá",
+"Atacama",
+"Coquimbo"
+],
+"c": 0
+},
+{
+"id": "q83",
+"n": 2,
+"p": "¿Cuántos grados tiene un ángulo recto?",
+"o": [
+"45",
+"90",
+"180",
+"360"
+],
+"c": 1
+},
+{
+"id": "q84",
+"n": 2,
+"p": "¿Qué animal es símbolo de Australia?",
+"o": [
+"Canguro",
+"León",
+"Panda",
+"Jaguar"
+],
+"c": 0
+},
+{
+"id": "q85",
+"n": 2,
+"p": "¿Qué pintor se cortó parte de una oreja?",
+"o": [
+"Picasso",
+"Dalí",
+"Van Gogh",
+"Monet"
+],
+"c": 2
+},
+{
+"id": "q86",
+"n": 3,
+"p": "¿En qué año llegó el ser humano a la Luna?",
+"o": [
+"1965",
+"1969",
+"1972",
+"1959"
+],
+"c": 1
+},
+{
+"id": "q87",
+"n": 3,
+"p": "¿Cuál es la capital de Nueva Zelanda?",
+"o": [
+"Auckland",
+"Wellington",
+"Christchurch",
+"Sídney"
+],
+"c": 1
+},
+{
+"id": "q88",
+"n": 3,
+"p": "¿Quién pintó el «Guernica»?",
+"o": [
+"Dalí",
+"Goya",
+"Picasso",
+"Velázquez"
+],
+"c": 2
+},
+{
+"id": "q89",
+"n": 3,
+"p": "¿Cuál es el elemento más abundante en la corteza terrestre?",
+"o": [
+"Hierro",
+"Silicio",
+"Oxígeno",
+"Aluminio"
+],
+"c": 2
+},
+{
+"id": "q90",
+"n": 3,
+"p": "¿En qué año fundó Pedro de Valdivia la ciudad de Santiago?",
+"o": [
+"1536",
+"1541",
+"1550",
+"1810"
+],
+"c": 1
+},
+{
+"id": "q91",
+"n": 3,
+"p": "¿Cuántos huesos tiene el oído medio?",
+"o": [
+"1",
+"2",
+"3",
+"4"
+],
+"c": 2
+},
+{
+"id": "q92",
+"n": 3,
+"p": "¿Qué escritor creó a Sherlock Holmes?",
+"o": [
+"Agatha Christie",
+"Arthur Conan Doyle",
+"Edgar Allan Poe",
+"Julio Verne"
+],
+"c": 1
+},
+{
+"id": "q93",
+"n": 3,
+"p": "¿Qué planeta tiene más lunas conocidas?",
+"o": [
+"Júpiter",
+"Saturno",
+"Urano",
+"Neptuno"
+],
+"c": 1
+},
+{
+"id": "q94",
+"n": 3,
+"p": "¿Quién propuso la teoría de la evolución por selección natural?",
+"o": [
+"Mendel",
+"Darwin",
+"Lamarck",
+"Pasteur"
+],
+"c": 1
+},
+{
+"id": "q95",
+"n": 3,
+"p": "¿En qué país está Machu Picchu?",
+"o": [
+"Bolivia",
+"Ecuador",
+"Perú",
+"Chile"
+],
+"c": 2
+},
+{
+"id": "q96",
+"n": 3,
+"p": "¿Qué idioma tiene más hablantes en Sudamérica después del español?",
+"o": [
+"Quechua",
+"Portugués",
+"Guaraní",
+"Inglés"
+],
+"c": 1
+},
+{
+"id": "q97",
+"n": 3,
+"p": "¿Quién compuso «Las cuatro estaciones»?",
+"o": [
+"Bach",
+"Vivaldi",
+"Mozart",
+"Händel"
+],
+"c": 1
+},
+{
+"id": "q98",
+"n": 3,
+"p": "¿Cuántos lados tiene un dodecágono?",
+"o": [
+"10",
+"11",
+"12",
+"20"
+],
+"c": 2
+},
+{
+"id": "q99",
+"n": 3,
+"p": "¿Qué metal es líquido a temperatura ambiente?",
+"o": [
+"Plomo",
+"Mercurio",
+"Estaño",
+"Zinc"
+],
+"c": 1
+},
+{
+"id": "q100",
+"n": 3,
+"p": "¿Qué chileno ganó el Premio Nobel de Literatura en 1971?",
+"o": [
+"Pablo Neruda",
+"Nicanor Parra",
+"Gonzalo Rojas",
+"Jorge Edwards"
+],
+"c": 0
 }
 ],
 "pista": [
@@ -6079,6 +6619,318 @@
 "Se dice al oído",
 "Algo que pocos saben"
 ]
+},
+{
+"id": "p29",
+"n": 1,
+"r": [
+"hamaca"
+],
+"h": [
+"Se cuelga entre dos árboles",
+"Se mece",
+"Ideal para la siesta",
+"Es de tela o de cuerdas tejidas"
+]
+},
+{
+"id": "p30",
+"n": 1,
+"r": [
+"regadera"
+],
+"h": [
+"Tiene muchos agujeritos",
+"Echa agua",
+"La necesitan las plantas",
+"Se usa en el jardín"
+]
+},
+{
+"id": "p31",
+"n": 1,
+"r": [
+"piscina"
+],
+"h": [
+"Tiene agua",
+"Se usa en verano",
+"Se nada en ella",
+"Puede ser olímpica"
+]
+},
+{
+"id": "p32",
+"n": 1,
+"r": [
+"carpa"
+],
+"h": [
+"Se arma",
+"Lleva estacas",
+"Se usa para acampar",
+"Adentro se duerme en saco"
+]
+},
+{
+"id": "p33",
+"n": 1,
+"r": [
+"fogata"
+],
+"h": [
+"Se hace de noche en el campo",
+"Da calor",
+"Se cuentan historias alrededor",
+"Se prende con leña"
+]
+},
+{
+"id": "p34",
+"n": 1,
+"r": [
+"lupa"
+],
+"h": [
+"Tiene un vidrio",
+"Agranda lo que miras",
+"La usan los detectives",
+"Tiene mango"
+]
+},
+{
+"id": "p35",
+"n": 1,
+"r": [
+"despertador"
+],
+"h": [
+"Suena muy temprano",
+"Marca la hora",
+"Está en el velador",
+"Te saca de la cama"
+]
+},
+{
+"id": "p36",
+"n": 1,
+"r": [
+"chicle"
+],
+"h": [
+"Se masca",
+"Hace globos",
+"No se traga",
+"Se pega en el pelo"
+]
+},
+{
+"id": "p37",
+"n": 2,
+"r": [
+"trineo"
+],
+"h": [
+"Se desliza",
+"Necesita nieve",
+"Lo tiran perros o renos",
+"El Viejito Pascuero tiene uno"
+]
+},
+{
+"id": "p38",
+"n": 2,
+"r": [
+"pasaporte"
+],
+"h": [
+"Es un documento",
+"Tiene tu foto",
+"Lo sellan en las fronteras",
+"Sirve para viajar al extranjero"
+]
+},
+{
+"id": "p39",
+"n": 2,
+"r": [
+"marea"
+],
+"h": [
+"Sube y baja",
+"La provoca la Luna",
+"Se nota en la playa",
+"Puede ser alta o baja"
+]
+},
+{
+"id": "p40",
+"n": 2,
+"r": [
+"termo"
+],
+"h": [
+"Mantiene la temperatura",
+"Se lleva de paseo",
+"Ideal para el mate o el café",
+"Tiene tapa de rosca"
+]
+},
+{
+"id": "p41",
+"n": 2,
+"r": [
+"naipes"
+],
+"h": [
+"Son 40 o 52",
+"Se barajan",
+"Hay espadas, copas, oros y bastos",
+"Sirven para jugar al truco"
+]
+},
+{
+"id": "p42",
+"n": 2,
+"r": [
+"boleto"
+],
+"h": [
+"Puede ser de papel",
+"Se compra antes de subir",
+"Lo controlan",
+"Sirve para viajar en bus o tren"
+]
+},
+{
+"id": "p43",
+"n": 2,
+"r": [
+"estampilla"
+],
+"h": [
+"Es pequeña",
+"Tiene bordes dentados",
+"Se pega",
+"Va en las cartas"
+]
+},
+{
+"id": "p44",
+"n": 2,
+"r": [
+"andamio"
+],
+"h": [
+"Es una estructura",
+"Se arma junto a un edificio",
+"Lo usan los obreros",
+"Sirve para trabajar en altura"
+]
+},
+{
+"id": "p45",
+"n": 3,
+"r": [
+"nostalgia"
+],
+"h": [
+"Es un sentimiento",
+"Mira hacia atrás",
+"Duele un poco",
+"Tristeza por lo que ya pasó"
+]
+},
+{
+"id": "p46",
+"n": 3,
+"r": [
+"horizonte"
+],
+"h": [
+"Nunca se alcanza",
+"Se ve a lo lejos",
+"Ahí se pone el sol",
+"Línea donde el cielo parece juntarse con la tierra"
+]
+},
+{
+"id": "p47",
+"n": 3,
+"r": [
+"promesa"
+],
+"h": [
+"Se da",
+"Se puede romper",
+"Compromete",
+"Es palabra de honor"
+]
+},
+{
+"id": "p48",
+"n": 3,
+"r": [
+"rumor"
+],
+"h": [
+"Corre",
+"Nadie sabe de dónde viene",
+"Puede ser falso",
+"Se cuenta de boca en boca"
+]
+},
+{
+"id": "p49",
+"n": 3,
+"r": [
+"olvido"
+],
+"h": [
+"Es una ausencia",
+"Le pasa a la memoria",
+"Se cae en él",
+"Lo contrario del recuerdo"
+]
+},
+{
+"id": "p50",
+"n": 3,
+"r": [
+"paciencia"
+],
+"h": [
+"Es una virtud",
+"Se pierde",
+"Requiere saber esperar",
+"Dicen que la tienen los santos"
+]
+},
+{
+"id": "p51",
+"n": 3,
+"r": [
+"destino"
+],
+"h": [
+"Algunos creen en él",
+"Nadie lo ve",
+"Está escrito, dicen",
+"Lo que ha de ocurrir"
+]
+},
+{
+"id": "p52",
+"n": 3,
+"r": [
+"nudo"
+],
+"h": [
+"Se hace",
+"Se deshace",
+"Se siente en la garganta",
+"Se ata con una cuerda"
+]
 }
 ],
 "encadenadas": [
@@ -6395,6 +7247,330 @@
 "so",
 "fa"
 ]
+},
+{
+"id": "c13",
+"n": 1,
+"k": [
+"ca",
+"ra",
+"mo"
+],
+"w": [
+{
+"r": "boca",
+"d": "Parte de la cara por donde comemos"
+},
+{
+"r": "cara",
+"d": "Parte delantera de la cabeza"
+},
+{
+"r": "ramo",
+"d": "Conjunto de flores"
+},
+{
+"r": "moto",
+"d": "Vehículo de dos ruedas con motor"
+}
+]
+},
+{
+"id": "c14",
+"n": 1,
+"k": [
+"do",
+"na",
+"ta"
+],
+"w": [
+{
+"r": "codo",
+"d": "Articulación del brazo"
+},
+{
+"r": "dona",
+"d": "Rosquilla dulce con un hoyo al medio"
+},
+{
+"r": "nata",
+"d": "Capa que se forma sobre la leche hervida"
+},
+{
+"r": "tazón",
+"d": "Taza grande, sin asa o con asa, para el desayuno"
+}
+]
+},
+{
+"id": "c15",
+"n": 1,
+"k": [
+"ma",
+"sa",
+"co"
+],
+"w": [
+{
+"r": "lima",
+"d": "Herramienta para alisar las uñas"
+},
+{
+"r": "masa",
+"d": "Mezcla de harina y agua para hacer pan"
+},
+{
+"r": "saco",
+"d": "Bolsa grande de tela"
+},
+{
+"r": "cohete",
+"d": "Vehículo que viaja al espacio"
+}
+]
+},
+{
+"id": "c16",
+"n": 1,
+"k": [
+"la",
+"ta",
+"co"
+],
+"w": [
+{
+"r": "pala",
+"d": "Herramienta para cavar"
+},
+{
+"r": "lata",
+"d": "Envase metálico de conservas"
+},
+{
+"r": "taco",
+"d": "Comida mexicana de tortilla rellena"
+},
+{
+"r": "copa",
+"d": "Vaso con pie para el vino"
+}
+]
+},
+{
+"id": "c17",
+"n": 2,
+"k": [
+"da",
+"ma",
+"co"
+],
+"w": [
+{
+"r": "vereda",
+"d": "Camino para peatones a un lado de la calle"
+},
+{
+"r": "dama",
+"d": "Mujer distinguida; también, ficha de un juego de mesa"
+},
+{
+"r": "marisco",
+"d": "Animal marino comestible, como el loco o la almeja"
+},
+{
+"r": "cofre",
+"d": "Caja para guardar tesoros"
+}
+]
+},
+{
+"id": "c18",
+"n": 2,
+"k": [
+"ta",
+"ma",
+"ta"
+],
+"w": [
+{
+"r": "corbata",
+"d": "Prenda que se anuda al cuello de la camisa"
+},
+{
+"r": "tarima",
+"d": "Plataforma de madera un poco elevada"
+},
+{
+"r": "maceta",
+"d": "Recipiente con tierra para plantas"
+},
+{
+"r": "tapiz",
+"d": "Tejido decorativo que se cuelga en la pared"
+}
+]
+},
+{
+"id": "c19",
+"n": 2,
+"k": [
+"la",
+"na",
+"ja"
+],
+"w": [
+{
+"r": "canela",
+"d": "Especia en rama que se pone al arroz con leche"
+},
+{
+"r": "laguna",
+"d": "Lago pequeño"
+},
+{
+"r": "navaja",
+"d": "Cuchillo cuya hoja se dobla en el mango"
+},
+{
+"r": "jazmín",
+"d": "Flor blanca muy perfumada"
+}
+]
+},
+{
+"id": "c20",
+"n": 2,
+"k": [
+"do",
+"na",
+"bo"
+],
+"w": [
+{
+"r": "pescado",
+"d": "Pez que ya se sacó del agua para comerlo"
+},
+{
+"r": "docena",
+"d": "Conjunto de doce"
+},
+{
+"r": "nabo",
+"d": "Raíz blanca comestible"
+},
+{
+"r": "bolsillo",
+"d": "Bolsita cosida a la ropa"
+}
+]
+},
+{
+"id": "c21",
+"n": 3,
+"k": [
+"ca",
+"da",
+"to"
+],
+"w": [
+{
+"r": "música",
+"d": "Arte de combinar los sonidos"
+},
+{
+"r": "cascada",
+"d": "Caída de agua de un río"
+},
+{
+"r": "dato",
+"d": "Información concreta"
+},
+{
+"r": "tomillo",
+"d": "Hierba aromática de cocina"
+}
+]
+},
+{
+"id": "c22",
+"n": 3,
+"k": [
+"lla",
+"ra",
+"da"
+],
+"w": [
+{
+"r": "pantalla",
+"d": "Superficie donde se ven las imágenes"
+},
+{
+"r": "llanura",
+"d": "Terreno extenso y plano"
+},
+{
+"r": "rapsoda",
+"d": "Cantor ambulante de la antigua Grecia"
+},
+{
+"r": "dádiva",
+"d": "Regalo o donativo"
+}
+]
+},
+{
+"id": "c23",
+"n": 3,
+"k": [
+"fa",
+"ge",
+"ma"
+],
+"w": [
+{
+"r": "estrofa",
+"d": "Grupo de versos de un poema"
+},
+{
+"r": "falange",
+"d": "Cada hueso de los dedos"
+},
+{
+"r": "gema",
+"d": "Piedra preciosa"
+},
+{
+"r": "mazurca",
+"d": "Danza polaca que compuso Chopin"
+}
+]
+},
+{
+"id": "c24",
+"n": 3,
+"k": [
+"ma",
+"ja",
+"na"
+],
+"w": [
+{
+"r": "teorema",
+"d": "Proposición que se demuestra"
+},
+{
+"r": "madeja",
+"d": "Hilo recogido en vueltas"
+},
+{
+"r": "jabalina",
+"d": "Lanza que se arroja en atletismo"
+},
+{
+"r": "nácar",
+"d": "Sustancia brillante del interior de las conchas"
+}
+]
 }
 ],
 "anagramas": [
@@ -6613,6 +7789,2440 @@
 "n": 3,
 "r": "paralelepípedo",
 "h": "Cuerpo geométrico de seis caras que son paralelogramos"
+},
+{
+"id": "a53",
+"n": 1,
+"r": "zapatilla",
+"h": "Calzado para hacer deporte"
+},
+{
+"id": "a54",
+"n": 1,
+"r": "camiseta",
+"h": "Prenda de manga corta"
+},
+{
+"id": "a55",
+"n": 1,
+"r": "ciruela",
+"h": "Fruta morada con cuesco"
+},
+{
+"id": "a56",
+"n": 1,
+"r": "cereza",
+"h": "Fruta roja y pequeña con cuesco"
+},
+{
+"id": "a57",
+"n": 1,
+"r": "durazno",
+"h": "Fruta de piel aterciopelada"
+},
+{
+"id": "a58",
+"n": 1,
+"r": "espinaca",
+"h": "Verdura de hoja verde oscura"
+},
+{
+"id": "a59",
+"n": 1,
+"r": "gorrión",
+"h": "Pajarito café de las plazas"
+},
+{
+"id": "a60",
+"n": 1,
+"r": "canasta",
+"h": "Cesto con asa"
+},
+{
+"id": "a61",
+"n": 1,
+"r": "pelícano",
+"h": "Ave marina con una bolsa bajo el pico"
+},
+{
+"id": "a62",
+"n": 1,
+"r": "plancha",
+"h": "Para quitarle las arrugas a la ropa"
+},
+{
+"id": "a63",
+"n": 1,
+"r": "martes",
+"h": "Día que viene después del lunes"
+},
+{
+"id": "a64",
+"n": 1,
+"r": "violeta",
+"h": "Flor y color morado"
+},
+{
+"id": "a65",
+"n": 2,
+"r": "chimpancé",
+"h": "Simio muy inteligente"
+},
+{
+"id": "a66",
+"n": 2,
+"r": "mandarina",
+"h": "Cítrico pequeño y fácil de pelar"
+},
+{
+"id": "a67",
+"n": 2,
+"r": "orégano",
+"h": "Hierba aromática de la pizza"
+},
+{
+"id": "a68",
+"n": 2,
+"r": "estatua",
+"h": "Figura de piedra o de bronce"
+},
+{
+"id": "a69",
+"n": 2,
+"r": "torbellino",
+"h": "Remolino de viento"
+},
+{
+"id": "a70",
+"n": 2,
+"r": "alcachofa",
+"h": "Hortaliza de hojas carnosas"
+},
+{
+"id": "a71",
+"n": 2,
+"r": "diploma",
+"h": "Documento que certifica un título"
+},
+{
+"id": "a72",
+"n": 2,
+"r": "abanico",
+"h": "Para darse aire en el calor"
+},
+{
+"id": "a73",
+"n": 2,
+"r": "sacapuntas",
+"h": "Para afilar el lápiz"
+},
+{
+"id": "a74",
+"n": 2,
+"r": "horóscopo",
+"h": "Predicción según el signo del zodíaco"
+},
+{
+"id": "a75",
+"n": 2,
+"r": "espantapájaros",
+"h": "Muñeco del campo que asusta a las aves"
+},
+{
+"id": "a76",
+"n": 2,
+"r": "lavadora",
+"h": "Electrodoméstico que lava la ropa"
+},
+{
+"id": "a77",
+"n": 3,
+"r": "otorrinolaringólogo",
+"h": "Médico de oído, nariz y garganta"
+},
+{
+"id": "a78",
+"n": 3,
+"r": "electrodoméstico",
+"h": "Aparato eléctrico del hogar"
+},
+{
+"id": "a79",
+"n": 3,
+"r": "misántropo",
+"h": "Persona que rechaza el trato con los demás"
+},
+{
+"id": "a80",
+"n": 3,
+"r": "anticonstitucional",
+"h": "Contrario a la Constitución"
+},
+{
+"id": "a81",
+"n": 3,
+"r": "estratosfera",
+"h": "Capa de la atmósfera sobre la troposfera"
+},
+{
+"id": "a82",
+"n": 3,
+"r": "interrogación",
+"h": "Signo que encierra una pregunta"
+},
+{
+"id": "a83",
+"n": 3,
+"r": "electroencefalograma",
+"h": "Registro de la actividad eléctrica del cerebro"
+},
+{
+"id": "a84",
+"n": 3,
+"r": "paralelogramo",
+"h": "Cuadrilátero de lados opuestos paralelos"
+},
+{
+"id": "a85",
+"n": 3,
+"r": "anfitrión",
+"h": "Persona que recibe a los invitados"
+},
+{
+"id": "a86",
+"n": 3,
+"r": "circunferencia",
+"h": "Línea curva cerrada cuyos puntos están a igual distancia del centro"
+},
+{
+"id": "a87",
+"n": 3,
+"r": "subterráneo",
+"h": "Que está bajo tierra"
+},
+{
+"id": "a88",
+"n": 3,
+"r": "extraterrestre",
+"h": "Ser de otro planeta"
+}
+],
+"vof": [
+{
+"id": "v01",
+"n": 1,
+"v": false,
+"p": "El Sol gira alrededor de la Tierra."
+},
+{
+"id": "v02",
+"n": 1,
+"v": true,
+"p": "Los pingüinos no pueden volar."
+},
+{
+"id": "v03",
+"n": 1,
+"v": false,
+"p": "Las ballenas son peces."
+},
+{
+"id": "v04",
+"n": 1,
+"v": true,
+"p": "El agua hierve a 100 grados a nivel del mar."
+},
+{
+"id": "v05",
+"n": 1,
+"v": false,
+"p": "Una semana tiene ocho días."
+},
+{
+"id": "v06",
+"n": 1,
+"v": true,
+"p": "Las abejas fabrican miel."
+},
+{
+"id": "v07",
+"n": 1,
+"v": false,
+"p": "Las zanahorias crecen colgando de los árboles."
+},
+{
+"id": "v08",
+"n": 1,
+"v": true,
+"p": "Chile limita con Argentina."
+},
+{
+"id": "v09",
+"n": 1,
+"v": false,
+"p": "Los gatos comen solo pasto."
+},
+{
+"id": "v10",
+"n": 1,
+"v": true,
+"p": "El corazón es un músculo."
+},
+{
+"id": "v11",
+"n": 1,
+"v": false,
+"p": "La nieve es caliente."
+},
+{
+"id": "v12",
+"n": 1,
+"v": true,
+"p": "Las vacas son mamíferos."
+},
+{
+"id": "v13",
+"n": 1,
+"v": false,
+"p": "Los murciélagos ponen huevos."
+},
+{
+"id": "v14",
+"n": 1,
+"v": true,
+"p": "Santiago es la capital de Chile."
+},
+{
+"id": "v15",
+"n": 1,
+"v": false,
+"p": "En Chile, el invierno es en diciembre."
+},
+{
+"id": "v16",
+"n": 1,
+"v": true,
+"p": "Los pulpos tienen ocho brazos."
+},
+{
+"id": "v17",
+"n": 1,
+"v": false,
+"p": "La Luna tiene luz propia."
+},
+{
+"id": "v18",
+"n": 1,
+"v": true,
+"p": "El hielo flota en el agua."
+},
+{
+"id": "v19",
+"n": 1,
+"v": false,
+"p": "Un año tiene diez meses."
+},
+{
+"id": "v20",
+"n": 1,
+"v": true,
+"p": "Las plantas necesitan luz para vivir."
+},
+{
+"id": "v21",
+"n": 1,
+"v": false,
+"p": "Los tiburones son mamíferos."
+},
+{
+"id": "v22",
+"n": 1,
+"v": false,
+"p": "Los caballos tienen cuernos."
+},
+{
+"id": "v23",
+"n": 1,
+"v": true,
+"p": "La sandía tiene mucha agua."
+},
+{
+"id": "v24",
+"n": 1,
+"v": false,
+"p": "El elefante es el animal más pequeño de la selva."
+},
+{
+"id": "v25",
+"n": 1,
+"v": true,
+"p": "Los dientes de leche se caen."
+},
+{
+"id": "v26",
+"n": 1,
+"v": true,
+"p": "Las mariposas antes de ser mariposas son orugas."
+},
+{
+"id": "v27",
+"n": 1,
+"v": false,
+"p": "Los peces respiran con pulmones."
+},
+{
+"id": "v28",
+"n": 1,
+"v": true,
+"p": "El limón es ácido."
+},
+{
+"id": "v29",
+"n": 1,
+"v": false,
+"p": "La Tierra es plana."
+},
+{
+"id": "v30",
+"n": 1,
+"v": true,
+"p": "Los perros oyen sonidos que las personas no alcanzan a oír."
+},
+{
+"id": "v31",
+"n": 1,
+"v": false,
+"p": "El 18 de septiembre se celebra la Navidad."
+},
+{
+"id": "v32",
+"n": 1,
+"v": true,
+"p": "Los pájaros tienen plumas."
+},
+{
+"id": "v33",
+"n": 1,
+"v": false,
+"p": "Las tortugas son animales muy rápidos."
+},
+{
+"id": "v34",
+"n": 1,
+"v": true,
+"p": "El Everest es la montaña más alta del mundo."
+},
+{
+"id": "v35",
+"n": 1,
+"v": false,
+"p": "El océano Pacífico es el más pequeño del mundo."
+},
+{
+"id": "v36",
+"n": 1,
+"v": true,
+"p": "La leche de vaca es blanca."
+},
+{
+"id": "v37",
+"n": 2,
+"v": true,
+"p": "La Isla de Pascua pertenece a Chile."
+},
+{
+"id": "v38",
+"n": 2,
+"v": false,
+"p": "El río Amazonas desemboca en el océano Pacífico."
+},
+{
+"id": "v39",
+"n": 2,
+"v": true,
+"p": "Gabriela Mistral ganó el Premio Nobel de Literatura."
+},
+{
+"id": "v40",
+"n": 2,
+"v": false,
+"p": "Mozart nació en Alemania."
+},
+{
+"id": "v41",
+"n": 2,
+"v": false,
+"p": "La Gran Muralla China se ve a simple vista desde la Luna."
+},
+{
+"id": "v42",
+"n": 2,
+"v": true,
+"p": "Botánicamente, el tomate es una fruta."
+},
+{
+"id": "v43",
+"n": 2,
+"v": false,
+"p": "El cobre es un mal conductor de la electricidad."
+},
+{
+"id": "v44",
+"n": 2,
+"v": true,
+"p": "Australia es a la vez un país y un continente."
+},
+{
+"id": "v45",
+"n": 2,
+"v": false,
+"p": "Napoleón Bonaparte nació en París."
+},
+{
+"id": "v46",
+"n": 2,
+"v": true,
+"p": "La sangre de los pulpos es azul."
+},
+{
+"id": "v47",
+"n": 2,
+"v": false,
+"p": "El río Nilo está en Sudamérica."
+},
+{
+"id": "v48",
+"n": 2,
+"v": true,
+"p": "Pablo Neruda nació en Parral."
+},
+{
+"id": "v49",
+"n": 2,
+"v": false,
+"p": "Venus es el planeta más cercano al Sol."
+},
+{
+"id": "v50",
+"n": 2,
+"v": true,
+"p": "El ADN tiene forma de doble hélice."
+},
+{
+"id": "v51",
+"n": 2,
+"v": false,
+"p": "Los camellos guardan agua en sus jorobas."
+},
+{
+"id": "v52",
+"n": 2,
+"v": false,
+"p": "La Mona Lisa está en el Museo del Prado."
+},
+{
+"id": "v53",
+"n": 2,
+"v": true,
+"p": "Chile mide más de 4.000 kilómetros de largo."
+},
+{
+"id": "v54",
+"n": 2,
+"v": false,
+"p": "Cristóbal Colón llegó a América en 1592."
+},
+{
+"id": "v55",
+"n": 2,
+"v": true,
+"p": "El kiwi, además de una fruta, es un ave de Nueva Zelanda."
+},
+{
+"id": "v56",
+"n": 2,
+"v": true,
+"p": "Los tiburones tienen esqueleto de cartílago, no de hueso."
+},
+{
+"id": "v57",
+"n": 2,
+"v": false,
+"p": "Brasil limita con Chile."
+},
+{
+"id": "v58",
+"n": 2,
+"v": true,
+"p": "El cerro Aconcagua está en Argentina."
+},
+{
+"id": "v59",
+"n": 2,
+"v": false,
+"p": "El sonido viaja más rápido que la luz."
+},
+{
+"id": "v60",
+"n": 2,
+"v": true,
+"p": "Los delfines pueden dormir con la mitad del cerebro."
+},
+{
+"id": "v61",
+"n": 2,
+"v": false,
+"p": "El Titanic se hundió en el océano Pacífico."
+},
+{
+"id": "v62",
+"n": 2,
+"v": true,
+"p": "La Antártida es el continente más frío."
+},
+{
+"id": "v63",
+"n": 2,
+"v": false,
+"p": "La capital de Brasil es Río de Janeiro."
+},
+{
+"id": "v64",
+"n": 2,
+"v": false,
+"p": "Beethoven compuso «Las cuatro estaciones»."
+},
+{
+"id": "v65",
+"n": 2,
+"v": true,
+"p": "Los koalas se alimentan principalmente de hojas de eucalipto."
+},
+{
+"id": "v66",
+"n": 2,
+"v": false,
+"p": "El Día del Trabajador se celebra el 1 de junio."
+},
+{
+"id": "v67",
+"n": 2,
+"v": true,
+"p": "El agua cubre cerca del 70 % de la superficie de la Tierra."
+},
+{
+"id": "v68",
+"n": 2,
+"v": false,
+"p": "Las arañas son insectos."
+},
+{
+"id": "v69",
+"n": 2,
+"v": false,
+"p": "La palabra «árbol» es aguda."
+},
+{
+"id": "v70",
+"n": 2,
+"v": true,
+"p": "El oro es más denso que el hierro."
+},
+{
+"id": "v71",
+"n": 2,
+"v": true,
+"p": "La cueca es el baile nacional de Chile."
+},
+{
+"id": "v72",
+"n": 2,
+"v": false,
+"p": "El litio es un gas."
+},
+{
+"id": "v73",
+"n": 3,
+"v": true,
+"p": "Un año luz es una medida de distancia, no de tiempo."
+},
+{
+"id": "v74",
+"n": 3,
+"v": false,
+"p": "El idioma oficial de Brasil es el español."
+},
+{
+"id": "v75",
+"n": 3,
+"v": true,
+"p": "La palabra «murciélago» contiene las cinco vocales."
+},
+{
+"id": "v76",
+"n": 3,
+"v": false,
+"p": "«Cien años de soledad» la escribió Julio Cortázar."
+},
+{
+"id": "v77",
+"n": 3,
+"v": false,
+"p": "La Revolución Francesa comenzó en 1689."
+},
+{
+"id": "v78",
+"n": 3,
+"v": true,
+"p": "Mercurio no tiene lunas."
+},
+{
+"id": "v79",
+"n": 3,
+"v": false,
+"p": "«Don Quijote de la Mancha» lo escribió Lope de Vega."
+},
+{
+"id": "v80",
+"n": 3,
+"v": true,
+"p": "El grafito y el diamante están formados por el mismo elemento."
+},
+{
+"id": "v81",
+"n": 3,
+"v": false,
+"p": "El Canal de Panamá une el océano Atlántico con el Índico."
+},
+{
+"id": "v82",
+"n": 3,
+"v": true,
+"p": "La Torre Eiffel es unos centímetros más alta en verano que en invierno."
+},
+{
+"id": "v83",
+"n": 3,
+"v": false,
+"p": "El Partenón está en Roma."
+},
+{
+"id": "v84",
+"n": 3,
+"v": true,
+"p": "El chino mandarín es la lengua con más hablantes nativos del mundo."
+},
+{
+"id": "v85",
+"n": 3,
+"v": false,
+"p": "La fotosíntesis libera dióxido de carbono."
+},
+{
+"id": "v86",
+"n": 3,
+"v": false,
+"p": "«La Gioconda» y «La Mona Lisa» son cuadros distintos."
+},
+{
+"id": "v87",
+"n": 3,
+"v": false,
+"p": "El sistema solar tiene diez planetas."
+},
+{
+"id": "v88",
+"n": 3,
+"v": true,
+"p": "La palabra «esdrújula» es esdrújula."
+},
+{
+"id": "v89",
+"n": 3,
+"v": false,
+"p": "Shakespeare escribió «La vida es sueño»."
+},
+{
+"id": "v90",
+"n": 3,
+"v": true,
+"p": "La sede de gobierno de Bolivia está en La Paz, pero su capital constitucional es Sucre."
+},
+{
+"id": "v91",
+"n": 3,
+"v": false,
+"p": "El Muro de Berlín cayó en 1991."
+},
+{
+"id": "v92",
+"n": 3,
+"v": true,
+"p": "Los diamantes pueden arder."
+},
+{
+"id": "v93",
+"n": 3,
+"v": false,
+"p": "La capital del Imperio inca era Quito."
+},
+{
+"id": "v94",
+"n": 3,
+"v": true,
+"p": "Marte tiene dos lunas."
+},
+{
+"id": "v95",
+"n": 3,
+"v": false,
+"p": "La bóveda de la Capilla Sixtina la pintó Leonardo da Vinci."
+},
+{
+"id": "v96",
+"n": 3,
+"v": true,
+"p": "En la Isla de Pascua se habla rapanui."
+},
+{
+"id": "v97",
+"n": 3,
+"v": false,
+"p": "El oxígeno es el gas más abundante del aire."
+},
+{
+"id": "v98",
+"n": 3,
+"v": true,
+"p": "Neil Armstrong fue el primer ser humano en pisar la Luna."
+},
+{
+"id": "v99",
+"n": 3,
+"v": false,
+"p": "La música del himno nacional de Chile es de Violeta Parra."
+},
+{
+"id": "v100",
+"n": 3,
+"v": true,
+"p": "La Vía Láctea es una galaxia espiral."
+},
+{
+"id": "v101",
+"n": 3,
+"v": false,
+"p": "Los osos polares viven en la Antártida."
+},
+{
+"id": "v102",
+"n": 3,
+"v": true,
+"p": "El tango es Patrimonio Cultural Inmaterial de la Humanidad."
+},
+{
+"id": "v103",
+"n": 3,
+"v": false,
+"p": "«Gracias a la vida» la escribió Víctor Jara."
+},
+{
+"id": "v104",
+"n": 3,
+"v": true,
+"p": "El agua salada se congela a una temperatura más baja que el agua dulce."
+},
+{
+"id": "v105",
+"n": 3,
+"v": false,
+"p": "Plutón sigue siendo considerado el noveno planeta del sistema solar."
+},
+{
+"id": "v106",
+"n": 3,
+"v": true,
+"p": "El corazón de una ballena azul puede pesar más que una persona adulta."
+},
+{
+"id": "v107",
+"n": 3,
+"v": false,
+"p": "El Imperio romano de Occidente cayó en el año 1453."
+},
+{
+"id": "v108",
+"n": 3,
+"v": true,
+"p": "Ojos del Salado es el volcán más alto del mundo."
+}
+],
+"refran": [
+{
+"id": "r01",
+"n": 1,
+"t": "Al que madruga, Dios lo ___",
+"r": [
+"ayuda"
+]
+},
+{
+"id": "r02",
+"n": 1,
+"t": "Más vale tarde que ___",
+"r": [
+"nunca"
+]
+},
+{
+"id": "r03",
+"n": 1,
+"t": "No hay mal que por bien no ___",
+"r": [
+"venga"
+]
+},
+{
+"id": "r04",
+"n": 1,
+"t": "Perro que ladra no ___",
+"r": [
+"muerde"
+]
+},
+{
+"id": "r05",
+"n": 1,
+"t": "En boca cerrada no entran ___",
+"r": [
+"moscas"
+]
+},
+{
+"id": "r06",
+"n": 1,
+"t": "Ojos que no ven, corazón que no ___",
+"r": [
+"siente"
+]
+},
+{
+"id": "r07",
+"n": 1,
+"t": "Dime con quién andas y te diré quién ___",
+"r": [
+"eres"
+]
+},
+{
+"id": "r08",
+"n": 1,
+"t": "Camarón que se duerme se lo lleva la ___",
+"r": [
+"corriente"
+]
+},
+{
+"id": "r09",
+"n": 1,
+"t": "Más vale pájaro en mano que cien ___",
+"r": [
+"volando"
+]
+},
+{
+"id": "r10",
+"n": 1,
+"t": "A caballo regalado no se le mira el ___",
+"r": [
+"diente",
+"colmillo"
+]
+},
+{
+"id": "r11",
+"n": 1,
+"t": "El que busca, ___",
+"r": [
+"encuentra"
+]
+},
+{
+"id": "r12",
+"n": 1,
+"t": "No dejes para mañana lo que puedes hacer ___",
+"r": [
+"hoy"
+]
+},
+{
+"id": "r13",
+"n": 1,
+"t": "Del dicho al hecho hay mucho ___",
+"r": [
+"trecho"
+]
+},
+{
+"id": "r14",
+"n": 1,
+"t": "A mal tiempo, buena ___",
+"r": [
+"cara"
+]
+},
+{
+"id": "r15",
+"n": 1,
+"t": "Cuando el río suena, ___ trae",
+"r": [
+"piedras"
+]
+},
+{
+"id": "r16",
+"n": 1,
+"t": "Querer es ___",
+"r": [
+"poder"
+]
+},
+{
+"id": "r17",
+"n": 1,
+"t": "El que ríe último ríe ___",
+"r": [
+"mejor"
+]
+},
+{
+"id": "r18",
+"n": 1,
+"t": "Ojo por ojo, diente por ___",
+"r": [
+"diente"
+]
+},
+{
+"id": "r19",
+"n": 1,
+"t": "Haz el bien sin mirar a ___",
+"r": [
+"quién"
+]
+},
+{
+"id": "r20",
+"n": 1,
+"t": "La práctica hace al ___",
+"r": [
+"maestro"
+]
+},
+{
+"id": "r21",
+"n": 2,
+"t": "Al mal paso, darle ___",
+"r": [
+"prisa"
+]
+},
+{
+"id": "r22",
+"n": 2,
+"t": "Cría cuervos y te sacarán los ___",
+"r": [
+"ojos"
+]
+},
+{
+"id": "r23",
+"n": 2,
+"t": "En casa de herrero, cuchillo de ___",
+"r": [
+"palo"
+]
+},
+{
+"id": "r24",
+"n": 2,
+"t": "No por mucho madrugar amanece más ___",
+"r": [
+"temprano"
+]
+},
+{
+"id": "r25",
+"n": 2,
+"t": "El hábito no hace al ___",
+"r": [
+"monje"
+]
+},
+{
+"id": "r26",
+"n": 2,
+"t": "A buen entendedor, pocas ___",
+"r": [
+"palabras"
+]
+},
+{
+"id": "r27",
+"n": 2,
+"t": "Agua que no has de beber, déjala ___",
+"r": [
+"correr"
+]
+},
+{
+"id": "r28",
+"n": 2,
+"t": "Más sabe el diablo por viejo que por ___",
+"r": [
+"diablo"
+]
+},
+{
+"id": "r29",
+"n": 2,
+"t": "Quien mucho abarca, poco ___",
+"r": [
+"aprieta"
+]
+},
+{
+"id": "r30",
+"n": 2,
+"t": "Al pan, pan, y al vino, ___",
+"r": [
+"vino"
+]
+},
+{
+"id": "r31",
+"n": 2,
+"t": "Zapatero, a tus ___",
+"r": [
+"zapatos"
+]
+},
+{
+"id": "r32",
+"n": 2,
+"t": "Donde manda capitán, no manda ___",
+"r": [
+"marinero"
+]
+},
+{
+"id": "r33",
+"n": 2,
+"t": "Muerto el perro, se acabó la ___",
+"r": [
+"rabia"
+]
+},
+{
+"id": "r34",
+"n": 2,
+"t": "Más vale prevenir que ___",
+"r": [
+"curar",
+"lamentar"
+]
+},
+{
+"id": "r35",
+"n": 2,
+"t": "Dios aprieta, pero no ___",
+"r": [
+"ahorca"
+]
+},
+{
+"id": "r36",
+"n": 2,
+"t": "Cada oveja con su ___",
+"r": [
+"pareja"
+]
+},
+{
+"id": "r37",
+"n": 2,
+"t": "El que con lobos anda, a aullar se ___",
+"r": [
+"enseña"
+]
+},
+{
+"id": "r38",
+"n": 2,
+"t": "Lo cortés no quita lo ___",
+"r": [
+"valiente"
+]
+},
+{
+"id": "r39",
+"n": 2,
+"t": "Aunque la mona se vista de seda, mona se ___",
+"r": [
+"queda"
+]
+},
+{
+"id": "r40",
+"n": 2,
+"t": "De tal palo, tal ___",
+"r": [
+"astilla"
+]
+},
+{
+"id": "r41",
+"n": 3,
+"t": "A falta de pan, buenas son ___",
+"r": [
+"tortas"
+]
+},
+{
+"id": "r42",
+"n": 3,
+"t": "Quien siembra vientos recoge ___",
+"r": [
+"tempestades"
+]
+},
+{
+"id": "r43",
+"n": 3,
+"t": "A otro perro con ese ___",
+"r": [
+"hueso"
+]
+},
+{
+"id": "r44",
+"n": 3,
+"t": "El que nace pa' maceta no pasa del ___",
+"r": [
+"corredor"
+]
+},
+{
+"id": "r45",
+"n": 3,
+"t": "Ves la paja en el ojo ajeno y no la ___ en el propio",
+"r": [
+"viga"
+]
+},
+{
+"id": "r46",
+"n": 3,
+"t": "Cuando el diablo no tiene qué hacer, con la cola mata ___",
+"r": [
+"moscas"
+]
+},
+{
+"id": "r47",
+"n": 3,
+"t": "A rey muerto, rey ___",
+"r": [
+"puesto"
+]
+},
+{
+"id": "r48",
+"n": 3,
+"t": "Las apariencias ___",
+"r": [
+"engañan"
+]
+},
+{
+"id": "r49",
+"n": 3,
+"t": "Genio y figura hasta la ___",
+"r": [
+"sepultura"
+]
+},
+{
+"id": "r50",
+"n": 3,
+"t": "Para muestra, basta un ___",
+"r": [
+"botón"
+]
+},
+{
+"id": "r51",
+"n": 3,
+"t": "Más vale ser cabeza de ratón que cola de ___",
+"r": [
+"león"
+]
+},
+{
+"id": "r52",
+"n": 3,
+"t": "Gato con guantes no caza ___",
+"r": [
+"ratones"
+]
+},
+{
+"id": "r53",
+"n": 3,
+"t": "Por la boca muere el ___",
+"r": [
+"pez"
+]
+},
+{
+"id": "r54",
+"n": 3,
+"t": "Hijo de tigre sale ___",
+"r": [
+"rayado"
+]
+},
+{
+"id": "r55",
+"n": 3,
+"t": "El que se fue a Sevilla perdió su ___",
+"r": [
+"silla"
+]
+},
+{
+"id": "r56",
+"n": 3,
+"t": "Entre bomberos no nos vamos a pisar la ___",
+"r": [
+"manguera"
+]
+},
+{
+"id": "r57",
+"n": 3,
+"t": "Le dijo la sartén al ___: «no me tiznes»",
+"r": [
+"cazo"
+]
+},
+{
+"id": "r58",
+"n": 3,
+"t": "Mucho ruido y pocas ___",
+"r": [
+"nueces"
+]
+},
+{
+"id": "r59",
+"n": 3,
+"t": "Al que nace para martillo, del cielo le caen los ___",
+"r": [
+"clavos"
+]
+},
+{
+"id": "r60",
+"n": 3,
+"t": "A la tercera va la ___",
+"r": [
+"vencida"
+]
+}
+],
+"intrusa": [
+{
+"id": "i01",
+"n": 1,
+"o": [
+"manzana",
+"pera",
+"zanahoria",
+"uva"
+],
+"c": 2,
+"x": "La zanahoria es una verdura; las demás son frutas."
+},
+{
+"id": "i02",
+"n": 1,
+"o": [
+"perro",
+"gato",
+"loro",
+"tenedor"
+],
+"c": 3,
+"x": "El tenedor no es un animal."
+},
+{
+"id": "i03",
+"n": 1,
+"o": [
+"rojo",
+"azul",
+"verde",
+"mesa"
+],
+"c": 3,
+"x": "Mesa no es un color."
+},
+{
+"id": "i04",
+"n": 1,
+"o": [
+"lunes",
+"martes",
+"enero",
+"viernes"
+],
+"c": 2,
+"x": "Enero es un mes; los demás son días."
+},
+{
+"id": "i05",
+"n": 1,
+"o": [
+"avión",
+"barco",
+"tren",
+"nube"
+],
+"c": 3,
+"x": "La nube no es un medio de transporte."
+},
+{
+"id": "i06",
+"n": 1,
+"o": [
+"guitarra",
+"piano",
+"violín",
+"martillo"
+],
+"c": 3,
+"x": "El martillo no es un instrumento musical."
+},
+{
+"id": "i07",
+"n": 1,
+"o": [
+"camisa",
+"pantalón",
+"calcetín",
+"cuchara"
+],
+"c": 3,
+"x": "La cuchara no es ropa."
+},
+{
+"id": "i08",
+"n": 1,
+"o": [
+"león",
+"tigre",
+"vaca",
+"leopardo"
+],
+"c": 2,
+"x": "La vaca no es un felino."
+},
+{
+"id": "i09",
+"n": 1,
+"o": [
+"tres",
+"siete",
+"azul",
+"diez"
+],
+"c": 2,
+"x": "Azul no es un número."
+},
+{
+"id": "i10",
+"n": 1,
+"o": [
+"ojo",
+"nariz",
+"boca",
+"zapato"
+],
+"c": 3,
+"x": "El zapato no es parte de la cara."
+},
+{
+"id": "i11",
+"n": 1,
+"o": [
+"sol",
+"luna",
+"estrella",
+"árbol"
+],
+"c": 3,
+"x": "El árbol no está en el cielo."
+},
+{
+"id": "i12",
+"n": 1,
+"o": [
+"pato",
+"gallina",
+"paloma",
+"gato"
+],
+"c": 3,
+"x": "El gato no es un ave."
+},
+{
+"id": "i13",
+"n": 1,
+"o": [
+"lápiz",
+"goma",
+"regla",
+"sartén"
+],
+"c": 3,
+"x": "La sartén no es un útil escolar."
+},
+{
+"id": "i14",
+"n": 1,
+"o": [
+"verano",
+"otoño",
+"invierno",
+"mañana"
+],
+"c": 3,
+"x": "Mañana no es una estación del año."
+},
+{
+"id": "i15",
+"n": 1,
+"o": [
+"tiburón",
+"delfín",
+"ballena",
+"caballo"
+],
+"c": 3,
+"x": "El caballo no vive en el mar."
+},
+{
+"id": "i16",
+"n": 1,
+"o": [
+"fútbol",
+"tenis",
+"básquetbol",
+"ajedrez"
+],
+"c": 3,
+"x": "El ajedrez no se juega con pelota."
+},
+{
+"id": "i17",
+"n": 1,
+"o": [
+"leche",
+"queso",
+"yogur",
+"pan"
+],
+"c": 3,
+"x": "El pan no es un lácteo."
+},
+{
+"id": "i18",
+"n": 1,
+"o": [
+"Santiago",
+"Valparaíso",
+"Concepción",
+"Lima"
+],
+"c": 3,
+"x": "Lima no es una ciudad chilena."
+},
+{
+"id": "i19",
+"n": 1,
+"o": [
+"hormiga",
+"abeja",
+"mosca",
+"araña"
+],
+"c": 3,
+"x": "La araña no es un insecto."
+},
+{
+"id": "i20",
+"n": 1,
+"o": [
+"cuchillo",
+"tenedor",
+"cuchara",
+"almohada"
+],
+"c": 3,
+"x": "La almohada no es un cubierto."
+},
+{
+"id": "i21",
+"n": 2,
+"o": [
+"Marte",
+"Venus",
+"Júpiter",
+"Luna"
+],
+"c": 3,
+"x": "La Luna es un satélite, no un planeta."
+},
+{
+"id": "i22",
+"n": 2,
+"o": [
+"cóndor",
+"huemul",
+"pudú",
+"canguro"
+],
+"c": 3,
+"x": "El canguro no es fauna chilena."
+},
+{
+"id": "i23",
+"n": 2,
+"o": [
+"Neruda",
+"Mistral",
+"Huidobro",
+"Cervantes"
+],
+"c": 3,
+"x": "Cervantes no es un poeta chileno."
+},
+{
+"id": "i24",
+"n": 2,
+"o": [
+"triángulo",
+"cuadrado",
+"círculo",
+"cubo"
+],
+"c": 3,
+"x": "El cubo es un cuerpo, no una figura plana."
+},
+{
+"id": "i25",
+"n": 2,
+"o": [
+"cobre",
+"hierro",
+"oro",
+"madera"
+],
+"c": 3,
+"x": "La madera no es un metal."
+},
+{
+"id": "i26",
+"n": 2,
+"o": [
+"París",
+"Roma",
+"Madrid",
+"Nueva York"
+],
+"c": 3,
+"x": "Nueva York no es una capital."
+},
+{
+"id": "i27",
+"n": 2,
+"o": [
+"violín",
+"viola",
+"arpa",
+"trompeta"
+],
+"c": 3,
+"x": "La trompeta no es un instrumento de cuerda."
+},
+{
+"id": "i28",
+"n": 2,
+"o": [
+"águila",
+"halcón",
+"cóndor",
+"pingüino"
+],
+"c": 3,
+"x": "El pingüino no vuela."
+},
+{
+"id": "i29",
+"n": 2,
+"o": [
+"Mozart",
+"Beethoven",
+"Bach",
+"Picasso"
+],
+"c": 3,
+"x": "Picasso era pintor, no compositor."
+},
+{
+"id": "i30",
+"n": 2,
+"o": [
+"cueca",
+"tango",
+"salsa",
+"rugby"
+],
+"c": 3,
+"x": "El rugby no es un baile."
+},
+{
+"id": "i31",
+"n": 2,
+"o": [
+"riñón",
+"hígado",
+"pulmón",
+"rodilla"
+],
+"c": 3,
+"x": "La rodilla no es un órgano."
+},
+{
+"id": "i32",
+"n": 2,
+"o": [
+"ballena",
+"delfín",
+"foca",
+"tiburón"
+],
+"c": 3,
+"x": "El tiburón no es un mamífero."
+},
+{
+"id": "i33",
+"n": 2,
+"o": [
+"inglés",
+"francés",
+"alemán",
+"Europa"
+],
+"c": 3,
+"x": "Europa no es un idioma."
+},
+{
+"id": "i34",
+"n": 2,
+"o": [
+"roble",
+"pino",
+"araucaria",
+"helecho"
+],
+"c": 3,
+"x": "El helecho no es un árbol."
+},
+{
+"id": "i35",
+"n": 2,
+"o": [
+"sustantivo",
+"verbo",
+"adjetivo",
+"párrafo"
+],
+"c": 3,
+"x": "El párrafo no es una clase de palabra."
+},
+{
+"id": "i36",
+"n": 2,
+"o": [
+"Atacama",
+"Sahara",
+"Gobi",
+"Amazonas"
+],
+"c": 3,
+"x": "El Amazonas no es un desierto."
+},
+{
+"id": "i37",
+"n": 2,
+"o": [
+"trigo",
+"arroz",
+"maíz",
+"lenteja"
+],
+"c": 3,
+"x": "La lenteja es una legumbre, no un cereal."
+},
+{
+"id": "i38",
+"n": 2,
+"o": [
+"rubí",
+"esmeralda",
+"zafiro",
+"mármol"
+],
+"c": 3,
+"x": "El mármol no es una piedra preciosa."
+},
+{
+"id": "i39",
+"n": 2,
+"o": [
+"ajedrez",
+"damas",
+"dominó",
+"fútbol"
+],
+"c": 3,
+"x": "El fútbol no es un juego de mesa."
+},
+{
+"id": "i40",
+"n": 2,
+"o": [
+"Andes",
+"Alpes",
+"Himalaya",
+"Mediterráneo"
+],
+"c": 3,
+"x": "El Mediterráneo es un mar, no una cordillera."
+},
+{
+"id": "i41",
+"n": 3,
+"o": [
+"Quijote",
+"Sancho",
+"Dulcinea",
+"Hamlet"
+],
+"c": 3,
+"x": "Hamlet no es un personaje del Quijote."
+},
+{
+"id": "i42",
+"n": 3,
+"o": [
+"hexágono",
+"pentágono",
+"octógono",
+"cilindro"
+],
+"c": 3,
+"x": "El cilindro no es un polígono."
+},
+{
+"id": "i43",
+"n": 3,
+"o": [
+"Zeus",
+"Hera",
+"Atenea",
+"Thor"
+],
+"c": 3,
+"x": "Thor es un dios nórdico, no griego."
+},
+{
+"id": "i44",
+"n": 3,
+"o": [
+"soneto",
+"décima",
+"haiku",
+"novela"
+],
+"c": 3,
+"x": "La novela no es una forma poética."
+},
+{
+"id": "i45",
+"n": 3,
+"o": [
+"mitosis",
+"meiosis",
+"fotosíntesis",
+"citocinesis"
+],
+"c": 2,
+"x": "La fotosíntesis no es parte de la división celular."
+},
+{
+"id": "i46",
+"n": 3,
+"o": [
+"Picasso",
+"Dalí",
+"Miró",
+"Rembrandt"
+],
+"c": 3,
+"x": "Rembrandt no es un pintor español."
+},
+{
+"id": "i47",
+"n": 3,
+"o": [
+"helio",
+"neón",
+"argón",
+"hidrógeno"
+],
+"c": 3,
+"x": "El hidrógeno no es un gas noble."
+},
+{
+"id": "i48",
+"n": 3,
+"o": [
+"Bach",
+"Vivaldi",
+"Händel",
+"Chopin"
+],
+"c": 3,
+"x": "Chopin no es un compositor del Barroco."
+},
+{
+"id": "i49",
+"n": 3,
+"o": [
+"Tokio",
+"Pekín",
+"Seúl",
+"Sídney"
+],
+"c": 3,
+"x": "Sídney no es una capital."
+},
+{
+"id": "i50",
+"n": 3,
+"o": [
+"metáfora",
+"hipérbole",
+"anáfora",
+"sustantivo"
+],
+"c": 3,
+"x": "El sustantivo no es una figura literaria."
+},
+{
+"id": "i51",
+"n": 3,
+"o": [
+"cuarzo",
+"feldespato",
+"mica",
+"granito"
+],
+"c": 3,
+"x": "El granito es una roca; los demás son minerales."
+},
+{
+"id": "i52",
+"n": 3,
+"o": [
+"fémur",
+"tibia",
+"peroné",
+"húmero"
+],
+"c": 3,
+"x": "El húmero está en el brazo; los demás, en la pierna."
+},
+{
+"id": "i53",
+"n": 3,
+"o": [
+"Mercurio",
+"Venus",
+"Tierra",
+"Saturno"
+],
+"c": 3,
+"x": "Saturno no es un planeta rocoso."
+},
+{
+"id": "i54",
+"n": 3,
+"o": [
+"aguda",
+"grave",
+"esdrújula",
+"diptongo"
+],
+"c": 3,
+"x": "El diptongo no es una clase de palabra según su acento."
+},
+{
+"id": "i55",
+"n": 3,
+"o": [
+"Bolívar",
+"San Martín",
+"O'Higgins",
+"Napoleón"
+],
+"c": 3,
+"x": "Napoleón no fue un libertador americano."
+},
+{
+"id": "i56",
+"n": 3,
+"o": [
+"Ilíada",
+"Odisea",
+"Eneida",
+"Fausto"
+],
+"c": 3,
+"x": "Fausto no es una epopeya clásica."
+},
+{
+"id": "i57",
+"n": 3,
+"o": [
+"cetáceo",
+"sirénido",
+"pinnípedo",
+"salmónido"
+],
+"c": 3,
+"x": "Los salmónidos son peces; los demás, mamíferos marinos."
+},
+{
+"id": "i58",
+"n": 3,
+"o": [
+"yen",
+"euro",
+"rupia",
+"quechua"
+],
+"c": 3,
+"x": "El quechua es un idioma, no una moneda."
+},
+{
+"id": "i59",
+"n": 3,
+"o": [
+"Danubio",
+"Rin",
+"Sena",
+"Orinoco"
+],
+"c": 3,
+"x": "El Orinoco no está en Europa."
+},
+{
+"id": "i60",
+"n": 3,
+"o": [
+"Platón",
+"Aristóteles",
+"Sócrates",
+"Descartes"
+],
+"c": 3,
+"x": "Descartes no es un filósofo griego."
+}
+],
+"letras": [
+{
+"id": "l01",
+"n": 1,
+"r": "mermelada",
+"h": "Dulce de fruta para untar en el pan"
+},
+{
+"id": "l02",
+"n": 1,
+"r": "chaleco",
+"h": "Prenda sin mangas"
+},
+{
+"id": "l03",
+"n": 1,
+"r": "calcetín",
+"h": "Prenda que va dentro del zapato"
+},
+{
+"id": "l04",
+"n": 1,
+"r": "almuerzo",
+"h": "Comida del mediodía"
+},
+{
+"id": "l05",
+"n": 1,
+"r": "ventilador",
+"h": "Aparato que da aire fresco"
+},
+{
+"id": "l06",
+"n": 1,
+"r": "chinita",
+"h": "Insecto rojo con puntitos negros"
+},
+{
+"id": "l07",
+"n": 1,
+"r": "tetera",
+"h": "Para hervir el agua del té"
+},
+{
+"id": "l08",
+"n": 1,
+"r": "plumero",
+"h": "Para sacar el polvo de los muebles"
+},
+{
+"id": "l09",
+"n": 1,
+"r": "pantufla",
+"h": "Calzado para andar en la casa"
+},
+{
+"id": "l10",
+"n": 1,
+"r": "toalla",
+"h": "Para secarse después de la ducha"
+},
+{
+"id": "l11",
+"n": 1,
+"r": "cepillo",
+"h": "Para lavarse los dientes"
+},
+{
+"id": "l12",
+"n": 1,
+"r": "sartén",
+"h": "Para freír huevos"
+},
+{
+"id": "l13",
+"n": 1,
+"r": "refrigerador",
+"h": "Mantiene fría la comida"
+},
+{
+"id": "l14",
+"n": 1,
+"r": "ampolleta",
+"h": "Da luz en la lámpara"
+},
+{
+"id": "l15",
+"n": 1,
+"r": "mantel",
+"h": "Tela que cubre la mesa"
+},
+{
+"id": "l16",
+"n": 1,
+"r": "cuchillo",
+"h": "Cubierto para cortar"
+},
+{
+"id": "l17",
+"n": 1,
+"r": "caramelo",
+"h": "Dulce que se chupa"
+},
+{
+"id": "l18",
+"n": 1,
+"r": "cartero",
+"h": "Persona que reparte las cartas"
+},
+{
+"id": "l19",
+"n": 1,
+"r": "panadero",
+"h": "Persona que hace el pan"
+},
+{
+"id": "l20",
+"n": 1,
+"r": "columpio",
+"h": "Juego de la plaza que se mece"
+},
+{
+"id": "l21",
+"n": 2,
+"r": "mapamundi",
+"h": "Mapa de toda la Tierra en un plano"
+},
+{
+"id": "l22",
+"n": 2,
+"r": "acordeón",
+"h": "Instrumento con fuelle y teclas"
+},
+{
+"id": "l23",
+"n": 2,
+"r": "telaraña",
+"h": "Red que teje la araña"
+},
+{
+"id": "l24",
+"n": 2,
+"r": "maremoto",
+"h": "Terremoto bajo el mar"
+},
+{
+"id": "l25",
+"n": 2,
+"r": "estetoscopio",
+"h": "Lo usa el médico para escuchar el corazón"
+},
+{
+"id": "l26",
+"n": 2,
+"r": "carpintero",
+"h": "Oficio de quien trabaja la madera"
+},
+{
+"id": "l27",
+"n": 2,
+"r": "girasol",
+"h": "Flor que gira siguiendo al sol"
+},
+{
+"id": "l28",
+"n": 2,
+"r": "murmullo",
+"h": "Ruido suave de voces"
+},
+{
+"id": "l29",
+"n": 2,
+"r": "avalancha",
+"h": "Masa de nieve que cae por la ladera"
+},
+{
+"id": "l30",
+"n": 2,
+"r": "alfombra",
+"h": "Tejido grueso que cubre el piso"
+},
+{
+"id": "l31",
+"n": 2,
+"r": "sacacorchos",
+"h": "Para abrir una botella de vino"
+},
+{
+"id": "l32",
+"n": 2,
+"r": "trampolín",
+"h": "Tabla elástica para saltar a la piscina"
+},
+{
+"id": "l33",
+"n": 2,
+"r": "bufanda",
+"h": "Prenda que abriga el cuello"
+},
+{
+"id": "l34",
+"n": 2,
+"r": "escarabajo",
+"h": "Insecto de caparazón duro"
+},
+{
+"id": "l35",
+"n": 2,
+"r": "periodista",
+"h": "Persona que escribe noticias"
+},
+{
+"id": "l36",
+"n": 2,
+"r": "chimenea",
+"h": "Por donde sale el humo de la casa"
+},
+{
+"id": "l37",
+"n": 2,
+"r": "alcancía",
+"h": "Para guardar monedas"
+},
+{
+"id": "l38",
+"n": 2,
+"r": "invernadero",
+"h": "Lugar cubierto para cultivar plantas"
+},
+{
+"id": "l39",
+"n": 2,
+"r": "embajada",
+"h": "Oficina de un país en otro país"
+},
+{
+"id": "l40",
+"n": 2,
+"r": "maratón",
+"h": "Carrera de 42 kilómetros"
+},
+{
+"id": "l41",
+"n": 3,
+"r": "hipocampo",
+"h": "Caballito de mar; también, una parte del cerebro"
+},
+{
+"id": "l42",
+"n": 3,
+"r": "crepúsculo",
+"h": "Claridad del amanecer o del anochecer"
+},
+{
+"id": "l43",
+"n": 3,
+"r": "parsimonia",
+"h": "Lentitud y calma excesivas"
+},
+{
+"id": "l44",
+"n": 3,
+"r": "efemérides",
+"h": "Hechos notables que se recuerdan en su aniversario"
+},
+{
+"id": "l45",
+"n": 3,
+"r": "ornitología",
+"h": "Ciencia que estudia las aves"
+},
+{
+"id": "l46",
+"n": 3,
+"r": "escafandra",
+"h": "Traje de buzo con casco"
+},
+{
+"id": "l47",
+"n": 3,
+"r": "pentagrama",
+"h": "Cinco líneas donde se escriben las notas musicales"
+},
+{
+"id": "l48",
+"n": 3,
+"r": "magnolia",
+"h": "Árbol de grandes flores blancas y perfumadas"
+},
+{
+"id": "l49",
+"n": 3,
+"r": "palimpsesto",
+"h": "Manuscrito borrado y vuelto a escribir"
+},
+{
+"id": "l50",
+"n": 3,
+"r": "serendipia",
+"h": "Hallazgo afortunado que ocurre por casualidad"
+},
+{
+"id": "l51",
+"n": 3,
+"r": "idiosincrasia",
+"h": "Rasgos propios de una persona o de un pueblo"
+},
+{
+"id": "l52",
+"n": 3,
+"r": "almanaque",
+"h": "Calendario con datos astronómicos y efemérides"
+},
+{
+"id": "l53",
+"n": 3,
+"r": "equilibrista",
+"h": "Artista que camina sobre la cuerda floja"
+},
+{
+"id": "l54",
+"n": 3,
+"r": "filántropo",
+"h": "Persona que ayuda a los demás sin buscar nada a cambio"
+},
+{
+"id": "l55",
+"n": 3,
+"r": "anfiteatro",
+"h": "Recinto con gradas en semicírculo"
+},
+{
+"id": "l56",
+"n": 3,
+"r": "ventrílocuo",
+"h": "Persona que habla sin mover los labios"
+},
+{
+"id": "l57",
+"n": 3,
+"r": "criptografía",
+"h": "Arte de escribir con clave secreta"
+},
+{
+"id": "l58",
+"n": 3,
+"r": "meteorología",
+"h": "Ciencia que estudia el tiempo atmosférico"
+},
+{
+"id": "l59",
+"n": 3,
+"r": "hemeroteca",
+"h": "Lugar donde se guardan diarios y revistas"
+},
+{
+"id": "l60",
+"n": 3,
+"r": "procrastinar",
+"h": "Dejar para después lo que hay que hacer"
 }
 ]
 }
