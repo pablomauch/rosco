@@ -135,7 +135,8 @@ input.ans:focus{border-color:var(--cyan)}
     <div class="chips" id="home-mode"></div>
     <p class="mut small" style="margin-top:10px" id="home-mode-txt"></p>
   </div>
-  <button class="btn-main" id="b-play">▶ Nueva partida</button>
+  <button class="btn-main" id="b-play">▶ Jugar solo</button>
+  <button class="btn-main" id="b-mp" style="background:linear-gradient(180deg,#5ee8ff,#18a9d6);box-shadow:0 6px 0 #0b6d8c;color:#04203a">👥 Jugar en familia</button>
   <div class="row">
     <button id="b-cfg">⚙️ Ajustes</button>
     <button id="b-hist">🏆 Historial</button>
@@ -238,6 +239,8 @@ input.ans:focus{border-color:var(--cyan)}
     <label>Tic-tac del reloj <input type="checkbox" class="sw" id="c-tictac"></label>
     <label>Alerta en los últimos segundos <span><input type="range" id="c-alerta" min="0" max="20" step="1"> <span class="v" id="v-alerta"></span></span></label>
     <label>Vibración (Android) <input type="checkbox" class="sw" id="c-vibrar"></label>
+    <label>🗣 Leer consignas en voz alta <input type="checkbox" class="sw" id="c-voz"></label>
+    <label>Velocidad de la voz <span><input type="range" id="c-vozVel" min="0.7" max="1.5" step="0.05"> <span class="v" id="v-vozVel"></span></span></label>
     <button id="b-test-sound" style="margin-top:8px">🔊 Probar sonidos</button>
   </div>
   <div class="card">
@@ -279,9 +282,11 @@ input.ans:focus{border-color:var(--cyan)}
 <canvas class="confetti" id="confetti"></canvas>
 
 <script src="data.js"></script>
+<script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
 "use strict";
-const APP_VERSION = '1.0.0';
+const APP_VERSION = '2.0.0';
 const $ = s => document.querySelector(s);
 const LET = 'ABCDEFGHIJLMNÑOPQRSTUVXYZ'.split('');
 const B = window.BANCO;
@@ -298,7 +303,7 @@ const PRESET = {
 };
 const DEF = Object.assign({nivel:2,modo:'solo',nPrevios:3,pausaPaso:false,
   g:{cuatro:true,pista:true,encadenadas:true,anagramas:true},
-  sonido:true,vol:.8,tictac:true,alerta:10,vibrar:true}, PRESET[2]);
+  sonido:true,vol:.8,tictac:true,alerta:10,vibrar:true,voz:true,vozVel:1.05,nombre:''}, PRESET[2]);
 let cfg = Object.assign({}, DEF, LS.get('cfg', {}));
 cfg.g = Object.assign({}, DEF.g, cfg.g||{});
 const saveCfg = () => LS.set('cfg', cfg);
@@ -332,6 +337,7 @@ const SFX = {
     if(!this.ctx){ const C = window.AudioContext||window.webkitAudioContext; if(!C) return;
       this.ctx = new C(); this.master = this.ctx.createGain(); this.master.connect(this.ctx.destination); }
     if(this.ctx.state === 'suspended') this.ctx.resume();
+    if(!this._v){ this._v=1; VOZ.unlock(); }
     // desbloqueo iOS: buffer silencioso
     const b = this.ctx.createBuffer(1,1,22050), s = this.ctx.createBufferSource(); s.buffer=b; s.connect(this.ctx.destination); s.start(0);
   },
@@ -387,6 +393,21 @@ class Clock {
   stop(){ this.running=false; clearInterval(this.iv); }
   add(s){ this.left += s; this.lastWhole = Math.ceil(this.left); this.onTick(this.left); }
 }
+/* ---------- voz (lectura de consignas) ---------- */
+const LNAME={A:'a',B:'be',C:'ce',D:'de',E:'e',F:'efe',G:'ge',H:'hache',I:'i',J:'jota',L:'ele',M:'eme',N:'ene','Ñ':'eñe',O:'o',P:'pe',Q:'cu',R:'erre',S:'ese',T:'te',U:'u',V:'ve',X:'equis',Y:'ye',Z:'zeta'};
+const VOZ = {
+  v:null, ok:'speechSynthesis' in window,
+  pick(){ if(!this.ok) return; const vs=speechSynthesis.getVoices(); const pref=[/es[-_]CL/i,/es[-_](419|MX|US|AR|CO)/i,/es[-_]ES/i,/^es/i];
+    for(const r of pref){ const v=vs.find(v=>r.test(v.lang)); if(v){ this.v=v; return; } } },
+  unlock(){ if(!this.ok) return; this.pick(); try{ const u=new SpeechSynthesisUtterance(' '); u.volume=0; speechSynthesis.speak(u); }catch(e){} },
+  say(t, interrupt=true){ if(!this.ok || !cfg.sonido || !t) return; try{ if(interrupt) speechSynthesis.cancel(); if(!this.v) this.pick();
+    const u=new SpeechSynthesisUtterance(t); u.lang=this.v?this.v.lang:'es-ES'; if(this.v) u.voice=this.v; u.rate=cfg.vozVel||1.05; u.volume=Math.min(1,cfg.vol+.2); speechSynthesis.speak(u); }catch(e){} },
+  stop(){ if(this.ok) try{ speechSynthesis.cancel(); }catch(e){} }
+};
+if(VOZ.ok) speechSynthesis.onvoiceschanged = () => VOZ.pick();
+const say = t => { if(cfg.voz) VOZ.say(t); };
+const letraTxt = p => (p.t==='e' ? 'Con la ' : 'Contiene la ') + LNAME[p.l] + '. ' + p.d;
+
 function timerClass(el, left){ el.classList.toggle('crit', left<=5); el.classList.toggle('low', left>5 && left<=cfg.alerta); }
 
 /* ---------- navegación ---------- */
@@ -443,8 +464,8 @@ function nextStage(){
     $('#intro-ico').textContent = g.ico; $('#intro-title').textContent = g.name;
     $('#intro-rules').innerHTML = esc(g.rules) + `<br><br><span class="mut">Duración: ${cfg.tPrevio}s · ${cfg.modo==='solo'?'Modo solo':'Modo presentador'}</span>`;
     $('#b-intro-go').textContent = '¡Vamos!';
-    $('#b-intro-go').onclick = () => countdown(()=>runPrevio(k));
-    show('intro'); SFX.whoosh();
+    $('#b-intro-go').onclick = () => { VOZ.stop(); countdown(()=>runPrevio(k)); };
+    show('intro'); SFX.whoosh(); setTimeout(()=>say(g.name + '. ' + g.rules), 500);
   } else {
     $('#intro-step').textContent = 'Gran final';
     $('#intro-bank').textContent = `Bolsa: +${G.earned}s`;
@@ -452,8 +473,8 @@ function nextStage(){
     const tot = cfg.tRosco + G.earned;
     $('#intro-rules').innerHTML = `Tienes <b style="color:var(--gold)">${fmt(tot)}</b> para completar las 25 letras<br><span class="mut">${cfg.tRosco}s base + ${G.earned}s ganados</span><br><br>Responde o di «paso» para dejar la letra para la siguiente vuelta.${cfg.penal?`<br>Cada error resta ${cfg.penal}s.`:''}`;
     $('#b-intro-go').textContent = '¡Al rosco!';
-    $('#b-intro-go').onclick = () => countdown(runRosco);
-    show('intro'); SFX.whoosh();
+    $('#b-intro-go').onclick = () => { VOZ.stop(); countdown(runRosco); };
+    show('intro'); SFX.whoosh(); setTimeout(()=>say(`El rosco. Tienes ${tot} segundos para completar las veinticinco letras.`), 500);
   }
 }
 function countdown(cb){
@@ -524,6 +545,7 @@ function renderCuatro(it){
     afterItem(right?'ok':'bad', null);
   });
   body.querySelector('[data-a=pass]').onclick=()=>{ body.querySelector(`[data-i="${it.c}"]`).classList.add('right'); afterItem('pass', null); };
+  say(it.p + ' ' + it.o.map((o,i)=>'ABCD'[i].toLowerCase()+': '+o).join('. '));
 }
 function renderPista(it){
   const body=$('#prev-body'); let shown=1;
@@ -531,7 +553,8 @@ function renderPista(it){
   const draw=()=>{ $('#clues').innerHTML = it.h.map((h,i)=> i<shown ? `<div class="clue">${i+1}. ${esc(h)}</div>` : `<div class="clue hid">Pista ${i+1} · ${cfg.segAcierto + (4-i-1)*2}s</div>`).join('');
     body.querySelector('[data-a=more]').disabled = shown>=4; };
   draw();
-  body.querySelector('[data-a=more]').onclick=()=>{ if(shown<4){ shown++; draw(); SFX.tone(880,.08,'sine',.2); } };
+  body.querySelector('[data-a=more]').onclick=()=>{ if(shown<4){ shown++; draw(); SFX.tone(880,.08,'sine',.2); say(it.h[shown-1]); } };
+  say('Primera pista: ' + it.h[0]);
   answerPanel($('#pans'), it.r, r => afterItem(r, it.r[0], cfg.segAcierto + (4-shown)*2));
 }
 function scramble(w){ const L=norm(w).toUpperCase().split(''); let s; let n=0; do{ s=shuffle(L); n++; }while(s.join('')===L.join('') && n<20); return s; }
@@ -540,6 +563,7 @@ function renderAnagrama(it){
   body.innerHTML = `<div class="card"><div class="tiles">${scramble(it.r).map(c=>`<div class="tile">${c}</div>`).join('')}</div>
     <p class="mut" style="text-align:center;margin-top:12px">💡 ${esc(it.h)} · ${norm(it.r).length} letras</p></div><div id="pans"></div>`;
   answerPanel($('#pans'), [it.r], r => afterItem(r, it.r));
+  say(it.h + '. ' + norm(it.r).length + ' letras.');
 }
 function renderChain(){
   if(!P.chain || P.wi >= P.chain.w.length){
@@ -552,6 +576,7 @@ function renderChain(){
   const body=$('#prev-body');
   body.innerHTML = `<div class="card">${prev}<div style="margin:10px 0 6px">Empieza con <span class="syl" style="font-size:26px">${esc(start)}</span></div><div class="q">${esc(w.d)}</div>
     <p class="mut small">Palabra ${P.wi+1} de ${c.w.length}</p></div><div id="pans"></div>`;
+  say('Empieza con ' + start.toLowerCase() + '. ' + w.d);
   answerPanel($('#pans'), [w.r], r => {
     if(r==='ok'){ P.ok++; SFX.ok(); vib(30); earn(cfg.segAcierto); }
     else { if(r==='bad'){ P.bad++; SFX.bad(); } else SFX.pass(); const d=document.createElement('div'); d.className='reveal'; d.textContent=w.r; body.prepend(d); }
@@ -561,7 +586,7 @@ function renderChain(){
   });
 }
 function endPrevio(){
-  if(!P) return; P.clock.stop();
+  if(!P) return; P.clock.stop(); VOZ.stop();
   const p=P; P=null;
   G.perGame.push({k:p.key, ok:p.ok, bad:p.bad, s:p.earned});
   $('#psum-title').textContent = GAMES[p.key].name;
@@ -597,6 +622,7 @@ function showLetter(){
   const i=R.q[0], p=R.p[i]; drawRing();
   const tag=$('#r-tag'); tag.textContent = (p.t==='e'?'EMPIEZA CON ':'CONTIENE LA ') + p.l; tag.className = 'tag'+(p.t==='c'?' c':'');
   $('#r-def').textContent = p.d;
+  say(letraTxt(p));
   answerPanel($('#r-ans'), p.r, res => onRosco(res), {passLabel:'¡Paso!'});
 }
 function onRosco(res){
@@ -613,7 +639,7 @@ function onRosco(res){
   setTimeout(()=>{ if(R && !R.ended && R.clock.running) showLetter(); }, res==='bad' ? 1300 : 450);
 }
 function endRosco(why){
-  if(!R || R.ended) return; R.ended=true; R.clock.stop(); keepAwake(false);
+  if(!R || R.ended) return; R.ended=true; R.clock.stop(); keepAwake(false); VOZ.stop();
   const ok=R.state.filter(s=>s==='ok').length, bad=R.state.filter(s=>s==='bad').length, pen=25-ok-bad;
   const left=Math.max(0,Math.ceil(R.clock.left));
   const full = ok===25;
@@ -639,28 +665,28 @@ function endRosco(why){
 /* ---------- pausa / abandonar ---------- */
 function activeClock(){ return (P && P.clock) || (R && !R.ended && R.clock) || null; }
 let pausedClock=null;
-function pause(){ const c=activeClock(); if(!c || !c.running) return; c.stop(); pausedClock=c; $('#ov-pause').classList.add('on'); }
+function pause(){ const c=activeClock(); if(!c || !c.running) return; c.stop(); VOZ.stop(); pausedClock=c; $('#ov-pause').classList.add('on'); }
 function resume(){ $('#ov-pause').classList.remove('on'); SFX.init(); if(pausedClock){ pausedClock.start(); pausedClock=null; } if(R && !R.ended){ const inp=$('#r-ans input'); if(inp) inp.focus(); } }
 function quit(){
   $('#ov-pause').classList.remove('on');
   if(P){ P.clock.stop(); P=null; } if(R){ R.clock.stop(); R.ended=true; R=null; }
-  G=null; pausedClock=null; keepAwake(false); renderHome(); show('home');
+  G=null; pausedClock=null; keepAwake(false); VOZ.stop(); renderHome(); show('home');
 }
 document.addEventListener('visibilitychange', ()=>{ if(document.hidden) pause(); });
 
 /* ---------- ajustes ---------- */
-const RANGES = {tRosco:v=>v+'s', tPrevio:v=>v+'s', segAcierto:v=>'+'+v+'s', penal:v=>v?'−'+v+'s':'No', nPrevios:v=>v, vol:v=>Math.round(v*100)+'%', alerta:v=>v?v+'s':'No'};
+const RANGES = {tRosco:v=>v+'s', tPrevio:v=>v+'s', segAcierto:v=>'+'+v+'s', penal:v=>v?'−'+v+'s':'No', nPrevios:v=>v, vol:v=>Math.round(v*100)+'%', alerta:v=>v?v+'s':'No', vozVel:v=>v.toFixed(2)+'×'};
 function renderCfg(){
   for(const k in RANGES){ const el=$('#c-'+k); el.value=cfg[k]; $('#v-'+k).textContent=RANGES[k](+cfg[k]);
     el.oninput=()=>{ cfg[k]=+el.value; $('#v-'+k).textContent=RANGES[k](cfg[k]); saveCfg(); }; }
-  ['sonido','tictac','vibrar','pausaPaso'].forEach(k=>{ const el=$('#c-'+k); el.checked=!!cfg[k]; el.onchange=()=>{ cfg[k]=el.checked; saveCfg(); }; });
+  ['sonido','tictac','vibrar','pausaPaso','voz'].forEach(k=>{ const el=$('#c-'+k); el.checked=!!cfg[k]; el.onchange=()=>{ cfg[k]=el.checked; saveCfg(); }; });
   Object.keys(GAMES).forEach(k=>{ const el=$('#c-g-'+k); el.checked=!!cfg.g[k]; el.onchange=()=>{ cfg.g[k]=el.checked; saveCfg(); }; });
   const t=$('#c-tolerancia'); t.value=cfg.tolerancia; t.onchange=()=>{ cfg.tolerancia=+t.value; saveCfg(); };
   const tot=n=>roscosDe(n).length, fr=n=>roscosDe(n).filter(r=>!used[r.id]).length;
   $('#cfg-bank').innerHTML = `Roscos sin jugar: Fácil <b>${fr(1)}/${tot(1)}</b> · Medio <b>${fr(2)}/${tot(2)}</b> · Difícil <b>${fr(3)}/${tot(3)}</b><br>Preguntas de juegos previos: ${['cuatro','pista','encadenadas','anagramas'].reduce((a,k)=>a+B[k].length,0)} (se reciclan al agotarse)`;
   $('#cfg-ver').textContent = `Versión ${APP_VERSION} · banco v${B.version}`;
 }
-$('#b-test-sound').onclick=()=>{ SFX.init(); SFX.ok(); setTimeout(()=>SFX.bad(),700); setTimeout(()=>SFX.pass(),1400); setTimeout(()=>{SFX.tick(0,0);},2000); setTimeout(()=>{SFX.tick(1,0);},2500); setTimeout(()=>SFX.tick(0,1),3000); setTimeout(()=>SFX.tick(0,2),3500); setTimeout(()=>SFX.alarm(),4200); };
+$('#b-test-sound').onclick=()=>{ SFX.init(); SFX.ok(); setTimeout(()=>SFX.bad(),700); setTimeout(()=>SFX.pass(),1400); setTimeout(()=>{SFX.tick(0,0);},2000); setTimeout(()=>{SFX.tick(1,0);},2500); setTimeout(()=>SFX.tick(0,1),3000); setTimeout(()=>SFX.tick(0,2),3500); setTimeout(()=>SFX.alarm(),4200); setTimeout(()=>VOZ.say('Con la a. Insecto que fabrica miel y vive en colmenas.'),5600); };
 $('#b-reset-bank').onclick=()=>{ if(confirm('¿Marcar todos los roscos y preguntas como no jugados?')){ used={}; LS.set('used',used); renderCfg(); toast('Banco reiniciado'); } };
 $('#b-preset').onclick=()=>{ Object.assign(cfg, PRESET[cfg.nivel]); saveCfg(); renderCfg(); toast('Valores de '+LVL[cfg.nivel]+' restaurados'); };
 
@@ -706,5 +732,6 @@ document.addEventListener('click', ()=>SFX.init(), {once:true});
 renderHome();
 if('serviceWorker' in navigator && location.protocol.startsWith('http')) navigator.serviceWorker.register('sw.js').catch(()=>{});
 </script>
+<script src="multi.js"></script>
 </body>
 </html>

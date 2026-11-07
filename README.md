@@ -2,6 +2,12 @@
 
 Juego de palabras para el celular: juegos previos aleatorios que suman segundos y un rosco final de 25 letras.
 
+- **Jugar solo**: modo escribir o modo presentador.
+- **Jugar en familia**: un teléfono crea la sala (código de 4 letras o QR) y los demás se unen desde el enlace. Todos responden a la vez; en cada ronda se elimina a los últimos (con desempate) hasta que quedan 2 para el rosco final por turnos.
+- **Voz**: las consignas se leen en voz alta (configurable: solo en el anfitrión o en todos los teléfonos).
+
+La conexión entre teléfonos es directa (WebRTC con PeerJS); el servidor público de PeerJS solo se usa para el primer contacto, así que se necesita internet. El teléfono anfitrión debe mantener la pantalla encendida.
+
 ## Publicar en GitHub Pages
 1. Crea el repo `rosco` en GitHub y sube todos estos archivos a la raíz.
 2. Settings → Pages → Source: *Deploy from a branch* → `main` / `(root)` → Save.
