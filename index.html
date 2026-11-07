@@ -151,13 +151,78 @@ input.ans::placeholder{color:rgba(168,155,212,.55)}
 .kicker{display:inline-flex;align-items:center;gap:8px;color:var(--mut);font-size:14px;font-weight:500}
 .kicker svg.i{width:16px;height:16px}
 /* inicio */
-.home-hero{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;padding:14px 0 6px}
-.home-hero .disc{width:132px;height:132px}
-.home-hero .disc svg{width:100%;height:100%;animation:spin 40s linear infinite}
-.home-hero .disc text{display:none}
-.home-hero .disc .rl:first-of-type circle{fill:var(--lemon);stroke:#fff6c2}
-.home-hero p{color:var(--mut);max-width:30ch}
-.home-links{display:flex;justify-content:center;gap:4px;flex-wrap:wrap}
+.ios-browser #app{padding-top:calc(env(safe-area-inset-top) + 76px)}
+.brand{display:flex;align-items:center;gap:10px}
+.brand .mark{width:34px;height:34px;animation:spin 30s linear infinite;overflow:visible}
+.brand .mark text{display:none}
+.brand .mark .rl:first-of-type circle{fill:var(--lemon);stroke:#fff6c2}
+.wordmark{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-.01em}
+.home-lead{font-family:var(--display);font-weight:600;font-size:30px;line-height:1.08;margin:14px 0 2px;letter-spacing:-.02em}
+.play-card{position:relative;display:flex;align-items:flex-end;justify-content:space-between;gap:12px;text-align:left;border-radius:30px;padding:22px;min-height:200px;max-height:290px;flex:1 1 auto;overflow:hidden;width:100%}
+@media (max-height:700px){.play-card{min-height:178px}.home-lead{font-size:25px;margin-top:8px}}
+.play-card:active{transform:scale(.98)}
+.play-card.solo{background:var(--lemon);color:var(--lemon-ink);border:0;box-shadow:0 18px 50px -24px rgba(255,225,77,.7)}
+.play-card.fam{background:linear-gradient(155deg,#33206f 0%,#211247 60%);border:1px solid rgba(255,225,77,.42);color:var(--ink)}
+.pc-art{position:absolute;pointer-events:none}
+.solo .pc-art{right:-140px;top:-160px;width:300px;height:300px}
+.fam .pc-art{left:14px;top:16px;width:230px;height:60px}
+.pc-txt{position:relative;display:flex;flex-direction:column;gap:7px;max-width:76%}
+.pc-t{font-family:var(--display);font-weight:800;font-size:27px;line-height:1;letter-spacing:-.02em}
+.pc-d{font-size:15px;font-weight:500;line-height:1.35;opacity:.78}
+.pc-go{position:relative;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;flex:0 0 54px;background:var(--lemon-ink);color:var(--lemon)}
+.fam .pc-go{background:var(--lemon);color:var(--lemon-ink)}
+.pc-go svg.i{width:22px;height:22px;stroke-width:2}
+.art-solo .rl circle{fill:#1d0f3d;stroke:none}
+.art-solo .rl text{fill:var(--lemon);font-size:13px}
+.art-solo .rl.ok circle{fill:#127a55}.art-solo .rl.ok text{fill:#d8ffef}
+.art-solo .rl.bad circle{fill:#c0283f}.art-solo .rl.bad text{fill:#ffe3e8}
+.art-solo .rl.now circle{fill:#fff;stroke:#1d0f3d;stroke-width:1.5}.art-solo .rl.now text{fill:#1d0f3d}
+.art-solo .rtrack{stroke:rgba(29,15,61,.25)}
+.art-solo .spin{transform-origin:150px 150px;animation:sway 7s ease-in-out infinite alternate}
+@keyframes sway{from{transform:rotate(-7deg)}to{transform:rotate(7deg)}}
+.fam-av circle{fill:#1d1142;stroke:var(--hair2);stroke-width:1}
+.fam-av text{fill:var(--mut);font-family:var(--display);font-weight:600;font-size:15px;text-anchor:middle;dominant-baseline:central}
+.fam-av.out{opacity:.45}.fam-av.out line{stroke:var(--coral);stroke-width:1.5}
+.fam-av.fin circle{fill:var(--lemon);stroke:none}.fam-av.fin text{fill:var(--lemon-ink)}
+.fam-arc{fill:none;stroke:var(--lemon);stroke-width:1;stroke-dasharray:3 4;animation:dash 1.6s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-14}}
+.install-hint{text-align:center;color:var(--mut);font-size:13.5px;border:1px dashed var(--hair2);border-radius:16px;padding:10px 14px}
+.dock{margin-top:6px;display:flex;justify-content:space-around;border:1px solid var(--hair);border-radius:26px;padding:6px;background:rgba(255,255,255,.03)}
+.dock button{flex-direction:column;gap:4px;background:transparent;border:0;font-size:12.5px;font-weight:500;color:var(--mut);padding:9px 16px;border-radius:20px;flex:1}
+.dock button:active{background:rgba(255,255,255,.06);color:var(--ink)}
+.dock svg.i{width:23px;height:23px}
+/* configuración de partida solo */
+.opt-list{display:grid;gap:8px}
+.opt{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:4px 14px;text-align:left;border-radius:20px;padding:14px 16px;background:transparent;border:1px solid var(--hair)}
+.opt .o-t{font-family:var(--display);font-weight:600;font-size:17px}
+.opt .o-d{grid-column:2;font-size:14px;color:var(--mut);font-weight:500}
+.opt .o-c{grid-row:1/3;grid-column:3;font-size:13px;color:var(--mut);font-weight:500;text-align:right}
+.opt .meter{grid-row:1/3;display:flex;gap:3px;align-items:flex-end;height:22px}
+.opt .meter i{width:6px;border-radius:3px;background:var(--hair2)}
+.opt .meter i:nth-child(1){height:8px}.opt .meter i:nth-child(2){height:15px}.opt .meter i:nth-child(3){height:22px}
+.opt .meter i.on{background:var(--lemon)}
+.opt.sel{border-color:var(--lemon);background:rgba(255,225,77,.07)}
+.opt-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.tile-opt{flex-direction:column;align-items:flex-start;text-align:left;gap:8px;border-radius:20px;padding:16px;background:transparent;border:1px solid var(--hair)}
+.tile-opt svg.i{width:26px;height:26px;color:var(--lemon)}
+.tile-opt .o-t{font-family:var(--display);font-weight:600;font-size:15px}
+.tile-opt .o-d{font-size:13.5px;color:var(--mut);font-weight:500;line-height:1.3}
+.tile-opt.sel{border-color:var(--lemon);background:rgba(255,225,77,.07)}
+.sec-t{font-size:14px;color:var(--mut);font-weight:500;margin:8px 0 -4px}
+/* rosco en espera (pantalla de lanzamiento) */
+.splash.idle .sp-ring .rl{opacity:1;animation:none;transform:none}
+.splash.idle .sp-ring .rl circle{transition:fill .35s,stroke .35s}
+.splash.idle .sp-ring .rl.s-ok circle{fill:var(--mint);stroke:#bff7e1}.splash.idle .sp-ring .rl.s-ok text{fill:#04271a}
+.splash.idle .sp-ring .rl.s-bad circle{fill:var(--coral);stroke:#ffc2cc}.splash.idle .sp-ring .rl.s-bad text{fill:#2b0610}
+.splash.idle .sp-ring .rl.s-cur circle{fill:var(--lemon);stroke:#fff6c2}.splash.idle .sp-ring .rl.s-cur text{fill:var(--lemon-ink)}
+.splash.idle .sp-ring .rl.s-cur{animation:cur .45s infinite alternate;filter:drop-shadow(0 0 7px rgba(255,225,77,.85))}
+.splash.idle.party .sp-ring .rl circle{animation:chase .55s ease-out;animation-delay:calc(var(--i) * 30ms)}
+.sp-word{position:relative;height:30px;margin-top:10px;font-family:var(--display);font-weight:600;font-size:19px;color:var(--ink);display:flex;align-items:center;gap:10px;opacity:0;transition:opacity .4s}
+.sp-word.on{opacity:1}
+.sp-word .lt{color:var(--lemon)}
+.sp-word .caret{width:2px;height:20px;background:var(--lemon);animation:blink .8s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.sp-word.good{color:var(--mint)}.sp-word.bad{color:var(--coral);text-decoration:line-through;text-decoration-thickness:1.5px}
 /* pantalla de lanzamiento */
 .splash{position:fixed;inset:0;z-index:50;background:var(--night);display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;cursor:pointer}
 .splash::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 40% at 50% 45%,rgba(124,82,255,.45),transparent 70%)}
@@ -217,6 +282,7 @@ input.ans::placeholder{color:rgba(168,155,212,.55)}
 <symbol id="i-redo" viewBox="0 0 24 24"><path d="M4.5 12a7.5 7.5 0 1 0 2.4-5.5M4.5 4.5v4h4"/></symbol>
 <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20l4-1 11-11-3-3L5 16z"/></symbol>
 <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></symbol>
+<symbol id="i-back" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
 <symbol id="i-crown" viewBox="0 0 24 24"><path d="M4 8l4 4 4-6 4 6 4-4-1.5 10h-13z"/></symbol>
 </svg>
 <div class="splash" id="splash" role="button" aria-label="Tocar para empezar">
@@ -228,35 +294,44 @@ input.ans::placeholder{color:rgba(168,155,212,.55)}
     </div>
   </div>
   <p class="sp-sub">25 letras, un reloj y toda la familia</p>
+  <div class="sp-word" id="sp-word" aria-hidden="true"></div>
   <div class="sp-cta"><button class="btn-main" id="sp-go" tabindex="0"><svg class="i"><use href="#i-play"/></svg>Tocar para empezar</button></div>
 </div>
 <div id="app">
 
 <!-- HOME -->
 <section class="screen on" id="s-home">
-  <div class="home-hero">
-    <div class="disc"><svg viewBox="-10 -10 320 320" id="home-disc"></svg></div>
-    <h1>El Rosco</h1>
-    <p>Gana segundos en los juegos previos y gástalos en el rosco final.</p>
-  </div>
-  <div class="card">
-    <h3>Dificultad</h3>
-    <div class="chips" id="home-lvl"></div>
-    <p class="mut small" style="margin-top:10px" id="home-avail"></p>
-  </div>
-  <div class="card">
-    <h3>Cómo responde el jugador</h3>
-    <div class="chips" id="home-mode"></div>
-    <p class="mut small" style="margin-top:10px" id="home-mode-txt"></p>
-  </div>
-  <button class="btn-main" id="b-play"><svg class="i"><use href="#i-play"/></svg>Jugar solo</button>
-  <button class="btn-alt" id="b-mp"><svg class="i"><use href="#i-people"/></svg>Jugar en familia</button>
-  <div class="home-links">
-    <button class="btn-ghost" id="b-cfg"><svg class="i"><use href="#i-sliders"/></svg>Ajustes</button>
-    <button class="btn-ghost" id="b-hist"><svg class="i"><use href="#i-trophy"/></svg>Historial</button>
-    <button class="btn-ghost" id="b-help"><svg class="i"><use href="#i-help"/></svg>Cómo se juega</button>
-  </div>
+  <header class="brand"><svg class="mark" viewBox="-10 -10 320 320" id="home-disc"></svg><span class="wordmark">El Rosco</span></header>
+  <h1 class="home-lead">¿A qué jugamos hoy?</h1>
+  <button class="play-card solo" id="b-solo">
+    <svg class="pc-art art-solo" viewBox="0 0 300 300" id="art-solo"></svg>
+    <span class="pc-txt"><span class="pc-t">Jugar solo</span><span class="pc-d">Gana segundos en los juegos previos y gástalos en el rosco.</span></span>
+    <span class="pc-go"><svg class="i"><use href="#i-play"/></svg></span>
+  </button>
+  <button class="play-card fam" id="b-mp">
+    <svg class="pc-art" viewBox="0 0 250 120" id="art-fam"></svg>
+    <span class="pc-txt"><span class="pc-t">Jugar en familia</span><span class="pc-d">Cada uno en su celular. Se eliminan jugadores hasta que quedan dos.</span></span>
+    <span class="pc-go"><svg class="i"><use href="#i-people"/></svg></span>
+  </button>
+  <p class="install-hint" id="install-hint" hidden>Para instalarla, toca Compartir en Safari y elige «Agregar a inicio».</p>
+  <nav class="dock" aria-label="Accesos">
+    <button id="b-hist"><svg class="i"><use href="#i-trophy"/></svg><span>Ranking</span></button>
+    <button id="b-cfg"><svg class="i"><use href="#i-sliders"/></svg><span>Ajustes</span></button>
+    <button id="b-help"><svg class="i"><use href="#i-help"/></svg><span>Ayuda</span></button>
+  </nav>
+</section>
+
+<!-- CONFIGURAR PARTIDA SOLO -->
+<section class="screen" id="s-solo">
+  <div class="top"><button class="icon" id="b-solo-back" aria-label="Volver"><svg class="i"><use href="#i-back"/></svg></button><h2 style="flex:1">Jugar solo</h2></div>
+  <p class="sec-t">Dificultad</p>
+  <div class="opt-list" id="home-lvl"></div>
+  <p class="mut small" id="home-avail"></p>
+  <p class="sec-t">Quién lee y corrige</p>
+  <div class="opt-grid" id="home-mode"></div>
+  <p class="mut small" id="home-prev"></p>
   <div class="spacer"></div>
+  <button class="btn-main" id="b-play"><svg class="i"><use href="#i-play"/></svg>Empezar partida</button>
 </section>
 
 <!-- INTRO PREVIO -->
@@ -400,7 +475,7 @@ input.ans::placeholder{color:rgba(168,155,212,.55)}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
 "use strict";
-const APP_VERSION = '2.1.0';
+const APP_VERSION = '2.2.0';
 const $ = s => document.querySelector(s);
 const LET = 'ABCDEFGHIJLMNÑOPQRSTUVXYZ'.split('');
 const B = window.BANCO;
@@ -538,12 +613,16 @@ function ringSVG(r=130, cr=14){ let h=`<circle class="rtrack" cx="150" cy="150" 
     h+=`<g class="rl" style="--i:${i}"><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${cr}"/><text x="${x.toFixed(1)}" y="${(y+.5).toFixed(1)}">${l}</text></g>`; });
   return h; }
 function roscosDe(n){ return B.roscos.filter(r=>r.nivel===n); }
+const LVL_D = {1:'Palabras de todos los días',2:'Cultura general',3:'Para expertos en palabras'};
 function renderHome(){
-  $('#home-lvl').innerHTML = [1,2,3].map(n=>`<button class="chip ${cfg.nivel===n?'sel':''}" data-n="${n}">${LVL[n]}</button>`).join('');
-  $('#home-mode').innerHTML = [['solo',ic('pen')+'Escribiendo'],['presentador',ic('mic')+'Presentador']].map(([k,t])=>`<button class="chip ${cfg.modo===k?'sel':''}" data-m="${k}">${t}</button>`).join('');
-  $('#home-mode-txt').textContent = cfg.modo==='solo' ? 'Escribes tus respuestas y el juego las corrige.' : 'Otra persona lee las definiciones y marca aciertos y errores.';
+  $('#home-lvl').innerHTML = [1,2,3].map(n=>{ const all=roscosDe(n), free=all.filter(r=>!used[r.id]).length;
+    return `<button class="opt ${cfg.nivel===n?'sel':''}" data-n="${n}"><span class="meter">${[1,2,3].map(k=>`<i class="${k<=n?'on':''}"></i>`).join('')}</span><span class="o-t">${LVL[n]}</span><span class="o-c">${free} de ${all.length}<br>sin jugar</span><span class="o-d">${LVL_D[n]}</span></button>`; }).join('');
+  $('#home-mode').innerHTML = [['solo','pen','Yo mismo','Escribo y el juego corrige'],['presentador','mic','Presentador','Otra persona lee y marca']].map(([k,i,t,d])=>`<button class="tile-opt ${cfg.modo===k?'sel':''}" data-m="${k}">${ic(i)}<span class="o-t">${t}</span><span class="o-d">${d}</span></button>`).join('');
   const all = roscosDe(cfg.nivel), free = all.filter(r=>!used[r.id]).length;
-  $('#home-avail').innerHTML = free ? `Te quedan <b>${free} de ${all.length}</b> roscos sin jugar en este nivel.` : `Ya jugaste todos los roscos de nivel ${LVL[cfg.nivel]}. Pide una nueva tanda o reinicia el banco en Ajustes.`;
+  $('#home-avail').innerHTML = free ? '' : `Ya jugaste todos los roscos de este nivel. Pide una nueva tanda o reinicia el banco en Ajustes.`;
+  const np = Math.min(cfg.nPrevios, Object.keys(cfg.g).filter(k=>cfg.g[k]).length);
+  $('#home-prev').textContent = np ? `Antes del rosco juegas ${np} ${np===1?'juego previo':'juegos previos'} al azar. Puedes cambiarlo en Ajustes.` : 'Vas directo al rosco, sin juegos previos.';
+  $('#b-play').disabled = !free;
   $('#home-lvl').querySelectorAll('button').forEach(b=>b.onclick=()=>{ cfg.nivel=+b.dataset.n; Object.assign(cfg, PRESET[cfg.nivel]); saveCfg(); renderHome(); });
   $('#home-mode').querySelectorAll('button').forEach(b=>b.onclick=()=>{ cfg.modo=b.dataset.m; saveCfg(); renderHome(); });
 }
@@ -852,6 +931,21 @@ document.addEventListener('click', ()=>SFX.init(), {once:true});
 
 renderHome();
 $('#home-disc').innerHTML = ringSVG();
+$('#b-solo').onclick = () => { renderHome(); show('solo'); };
+$('#b-solo-back').onclick = () => show('home');
+(function cardArt(){
+  // arco del rosco para "Jugar solo"
+  const st = {12:'ok',13:'ok',14:'ok',15:'bad',16:'ok',17:'now'};
+  let h='<circle class="rtrack" cx="150" cy="150" r="118" fill="none"/>';
+  LET.forEach((l,i)=>{ const a=-Math.PI/2+i*2*Math.PI/25, x=150+118*Math.cos(a), y=150+118*Math.sin(a);
+    h+=`<g class="rl ${st[i]||''}"><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="15"/><text x="${x.toFixed(1)}" y="${(y+.5).toFixed(1)}">${l}</text></g>`; });
+  $('#art-solo').innerHTML = `<g class="spin">${h}</g>`;
+  // jugadores que se eliminan hasta la final
+  const av=[['A',24,34,'out'],['B',78,34,'fin'],['C',132,34,'out'],['D',186,34,'fin']];
+  $('#art-fam').setAttribute('viewBox','0 0 250 65');
+  $('#art-fam').innerHTML = av.map(([t,x,y,c])=>`<g class="fam-av ${c}"><circle cx="${x}" cy="${y}" r="21"/><text x="${x}" y="${y+.5}">${t}</text>${c==='out'?`<line x1="${x-15}" y1="${y+15}" x2="${x+15}" y2="${y-15}"/>`:''}</g>`).join('');
+})();
+if(navigator.standalone===false){ document.documentElement.classList.add('ios-browser'); $('#install-hint').hidden=false; }
 
 /* ---------- pantalla de lanzamiento ---------- */
 (function splash(){
@@ -865,8 +959,26 @@ $('#home-disc').innerHTML = ringSVG();
   word($('#sp-w1'),'El',0); word($('#sp-w2'),'Rosco',2);
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(!reduce){ setTimeout(()=>sp.classList.add('chase'), 1700); setTimeout(()=>{ sp.classList.remove('chase'); }, 2900); }
-  let gone=false;
-  const go = () => { if(gone) return; gone=true;
+  let gone=false, idleT=null;
+  /* modo demostración: el rosco se juega solo hasta que alguien toca */
+  const gs=[...$('#sp-ring').querySelectorAll('.rl')], wordEl=$('#sp-word');
+  let ro=null, i=0, round=0;
+  const later=(f,ms)=>{ idleT=setTimeout(()=>{ if(!gone) f(); }, ms); };
+  const newRound=()=>{ const pool=B.roscos.filter(r=>r.nivel===1+(round%3)); ro=pool[Math.random()*pool.length|0]; i=0; round++;
+    gs.forEach(g=>g.classList.remove('s-ok','s-bad','s-cur')); step(); };
+  const step=()=>{
+    if(i>=25){ wordEl.classList.remove('on'); sp.classList.add('party'); later(()=>{ sp.classList.remove('party'); later(newRound, 500); }, 1600); return; }
+    const g=gs[i], it=ro.p[i], w=it.r[0], good=Math.random()<.82;
+    g.classList.add('s-cur');
+    wordEl.className='sp-word on'; wordEl.innerHTML=`<span class="lt">${it.l}</span><span class="w"></span><span class="caret"></span>`;
+    const wEl=wordEl.querySelector('.w'), shown = good ? w : (w.length>4 ? w.slice(0,3)+'…' : '¿?');
+    let k=0; const type=()=>{ if(gone) return; if(k<shown.length){ wEl.textContent=shown.slice(0,++k); idleT=setTimeout(type, 70); }
+      else later(()=>{ g.classList.remove('s-cur'); g.classList.add(good?'s-ok':'s-bad'); wordEl.classList.add(good?'good':'bad');
+        const c=wordEl.querySelector('.caret'); if(c) c.remove(); i++; later(step, 520); }, 260); };
+    later(type, 180);
+  };
+  if(!reduce) later(()=>{ sp.classList.add('idle'); newRound(); }, 3300);
+  const go = () => { if(gone) return; gone=true; clearTimeout(idleT); sp.classList.remove('party'); gs.forEach(g=>g.classList.remove('s-ok','s-bad','s-cur')); wordEl.classList.remove('on');
     SFX.init(); SFX.sting && SFX.sting();
     sp.classList.add('lit'); setTimeout(()=>sp.classList.add('exit'), 120);
     setTimeout(()=>sp.remove(), reduce?50:950); };
