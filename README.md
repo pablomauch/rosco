@@ -8,10 +8,16 @@ Juego de palabras para el celular: juegos previos aleatorios que suman segundos 
 
 La conexión entre teléfonos es directa (WebRTC con PeerJS); el servidor público de PeerJS solo se usa para el primer contacto, así que se necesita internet. El teléfono anfitrión debe mantener la pantalla encendida.
 
+## Instalar en el teléfono
+Enlace: https://pablomauch.github.io/rosco/
+
+- **iPhone / iPad:** abrir el enlace en Safari → Compartir → «Agregar a pantalla de inicio».
+- **Android:** abrir el enlace en Chrome → botón «Instalar la app» en el inicio (o menú ⋮ → «Instalar app»). Manteniendo presionado el ícono aparecen accesos directos a Jugar solo y Jugar en familia.
+
+Instalada, se abre a pantalla completa como una app. El modo solo funciona sin internet; el modo en familia necesita conexión. En Android, el botón «atrás» pausa la partida o vuelve al inicio en lugar de cerrar la app.
+
 ## Publicar en GitHub Pages
-1. Crea el repo `rosco` en GitHub y sube todos estos archivos a la raíz.
-2. Settings → Pages → Source: *Deploy from a branch* → `main` / `(root)` → Save.
-3. Abre `https://<usuario>.github.io/rosco/` en Safari → Compartir → **Agregar a pantalla de inicio**.
+Settings → Pages → Source: *Deploy from a branch* → `main` / `(root)` → Save.
 
 ## Contenido
 - `data.json`: banco editable (roscos, Una de cuatro, La pista, Encadenadas, Letras desordenadas).

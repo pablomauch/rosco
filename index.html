@@ -187,6 +187,7 @@ input.ans::placeholder{color:rgba(168,155,212,.55)}
 .fam-arc{fill:none;stroke:var(--lemon);stroke-width:1;stroke-dasharray:3 4;animation:dash 1.6s linear infinite}
 @keyframes dash{to{stroke-dashoffset:-14}}
 .install-hint{text-align:center;color:var(--mut);font-size:13.5px;border:1px dashed var(--hair2);border-radius:16px;padding:10px 14px}
+.install-hint.btn{border:0;padding:0}
 .dock{margin-top:6px;display:flex;justify-content:space-around;border:1px solid var(--hair);border-radius:26px;padding:6px;background:rgba(255,255,255,.03)}
 .dock button{flex-direction:column;gap:4px;background:transparent;border:0;font-size:12.5px;font-weight:500;color:var(--mut);padding:9px 16px;border-radius:20px;flex:1}
 .dock button:active{background:rgba(255,255,255,.06);color:var(--ink)}
@@ -313,7 +314,7 @@ input.ans::placeholder{color:rgba(168,155,212,.55)}
     <span class="pc-txt"><span class="pc-t">Jugar en familia</span><span class="pc-d">Cada uno en su celular. Se eliminan jugadores hasta que quedan dos.</span></span>
     <span class="pc-go"><svg class="i"><use href="#i-people"/></svg></span>
   </button>
-  <p class="install-hint" id="install-hint" hidden>Para instalarla, toca Compartir en Safari y elige «Agregar a inicio».</p>
+  <div class="install-hint" id="install-hint" hidden></div>
   <nav class="dock" aria-label="Accesos">
     <button id="b-hist"><svg class="i"><use href="#i-trophy"/></svg><span>Ranking</span></button>
     <button id="b-cfg"><svg class="i"><use href="#i-sliders"/></svg><span>Ajustes</span></button>
@@ -455,7 +456,7 @@ input.ans::placeholder{color:rgba(168,155,212,.55)}
   <div class="card"><h3>La partida</h3><p>Primero juegas algunos <b>juegos previos</b>, elegidos al azar. Cada acierto suma segundos a tu <b>bolsa de tiempo</b>. Al final llega <b>el rosco</b>: una definición por cada letra, con el tiempo base más todo lo que ganaste.</p></div>
   <div class="card"><h3>El rosco</h3><p>«Empieza con» o «Contiene» la letra. Si no sabes, di <b>«paso»</b> y la letra vuelve en la siguiente vuelta. Termina cuando respondes todas o se acaba el tiempo. Completarlo sin errores es el gran premio.</p></div>
   <div class="card"><h3>Modos</h3><p><b>Solo:</b> escribes la respuesta; se aceptan tildes omitidas y pequeños errores según la tolerancia.<br><br><b>Presentador:</b> otra persona tiene el celular, lee en voz alta y marca bien o mal. Con «Ver respuesta» puede revisar sin que el jugador mire.</p></div>
-  <div class="card"><h3>Instalar en el iPhone</h3><p>Abre la página en Safari, toca Compartir y elige «Agregar a pantalla de inicio». Funciona sin internet. Si no escuchas sonidos, revisa el interruptor de silencio del iPhone.</p></div>
+  <div class="card"><h3>Instalar en el teléfono</h3><p><b>iPhone:</b> abre la página en Safari, toca Compartir y elige «Agregar a pantalla de inicio». Si no escuchas sonidos, revisa el interruptor de silencio.<br><br><b>Android:</b> abre la página en Chrome y toca «Instalar la app» en el inicio, o usa el menú ⋮ y elige «Instalar app». Si mantienes presionado el ícono, aparecen accesos directos a Jugar solo y Jugar en familia.<br><br>Una vez instalada, el modo solo funciona sin internet.</p></div>
 </section>
 
 </div>
@@ -475,7 +476,7 @@ input.ans::placeholder{color:rgba(168,155,212,.55)}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
 "use strict";
-const APP_VERSION = '2.2.0';
+const APP_VERSION = '2.3.0';
 const $ = s => document.querySelector(s);
 const LET = 'ABCDEFGHIJLMNÑOPQRSTUVXYZ'.split('');
 const B = window.BANCO;
@@ -601,7 +602,23 @@ const letraTxt = p => (p.t==='e' ? 'Con la ' : 'Contiene la ') + LNAME[p.l] + '.
 function timerClass(el, left){ el.classList.toggle('crit', left<=5); el.classList.toggle('low', left>5 && left<=cfg.alerta); }
 
 /* ---------- navegación ---------- */
-function show(id){ document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('on', s.id==='s-'+id)); window.scrollTo(0,0); }
+let curScreen='home';
+function show(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('on', s.id==='s-'+id)); window.scrollTo(0,0);
+  curScreen=id;
+  // historial para que el botón "atrás" de Android navegue dentro de la app en vez de cerrarla
+  try{ if(id!=='home'){ if(!(history.state && history.state.r)) history.pushState({r:1},''); }
+       else if(history.state && history.state.r) history.back(); }catch(e){}
+}
+window.addEventListener('popstate', ()=>{
+  const c=curScreen; if(c==='home') return;
+  const keep=()=>{ try{ history.pushState({r:1},''); }catch(e){} };
+  if(c==='prev' || c==='rosco'){ keep(); pause(); return; }
+  if(c==='intro' || c==='psum'){ keep(); if(confirm('¿Abandonar la partida?')) quit(); return; }
+  if(c==='mp'){ keep(); $('#mp-exit').click(); return; }
+  if(c==='res') R=null;
+  renderHome(); show('home');
+});
 let wakeLock=null;
 async function keepAwake(on){ try{ if(on && 'wakeLock' in navigator && !wakeLock){ wakeLock = await navigator.wakeLock.request('screen'); wakeLock.addEventListener('release',()=>wakeLock=null); } else if(!on && wakeLock){ wakeLock.release(); wakeLock=null; } }catch(e){} }
 
@@ -945,7 +962,29 @@ $('#b-solo-back').onclick = () => show('home');
   $('#art-fam').setAttribute('viewBox','0 0 250 65');
   $('#art-fam').innerHTML = av.map(([t,x,y,c])=>`<g class="fam-av ${c}"><circle cx="${x}" cy="${y}" r="21"/><text x="${x}" y="${y+.5}">${t}</text>${c==='out'?`<line x1="${x-15}" y1="${y+15}" x2="${x+15}" y2="${y-15}"/>`:''}</g>`).join('');
 })();
-if(navigator.standalone===false){ document.documentElement.classList.add('ios-browser'); $('#install-hint').hidden=false; }
+/* ---------- instalación en iOS y Android ---------- */
+const IS_IOS = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1);
+const IS_ANDROID = /Android/i.test(navigator.userAgent);
+const isStandalone = () => matchMedia('(display-mode: standalone)').matches || navigator.standalone===true;
+let installEvt = null;
+function updInstall(){
+  const h=$('#install-hint'); h.classList.remove('btn');
+  if(isStandalone()){ h.hidden=true; return; }
+  if(installEvt){
+    h.hidden=false; h.classList.add('btn');
+    h.innerHTML=`<button class="btn-alt" id="b-install" style="width:100%;font-size:16px;padding:13px">${ic('plus')}Instalar la app en este teléfono</button>`;
+    $('#b-install').onclick=async()=>{ const e=installEvt; installEvt=null; try{ e.prompt(); await e.userChoice; }catch(err){} updInstall(); };
+  } else if(IS_IOS){ h.hidden=false; h.textContent='Para instalarla, toca Compartir en Safari y elige «Agregar a inicio».'; }
+  else if(IS_ANDROID){ h.hidden=false; h.textContent='Para instalarla, abre el menú ⋮ del navegador y elige «Instalar app» o «Agregar a la pantalla principal».'; }
+  else h.hidden=true;
+}
+window.addEventListener('beforeinstallprompt', e=>{ e.preventDefault(); installEvt=e; updInstall(); });
+window.addEventListener('appinstalled', ()=>{ installEvt=null; updInstall(); toast('App instalada'); });
+if(navigator.standalone===false) document.documentElement.classList.add('ios-browser');
+updInstall();
+/* accesos directos del ícono (mantener presionado en Android) */
+window.addEventListener('load', ()=>{ const ir=new URLSearchParams(location.search).get('ir');
+  if(ir==='solo'){ renderHome(); show('solo'); } else if(ir==='familia' && $('#b-mp')) $('#b-mp').click(); });
 
 /* ---------- pantalla de lanzamiento ---------- */
 (function splash(){

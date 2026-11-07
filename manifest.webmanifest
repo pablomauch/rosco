@@ -1,7 +1,8 @@
 {
+  "id": "./",
   "name": "El Rosco",
   "short_name": "El Rosco",
-  "description": "Juego de palabras con juegos previos y rosco final",
+  "description": "Juego de palabras: gana segundos en los juegos previos y completa el rosco de 25 letras. Solo o en familia.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
@@ -9,9 +10,21 @@
   "background_color": "#160a2c",
   "theme_color": "#160a2c",
   "lang": "es",
+  "dir": "ltr",
+  "categories": ["games", "education", "entertainment"],
   "icons": [
-    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png"},
-    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png"},
-    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+    {"src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "icons/icon-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable"},
+    {"src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ],
+  "shortcuts": [
+    {"name": "Jugar solo", "short_name": "Solo", "url": "./?ir=solo", "icons": [{"src": "icons/sc-solo.png", "sizes": "96x96", "type": "image/png"}]},
+    {"name": "Jugar en familia", "short_name": "Familia", "url": "./?ir=familia", "icons": [{"src": "icons/sc-familia.png", "sizes": "96x96", "type": "image/png"}]}
+  ],
+  "screenshots": [
+    {"src": "screens/1-inicio.jpg", "sizes": "780x1688", "type": "image/jpeg", "form_factor": "narrow", "label": "Pantalla de inicio con el rosco"},
+    {"src": "screens/2-menu.jpg", "sizes": "780x1688", "type": "image/jpeg", "form_factor": "narrow", "label": "Elegir entre jugar solo o en familia"},
+    {"src": "screens/3-rosco.jpg", "sizes": "780x1688", "type": "image/jpeg", "form_factor": "narrow", "label": "Partida de rosco en curso"}
   ]
 }
