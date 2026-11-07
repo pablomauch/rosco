@@ -7,48 +7,56 @@
 
 /* ---------- estilos y pantallas ---------- */
 const css = `
-.code{font-size:56px;font-weight:900;letter-spacing:.18em;color:var(--gold);text-align:center;line-height:1}
-.qr{display:flex;justify-content:center}.qr img,.qr canvas{border:8px solid #fff;border-radius:12px;width:170px;height:170px}
+.code{font-family:var(--display);font-size:52px;font-weight:800;letter-spacing:.14em;color:var(--lemon);text-align:center;line-height:1;padding-left:.14em}
+.qr{display:flex;justify-content:center}.qr img,.qr canvas{border:8px solid #fff;border-radius:14px;width:168px;height:168px}
 .plist{display:grid;gap:6px}
-.pl{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;background:#0005;font-weight:700}
-.pl .n{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.pl.me{outline:2px solid var(--cyan)}.pl.out{opacity:.45;text-decoration:line-through}.pl.elim{background:#5a1020;opacity:1;text-decoration:none}
-.pl .s{font-variant-numeric:tabular-nums;color:var(--gold)}
-.pl .st{font-size:12px;color:var(--mut);font-weight:700}
-.badge{font-size:12px;padding:3px 8px;border-radius:999px;background:var(--blue);font-weight:800}
-.waiting{text-align:center;padding:14px;border-radius:14px;background:#0005;font-weight:700}
+.pl{display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:14px;border:1px solid var(--hair);font-weight:500}
+.pl .n{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.pl .n svg.i{width:15px;height:15px;color:var(--lemon)}
+.pl.me{border-color:var(--lemon)}.pl.out{opacity:.4;text-decoration:line-through}.pl.elim{border-color:var(--coral);background:rgba(255,84,112,.12)}
+.pl .s{font-family:var(--num);font-size:14px;font-variant-numeric:tabular-nums;color:var(--lemon);font-weight:600}
+.pl .st{font-size:12.5px;color:var(--mut)}
+.mk{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;flex:0 0 20px;border:1px solid var(--hair2)}
+.mk.y{background:var(--mint);border-color:var(--mint);color:#032417}.mk.no{background:var(--coral);border-color:var(--coral);color:#2b0610}
+.pl .n .mk svg.i{width:12px;height:12px;stroke-width:2.6;color:inherit}
+.mk svg.i{width:12px;height:12px;stroke-width:2.6}
+.mk.w{border-style:dashed;animation:spin 6s linear infinite}
+.badge{font-size:12px;padding:2px 9px;border-radius:999px;border:1px solid rgba(255,225,77,.5);color:var(--lemon);font-weight:600}
+.waiting{text-align:center;padding:14px;border-radius:18px;border:1px dashed var(--hair2);color:var(--mut);font-weight:500}
 .duelbar{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.dp{padding:10px;border-radius:14px;background:#0005;border:2px solid transparent;text-align:center}
-.dp.act{border-color:var(--gold);background:#2a2f7a}
-.dp .nm{font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.dp .tm{font-size:34px;font-weight:900;font-variant-numeric:tabular-nums}
-.dp .tm.low{color:var(--warn)}.dp .tm.crit{color:var(--bad)}
-.dp .sc{font-weight:800;font-size:15px}
-.flash{text-align:center;font-size:20px;font-weight:900;padding:10px;border-radius:12px}
-.flash.bad{background:#5a1020}.flash.pass{background:#1d3a9a}
-input.txt{width:100%;font:inherit;font-size:20px;font-weight:700;padding:12px;border-radius:12px;border:2px solid var(--line);background:#0a0f33;color:var(--txt);text-align:center;outline:none;-webkit-user-select:text;user-select:text}
+.dp{padding:12px 10px;border-radius:20px;border:1px solid var(--hair);text-align:center;transition:border-color .3s,background .3s}
+.dp.act{border-color:var(--lemon);background:rgba(255,225,77,.07)}
+.dp .nm{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dp .tm{font-family:var(--display);font-size:30px;font-weight:600;font-variant-numeric:tabular-nums;margin:2px 0}
+.dp .tm.low{color:var(--warn)}.dp .tm.crit{color:var(--coral)}
+.dp .sc{font-size:14px;display:flex;gap:12px;justify-content:center;font-weight:600}
+.flash{text-align:center;font-size:18px;font-weight:600;padding:12px 14px;border-radius:18px;border:1px solid var(--hair2)}
+.flash.bad{border-color:var(--coral);background:rgba(255,84,112,.12)}.flash.pass{border-color:var(--blue);background:rgba(74,107,255,.12)}
+.flash.good{border-color:var(--mint);background:rgba(47,217,154,.14)}
+input.txt{width:100%;font:inherit;font-size:20px;font-weight:500;padding:13px;border-radius:16px;border:1px solid var(--hair2);background:rgba(10,4,26,.55);color:var(--ink);text-align:center;outline:none;-webkit-user-select:text;user-select:text}
+input.txt:focus{border-color:var(--lemon)}
 `;
 document.head.insertAdjacentHTML('beforeend', `<style>${css}</style>`);
 document.querySelector('#app').insertAdjacentHTML('beforeend', `
 <section class="screen" id="s-mpmenu">
-  <div class="top"><h2>Jugar en familia</h2><button class="icon" id="mp-menu-close">✕</button></div>
+  <div class="top"><h2>Jugar en familia</h2><button class="icon" id="mp-menu-close" aria-label="Cerrar">${ic('close')}</button></div>
   <div class="card"><p>Todos contra todos: cada uno responde en su celular, en cada ronda se elimina a los últimos y los dos mejores se enfrentan en el rosco final.</p></div>
   <div class="card cfg">
     <h3>Tu nombre</h3>
     <input class="txt" id="mp-name" maxlength="14" placeholder="Ej: Pablo" autocomplete="off" autocorrect="off" spellcheck="false">
   </div>
-  <button class="btn-main" id="mp-create">➕ Crear sala</button>
+  <button class="btn-main" id="mp-create">${ic('plus')}Crear sala</button>
   <div class="card">
     <h3>Unirme a una sala</h3>
-    <input class="txt" id="mp-code" maxlength="4" placeholder="CÓDIGO" autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false" style="letter-spacing:.3em;text-transform:uppercase">
+    <input class="txt" id="mp-code" maxlength="4" placeholder="Código" autocomplete="off" autocorrect="off" autocapitalize="characters" spellcheck="false" style="letter-spacing:.3em;text-transform:uppercase">
     <button id="mp-join" style="width:100%;margin-top:10px">Unirme</button>
   </div>
   <p class="mut small" style="text-align:center">Se necesita internet. Funciona mejor si todos están en el mismo wifi.</p>
 </section>
 <section class="screen" id="s-mp">
   <div class="top">
-    <button class="icon" id="mp-exit">✕</button>
-    <span class="mut small" id="mp-label" style="text-align:center;flex:1;font-weight:800"></span>
+    <button class="icon" id="mp-exit" aria-label="Salir">${ic('close')}</button>
+    <span class="mut small" id="mp-label" style="text-align:center;flex:1;font-weight:500"></span>
     <div class="timer" id="mp-timer" style="visibility:hidden">0</div>
   </div>
   <div id="mp-body" style="display:flex;flex-direction:column;gap:14px"></div>
@@ -469,16 +477,16 @@ CL.view = v => {
   else if(upd[v.phase]) upd[v.phase](v);
 };
 const body = () => $('#mp-body');
-const nameOf = p => esc(p.name) + (p.pid===HOST_PID ? ' 👑' : '');
+const nameOf = p => esc(p.name) + (p.pid===HOST_PID ? ic('crown') : '');
 function plistHTML(v, mode){
   let list = v.players.slice();
   if(mode==='score') list.sort((a,b)=>(b.alive-a.alive) || (b.round-a.round));
   return `<div class="plist">${list.map(p=>{
     const cls = ['pl', p.pid===v.meId?'me':'', p.elimNow?'elim':(!p.alive && mode!=='lobby'?'out':'')].join(' ');
-    const right = mode==='lobby' ? (p.online?'':'<span class="st">desconectado</span>') + (p.wins?` <span class="badge">🏆 ${p.wins}</span>`:'')
-      : mode==='q' ? (p.answered===null ? '' : p.answered ? '✅' : '⏳')
+    const right = mode==='lobby' ? (p.online?'':'<span class="st">desconectado</span>') + (p.wins?` <span class="badge">${p.wins} ${p.wins===1?'final':'finales'}</span>`:'')
+      : mode==='q' ? (p.answered===null ? '' : p.answered ? `<span class="mk y">${ic('check')}</span>` : '<span class="mk w"></span>')
       : mode==='score' ? `<span class="st">+${p.secs}s</span> <span class="s">${p.round}</span>` : '';
-    return `<div class="${cls}"><span class="n">${nameOf(p)}${p.spectator?' <span class="st">(mira)</span>':''}${p.online?'':' 📵'}</span>${right}</div>`; }).join('')}</div>`;
+    return `<div class="${cls}"><span class="n">${nameOf(p)}${p.spectator?' <span class="st">mirando</span>':''}${p.online?'':' <span class="st">sin conexión</span>'}</span>${right}</div>`; }).join('')}</div>`;
 }
 function hostBtn(label, id){ return `<button class="btn-main" id="${id}">${label}</button>`; }
 
@@ -490,7 +498,7 @@ const draw = {
       body().innerHTML = `
       <div class="card" style="text-align:center"><h3>Código de la sala</h3><div class="code">${v.code}</div>
         <div class="qr" id="mp-qr" style="margin-top:12px"></div>
-        <button id="mp-share" style="margin-top:12px;width:100%">📤 Compartir enlace</button></div>
+        <button id="mp-share" style="margin-top:14px;width:100%">${ic('share')}Compartir enlace</button></div>
       <div class="card"><h3>Jugadores (<span id="mp-pn">${v.players.filter(p=>p.online).length}</span>)</h3><div id="mp-plist">${plistHTML(v,'lobby')}</div></div>
       <div class="card cfg"><h3>Configuración</h3>
         <label>Dificultad <select id="h-nivel">${[1,2,3].map(n=>`<option value="${n}" ${v.nivel===n?'selected':''}>${LVL[n]}</option>`).join('')}</select></label>
@@ -498,12 +506,12 @@ const draw = {
         <label>Preguntas por ronda <span><input type="range" id="h-preg" min="3" max="10" step="1" value="${s.preg}"> <span class="v" id="hv-preg">${s.preg}</span></span></label>
         <label>Segundos por pregunta <span><input type="range" id="h-tPreg" min="10" max="45" step="5" value="${s.tPreg}"> <span class="v" id="hv-tPreg">${s.tPreg}s</span></span></label>
         <label>Tiempo base del rosco <span><input type="range" id="h-tRosco" min="40" max="300" step="5" value="${v.tRosco}"> <span class="v" id="hv-tRosco">${v.tRosco}s</span></span></label>
-        <label>🗣 Leer consignas en voz alta <input type="checkbox" class="sw" id="h-voz" ${s.voz?'checked':''}></label>
+        <label>Leer consignas en voz alta <input type="checkbox" class="sw" id="h-voz" ${s.voz?'checked':''}></label>
         <label>Voz, reloj y sonidos en <select id="h-audio"><option value="anfitrion" ${s.audio==='anfitrion'?'selected':''}>Solo este teléfono</option><option value="todos" ${s.audio==='todos'?'selected':''}>Todos los teléfonos</option></select></label>
         <label>Yo también juego <input type="checkbox" class="sw" id="h-plays" ${s.hostPlays?'checked':''}></label>
       </div>
       <p class="mut small" id="mp-plan"></p>
-      ${hostBtn('▶ Empezar partida','mp-start')}`;
+      ${hostBtn(ic('play')+'Empezar partida','mp-start')}`;
       try{ if(window.QRCode) new QRCode($('#mp-qr'), {text:link, width:340, height:340, colorDark:'#0b1033', colorLight:'#ffffff'}); }catch(e){}
       $('#mp-share').onclick = async()=>{ try{ if(navigator.share) await navigator.share({title:'El Rosco', text:'¡Únete a mi sala de El Rosco! Código '+v.code, url:link}); else { await navigator.clipboard.writeText(link); toast('Enlace copiado'); } }catch(e){} };
       const S=H.set;
@@ -517,17 +525,17 @@ const draw = {
       planTxt();
     } else {
       body().innerHTML = `<div class="card" style="text-align:center"><h3>Sala</h3><div class="code">${v.code}</div></div>
-        <div class="waiting">✅ Estás dentro. Esperando a que el anfitrión empiece…</div>
+        <div class="waiting">Estás dentro. La partida empieza cuando el anfitrión la inicie.</div>
         <div class="card"><h3>Jugadores</h3><div id="mp-plist">${plistHTML(v,'lobby')}</div></div>`;
     }
   },
   intro(v){
     const g=GAMES[v.round.g], alive=v.players.filter(p=>p.alive).length;
-    body().innerHTML = `<div class="spacer"></div><div style="font-size:72px;text-align:center">${g.ico}</div>
+    body().innerHTML = `<div class="spacer"></div><div class="game-ico">${g.ico}</div>
       <h2 style="text-align:center;font-size:28px">${g.name}</h2>
       <div class="card"><p>${esc(g.rules)}</p><p style="margin-top:10px">${v.round.qn} preguntas · se gana por acertar y por rapidez.</p>
       <p style="margin-top:10px;font-weight:800;color:var(--gold)">${v.round.elim ? (v.round.elim===1?'Al final queda eliminado 1 jugador':`Al final quedan eliminados ${v.round.elim} jugadores`) : (alive>2?'Ronda sin eliminados':'Ronda para sumar segundos')}</p></div>
-      ${v.me && !v.me.alive ? '<div class="waiting">👀 Estás mirando</div>' : ''}
+      ${v.me && !v.me.alive ? '<div class="waiting">Estás mirando esta ronda</div>' : ''}
       <div class="spacer"></div>
       ${v.host ? hostBtn('¡Comenzar ronda!','mp-go') : '<div class="waiting">Esperando al anfitrión…</div>'}`;
     if(v.host) $('#mp-go').onclick=()=>{ VOZ.stop(); hCountdown(hRunRound); };
@@ -541,10 +549,10 @@ const draw = {
     step();
   },
   q(v){
-    const q=v.q; let h = `<div class="mut small" style="text-align:center;font-weight:800;letter-spacing:.06em;text-transform:uppercase">${q.tie?'⚔️ ':''+GAMES[q.g].ico+' '}${esc(q.label||'')}</div>`;
+    const q=v.q; let h = `<div class="kicker" style="justify-content:center">${GAMES[q.g].ico}${esc(q.label||'')}</div>`;
     if(q.g==='cuatro') h += `<div class="card"><div class="q">${esc(q.text)}</div></div>`;
     else if(q.g==='pista') h += `<div class="clues" id="mp-clues"></div>`;
-    else if(q.g==='anagramas') h += `<div class="card"><div class="tiles">${q.tiles.map(c=>`<div class="tile">${c}</div>`).join('')}</div><p class="mut" style="text-align:center;margin-top:12px">💡 ${esc(q.hint)} · ${q.len} letras</p></div>`;
+    else if(q.g==='anagramas') h += `<div class="card"><div class="tiles">${q.tiles.map(c=>`<div class="tile">${c}</div>`).join('')}</div><p class="mut" style="text-align:center;margin-top:12px">${esc(q.hint)}. ${q.len} letras.</p></div>`;
     else h += `<div class="card">${q.prev?`<p class="mut">Anterior: <b>${esc(q.prev.toUpperCase())}</b></p>`:'<p class="mut">Nueva cadena</p>'}<div style="margin:10px 0 6px">Empieza con <span class="syl" style="font-size:26px">${esc(q.start)}</span></div><div class="q">${esc(q.text)}</div></div>`;
     h += `<div id="mp-ans"></div><div class="card"><h3>Respuestas</h3><div id="mp-plist">${plistHTML(v,'q')}</div></div>`;
     body().innerHTML = h;
@@ -552,14 +560,14 @@ const draw = {
   },
   reveal(v){
     const r=v.rev, m=r.mine;
-    let h = `<div class="mut small" style="text-align:center;font-weight:800;text-transform:uppercase">${esc(r.label||'')}</div>`;
-    if(m) h += `<div class="flash" style="background:${m.ok?'var(--ok)':'#5a1020'};font-size:24px">${m.ok ? `¡Correcto! +${m.pts} pts · +${m.secs}s` : m.answered ? '✗ Incorrecto' : '⌛ Sin respuesta'}</div>`;
+    let h = `<div class="kicker" style="justify-content:center">${esc(r.label||'')}</div>`;
+    if(m) h += `<div class="flash ${m.ok?'good':'bad'}" style="font-size:20px">${m.ok ? `¡Correcto! +${m.pts} puntos y +${m.secs} s` : m.answered ? 'Incorrecto' : 'No alcanzaste a responder'}</div>`;
     h += `<div class="card" style="text-align:center"><h3>La respuesta era</h3><div class="reveal" style="font-size:28px">${esc(r.ans)}</div></div>`;
-    h += `<div class="card"><h3>Resultados</h3><div class="plist">${r.res.map(x=>`<div class="pl ${x.pid===v.meId?'me':''}"><span class="n">${x.ok?'✅':x.answered?'❌':'⌛'} ${esc(x.name)}</span><span class="st">${x.given!=null && !x.ok ? esc(String(x.given)).slice(0,18) : x.ok ? (x.ms/1000).toFixed(1)+'s' : ''}</span><span class="s">${x.pts?'+'+x.pts:''}</span></div>`).join('')}</div></div>`;
+    h += `<div class="card"><h3>Resultados</h3><div class="plist">${r.res.map(x=>`<div class="pl ${x.pid===v.meId?'me':''}"><span class="n"><span class="mk ${x.ok?'y':x.answered?'no':''}">${x.ok?ic('check'):x.answered?ic('close'):''}</span>${esc(x.name)}</span><span class="st">${x.given!=null && !x.ok ? esc(String(x.given)).slice(0,18) : x.ok ? (x.ms/1000).toFixed(1)+'s' : ''}</span><span class="s">${x.pts?'+'+x.pts:''}</span></div>`).join('')}</div></div>`;
     body().innerHTML = h;
   },
   tieIntro(v){
-    body().innerHTML = `<div class="spacer"></div><div style="font-size:72px;text-align:center">⚔️</div><h2 style="text-align:center">¡Empate!</h2>
+    body().innerHTML = `<div class="spacer"></div><div class="game-ico">${ic('flag')}</div><h2 style="text-align:center">¡Empate!</h2>
       <div class="card" style="text-align:center"><p>Pregunta de desempate para</p><p style="font-size:22px;font-weight:900;margin-top:8px;color:var(--gold)">${v.tie.names.map(esc).join(' · ')}</p>
       <p class="mut" style="margin-top:8px">Gana quien acierte más rápido</p></div>
       ${v.tie.inTie ? '<div class="waiting">¡Prepárate, te toca!</div>' : '<div class="waiting">Mira el desempate</div>'}<div class="spacer"></div>`;
@@ -567,34 +575,34 @@ const draw = {
   standings(v){
     const out = v.players.filter(p=>p.elimNow), last = v.round.n===v.round.of;
     body().innerHTML = `<h2 style="text-align:center">Fin de la ronda ${v.round.n}</h2>
-      ${out.length ? `<div class="flash bad">❌ ${out.length===1?'Eliminado':'Eliminados'}: ${out.map(p=>esc(p.name)).join(', ')}</div>` : '<div class="flash pass">Nadie quedó eliminado</div>'}
-      ${v.me && v.me.alive ? `<div class="waiting">Sigues en juego · llevas <b style="color:var(--gold)">+${v.me.secs}s</b> para el rosco</div>` : v.me && out.some(p=>p.pid===v.meId) ? '<div class="waiting">Quedaste fuera, pero puedes seguir mirando 👀</div>' : ''}
-      <div class="card"><h3>Puntaje de la ronda · segundos acumulados</h3>${plistHTML(v,'score')}</div>
-      ${v.host ? hostBtn(last ? '🎯 Ir a la gran final' : 'Siguiente ronda','mp-next') : '<div class="waiting">Esperando al anfitrión…</div>'}`;
+      ${out.length ? `<div class="flash bad">${out.length===1?'Queda eliminado':'Quedan eliminados'} ${out.map(p=>esc(p.name)).join(' y ')}</div>` : '<div class="flash pass">Nadie quedó eliminado</div>'}
+      ${v.me && v.me.alive ? `<div class="waiting">Sigues en juego · llevas <b style="color:var(--gold)">+${v.me.secs}s</b> para el rosco</div>` : v.me && out.some(p=>p.pid===v.meId) ? '<div class="waiting">Quedaste fuera, pero puedes seguir mirando la partida.</div>' : ''}
+      <div class="card"><h3>Puntos de la ronda y segundos acumulados para el rosco</h3>${plistHTML(v,'score')}</div>
+      ${v.host ? hostBtn(last ? ic('target')+'Ir a la gran final' : 'Siguiente ronda','mp-next') : '<div class="waiting">Esperando al anfitrión…</div>'}`;
     if(v.host) $('#mp-next').onclick=()=>{ VOZ.stop(); hContinue(); };
   },
   duelIntro(v){
     const d=v.duel;
-    body().innerHTML = `<div class="spacer"></div><h2 style="text-align:center;font-size:30px">🎯 Gran final</h2>
+    body().innerHTML = `<div class="spacer"></div><div class="game-ico">${ic('target')}</div><h2 style="text-align:center;font-size:28px">Gran final</h2>
       <div class="duelbar">${d.pl.map((p,i)=>`<div class="dp ${i===d.turn?'act':''}"><div class="nm">${esc(p.name)}</div><div class="tm">${fmt(p.left/1000)}</div><div class="st small mut">${i===d.turn?'empieza':''}</div></div>`).join('')}</div>
       <div class="card"><p>Cada finalista tiene su propio rosco y su propio reloj (tiempo base + segundos ganados). Responde hasta que falles o digas «paso»: ahí se detiene tu reloj y juega el otro. Gana quien tenga más aciertos.</p></div>
-      ${d.pl.some(p=>p.pid===v.meId) ? '<div class="waiting">¡Estás en la final! 🎉</div>' : ''}
+      ${d.pl.some(p=>p.pid===v.meId) ? '<div class="waiting" style="color:var(--lemon);border-color:rgba(255,225,77,.5)">¡Estás en la final!</div>' : ''}
       <div class="spacer"></div>
       ${v.host ? hostBtn('¡Que empiece la final!','mp-duel') : '<div class="waiting">Esperando al anfitrión…</div>'}`;
     if(v.host) $('#mp-duel').onclick=()=>{ VOZ.stop(); hCountdown(()=>hDuelTurn(H.D.turn)); };
   },
   duel(v){
     const d=v.duel, act=d.pl[d.turn];
-    let h = `<div class="duelbar">${d.pl.map((p,i)=>`<div class="dp ${i===d.turn?'act':''}"><div class="nm">${i===d.turn?'▶ ':''}${esc(p.name)}</div><div class="tm">${fmt(p.left/1000)}</div><div class="sc"><span style="color:var(--ok)">✓ ${p.ok}</span> · <span style="color:var(--bad)">✗ ${p.bad}</span>${p.done?' · 🏁':''}</div></div>`).join('')}</div>
-      <div class="rwrap" style="width:min(100%,300px)"><svg viewBox="0 0 300 300" id="mp-ring"></svg><div class="center"><div class="sub" style="font-size:15px">${esc(act.name)}</div></div></div>`;
+    let h = `<div class="duelbar">${d.pl.map((p,i)=>`<div class="dp ${i===d.turn?'act':''}"><div class="nm">${esc(p.name)}</div><div class="tm">${fmt(p.left/1000)}</div><div class="sc"><span><i class="dot dok"></i>${p.ok}</span><span><i class="dot dbad"></i>${p.bad}</span>${p.done?'<span class="mut">terminó</span>':''}</div></div>`).join('')}</div>
+      <div class="rwrap" style="width:min(100%,290px)"><svg viewBox="0 0 300 300" id="mp-ring"></svg><div class="center"><div class="mut small">Rosco de</div><div class="display" style="font-size:20px;margin-top:4px">${esc(act.name)}</div></div></div>`;
     if(d.flash){ const f=d.flash;
-      h += f.res==='bad' ? `<div class="flash bad">✗ ${esc(f.name)} falló la ${f.letter}${f.given?` («${esc(f.given)}»)`:''}<br><span style="color:var(--gold)">Era: ${esc(f.ans.toUpperCase())}</span></div>`
+      h += f.res==='bad' ? `<div class="flash bad">${esc(f.name)} falló la ${f.letter}${f.given?` con «${esc(f.given)}»`:''}<br><span class="display" style="color:var(--lemon);font-size:17px">Era ${esc(f.ans)}</span></div>`
         : f.res==='pass' ? `<div class="flash pass">${esc(f.name)} pasa la ${f.letter}</div>`
-        : f.res==='time' ? `<div class="flash bad">⏰ Se acabó el tiempo de ${esc(f.name)}</div>`
-        : `<div class="flash pass">🏁 ${esc(f.name)} terminó su rosco</div>`;
-    } else if(!d.running){ h += `<div class="waiting" style="font-size:22px">Turno de <b style="color:var(--gold)">${esc(act.name)}</b>${act.pid===v.meId?' (¡tú!)':''}</div>`; }
+        : f.res==='time' ? `<div class="flash bad">Se acabó el tiempo de ${esc(f.name)}</div>`
+        : `<div class="flash good">${esc(f.name)} terminó su rosco</div>`;
+    } else if(!d.running){ h += `<div class="waiting" style="font-size:20px;color:var(--ink)">${act.pid===v.meId?'Te toca a ti':'Turno de <b style="color:var(--lemon)">'+esc(act.name)+'</b>'}</div>`; }
     if(d.running && d.cur){ const c=d.cur;
-      h += `<div class="card"><span class="tag ${c.t==='c'?'c':''}">${c.t==='e'?'EMPIEZA CON':'CONTIENE LA'} ${c.l}</span><div class="q">${esc(c.d)}</div></div><div id="mp-ans"></div>`; }
+      h += `<div class="card"><span class="tag ${c.t==='c'?'c':''}"><span class="L">${c.l}</span>${c.t==='e'?'Empieza con':'Contiene'}</span><div class="q">${esc(c.d)}</div></div><div id="mp-ans"></div>`; }
     body().innerHTML = h;
     drawRing($('#mp-ring'), act.st, d.running && d.cur ? d.cur.idx : -1);
     if(d.running && d.cur){
@@ -602,8 +610,8 @@ const draw = {
       if(d.myTurn){
         answerPanelMP(host, v=>CL.send({t:'dans', key:CL.key, v}), ()=>CL.send({t:'dans', key:CL.key, pass:true}), '¡Paso!');
       } else if(v.host && d.cur.ans){
-        host.innerHTML = `<div class="reveal" id="mp-hidden">&nbsp;</div><button id="mp-see" style="width:100%;margin-bottom:10px">👁 Ver respuesta (anfitrión)</button>
-          <div class="row"><button class="btn-bad" id="mp-ov-bad">✗ Mal</button><button class="btn-ok" id="mp-ov-ok">✓ Bien</button></div>
+        host.innerHTML = `<div class="reveal" id="mp-hidden">&nbsp;</div><button id="mp-see" style="width:100%;margin-bottom:10px">${ic('eye')}Ver respuesta</button>
+          <div class="row"><button class="btn-bad" id="mp-ov-bad">${ic('close')}Mal</button><button class="btn-ok" id="mp-ov-ok">${ic('check')}Bien</button></div>
           <p class="mut small" style="margin-top:6px;text-align:center">Responde ${esc(act.name)} en su teléfono. Si contesta en voz alta, puedes marcar tú.</p>`;
         let vis=false; $('#mp-see').onclick=()=>{ vis=!vis; $('#mp-hidden').innerHTML = vis ? esc(d.cur.ans.toUpperCase()) : '&nbsp;'; };
         $('#mp-ov-ok').onclick=()=>CL.send({t:'dans', key:CL.key, override:'ok'});
@@ -614,11 +622,11 @@ const draw = {
   final(v){
     const d=v.duel, w=d.winner;
     const iWon = w>=0 && d.pl[w].pid===v.meId;
-    body().innerHTML = `<h2 style="text-align:center;font-size:28px">${w>=0 ? '🏆 ¡'+esc(d.pl[w].name)+' gana!' : '🤝 ¡Empate!'}</h2>
-      ${iWon ? '<div class="flash" style="background:var(--ok)">¡Felicitaciones, campeón/a!</div>' : ''}
-      <div class="duelbar">${d.pl.map((p,i)=>`<div class="dp ${i===w?'act':''}"><div class="nm">${esc(p.name)}</div><div class="tm" style="color:var(--gold)">${p.ok}</div><div class="sc">aciertos · ✗ ${p.bad}</div></div>`).join('')}</div>
+    body().innerHTML = `<div class="game-ico">${ic('trophy')}</div><h2 style="text-align:center;font-size:28px">${w>=0 ? '¡'+esc(d.pl[w].name)+' gana!' : '¡Empate!'}</h2>
+      ${iWon ? '<div class="flash good">¡Ganaste la final!</div>' : ''}
+      <div class="duelbar">${d.pl.map((p,i)=>`<div class="dp ${i===w?'act':''}"><div class="nm">${esc(p.name)}</div><div class="tm" style="color:var(--lemon)">${p.ok}</div><div class="sc"><span class="mut">aciertos</span><span><i class="dot dbad"></i>${p.bad}</span></div></div>`).join('')}</div>
       ${d.pl.map(p=>`<div class="card"><h3>Rosco de ${esc(p.name)}</h3><div class="res-letters">${p.letters.map(x=>`<div class="${x.s===1?'o':x.s===2?'x':'p'}"><b>${x.l}</b> · ${esc(x.a)}${x.s===2&&x.g?` <span class="mut">(${esc(x.g)})</span>`:''}</div>`).join('')}</div></div>`).join('')}
-      ${v.host ? hostBtn('🔁 Otra partida con la misma sala','mp-again') : '<div class="waiting">El anfitrión puede iniciar otra partida</div>'}`;
+      ${v.host ? hostBtn(ic('redo')+'Otra partida en esta sala','mp-again') : '<div class="waiting">El anfitrión puede iniciar otra partida</div>'}`;
     if(v.host) $('#mp-again').onclick=()=>hBackToLobby();
     if(iWon) setTimeout(confetti, 200);
   }
@@ -637,15 +645,15 @@ function planTxt(){
 function drawClues(v){
   const el=$('#mp-clues'); if(!el || !v.q.clues) return;
   const n=v.q.clues.length; if(el.dataset.n==String(n)) return; el.dataset.n=n;
-  el.innerHTML = [0,1,2,3].map(i=> i<n ? `<div class="clue">${i+1}. ${esc(v.q.clues[i])}</div>` : `<div class="clue hid">Pista ${i+1} · aparece pronto</div>`).join('');
+  el.innerHTML = [0,1,2,3].map(i=> i<n ? `<div class="clue">${esc(v.q.clues[i])}</div>` : `<div class="clue hid">La pista ${i+1} aparece pronto</div>`).join('');
   if(n>1 && v.audio) SFX.tone(880,.08,'sine',.2);
 }
 function drawAnswer(v){
   const host=$('#mp-ans'), q=v.q; if(!host) return;
-  if(!q.canAnswer){ host.innerHTML = `<div class="waiting">${v.me && !v.me.alive ? '👀 Estás mirando' : '📺 Pantalla del anfitrión'}</div>`;
+  if(!q.canAnswer){ host.innerHTML = `<div class="waiting">${v.me && !v.me.alive ? 'Estás mirando esta ronda' : 'Pantalla del anfitrión'}</div>`;
     if(q.g==='cuatro') host.innerHTML += `<div class="opts">${q.opts.map((o,i)=>`<button disabled><b>${'ABCD'[i]}</b>${esc(o)}</button>`).join('')}</div>`;
     return; }
-  if(q.sent){ host.innerHTML = `<div class="waiting sent">✅ Respuesta enviada${q.g==='cuatro'?': '+esc(q.opts[q.sentV]):q.sentV?': '+esc(q.sentV):''}<br><span class="mut small">esperando a los demás…</span></div>`; return; }
+  if(q.sent){ host.innerHTML = `<div class="waiting sent">Respuesta enviada${q.g==='cuatro'?': '+esc(q.opts[q.sentV]):q.sentV?': '+esc(q.sentV):''}<br><span class="mut small">esperando a los demás…</span></div>`; return; }
   if(q.g==='cuatro'){
     host.innerHTML = `<div class="opts">${q.opts.map((o,i)=>`<button data-i="${i}"><b>${'ABCD'[i]}</b>${esc(o)}</button>`).join('')}</div>`;
     host.querySelectorAll('button').forEach(b=>b.onclick=()=>{ host.querySelectorAll('button').forEach(x=>x.disabled=true); b.style.background='var(--blue)'; CL.send({t:'ans', key:CL.key, v:+b.dataset.i}); });
@@ -667,7 +675,7 @@ function drawRing(svg, st, cur){
   let h=''; for(let i=0;i<25;i++){ const a=-Math.PI/2+i*2*Math.PI/25, x=150+130*Math.cos(a), y=150+130*Math.sin(a);
     const cls=(st[i]===1?'ok':st[i]===2?'bad':'')+(i===cur?' cur':'');
     h+=`<g class="rl ${cls}"><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="14"/><text x="${x.toFixed(1)}" y="${(y+.5).toFixed(1)}">${LET[i]}</text></g>`; }
-  svg.innerHTML=h;
+  svg.innerHTML='<circle class="rtrack" cx="150" cy="150" r="130"/>'+h;
 }
 
 /* ---------- menú ---------- */
