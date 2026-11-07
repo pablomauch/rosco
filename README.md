@@ -21,6 +21,7 @@ Settings → Pages → Source: *Deploy from a branch* → `main` / `(root)` → 
 
 ## Contenido
 - `data.json`: banco editable (roscos, Una de cuatro, La pista, Encadenadas, Letras desordenadas).
+- `tools/tanda2.txt` + `tools/agregar_tanda.py`: roscos nuevos en formato de texto simple (`LETRA|e/c|definición|respuesta;alternativa`). `python3 tools/agregar_tanda.py tools/tandaN.txt` los suma a `data.json`.
 - `tools/validar.py`: valida letras, sílabas y que ninguna respuesta se repita, y genera `data.js`.
   ```
   python3 tools/validar.py

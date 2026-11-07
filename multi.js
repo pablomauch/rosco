@@ -594,7 +594,7 @@ const draw = {
   duel(v){
     const d=v.duel, act=d.pl[d.turn];
     let h = `<div class="duelbar">${d.pl.map((p,i)=>`<div class="dp ${i===d.turn?'act':''}"><div class="nm">${esc(p.name)}</div><div class="tm">${fmt(p.left/1000)}</div><div class="sc"><span><i class="dot dok"></i>${p.ok}</span><span><i class="dot dbad"></i>${p.bad}</span>${p.done?'<span class="mut">terminó</span>':''}</div></div>`).join('')}</div>
-      <div class="rwrap" style="width:min(100%,290px)"><svg viewBox="0 0 300 300" id="mp-ring"></svg><div class="center"><div class="mut small">Rosco de</div><div class="display" style="font-size:20px;margin-top:4px">${esc(act.name)}</div></div></div>`;
+      <div class="rwrap" style="width:${d.myTurn ? 'clamp(150px,calc(100svh - 610px),290px)' : 'min(100%,290px)'}"><svg viewBox="0 0 300 300" id="mp-ring"></svg><div class="center"><div class="mut small">Rosco de</div><div class="display" style="font-size:20px;margin-top:4px">${esc(act.name)}</div></div></div>`;
     if(d.flash){ const f=d.flash;
       h += f.res==='bad' ? `<div class="flash bad">${esc(f.name)} falló la ${f.letter}${f.given?` con «${esc(f.given)}»`:''}<br><span class="display" style="color:var(--lemon);font-size:17px">Era ${esc(f.ans)}</span></div>`
         : f.res==='pass' ? `<div class="flash pass">${esc(f.name)} pasa la ${f.letter}</div>`
@@ -662,14 +662,7 @@ function drawAnswer(v){
   }
 }
 function answerPanelMP(host, onSend, onPass, passLabel){
-  host.innerHTML = `<input class="ans" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="send" placeholder="Tu respuesta">
-    <div class="row" style="margin-top:10px">${onPass?`<button class="btn-pass" data-a="pass">${passLabel}</button>`:''}<button class="btn-ok" data-a="go">Responder</button></div>`;
-  const inp=host.querySelector('input'); let done=false;
-  const go=()=>{ if(done) return; const val=inp.value.trim(); if(!val){ shake(inp); return; } done=true; host.querySelectorAll('button,input').forEach(x=>x.disabled=true); onSend(val); };
-  inp.addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); go(); } });
-  host.querySelector('[data-a=go]').onclick=go;
-  if(onPass) host.querySelector('[data-a=pass]').onclick=()=>{ if(done) return; done=true; host.querySelectorAll('button,input').forEach(x=>x.disabled=true); onPass(); };
-  setTimeout(()=>{ try{ inp.focus({preventScroll:true}); }catch(e){} }, 40);
+  kbPanel(host, {onSubmit:onSend, onPass:onPass||null, passLabel});
 }
 function drawRing(svg, st, cur){
   let h=''; for(let i=0;i<25;i++){ const a=-Math.PI/2+i*2*Math.PI/25, x=150+130*Math.cos(a), y=150+130*Math.sin(a);

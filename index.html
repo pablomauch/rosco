@@ -103,6 +103,27 @@ input.ans::placeholder{color:rgba(168,155,212,.55)}
 .tiles{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
 .tile{width:36px;height:44px;border-radius:10px;border:1.5px solid rgba(255,225,77,.7);color:var(--lemon);display:grid;place-items:center;font-family:var(--display);font-weight:600;font-size:19px;background:rgba(255,225,77,.06)}
 .syl{font-family:var(--display);color:var(--lemon);font-weight:800}
+/* teclado propio */
+.kb-disp{display:flex;align-items:center;justify-content:center;min-height:56px;padding:10px 16px;border-radius:18px;border:1px solid var(--hair2);background:rgba(10,4,26,.55);font-size:23px;font-weight:600;letter-spacing:.02em;text-transform:uppercase;word-break:break-all}
+.kb-disp.empty::before{content:attr(data-ph);color:rgba(168,155,212,.55);font-size:17px;font-weight:500;text-transform:none;letter-spacing:0}
+.kb-caret{width:2px;height:26px;background:var(--lemon);margin-left:3px;animation:blink 1s steps(1) infinite}
+.kb-disp.empty .kb-caret{margin-left:0;order:-1;margin-right:8px}
+.kb{display:grid;gap:7px;margin-top:10px;touch-action:manipulation;-webkit-user-select:none;user-select:none}
+.kb-row{display:flex;gap:5px}
+.k{flex:1 1 0;min-width:0;height:48px;padding:0;border-radius:11px;font-family:var(--display);font-weight:600;font-size:17px;text-transform:uppercase;background:rgba(255,255,255,.07);border:1px solid var(--hair);color:var(--ink);transition:background .08s,transform .08s}
+.k.down{background:var(--lemon);color:var(--lemon-ink);transform:scale(.93)}
+.k-del{flex:1.6 1 0}.k-del svg.i{width:22px;height:22px}
+.kb-act .k{font-family:var(--text);font-size:17px;font-weight:700;text-transform:none;height:52px;border-radius:999px}
+.k-go{flex:1.8 1 0;background:var(--lemon);color:var(--lemon-ink);border-color:transparent}
+.k-pass{background:var(--blue);color:#fff;border-color:transparent}
+.k-go.down{background:#fff3a8}.k-pass.down{background:#7f97ff;color:#fff}
+#s-rosco.kbmode .rwrap{width:clamp(170px,calc(100svh - 545px),330px)}
+#s-rosco.kbmode .q{min-height:0;font-size:19px}
+#s-rosco.kbmode{gap:10px}
+.rwrap{container-type:inline-size}
+.rwrap .center .big{font-size:min(60px,18cqw)}
+.rwrap .center .sub{font-size:min(15px,4.6cqw);margin-top:min(10px,3cqw)}
+@media (max-height:700px){.k{height:42px}.kb-act .k{height:46px}.kb-disp{min-height:48px;font-size:20px}.kb{gap:6px}}
 /* rosco */
 .rwrap{position:relative;width:min(100%,360px);aspect-ratio:1;margin:0 auto}
 .rwrap svg{width:100%;height:100%;display:block;overflow:visible}
@@ -210,6 +231,11 @@ input.ans::placeholder{color:rgba(168,155,212,.55)}
 .tile-opt .o-d{font-size:13.5px;color:var(--mut);font-weight:500;line-height:1.3}
 .tile-opt.sel{border-color:var(--lemon);background:rgba(255,225,77,.07)}
 .sec-t{font-size:14px;color:var(--mut);font-weight:500;margin:8px 0 -4px}
+/* cortina de entrada: luces al ritmo de la música */
+.splash.show .sp-ring .rl circle{animation:chase .441s ease-out infinite;animation-delay:calc(var(--i) * 17.6ms)}
+.splash.show .sp-title{animation:beat .441s ease-out infinite}
+.splash.show .sp-grooves{animation:spin 3s linear infinite,fadein .1s forwards}
+@keyframes beat{0%{transform:scale(1.06)}100%{transform:scale(1)}}
 /* rosco en espera (pantalla de lanzamiento) */
 .splash.idle .sp-ring .rl{opacity:1;animation:none;transform:none}
 .splash.idle .sp-ring .rl circle{transition:fill .35s,stroke .35s}
@@ -284,6 +310,7 @@ input.ans::placeholder{color:rgba(168,155,212,.55)}
 <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20l4-1 11-11-3-3L5 16z"/></symbol>
 <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></symbol>
 <symbol id="i-back" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+<symbol id="i-del" viewBox="0 0 24 24"><path d="M9 5.5h11a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H9l-6-6.5z"/><path d="M12.5 9.5l5 5M17.5 9.5l-5 5"/></symbol>
 <symbol id="i-crown" viewBox="0 0 24 24"><path d="M4 8l4 4 4-6 4 6 4-4-1.5 10h-13z"/></symbol>
 </svg>
 <div class="splash" id="splash" role="button" aria-label="Tocar para empezar">
@@ -476,7 +503,7 @@ input.ans::placeholder{color:rgba(168,155,212,.55)}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
 "use strict";
-const APP_VERSION = '2.3.0';
+const APP_VERSION = '2.4.0';
 const $ = s => document.querySelector(s);
 const LET = 'ABCDEFGHIJLMNÑOPQRSTUVXYZ'.split('');
 const B = window.BANCO;
@@ -525,7 +552,9 @@ const SFX = {
   ctx:null, master:null,
   init(){
     if(!this.ctx){ const C = window.AudioContext||window.webkitAudioContext; if(!C) return;
-      this.ctx = new C(); this.master = this.ctx.createGain(); this.master.connect(this.ctx.destination); }
+      this.ctx = new C(); this.master = this.ctx.createGain();
+      const comp = this.ctx.createDynamicsCompressor(); comp.threshold.value=-14; comp.knee.value=12; comp.ratio.value=4; comp.attack.value=.004; comp.release.value=.2;
+      this.master.connect(comp); comp.connect(this.ctx.destination); }
     if(this.ctx.state === 'suspended') this.ctx.resume();
     if(!this._v){ this._v=1; VOZ.unlock(); }
     // desbloqueo iOS: buffer silencioso
@@ -559,6 +588,38 @@ const SFX = {
   ok(){ this.tone(988,.12,'sine',.45); this.tone(1319,.4,'sine',.45,.1); this.tone(1976,.3,'triangle',.12,.1); },
   bad(){ this.tone(196,.5,'sawtooth',.28,0,98); this.tone(147,.5,'square',.14,0,73); },
   pass(){ this.noise(.35,.5,300,3500); this.tone(660,.12,'triangle',.15,.05,990); },
+  key(){ this.tone(2200,.02,'sine',.05); },
+  /* ---- instrumentos de la cortina musical ---- */
+  _noise(){ if(!this._nb){ const c=this.ctx, n=c.sampleRate*2, b=c.createBuffer(1,n,c.sampleRate), d=b.getChannelData(0); for(let i=0;i<n;i++) d[i]=Math.random()*2-1; this._nb=b; } const s=this.ctx.createBufferSource(); s.buffer=this._nb; return s; },
+  _g(t, peak, a, d, out){ const g=this.ctx.createGain(); g.gain.setValueAtTime(.0001,t); g.gain.exponentialRampToValueAtTime(peak,t+a); g.gain.exponentialRampToValueAtTime(.0001,t+a+d); g.connect(out||this.master); return g; },
+  kick(t,v=.9){ const c=this.ctx,o=c.createOscillator(); o.frequency.setValueAtTime(150,t); o.frequency.exponentialRampToValueAtTime(40,t+.16); o.connect(this._g(t,v,.003,.3)); o.start(t); o.stop(t+.36); },
+  snare(t,v=.45){ const c=this.ctx,s=this._noise(),f=c.createBiquadFilter(); f.type='bandpass'; f.frequency.value=1900; f.Q.value=.7; s.connect(f); f.connect(this._g(t,v,.002,.17)); s.start(t,Math.random()); s.stop(t+.22);
+    const o=c.createOscillator(); o.type='triangle'; o.frequency.setValueAtTime(220,t); o.frequency.exponentialRampToValueAtTime(140,t+.08); o.connect(this._g(t,v*.5,.002,.09)); o.start(t); o.stop(t+.12); },
+  hat(t,v=.12,d=.045){ const c=this.ctx,s=this._noise(),f=c.createBiquadFilter(); f.type='highpass'; f.frequency.value=7500; s.connect(f); f.connect(this._g(t,v,.001,d)); s.start(t,Math.random()); s.stop(t+d+.05); },
+  crash(t,v=.35){ const c=this.ctx,s=this._noise(),f=c.createBiquadFilter(); f.type='highpass'; f.frequency.value=4200; s.connect(f); f.connect(this._g(t,v,.004,1.9)); s.start(t,0); s.stop(t+2); },
+  brass(freqs,t,d,v=.11){ const c=this.ctx,f=c.createBiquadFilter(); f.type='lowpass'; f.Q.value=2;
+    f.frequency.setValueAtTime(500,t); f.frequency.exponentialRampToValueAtTime(3600,t+.05); f.frequency.exponentialRampToValueAtTime(1300,t+Math.min(d,.5));
+    const g=c.createGain(); g.gain.setValueAtTime(.0001,t); g.gain.exponentialRampToValueAtTime(v,t+.025); g.gain.setValueAtTime(v,t+d*.6); g.gain.exponentialRampToValueAtTime(.0001,t+d); f.connect(g); g.connect(this.master);
+    freqs.forEach(fr=>[-9,0,9].forEach(dt=>{ const o=c.createOscillator(); o.type='sawtooth'; o.frequency.value=fr; o.detune.value=dt; o.connect(f); o.start(t); o.stop(t+d+.05); })); },
+  bass(fr,t,d,v=.32){ const c=this.ctx,o=c.createOscillator(),f=c.createBiquadFilter(); o.type='sawtooth'; o.frequency.value=fr; f.type='lowpass'; f.frequency.value=650; o.connect(f); f.connect(this._g(t,v,.008,d)); o.start(t); o.stop(t+d+.05); },
+  bell(fr,t,v=.07,d=.5){ const c=this.ctx; [[1,'triangle',v],[2.01,'sine',v*.4]].forEach(([m,ty,vv])=>{ const o=c.createOscillator(); o.type=ty; o.frequency.value=fr*m; o.connect(this._g(t,vv,.004,d)); o.start(t); o.stop(t+d+.05); }); },
+  /* Cortina de entrada: 6 tiempos a 136 bpm y un acorde final. Devuelve los segundos hasta el golpe final. */
+  theme(){
+    if(!this.on()) return 0;
+    const B=60/136, N=n=>440*Math.pow(2,(n-69)/12);
+    const play=()=>{ const t0=this.ctx.currentTime+.06, T=b=>t0+b*B; this.master.gain.value=cfg.vol;
+      for(let b=0;b<6;b++){ this.kick(T(b)); this.hat(T(b+.5)); if(b%2) this.snare(T(b)); }
+      [[0,[60,64,67,72],.28,36],[1.5,[60,64,67,72],.2,36],[2.5,[65,69,72],.28,41],[3.5,[67,71,74],.2,43],[4,[57,60,64,69],.3,45],[4.75,[55,59,62,67],.2,43]]
+        .forEach(([b,ch,d,bs])=>{ this.brass(ch.map(N),T(b),d); this.bass(N(bs),T(b),d+.05); });
+      [72,76,79,84,79,76,79,84,88,84,79,84].forEach((n,i)=>this.bell(N(n),T(i*.25),.05,.25));
+      [5,5.25,5.5,5.625,5.75,5.875].forEach((b,i)=>this.snare(T(b),.22+i*.06));
+      const F=T(6); this.kick(F,1); this.crash(F,.38);
+      this.brass([48,55,60,64,67,72].map(N),F,1.9,.1); this.bass(N(36),F,1.6,.36);
+      [72,76,79,84,88,91,96].forEach((n,i)=>this.bell(N(n),F+.04+i*.045,.06,.9));
+    };
+    if(this.ctx.state!=='running') this.ctx.resume().then(play); else play();
+    return 6*B + .06;
+  },
   coin(){ this.tone(1319,.07,'square',.16); this.tone(1976,.28,'square',.16,.07); },
   beep(hi){ this.tone(hi?1320:660, hi?.6:.2, 'sine', .5); if(hi) this.tone(1980,.6,'triangle',.15); },
   alarm(){ for(let i=0;i<8;i++) this.tone(i%2?620:880,.17,'square',.3,i*.19); },
@@ -702,19 +763,43 @@ function countdown(cb){
 }
 
 /* panel de respuesta común a todos los juegos */
+/* ---------- teclado propio del juego (evita el teclado y la barra de iOS) ---------- */
+const KB_ROWS=['qwertyuiop','asdfghjklñ','zxcvbnm'];
+let KB=null;
+function kbPanel(host, {onSubmit, onPass, passLabel, submitLabel='Responder', placeholder='Escribe tu respuesta'}){
+  host.innerHTML = `<div class="kb-disp empty" data-ph="${esc(placeholder)}"><span class="kb-txt"></span><span class="kb-caret"></span></div>
+    <div class="kb" role="group" aria-label="Teclado">${KB_ROWS.map((r,ri)=>`<div class="kb-row">${[...r].map(c=>`<button type="button" class="k" data-k="${c}">${c}</button>`).join('')}${ri===2?`<button type="button" class="k k-del" data-k="del" aria-label="Borrar">${ic('del')}</button>`:''}</div>`).join('')}
+    <div class="kb-row kb-act">${onPass?`<button type="button" class="k k-pass" data-k="pass">${passLabel||'Paso'}</button>`:''}<button type="button" class="k k-go" data-k="go">${submitLabel}</button></div></div>`;
+  const st={val:'', done:false, host}, txt=host.querySelector('.kb-txt'), disp=host.querySelector('.kb-disp');
+  const upd=()=>{ txt.textContent=st.val; disp.classList.toggle('empty', !st.val); host.dataset.val=st.val; };
+  const off=()=>host.querySelectorAll('.k').forEach(b=>b.disabled=true);
+  st.press = k => { if(st.done) return;
+    if(k==='go'){ const v=st.val.trim(); if(!v){ shake(disp); return; } st.done=true; off(); onSubmit(v); return; }
+    if(k==='pass'){ st.done=true; off(); onPass(); return; }
+    if(k==='del') st.val=st.val.slice(0,-1); else if(st.val.length<24) st.val+=k;
+    upd(); SFX.key(); };
+  st.retry = () => { st.done=false; st.val=''; host.querySelectorAll('.k').forEach(b=>b.disabled=false); upd(); };
+  host.querySelectorAll('.k').forEach(b=>{
+    b.addEventListener('pointerdown', e=>{ e.preventDefault(); b.classList.add('down'); st.press(b.dataset.k); });
+    ['pointerup','pointerleave','pointercancel'].forEach(t=>b.addEventListener(t, ()=>b.classList.remove('down')));
+  });
+  KB=st; upd(); return st;
+}
+document.addEventListener('keydown', e=>{
+  if(!KB || KB.done || !KB.host.isConnected || e.metaKey || e.ctrlKey || e.altKey) return;
+  const a=document.activeElement; if(a && /^(INPUT|SELECT|TEXTAREA)$/.test(a.tagName)) return;
+  if(e.key==='Enter'){ e.preventDefault(); KB.press('go'); }
+  else if(e.key==='Backspace'){ e.preventDefault(); KB.press('del'); }
+  else if(/^[a-zñáéíóúü]$/i.test(e.key)){ e.preventDefault(); KB.press(e.key.toLowerCase()); }
+});
+window.__kbType = t => { if(!KB) return; for(const c of t) KB.press(c); KB.press('go'); };
+
 function answerPanel(host, answers, onResult, opts={}){
   host.innerHTML=''; let done=false;
   const finish = r => { if(done) return; done=true; onResult(r); };
   if(cfg.modo==='solo'){
-    host.innerHTML = `<input class="ans" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" enterkeyhint="go" placeholder="Tu respuesta">
-      <div class="row" style="margin-top:10px"><button class="btn-pass" data-a="pass">${opts.passLabel||'Paso'}</button><button class="btn-ok" data-a="go">Responder</button></div>`;
-    const inp = host.querySelector('input');
-    const submit = () => { if(done) return; const v=inp.value.trim(); if(!v){ shake(inp); return; }
-      if(matches(v, answers)) finish('ok'); else if(opts.retry){ shake(inp); SFX.bad(); inp.select(); opts.retry(); } else finish('bad'); };
-    inp.addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); submit(); } });
-    host.querySelector('[data-a=go]').onclick = submit;
-    host.querySelector('[data-a=pass]').onclick = () => finish('pass');
-    setTimeout(()=>{ try{ inp.focus({preventScroll:true}); }catch(e){ inp.focus(); } }, 30);
+    kbPanel(host, {passLabel: opts.passLabel, onPass: () => finish('pass'),
+      onSubmit: v => finish(matches(v, answers) ? 'ok' : 'bad')});
   } else {
     host.innerHTML = `<div class="reveal" data-r>&nbsp;</div>
       <button data-a="see" style="width:100%;margin-bottom:10px">${ic('eye')}Ver respuesta</button>
@@ -840,11 +925,12 @@ function showLetter(){
   const tag=$('#r-tag'); tag.innerHTML = `<span class="L">${p.l}</span>${p.t==='e'?'Empieza con':'Contiene'}`; tag.className = 'tag'+(p.t==='c'?' c':'');
   $('#r-def').textContent = p.d;
   say(letraTxt(p));
+  $('#s-rosco').classList.toggle('kbmode', cfg.modo==='solo');
   answerPanel($('#r-ans'), p.r, res => onRosco(res), {passLabel:'¡Paso!'});
 }
 function onRosco(res){
   const i=R.q[0], p=R.p[i];
-  const inp=$('#r-ans input'); if(inp) R.given[i]=inp.value.trim();
+  R.given[i] = ($('#r-ans').dataset.val || '').trim();
   if(res==='ok'){ R.state[i]='ok'; R.q.shift(); SFX.ok(); vib(30); }
   else if(res==='bad'){ R.state[i]='bad'; R.q.shift(); SFX.bad(); vib([60,40,60]); if(cfg.penal){ R.clock.add(-cfg.penal); toast(`−${cfg.penal}s`); } }
   else { R.q.push(R.q.shift()); SFX.pass(); }
@@ -883,7 +969,7 @@ function endRosco(why){
 function activeClock(){ return (P && P.clock) || (R && !R.ended && R.clock) || null; }
 let pausedClock=null;
 function pause(){ const c=activeClock(); if(!c || !c.running) return; c.stop(); VOZ.stop(); pausedClock=c; $('#ov-pause').classList.add('on'); }
-function resume(){ $('#ov-pause').classList.remove('on'); SFX.init(); if(pausedClock){ pausedClock.start(); pausedClock=null; } if(R && !R.ended){ const inp=$('#r-ans input'); if(inp) inp.focus(); } }
+function resume(){ $('#ov-pause').classList.remove('on'); SFX.init(); if(pausedClock){ pausedClock.start(); pausedClock=null; } }
 function quit(){
   $('#ov-pause').classList.remove('on');
   if(P){ P.clock.stop(); P=null; } if(R){ R.clock.stop(); R.ended=true; R=null; }
@@ -1028,10 +1114,13 @@ window.addEventListener('load', ()=>{ const ir=new URLSearchParams(location.sear
     later(type, 180);
   };
   if(!reduce) later(()=>{ sp.classList.add('idle'); newRound(); }, 3300);
-  const go = () => { if(gone) return; gone=true; clearTimeout(idleT); sp.classList.remove('party'); gs.forEach(g=>g.classList.remove('s-ok','s-bad','s-cur')); wordEl.classList.remove('on');
-    SFX.init(); SFX.sting && SFX.sting();
-    sp.classList.add('lit'); setTimeout(()=>sp.classList.add('exit'), 120);
-    setTimeout(()=>sp.remove(), reduce?50:950); };
+  let exitT=null, exited=false;
+  const exit = () => { if(exited) return; exited=true; clearTimeout(exitT); sp.classList.remove('show'); sp.classList.add('lit');
+    setTimeout(()=>sp.classList.add('exit'), 140); setTimeout(()=>sp.remove(), reduce?50:1000); };
+  const go = () => { if(gone){ exit(); return; } gone=true; clearTimeout(idleT); sp.classList.remove('party'); gs.forEach(g=>g.classList.remove('s-ok','s-bad','s-cur')); wordEl.classList.remove('on');
+    SFX.init(); const d = SFX.theme();
+    if(!d || reduce) return exit();
+    sp.classList.add('show'); exitT=setTimeout(exit, d*1000); };
   sp.addEventListener('click', go);
   sp.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' ') go(); });
   setTimeout(()=>{ try{ $('#sp-go').focus({preventScroll:true}); }catch(e){} }, 3000);
