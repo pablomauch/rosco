@@ -526,7 +526,7 @@ input.ans::placeholder{color:rgba(168,155,212,.55)}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
 "use strict";
-const APP_VERSION = '3.0.0';
+const APP_VERSION = '3.0.1';
 const $ = s => document.querySelector(s);
 const LET = 'ABCDEFGHIJLMNÑOPQRSTUVXYZ'.split('');
 const B = window.BANCO;
@@ -551,6 +551,8 @@ const saveCfg = () => LS.set('cfg', cfg);
 let seen = LS.get('seen4', {});
 try{ localStorage.removeItem('rosco.used'); }catch(e){}
 const markSeen = (k, t=Date.now()) => { if(!k) return; if(!(seen[k] >= t)) seen[k] = t; clearTimeout(markSeen.t); markSeen.t = setTimeout(()=>LS.set('seen4', seen), 300); };
+const flushSeen = () => { clearTimeout(markSeen.t); LS.set('seen4', seen); };
+addEventListener('pagehide', flushSeen); document.addEventListener('visibilitychange', ()=>{ if(document.hidden) flushSeen(); });
 window.SEEN_EXT = {};   // historial de los demás teléfonos de la sala (lo llena el modo familia)
 const seenAt = k => Math.max(seen[k]||0, window.SEEN_EXT[k]||0);
 /* clave estable de cada palabra o pregunta, basada en su contenido */
