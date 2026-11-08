@@ -1,0 +1,351 @@
+# 1
+A|e|Insecto que fabrica miel y vive en colmenas|abeja
+A|e|Planta grande con tronco, ramas y hojas|árbol
+A|e|Líquido transparente que bebemos para vivir|agua
+A|e|Aparato con alas que lleva pasajeros por el aire|avión
+A|e|Papá de tu papá o de tu mamá|abuelo;abuela
+A|e|Joya redonda que se pone en el dedo|anillo
+A|e|Lo que hay en la playa y sirve para hacer castillos|arena
+A|e|Roedor de cola peluda que trepa árboles y junta nueces|ardilla
+A|e|Cojín donde apoyas la cabeza para dormir|almohada
+A|e|Persona a la que quieres y con la que te gusta jugar y conversar|amigo;amiga
+A|e|Líquido que se usa para freír, puede ser de oliva|aceite
+A|e|Objeto fino de metal con un ojo para enhebrar el hilo|aguja
+A|e|Aparato que sube y baja a las personas entre los pisos de un edificio|ascensor
+A|e|Arco de colores que aparece cuando hay sol y lluvia a la vez|arcoíris;arcoiris
+B|e|Embarcación que navega por el mar|barco
+B|e|Mamífero marino enorme que echa agua por un orificio de la cabeza|ballena
+B|e|Calzado alto que cubre el pie y parte de la pierna|bota
+B|e|Muestra de cariño que se da con los labios|beso
+B|e|Vehículo de dos ruedas que se mueve con pedales|bicicleta;bici
+B|e|Envase de vidrio o plástico para líquidos|botella
+B|e|Lugar con muchos árboles|bosque
+B|e|Animal de orejas largas parecido al caballo, que rebuzna|burro
+B|e|Tela con colores que representa a un país|bandera
+B|e|Pieza pequeña y redonda para abrochar la ropa|botón
+B|e|Recipiente con asa que en la playa se llena de arena|balde
+B|e|Mujer de los cuentos que vuela en escoba|bruja
+B|e|Esfera de jabón que flota en el aire|burbuja
+B|e|Pelo que crece en la cara de los hombres|barba
+C|e|Edificio donde vive una familia|casa
+C|e|Mueble para dormir|cama
+C|e|Animal de orejas largas que salta, como el de Pascua|conejo
+C|e|Animal que relincha y se puede montar|caballo
+C|e|Órgano que late en el pecho|corazón
+C|e|Cubierto para tomar la sopa|cuchara
+C|e|Prenda con cuello y botones|camisa
+C|e|Verdura que hace llorar cuando se pica|cebolla
+C|e|Lo que vemos arriba, azul en un día despejado|cielo
+C|e|Libreta donde se escribe en el colegio|cuaderno
+C|e|Lugar de la casa donde se preparan las comidas|cocina
+C|e|Nave que despega hacia el espacio|cohete
+C|e|Joya que se lleva colgada del cuello|collar
+C|e|Animal lento que lleva su casa en la espalda|caracol
+D|e|Pieza dura de la boca que sirve para masticar|diente
+D|e|Cada una de las cinco partes en que termina la mano|dedo
+D|e|Reptil gigante que vivió hace millones de años|dinosaurio
+D|e|Animal fantástico que echa fuego por la boca|dragón
+D|e|Chorro de agua para bañarse de pie|ducha
+D|e|Sabor del azúcar y de los pasteles|dulce
+D|e|Mamífero marino muy inteligente que salta sobre las olas|delfín
+D|e|Último día de la semana|domingo
+D|e|Cubo con puntos del uno al seis que se lanza en los juegos|dado
+D|e|Imagen que se hace con lápices de colores|dibujo
+D|e|Otra forma de llamar al médico|doctor;doctora
+D|e|Fruta de piel aterciopelada y cuesco grande|durazno
+D|e|Traje para parecer otra persona en una fiesta|disfraz
+D|e|Número que sigue al nueve|diez
+E|e|Mamífero terrestre más grande, con trompa y colmillos|elefante
+E|e|Punto brillante que se ve en el cielo de noche|estrella
+E|e|Escalones para subir de un piso a otro|escalera
+E|e|Vidrio donde te miras|espejo
+E|e|Personaje muy bajito de los cuentos, como los siete de Blancanieves|enano
+E|e|Utensilio con mango y cerdas para barrer|escoba
+E|e|Lugar donde los niños van a aprender|escuela
+E|e|Plato frío de lechuga, tomate y otras verduras|ensalada
+E|e|Aparato que calienta la casa en invierno|estufa
+E|e|Pequeño mamífero cubierto de púas|erizo
+E|e|Arma de hoja larga de los caballeros|espada
+E|e|Primer mes del año|enero
+E|e|Utensilio con forma de cono para echar líquidos en una botella|embudo
+E|e|Objeto blando que absorbe agua y sirve para lavar los platos|esponja
+F|e|Parte colorida y perfumada de muchas plantas|flor
+F|e|Llamas y calor que salen al quemarse la leña|fuego
+F|e|Mamífero marino con aletas que descansa en las rocas|foca
+F|e|Espíritu que asusta tapado con una sábana|fantasma
+F|e|Pasta larga y delgada que se come con salsa|fideos;fideo
+F|e|Instrumento musical de viento con agujeros|flauta
+F|e|Lo contrario del calor|frío
+F|e|Alimento dulce que dan las plantas, como la manzana o la pera|fruta
+F|e|Torre con una luz que guía a los barcos|faro
+F|e|Prenda que cubre de la cintura hacia abajo, sin piernas|falda
+F|e|Papás, hijos, abuelos, tíos y primos|familia
+F|e|Celebración con música, comida e invitados|fiesta
+F|e|Manta gruesa para abrigarse en la cama|frazada
+F|e|Fruta roja con semillitas por fuera|frutilla
+G|e|Felino doméstico que maúlla|gato
+G|e|Bolsa de goma que se infla en los cumpleaños|globo
+G|e|Ave de corral que pone huevos|gallina
+G|e|Instrumento de seis cuerdas que se rasguea|guitarra
+G|e|Prenda de lana para abrigar la cabeza|gorro
+G|e|Animal alargado y blando que vive bajo la tierra|gusano
+G|e|Ave que canta al amanecer|gallo
+G|e|Dulce horneado y crujiente|galleta
+G|e|Pequeña porción de agua que cae|gota
+G|e|Insecto que canta de noche|grillo
+G|e|Prenda que cubre la mano y cada dedo|guante
+G|e|Personaje de los cuentos de enorme tamaño|gigante
+G|e|Lugar en el campo donde se crían animales|granja
+G|e|Máquina alta que levanta cosas pesadas en las construcciones|grúa
+H|e|Agua congelada|hielo
+H|e|Parte verde y plana de las plantas|hoja
+H|e|Lo que pone la gallina|huevo
+H|e|Insecto pequeño y trabajador que vive en colonias|hormiga
+H|e|Postre frío que se derrite al sol|helado
+H|e|Hijo de tus mismos padres|hermano;hermana
+H|e|Hebra fina para coser|hilo
+H|e|Ser mágico de los cuentos con varita y alas|hada
+H|e|Red o tela colgada entre dos árboles para descansar|hamaca
+H|e|Parte dura del esqueleto que les encanta a los perros|hueso
+H|e|Lo que sale de la chimenea cuando hay fuego|humo
+H|e|Polvo blanco de trigo molido con que se hace el pan|harina
+H|e|Aparato de cocina para hornear queques|horno
+H|e|Terreno pequeño donde se cultivan verduras|huerto
+I|e|Porción de tierra rodeada de agua|isla
+I|e|Templo cristiano|iglesia
+I|e|Estación más fría del año|invierno
+I|e|Animal pequeño de seis patas, como la mosca|insecto
+I|e|Reptil verde con cresta que parece un pequeño dinosaurio|iguana
+I|e|Casa de hielo de los pueblos del Ártico|iglú
+I|e|Objeto que atrae los clips y se pega al refrigerador|imán
+I|e|Lo que se te ocurre cuando piensas algo nuevo|idea
+I|e|Lengua de un país, como el inglés o el francés|idioma
+I|e|Fuego grande que quema lo que no debía|incendio
+I|e|Taza del baño|inodoro
+I|e|Algo nuevo que alguien crea por primera vez|invento
+I|e|Máquina que pone en papel lo que está en el computador|impresora
+I|e|Tarjeta para llamar a alguien a una fiesta|invitación
+J|e|Animal africano de cuello larguísimo|jirafa
+J|e|Producto que hace espuma para lavarse las manos|jabón
+J|e|Terreno de la casa con pasto y flores|jardín
+J|e|Objeto con que juegan los niños|juguete
+J|e|Pierna de cerdo que va en el sándwich|jamón
+J|e|Caja con barrotes donde se guarda un pájaro|jaula
+J|e|Bebida que se saca de exprimir fruta|jugo
+J|e|Recipiente con asa para servir agua|jarra;jarro
+J|e|Día de la semana que va después del miércoles|jueves
+J|e|Séptimo mes del año|julio
+J|e|Persona que monta a caballo|jinete
+J|e|Postre de gelatina de colores|jalea
+J|e|Sexto mes del año|junio
+J|e|Persona que decide en un juicio|juez;jueza
+L|e|Satélite de la Tierra|luna
+L|e|Líquido blanco que da la vaca|leche
+L|e|Felino con melena, llamado rey de la selva|león
+L|e|Hojas impresas y encuadernadas para leer|libro
+L|e|Fruta amarilla y muy ácida|limón
+L|e|Animal salvaje que aúlla a la luna|lobo
+L|e|Agua que cae de las nubes|lluvia
+L|e|Gran masa de agua dulce rodeada de tierra|lago
+L|e|Aparato a pilas para iluminar en la oscuridad|linterna
+L|e|Ave de colores que puede imitar palabras|loro
+L|e|Parte de la boca que sirve para saborear|lengua
+L|e|Objeto metálico para abrir una puerta|llave
+L|e|Pelo de oveja con que se tejen chalecos|lana
+L|e|Hoja verde de las ensaladas|lechuga
+M|e|Fruta roja o verde que, según la historia, cayó sobre Newton|manzana
+M|e|Gran extensión de agua salada|mar
+M|e|Mueble con patas sobre el que se come|mesa
+M|e|Animal que salta entre los árboles y come plátanos|mono
+M|e|Insecto de alas de colores que antes fue oruga|mariposa
+M|e|Alimento dulce que fabrican las abejas|miel
+M|e|Parte del cuerpo con cinco dedos|mano
+M|e|Vehículo de dos ruedas con motor|moto
+M|e|Dibujo de un territorio para orientarse|mapa
+M|e|Día de la semana que va después del lunes|martes
+M|e|Bolso que se lleva en la espalda|mochila
+M|e|Equipaje con asa para viajar|maleta
+M|e|Insecto que zumba y se para en la comida|mosca
+M|e|Fruta redonda y dulce de pulpa anaranjada o verde que se come en verano|melón
+N|e|Masa blanca que flota en el cielo|nube
+N|e|Agua helada que cae en copos blancos|nieve
+N|e|Cítrico de color anaranjado|naranja
+N|e|Casita que hacen los pájaros para sus huevos|nido
+N|e|Parte del día en que no hay sol|noche
+N|e|Fruto seco de cáscara dura que parece un cerebro|nuez
+N|e|Número que sigue al ocho|nueve
+N|e|Fiesta del 25 de diciembre|navidad
+N|e|Hijo de tu hijo|nieto;nieta
+N|e|Signo que sirve para contar, como el 5 o el 8|número
+N|e|Color del carbón|negro
+N|e|Barco o vehículo que viaja al espacio|nave
+N|e|Lazo apretado que se hace con una cuerda|nudo
+N|e|Palabra con que se llama a una persona: ¿cuál es tu …?|nombre
+Ñ|c|Persona de pocos años|niño;niña
+Ñ|c|Parte dura al final de cada dedo|uña
+Ñ|c|Período de doce meses|año
+Ñ|c|Fruta tropical con corona de hojas|piña
+Ñ|c|Pieza de la casa donde está la ducha|baño
+Ñ|c|Animal de ocho patas que teje telas|araña
+Ñ|c|Gran elevación del terreno|montaña
+Ñ|c|Juguete con forma de persona|muñeca;muñeco
+Ñ|c|Ganas de dormir|sueño
+Ñ|c|Día que se celebra con torta y velas|cumpleaños
+Ñ|c|Estación en que caen las hojas|otoño
+Ñ|c|Madera que se quema en la chimenea|leña
+Ñ|c|Trozo de tela para sonarse la nariz|pañuelo
+Ñ|c|De poco tamaño|pequeño;pequeña
+O|e|Órgano con el que vemos|ojo
+O|e|Mamífero grande y peludo, como el pardo o el polar|oso
+O|e|Animal de granja que da lana|oveja
+O|e|Parte del cuerpo que sirve para oír|oreja
+O|e|Recipiente hondo de cocina para hervir|olla
+O|e|Número que sigue al siete|ocho
+O|e|Metal dorado de las medallas de primer lugar|oro
+O|e|Larva que se convierte en mariposa|oruga
+O|e|Onda de agua que llega a la playa|ola
+O|e|Cicatriz en el centro de la guata|ombligo
+O|e|Merienda chilena de la tarde, con té y pan|once
+O|e|Lugar donde trabajan las personas con escritorio y computador|oficina
+O|e|Mes que viene después de septiembre|octubre
+O|e|Trabajador de una construcción o una fábrica|obrero;obrera
+P|e|Animal que ladra|perro
+P|e|Alimento horneado de harina, agua y levadura|pan
+P|e|Ave acuática que hace «cuac»|pato
+P|e|Juguete redondo que rebota|pelota
+P|e|Animal con plumas que vuela y canta|pájaro
+P|e|Fruta verde o amarilla, más ancha abajo|pera
+P|e|Instrumento con teclas blancas y negras|piano
+P|e|Ropa para dormir|pijama;piyama
+P|e|Recipiente donde se sirve la comida|plato
+P|e|Abertura con una hoja para entrar a una casa|puerta
+P|e|Cría de la gallina|pollo
+P|e|Hojas en las que se escribe o se dibuja|papel
+P|e|Dulce de masa horneada con crema|pastel
+P|e|Peine con mango para el pelo|peineta
+Q|e|Alimento que se hace cuajando la leche|queso
+Q|e|Número que sigue al catorce|quince
+Q|e|Bizcocho dulce y esponjoso de la once|queque
+Q|e|Perro sin raza, en Chile|quiltro
+Q|c|Espacio verde de la ciudad para pasear|parque
+Q|c|Barco grande|buque
+Q|c|Objeto con mango y red para jugar tenis|raqueta
+Q|c|Prenda de abrigo con mangas que se abre por delante|chaqueta
+Q|c|Caja o envoltorio que se manda por correo|paquete
+Q|c|Insecto pequeño que pica y zumba de noche|mosquito
+Q|c|Grasa de la leche que se unta en el pan|mantequilla
+Q|c|Lugar donde se juntan dos calles|esquina
+Q|c|Aparato que hace un trabajo, como la de coser|máquina
+Q|c|Depósito grande para guardar agua o bencina|tanque
+R|e|Roedor pequeño al que persigue el gato|ratón
+R|e|Flor con espinas en el tallo|rosa
+R|e|Aparato que marca la hora|reloj
+R|e|Anfibio verde que croa|rana
+R|e|Monarca que gobierna un reino|rey
+R|e|Lo que se recibe envuelto en un cumpleaños|regalo
+R|e|Pieza redonda que gira en los autos|rueda
+R|e|Corriente de agua que va al mar|río
+R|e|Aparato para escuchar música y noticias|radio
+R|e|Útil para trazar líneas rectas|regla
+R|e|Lo que provoca un buen chiste|risa
+R|e|Color de la sangre|rojo
+R|e|Articulación del medio de la pierna|rodilla
+R|e|Esposa del rey|reina
+S|e|Estrella que nos da luz durante el día|sol
+S|e|Mueble para sentarse con respaldo|silla
+S|e|Anfibio de piel rugosa, pariente de la rana|sapo
+S|e|Fruta grande, verde por fuera y roja por dentro|sandía
+S|e|Siete días seguidos|semana
+S|e|Prenda con ala para protegerse del sol|sombrero
+S|e|Comida líquida y caliente que se toma con cuchara|sopa
+S|e|Reptil sin patas que se arrastra|serpiente
+S|e|Mujer con cola de pez de las leyendas|sirena
+S|e|Condimento blanco que se saca del mar|sal
+S|e|Día de la semana que va antes del domingo|sábado
+S|e|Utensilio para freír huevos|sartén
+S|e|Tela que cubre el colchón|sábana
+S|e|Número que sigue al seis|siete
+T|e|Vehículo que va sobre rieles|tren
+T|e|Recipiente con asa para tomar té|taza
+T|e|Gran felino de rayas negras|tigre
+T|e|Fruto rojo de las ensaladas|tomate
+T|e|Reptil lento con caparazón|tortuga
+T|e|Herramienta de dos hojas para cortar papel|tijera;tijeras
+T|e|Macho de la vaca|toro
+T|e|Instrumento que se toca con baquetas|tambor
+T|e|Aparato para llamar a distancia|teléfono
+T|e|Cubierto con dientes para pinchar|tenedor
+T|e|Parte de arriba de la casa que la protege de la lluvia|techo
+T|e|Barrita blanca para escribir en la pizarra|tiza
+T|e|Juguete que baila girando sobre su punta|trompo
+T|e|Aparato para ver programas y noticias|televisor;televisión;tele
+U|e|Fruta pequeña en racimos con que se hace el vino|uva
+U|e|Primer número|uno
+U|e|Ropa igual que usan los alumnos de un colegio|uniforme
+U|e|Que está al final de la fila|último;última
+U|e|Caballo mágico con un cuerno en la frente|unicornio
+U|e|Extender mantequilla sobre el pan|untar
+U|e|Objeto escolar, como el lápiz o la goma: un …|útil;útiles
+U|e|Parte de la vaca de donde sale la leche|ubre
+U|e|Juntar dos cosas para que queden pegadas|unir
+U|e|Todo lo que existe: estrellas, planetas y galaxias|universo
+U|e|Que no hay otro igual|único;única
+U|e|Emplear algo para lo que sirve|usar
+U|e|Palo de cocina para estirar la masa de las empanadas|uslero
+U|e|Que se necesita con mucha prisa|urgente
+V|e|Animal de granja que da leche|vaca
+V|e|Recipiente para tomar agua|vaso
+V|e|Abertura en la pared por donde entra la luz|ventana
+V|e|Cilindro de cera con mecha que se enciende|vela
+V|e|Color del pasto|verde
+V|e|Aire en movimiento|viento
+V|e|Montaña que puede echar lava|volcán
+V|e|Día de la semana que va antes del sábado|viernes
+V|e|Prenda de una pieza que cubre desde los hombros|vestido
+V|e|Instrumento de cuerda que se toca con arco apoyado en el hombro|violín
+V|e|Persona que vive en la casa de al lado|vecino;vecina
+V|e|Estación más calurosa del año|verano
+V|e|Ser de las leyendas que chupa sangre|vampiro
+V|e|Líquido ácido que se le echa a la ensalada|vinagre
+X|c|Auto con chofer que se paga por viaje|taxi
+X|c|Prueba para ver cuánto aprendiste|examen
+X|c|Número de orden que va después del quinto|sexto;sexta
+X|c|Cuando algo sale muy bien|éxito
+X|c|Conjunto de palabras escritas|texto
+X|c|Deporte de pelea con guantes|boxeo
+X|c|Grito para pedir ayuda: ¡…!|auxilio
+X|c|Parte del cuerpo debajo del brazo|axila
+X|c|Paseo o salida al campo con el curso|excursión
+X|c|Persona que viene de otro país|extranjero;extranjera
+X|c|Aparato para sacarle el jugo a los limones|exprimidor
+X|c|Instrumento de metal muy usado en el jazz|saxofón;saxo
+X|c|Gas del aire que necesitamos para respirar|oxígeno
+X|c|Que viene después, el que sigue|próximo;próxima
+Y|e|Parte amarilla del huevo|yema
+Y|e|Alimento lácteo cremoso que se come con cereales|yogur;yogurt
+Y|e|Hembra del caballo|yegua
+Y|e|Barco de lujo para pasear|yate
+Y|e|Juguete que sube y baja colgado de un hilo|yoyó;yoyo
+Y|c|Orilla del mar con arena|playa
+Y|c|Artista de circo de nariz roja|payaso;payasa
+Y|c|Primera comida del día|desayuno
+Y|c|Quinto mes del año|mayo
+Y|c|Chispa eléctrica que cae del cielo en una tormenta|rayo
+Y|c|Adorno valioso de oro o piedras preciosas|joya
+Y|c|El día antes de hoy|ayer
+Y|c|Lo que pides cuando necesitas una mano|ayuda
+Y|c|Salsa blanca y cremosa que se le pone al completo|mayonesa
+Z|e|Calzado que cubre el pie|zapato
+Z|e|Animal astuto de cola peluda|zorro
+Z|e|Hortaliza alargada de color naranja|zanahoria
+Z|e|Hortaliza grande y anaranjada con que se hacen sopaipillas|zapallo
+Z|e|Calzado para hacer deporte|zapatilla
+Z|e|Persona que escribe con la mano izquierda|zurdo;zurda
+Z|e|Parque con animales de todo el mundo|zoológico;zoo
+Z|c|Animal que vive en el agua y respira por branquias|pez
+Z|c|Útil para escribir con mina de grafito|lápiz
+Z|c|Parte de la cara que sirve para oler|nariz
+Z|c|Lo que da la ampolleta al encenderla|luz
+Z|c|Grano blanco que se come cocido|arroz
+Z|c|Parte del cuerpo donde están los ojos y la boca|cabeza
+Z|c|Superficie donde escribe el profesor|pizarra;pizarrón

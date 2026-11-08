@@ -1,0 +1,442 @@
+# Juegos previos — banco 4. Cada línea empieza con el nivel (1, 2 o 3).
+## vof
+1|V|Las arañas tienen ocho patas.
+1|F|Los peces pueden vivir mucho tiempo fuera del agua.
+1|V|El arcoíris tiene siete colores.
+1|F|Las gallinas tienen cuatro patas.
+1|V|El azul y el amarillo juntos forman el verde.
+1|F|Los elefantes son más pequeños que los ratones.
+1|V|La Navidad se celebra en diciembre.
+1|F|Un triángulo tiene cuatro lados.
+1|V|Los osos polares viven en el Ártico.
+1|F|El sol sale de noche.
+1|V|Las vacas comen pasto.
+1|F|Los perros maúllan.
+1|V|El hielo es agua congelada.
+1|F|Las tortugas pueden salir de su caparazón y dejarlo botado.
+1|V|Chile tiene costa en el océano Pacífico.
+1|F|La miel la fabrican las hormigas.
+1|V|Los pájaros ponen huevos.
+1|F|El tomate es azul cuando está maduro.
+1|V|Una hora tiene 60 minutos.
+1|F|Un año tiene 300 días.
+1|V|Los dientes sirven para masticar.
+1|F|Las nubes están hechas de algodón.
+1|V|El rojo es uno de los colores de la bandera de Chile.
+1|F|La bandera de Chile tiene tres estrellas.
+1|V|Las plantas toman agua por sus raíces.
+1|F|Los caballos vuelan.
+1|V|En invierno hace más frío que en verano.
+1|F|La leche sale de las gallinas.
+1|V|El corazón bombea la sangre.
+1|F|El pingüino es un mamífero.
+2|V|El desierto de Atacama es uno de los lugares más secos del mundo.
+2|F|Rapa Nui está en el océano Atlántico.
+2|V|Los murciélagos son mamíferos.
+2|F|El monte Everest está en la cordillera de los Andes.
+2|V|Júpiter es el planeta más grande del sistema solar.
+2|F|El agua de mar es dulce.
+2|V|Gabriela Mistral fue profesora.
+2|F|La capital de Perú es Cusco.
+2|V|El cuerpo humano adulto tiene más de 200 huesos.
+2|F|La Luna es más grande que la Tierra.
+2|V|El estrecho de Magallanes une el Atlántico con el Pacífico.
+2|F|Los pulpos tienen diez brazos.
+2|V|El Polo Sur está en la Antártida.
+2|F|Bernardo O'Higgins fue el primer presidente de Argentina.
+2|V|La palabra «rápido» es esdrújula.
+2|F|Mercurio es el planeta más alejado del Sol.
+2|V|Las abejas se comunican entre ellas con una especie de baile.
+2|F|Los tomates crecen bajo tierra, como las papas.
+2|V|La papa es originaria de los Andes.
+2|F|Vincent van Gogh era español.
+2|V|Un decágono tiene diez lados.
+2|F|El oro se oxida con facilidad.
+2|V|Los camaleones pueden cambiar de color.
+2|F|Chile limita con Bolivia, Perú y Uruguay.
+2|V|La Torre Eiffel está en París.
+2|F|Los delfines respiran bajo el agua con branquias.
+2|V|El castellano y el español son el mismo idioma.
+2|F|El 21 de mayo se celebra la Independencia de Chile.
+2|V|Las tortugas marinas vuelven a desovar a la playa donde nacieron.
+2|F|La Cordillera de la Costa es más alta que la de los Andes.
+3|V|La luz del Sol tarda unos ocho minutos en llegar a la Tierra.
+3|F|«La Araucana» la escribió Pablo Neruda.
+3|V|El español tiene más hablantes nativos que el inglés.
+3|F|El ADN fue descubierto por Albert Einstein.
+3|V|Venus gira sobre sí mismo en sentido contrario a la mayoría de los planetas.
+3|F|Los Juegos Olímpicos modernos comenzaron en Roma.
+3|V|El Imperio inca llegó a dominar parte del territorio que hoy es Chile.
+3|F|«Martín Rivas» la escribió Vicente Huidobro.
+3|V|El helio es más liviano que el aire.
+3|F|La Gran Pirámide de Guiza fue construida por los romanos.
+3|V|Los pulpos tienen tres corazones.
+3|F|El sonido viaja más rápido en el aire que en el agua.
+3|V|El elemento más abundante del universo es el hidrógeno.
+3|F|Cristóbal Colón murió sabiendo que había llegado a un continente nuevo.
+3|V|Charles Darwin estuvo en Chile durante su viaje en el Beagle.
+3|F|El Sahara es el desierto más grande del mundo, incluso contando los polares.
+3|V|Un número primo solo es divisible por 1 y por sí mismo.
+3|F|El 1 es un número primo.
+3|V|Nicanor Parra es conocido como el creador de la «antipoesía».
+3|F|La penicilina la descubrió Louis Pasteur.
+3|V|Isaac Newton formuló la ley de la gravitación universal.
+3|F|El mar Muerto es tan salado como el resto de los océanos.
+3|V|Para los griegos, el monte Olimpo era la morada de los dioses.
+3|F|La Revolución rusa ocurrió en 1789.
+3|V|La palabra «oftalmólogo» lleva tilde.
+3|F|Las estrellas fugaces son estrellas que caen a la Tierra.
+3|V|El Sol es una estrella.
+3|F|La capital de Turquía es Estambul.
+3|V|El canal de Suez une el mar Mediterráneo con el mar Rojo.
+3|F|«La última cena» de Leonardo da Vinci está en el Vaticano.
+## refran
+1|Dios los cría y ellos se ___|juntan
+1|Más vale solo que mal ___|acompañado
+1|Barriga llena, corazón ___|contento
+1|El que la sigue la ___|consigue
+1|Cada loco con su ___|tema
+1|No hay que llorar sobre la leche ___|derramada
+1|Al que le quede el sayo, que se lo ___|ponga
+1|Poco a poco se anda ___|lejos
+1|Más vale maña que ___|fuerza
+1|Lo que no mata, ___|engorda
+1|Amor con amor se ___|paga
+1|Nunca es tarde si la dicha es ___|buena
+1|No hay peor sordo que el que no quiere ___|oír
+1|Hablando del rey de Roma, por la puerta se ___|asoma
+1|Con la vara que midas serás ___|medido
+1|El que mucho se despide, pocas ganas tiene de ___|irse
+2|A palabras necias, oídos ___|sordos
+2|Quien no llora, no ___|mama
+2|Obras son amores y no buenas ___|razones
+2|El que a buen árbol se arrima, buena sombra lo ___|cobija
+2|Más vale un «toma» que dos «te ___»|daré
+2|No es oro todo lo que ___|reluce
+2|Ladrón que roba a ladrón tiene cien años de ___|perdón
+2|Piensa mal y ___|acertarás
+2|Cuando una puerta se cierra, otra se ___|abre
+2|Quien bien te quiere te hará ___|llorar
+2|Unos nacen con estrella y otros nacen ___|estrellados
+2|Árbol que nace torcido, jamás su tronco ___|endereza
+2|Desvestir a un santo para vestir a ___|otro
+2|Echando a perder se ___|aprende
+2|El que tiene boca se ___|equivoca
+2|A cada chancho le llega su San ___|martín
+3|Quien a hierro mata, a hierro ___|muere
+3|Más vale malo conocido que bueno por ___|conocer
+3|De noche, todos los gatos son ___|pardos
+3|Al freír será el ___|reír
+3|Cuando las barbas de tu vecino veas cortar, pon las tuyas a ___|remojar
+3|Donde fueres, haz lo que ___|vieres
+3|Arrieros somos y en el camino nos ___|encontraremos
+3|El que con niños se acuesta, ___ amanece|mojado
+3|Cuentas claras conservan la ___|amistad
+3|Tanto va el cántaro al agua que al fin se ___|rompe
+3|Por el hilo se saca el ___|ovillo
+3|Al buen pagador no le duelen ___|prendas
+3|En martes, ni te cases ni te ___|embarques
+3|Nadie sabe para quién ___|trabaja
+3|Sarna con gusto no ___|pica
+3|Quien calla, ___|otorga
+## intrusa
+1|plátano;frutilla;kiwi;papa|3|La papa no es una fruta.
+1|búho;loro;gaviota;delfín|3|El delfín no es un ave.
+1|azul;amarillo;morado;cuchara|3|La cuchara no es un color.
+1|marzo;abril;sábado;agosto|2|Sábado es un día; los demás son meses.
+1|bus;metro;bicicleta;lavadora|3|La lavadora no es un medio de transporte.
+1|trompeta;flauta;tambor;tenedor|3|El tenedor no es un instrumento musical.
+1|zapato;bota;sandalia;gorro|3|El gorro no se usa en los pies.
+1|perro;gato;hámster;tiburón|3|El tiburón no es una mascota de la casa.
+1|círculo;cuadrado;triángulo;manzana|3|La manzana no es una figura geométrica.
+1|cama;sofá;silla;nube|3|La nube no es un mueble.
+1|brazo;pierna;mano;sombrero|3|El sombrero no es parte del cuerpo.
+1|rosa;margarita;tulipán;pino|3|El pino es un árbol, no una flor.
+1|cinco;ocho;doce;verde|3|Verde no es un número.
+1|abeja;mariposa;mosquito;caracol|3|El caracol no es un insecto.
+1|primavera;verano;otoño;noviembre|3|Noviembre es un mes; los demás son estaciones.
+1|vaca;oveja;cerdo;jirafa|3|La jirafa no es un animal de granja.
+1|pizza;hamburguesa;empanada;jabón|3|El jabón no se come.
+1|lápiz;goma;sacapuntas;almohada|3|La almohada no es un útil escolar.
+2|Mercurio;Saturno;Neptuno;Sirio|3|Sirio es una estrella, no un planeta.
+2|araucaria;alerce;quillay;baobab|3|El baobab no es un árbol nativo de Chile.
+2|Valdivia;Osorno;Temuco;Arica|3|Arica está en el norte; las demás ciudades, en el sur.
+2|tenis;bádminton;ping-pong;natación|3|La natación no se juega con raqueta.
+2|español;portugués;italiano;alemán|3|El alemán no es una lengua romance.
+2|ballena;foca;nutria;pulpo|3|El pulpo no es un mamífero.
+2|cuadrado;rombo;rectángulo;triángulo|3|El triángulo no tiene cuatro lados.
+2|Lima;Quito;Bogotá;Valparaíso|3|Valparaíso no es la capital de un país.
+2|guitarra;charango;arpa;flauta|3|La flauta no es un instrumento de cuerda.
+2|hidrógeno;oxígeno;nitrógeno;bronce|3|El bronce es una aleación, no un elemento.
+2|Neruda;Mistral;Parra;Borges|3|Borges era argentino; los demás, chilenos.
+2|Nilo;Amazonas;Misisipi;Titicaca|3|El Titicaca es un lago, no un río.
+2|sapo;rana;salamandra;lagarto|3|El lagarto es un reptil; los demás, anfibios.
+2|óleo;acuarela;témpera;cincel|3|El cincel no es un tipo de pintura.
+2|París;Roma;Berlín;Barcelona|3|Barcelona no es una capital de país.
+2|corazón;pulmón;hígado;codo|3|El codo no es un órgano.
+2|Picasso;Matta;Kahlo;Mozart|3|Mozart era músico; los demás, pintores.
+2|cobre;litio;salitre;trigo|3|El trigo no es un recurso minero.
+3|Homero;Virgilio;Ovidio;Cervantes|3|Cervantes no es un poeta de la Antigüedad.
+3|Afrodita;Apolo;Hermes;Odín|3|Odín es un dios nórdico, no griego.
+3|bronce;latón;acero;cobre|3|El cobre es un metal puro; los demás son aleaciones.
+3|haiku;soneto;oda;ensayo|3|El ensayo no es una forma poética.
+3|Machu Picchu;Chichén Itzá;Teotihuacán;Stonehenge|3|Stonehenge no está en América.
+3|Vivaldi;Verdi;Puccini;Rossini|0|Vivaldi era barroco; los demás compusieron óperas en el siglo XIX.
+3|cuarzo;diamante;rubí;perla|3|La perla no es un mineral: la produce un molusco.
+3|pentágono;hexágono;heptágono;esfera|3|La esfera es un cuerpo, no un polígono.
+3|Saturno;Júpiter;Urano;Marte|3|Marte no es un planeta gigante gaseoso.
+3|Bolívar;Sucre;San Martín;Cortés|3|Hernán Cortés fue un conquistador, no un libertador.
+3|metáfora;símil;hipérbole;adverbio|3|El adverbio no es una figura literaria.
+3|Atenas;Esparta;Corinto;Cartago|3|Cartago no era una ciudad griega.
+3|neurona;glóbulo rojo;plaqueta;bacteria|3|La bacteria no es una célula del cuerpo humano.
+3|Dalí;Magritte;Miró;Velázquez|3|Velázquez no es un pintor surrealista.
+3|Kant;Hegel;Nietzsche;Voltaire|3|Voltaire era francés; los demás, alemanes.
+3|Andrómeda;Orión;Casiopea;Andes|3|Los Andes son una cordillera, no una constelación.
+3|Tokio;Kioto;Osaka;Seúl|3|Seúl no está en Japón.
+3|rupia;rublo;peso;sánscrito|3|El sánscrito es una lengua, no una moneda.
+## letras
+1|calabaza|Hortaliza grande y anaranjada de Halloween
+1|lavaplatos|Lugar de la cocina donde se lavan los platos
+1|bombilla|Tubito metálico para tomar mate
+1|cucharón|Cuchara grande para servir sopa
+1|semilla|Lo que se planta para que nazca una planta
+1|sillón|Asiento grande y cómodo con brazos
+1|cortina|Tela que cubre la ventana
+1|escritorio|Mesa para estudiar o trabajar
+1|basurero|Tarro donde se bota la basura
+1|marioneta|Muñeco que se mueve con hilos
+1|chupete|Lo que chupa la guagua para calmarse
+1|mamadera|Botella con que toma leche la guagua
+1|velador|Mueble pequeño junto a la cama
+1|pantorrilla|Parte de atrás de la pierna, bajo la rodilla
+1|cosquillas|Lo que te hace reír cuando te tocan la guata
+1|pegamento|Sirve para pegar papeles
+1|aspiradora|Máquina que aspira el polvo del suelo
+1|tostadora|Aparato para tostar el pan
+2|carrusel|Juego de feria con caballitos que giran
+2|catedral|Iglesia principal de una ciudad
+2|bicentenario|Celebración de los doscientos años
+2|chinchilla|Roedor andino de pelaje muy suave
+2|pasamontañas|Gorro que cubre toda la cabeza menos los ojos
+2|paracaídas|Tela que frena la caída al saltar de un avión
+2|esgrima|Deporte de combate con espadas
+2|cordillera|Cadena de montañas
+2|guardabosques|Persona que cuida un bosque
+2|campanario|Torre donde están las campanas
+2|limonada|Bebida de limón, agua y azúcar
+2|bailarina|Mujer que baila ballet
+2|carnicero|Persona que vende carne
+2|archivador|Carpeta o mueble para guardar documentos
+2|caleta|Pequeño puerto de pescadores
+2|empanada|Masa rellena de pino que se come en Fiestas Patrias
+2|sopaipilla|Masa frita de zapallo que se come en días de lluvia
+2|teleférico|Cabina colgada de un cable que sube un cerro
+3|ambivalencia|Estado de quien siente dos cosas opuestas a la vez
+3|clarividencia|Capacidad de ver con claridad lo que otros no ven
+3|ecuanimidad|Serenidad y equilibrio al juzgar
+3|perspicacia|Agudeza para notar lo que no es evidente
+3|melancolía|Tristeza vaga y profunda
+3|altruismo|Ayudar a otros sin esperar nada a cambio
+3|prestidigitador|Mago que hace trucos con las manos
+3|cartografía|Arte de hacer mapas
+3|desfachatez|Descaro, falta de vergüenza
+3|efervescencia|Burbujeo de un líquido que libera gas
+3|incertidumbre|Falta de certeza
+3|intemperie|Lugar descubierto, expuesto al clima
+3|magnetismo|Fuerza de atracción de los imanes
+3|obstinación|Terquedad, insistencia en una idea
+3|paralelismo|Cualidad de dos cosas que siguen la misma dirección
+3|reciprocidad|Correspondencia mutua entre dos
+3|transeúnte|Persona que camina por la calle
+3|taquigrafía|Escritura rápida con signos abreviados
+## cuatro
+1|¿Cuántas patas tiene una gallina?|2;4;6;3|0
+1|¿Qué animal tiene rayas blancas y negras?|Cebra;Jirafa;León;Oso|0
+1|¿De qué color es el cielo en un día despejado?|Verde;Azul;Rojo;Café|1
+1|¿Qué fruta se pela y tiene gajos?|Naranja;Manzana;Pera;Sandía|0
+1|¿Qué usamos para cortar papel?|Tijeras;Cuchara;Lápiz;Regla|0
+1|¿Cuántos meses tiene medio año?|3;6;9;12|1
+1|¿Qué animal vive en una colmena?|Abeja;Hormiga;Mosca;Araña|0
+1|¿Qué se usa para lavarse los dientes?|Peineta;Cepillo;Esponja;Toalla|1
+1|¿Qué animal hace «guau»?|Gato;Pato;Perro;Vaca|2
+1|¿En qué estación del año se celebra la Navidad en Chile?|Invierno;Otoño;Verano;Primavera|2
+1|¿Qué planeta es conocido como el planeta rojo?|Marte;Venus;Júpiter;Saturno|0
+1|¿Cuántos ojos tiene una persona?|1;2;3;4|1
+1|¿Qué instrumento se toca soplando?|Flauta;Tambor;Guitarra;Piano|0
+1|¿Qué se le echa a la sopa para darle sabor?|Sal;Azúcar;Jabón;Arena|0
+1|¿Cuál es el animal más grande del mar?|Ballena azul;Tiburón;Delfín;Pulpo|0
+1|¿De qué color es la nieve?|Negro;Blanco;Azul;Gris|1
+1|¿Qué día viene después del domingo?|Sábado;Lunes;Martes;Viernes|1
+1|¿Con qué fruta se hace el vino?|Uva;Manzana;Frutilla;Naranja|0
+1|¿Qué parte del cuerpo usamos para oler?|Oreja;Nariz;Boca;Mano|1
+1|¿Con qué se toma la sopa?|Tenedor;Cuchillo;Cuchara;Palitos|2
+1|¿Qué animal pone huevos y hace «cuac»?|Pato;Perro;Gato;Caballo|0
+1|¿Cuántas ruedas tiene una bicicleta?|1;2;3;4|1
+1|¿Qué se usa en la cabeza para protegerse del sol?|Guantes;Sombrero;Bufanda;Calcetines|1
+1|¿Cuál de estos es un día de la semana?|Enero;Miércoles;Otoño;Mañana|1
+2|¿Cuál es la capital de Argentina?|Córdoba;Rosario;Buenos Aires;Mendoza|2
+2|¿Cuántos jugadores por equipo hay en cancha en el vóleibol?|5;6;7;11|1
+2|¿Qué popularizó Thomas Edison, entre otros inventos?|El teléfono;La ampolleta eléctrica;La imprenta;La rueda|1
+2|¿Qué planeta es famoso por sus grandes anillos?|Marte;Saturno;Mercurio;Venus|1
+2|¿En qué continente está Japón?|Europa;Asia;Oceanía;África|1
+2|¿Quién escribió «El Principito»?|Julio Verne;Antoine de Saint-Exupéry;Hans Christian Andersen;Lewis Carroll|1
+2|¿Qué océano separa América de Europa?|Pacífico;Atlántico;Índico;Ártico|1
+2|¿Cuántos minutos dura un partido de fútbol sin alargue?|60;80;90;120|2
+2|¿Qué ave es símbolo de la paz?|Paloma;Águila;Cóndor;Búho|0
+2|¿En qué ciudad está el Coliseo?|Atenas;Roma;Madrid;Estambul|1
+2|¿Qué volcán chileno está junto a Pucón?|Osorno;Villarrica;Llaima;Calbuco|1
+2|¿Cuántos centímetros tiene un metro?|10;100;1.000;50|1
+2|¿Quién fue el primer presidente de Estados Unidos?|Abraham Lincoln;George Washington;Thomas Jefferson;John Adams|1
+2|¿Qué gas forma la mayor parte del aire?|Oxígeno;Nitrógeno;Dióxido de carbono;Helio|1
+2|¿Cuál es la moneda del Reino Unido?|Euro;Libra esterlina;Dólar;Franco|1
+2|¿Qué órgano filtra la sangre y produce la orina?|Hígado;Riñón;Pulmón;Estómago|1
+2|¿En qué país nació Gabriel García Márquez?|México;Colombia;Venezuela;Perú|1
+2|¿Cuántas regiones tiene Chile?|13;15;16;18|2
+2|¿Qué selección ganó el Mundial de Fútbol de 2022?|Francia;Brasil;Argentina;Alemania|2
+2|¿Qué idioma se habla en Brasil?|Español;Portugués;Inglés;Francés|1
+2|¿Qué pintor creó «Los girasoles»?|Monet;Van Gogh;Picasso;Rembrandt|1
+2|¿Cuántos años tiene un siglo?|10;50;100;1.000|2
+2|¿Qué se celebra en Chile el 18 de septiembre?|Navidad;Fiestas Patrias;Año Nuevo;Día del Trabajador|1
+2|¿En qué ciudad chilena está el cerro San Cristóbal?|Valparaíso;Santiago;Concepción;La Serena|1
+3|¿Quién escribió «La casa de los espíritus»?|Isabel Allende;Marcela Paz;María Luisa Bombal;Gabriela Mistral|0
+3|¿En qué año comenzó la Primera Guerra Mundial?|1905;1914;1918;1939|1
+3|¿Qué científica ganó dos Premios Nobel en ciencias distintas?|Marie Curie;Rosalind Franklin;Ada Lovelace;Lise Meitner|0
+3|¿Cuál es el país más grande del mundo por superficie?|China;Canadá;Rusia;Estados Unidos|2
+3|¿Cuál es la capital de Egipto?|Alejandría;El Cairo;Luxor;Guiza|1
+3|¿Qué filósofo griego fue maestro de Alejandro Magno?|Sócrates;Platón;Aristóteles;Pitágoras|2
+3|¿Cuál es el símbolo químico del sodio?|So;Sd;Na;S|2
+3|¿Quién escribió «Hijo de ladrón»?|Manuel Rojas;José Donoso;Baldomero Lillo;Alberto Blest Gana|0
+3|¿Cuál es la capital de Suiza?|Zúrich;Ginebra;Berna;Basilea|2
+3|¿Cuántos planetas del sistema solar tienen anillos?|1;2;4;6|2
+3|¿Quién pintó «Las meninas»?|Goya;El Greco;Velázquez;Murillo|2
+3|¿En qué ciudad se firmó la Declaración de Independencia de Estados Unidos?|Nueva York;Boston;Filadelfia;Washington|2
+3|¿Cuál es el hueso más pequeño del cuerpo humano?|Estribo;Martillo;Yunque;Falange|0
+3|¿Qué compositor escribió «La flauta mágica»?|Bach;Mozart;Wagner;Verdi|1
+3|¿Cuántos grados suman los ángulos interiores de un triángulo?|90;180;270;360|1
+3|¿En qué año se fundó la Universidad de Chile?|1810;1842;1888;1900|1
+3|¿Qué océano rodea a la Antártida?|Austral;Índico;Ártico;Atlántico Norte|0
+3|¿Cuál es el idioma oficial de Irán?|Árabe;Persa;Turco;Urdu|1
+3|¿Quién escribió «Rayuela»?|Jorge Luis Borges;Julio Cortázar;Ernesto Sabato;Adolfo Bioy Casares|1
+3|¿Qué partícula del átomo tiene carga negativa?|Protón;Neutrón;Electrón;Fotón|2
+3|¿En qué país está la ciudad de Petra?|Egipto;Jordania;Israel;Siria|1
+3|¿En qué país está el desierto de Gobi, junto con China?|India;Mongolia;Japón;Irán|1
+3|¿Quién completó la primera vuelta al mundo tras la muerte de Magallanes?|Juan Sebastián Elcano;Vasco da Gama;Américo Vespucio;Francis Drake|0
+3|¿Qué número representa la letra romana L?|10;50;100;500|1
+3|¿Quién fue la primera mujer en recibir el Premio Nacional de Literatura de Chile?|Gabriela Mistral;Marta Brunet;Isabel Allende;Marcela Paz|0
+## anagramas
+1|camión|Vehículo grande para llevar carga
+1|cereal|Copos que se comen con leche al desayuno
+1|lámpara|Aparato que da luz
+1|carpeta|Cartulina doblada para guardar hojas
+1|tobillo|Articulación entre la pierna y el pie
+1|serpentina|Tira de papel de colores que se lanza en las fiestas
+1|lavamanos|Donde nos lavamos las manos en el baño
+1|pepino|Hortaliza verde y alargada de las ensaladas
+1|panqueque|Masa delgada que se rellena con manjar
+1|manjar|Dulce de leche que se unta en el pan, en Chile
+1|cartera|Bolso de mano
+1|gallinero|Lugar donde duermen las gallinas
+1|abrazo|Muestra de cariño con los brazos
+1|teclado|Parte del computador con letras para escribir
+1|patineta|Tabla con ruedas para deslizarse
+1|cartulina|Papel grueso de colores para hacer trabajos
+1|pulsera|Joya que se lleva en la muñeca
+1|corchete|Útil que une hojas con un alambrito
+2|biografía|Historia de la vida de una persona
+2|calculadora|Aparato para hacer operaciones matemáticas
+2|campamento|Lugar con carpas donde se acampa
+2|ortografía|Reglas para escribir correctamente
+2|parlamento|Asamblea que hace las leyes
+2|pescador|Persona que vive de la pesca
+2|televidente|Persona que mira televisión
+2|enfermería|Lugar del colegio donde se atiende a los enfermos
+2|aeropuerto|Lugar donde aterrizan los aviones
+2|florista|Persona que vende flores
+2|saltamontes|Insecto verde que salta muy alto
+2|trapecista|Artista de circo que se columpia en las alturas
+2|cerrajero|Persona que abre y arregla cerraduras
+2|alpinista|Persona que escala montañas
+2|ventisquero|Lugar de la montaña donde se acumula la nieve
+2|carabinero|Policía uniformado de Chile
+2|lavandería|Lugar donde se lava la ropa
+2|detergente|Producto para lavar la ropa
+3|subconsciente|Parte de la mente de la que no nos damos cuenta
+3|parapsicología|Estudio de fenómenos como la telepatía
+3|aerodinámico|Con forma que corta bien el aire
+3|trigonometría|Rama de las matemáticas que estudia los triángulos
+3|interplanetario|Que ocurre entre planetas
+3|imperceptible|Que no se puede percibir
+3|termoeléctrica|Central que produce electricidad quemando combustible
+3|biodiversidad|Variedad de seres vivos de un lugar
+3|cosmonauta|Astronauta de la antigua Unión Soviética
+3|hidroeléctrica|Central que genera electricidad con la fuerza del agua
+3|inconmensurable|Tan grande que no se puede medir
+3|oceanografía|Ciencia que estudia los océanos
+3|paleontólogo|Científico que estudia los fósiles
+3|arqueología|Ciencia que estudia las civilizaciones antiguas por sus restos
+3|caricaturista|Persona que dibuja caricaturas
+3|contemporáneo|De la misma época
+3|bienaventuranza|Felicidad plena
+3|telecomunicaciones|Sistemas para transmitir información a distancia
+## pista
+1|vacaciones|Se esperan todo el año;No hay colegio;Muchos viajan;Las de verano son las más largas
+1|cine|Se apaga la luz;Hay cabritas;Tiene una pantalla gigante;Se ven películas
+1|bebé|Duerme mucho;Usa pañales;Llora para pedir leche;Recién nacido
+1|plaza|Tiene bancas;Hay juegos para niños;Está en el centro del pueblo;La principal se llama «de Armas»
+1|mascota|Vive contigo;Hay que darle comida;Puede ser perro o gato;Es parte de la familia
+1|pizza|Es redonda;Se corta en triángulos;Lleva queso derretido;Viene de Italia
+1|trueno|Se oye después del relámpago;Hace un ruido muy fuerte;Asusta a los perros;Llega con la tormenta
+1|circo|Tiene una carpa grande;Hay payasos;Hay malabaristas;Los niños lo aman
+1|escondidas|Es un juego;Uno cuenta con los ojos cerrados;Los demás se ocultan;«¡Uno, dos, tres por mí!»
+1|torta|Es dulce;Se corta en trozos;Se le ponen velas;Infaltable en los cumpleaños
+1|bus|Lleva muchos pasajeros;Para en los paraderos;Se paga el pasaje;Transporte público
+1|campana|Es de metal;Suena «din don»;Está en las iglesias;Anuncia el recreo
+1|picnic|Se hace al aire libre;Se lleva un mantel;Se come sentado en el pasto;Canasto con comida
+1|colegio|Tiene salas;Hay recreos;Se usa uniforme;Ahí estudian los niños
+2|vendimia|Se celebra en otoño;Hay fiestas en el campo;Se juntan racimos;Cosecha de la uva
+2|caravana|Va en fila;Puede ser de camellos;Avanza por el desierto;Grupo de vehículos o viajeros
+2|naufragio|Ocurre en el mar;Puede haber sobrevivientes;Lo sufrió el Titanic;Hundimiento de un barco
+2|mudanza|Hay muchas cajas;Llega un camión;Se cambia de casa;Se embalan las cosas
+2|herencia|Se recibe;Viene de un familiar;Está en un testamento;Bienes que deja alguien al morir
+2|cosecha|Ocurre en el campo;Se hace al final de la temporada;Se juntan frutos;Lo que se recoge de los cultivos
+2|fogón|Se prende al aire libre;Lleva leña;Se asa carne alrededor;Típico de las fondas
+2|fonda|Se instala en septiembre;Hay cueca;Se toma chicha;Fiesta de las Fiestas Patrias
+2|carta|Se escribe;Lleva sobre;Se envía por correo;Empieza con «Querido…»
+2|diario|Sale todos los días;Tiene noticias;Se lee en papel o en línea;Antes lo vendía el suplementero
+2|piloto|Usa uniforme;Trabaja en la cabina;Habla por altoparlante;Conduce el avión
+2|tatuaje|Es para siempre;Se hace con agujas;Está en la piel;Es un dibujo con tinta
+2|medalla|Se cuelga al cuello;Puede ser de oro, plata o bronce;Se gana en una competencia;Premio olímpico
+2|pasaje|Se compra;Puede ser de ida y vuelta;Sirve para viajar;Lo pide el chofer o la aerolínea
+3|mentira|Tiene patas cortas, dicen;Hacía crecer la nariz de Pinocho;Engaña;Lo contrario de la verdad
+3|esperanza|Es lo último que se pierde;Es verde, dicen;Mira al futuro;Confianza en que algo bueno ocurra
+3|vergüenza|Te pone rojo;Te dan ganas de esconderte;Aparece al equivocarse en público;Bochorno
+3|memoria|Se puede perder;Guarda el pasado;Se entrena;Capacidad de recordar
+3|orgullo|Puede ser bueno o malo;Se siente por un logro;A veces impide pedir perdón;Satisfacción por lo propio
+3|envidia|Se dice que corroe;Es un pecado capital;Desea lo que tiene otro;A veces se dice que es «sana»
+3|sorpresa|No se espera;Puede ser una fiesta;Se guarda en secreto;Hace decir «¡oh!»
+3|costumbre|Se repite;Se hereda;Cuesta cambiarla;Hábito de un pueblo o una persona
+3|suerte|Se desea antes de un examen;Hay buena y mala;La atrae un trébol de cuatro hojas;Azar
+3|consejo|Se da;Se pide;No siempre se sigue;Recomendación de alguien con experiencia
+3|aniversario|Se celebra cada año;Recuerda una fecha;Puede ser de bodas;Los hay de plata y de oro
+3|rutina|Se repite cada día;Puede aburrir;Es un hábito;Serie de actividades fijas
+3|ilusión|Puede ser óptica;Hace creer lo que no es;Se puede perder;Esperanza de algo deseado
+3|rival|Está al frente;Se le quiere ganar;Puede ser un equipo;Adversario
+## encadenadas
+1|sa,la,to|cosa=Objeto cualquiera|sala=Pieza de la casa para recibir visitas|lagarto=Reptil grande que toma sol|toalla=Sirve para secarse después de la ducha
+1|lo,do|pelo=Lo que nos crece en la cabeza|lodo=Barro|dormitorio=Pieza para dormir
+1|ra,bo,te|gorra=Gorro con visera|rabo=Cola de un animal|bote=Embarcación pequeña|tejado=Techo cubierto de tejas
+1|na,dor|tuna=Fruto del cactus|nadador=Persona que nada|dormilón=Que duerme mucho
+1|ca,co,ta|roca=Piedra grande|casco=Protección para la cabeza al andar en bicicleta|cometa=Astro con una larga cola brillante|taladro=Herramienta para hacer agujeros
+1|ma,go,ra|pluma=Lo que cubre a las aves|mago=Persona que hace trucos de magia|gotera=Filtración de agua por el techo|rato=Momento corto
+2|llo,na,te|pasillo=Corredor de una casa|llovizna=Lluvia muy fina|navegante=Persona que navega|telar=Máquina para tejer
+2|lo,sa,ro,ro|anzuelo=Gancho para pescar|losa=Piedra plana del piso|salero=Recipiente para la sal|ropero=Mueble para guardar la ropa|rodaja=Trozo redondo y delgado
+2|ta,pir,gua|careta=Máscara|tapir=Mamífero de trompa corta de las selvas americanas|piragua=Embarcación larga y estrecha|guacamayo=Loro grande de colores
+2|lla,to,do|tortilla=Huevos batidos cocinados en el sartén|llanto=Acción de llorar|toldo=Cubierta de tela para dar sombra|dote=Talento natural
+2|go,na,na|testigo=Persona que vio un hecho|golosina=Dulce o chuchería|nana=Canción de cuna|navío=Barco grande
+2|ro,ro|granero=Lugar donde se guarda el grano|romero=Hierba aromática|rosario=Collar de cuentas para rezar
+3|la,go,ne|clavícula=Hueso del hombro|látigo=Cuerda para azotar|gozne=Bisagra|nevado=Montaña cubierta de nieve
+3|la,go,te|tómbola=Rifa pública|labriego=Campesino que labra la tierra|gobernante=Persona que gobierna|tenor=Voz masculina aguda
+3|ra,no,za|mampara=Panel que separa ambientes|rábano=Raíz roja y picante|nobleza=Clase social de los aristócratas|zaga=Parte de atrás: quedarse a la …
+3|no,to,on|pergamino=Piel preparada para escribir|novato=Que recién empieza|torreón=Torre grande de una fortaleza|onda=Ondulación
+3|te,fo,ro|almirante=Alto grado de la Armada|telégrafo=Antiguo aparato para enviar mensajes en morse|forastero=Persona que viene de afuera|romance=Relación amorosa; también, lengua derivada del latín
+3|lo,lo,co|escalpelo=Bisturí|lóbulo=Parte blanda de la oreja|lógico=Que sigue la razón|cofradía=Hermandad

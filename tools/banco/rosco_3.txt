@@ -1,0 +1,351 @@
+# 3
+A|e|Instrumento con bolitas ensartadas para hacer cálculos|ábaco
+A|e|Pintura hecha con colores diluidos en agua|acuarela
+A|e|Frase breve que encierra un consejo, proverbio|adagio
+A|e|Sentencia breve que resume una idea, como «menos es más»|aforismo
+A|e|Mezcla de cosas distintas; también, aleación de mercurio|amalgama
+A|e|Manjar de los dioses del Olimpo|ambrosía
+A|e|Palabra que resulta de reordenar las letras de otra, como «amor» y «Roma»|anagrama
+A|e|Animal marino que parece una flor, de tentáculos urticantes|anémona
+A|e|Sustancia que contrarresta un veneno|antídoto
+A|e|Palabra de significado opuesto a otra|antónimo
+A|e|Momento de máxima grandeza o glorificación|apoteosis
+A|e|Antiguo instrumento para medir la altura de los astros y orientarse|astrolabio
+A|e|Isla de coral en forma de anillo con una laguna interior|atolón
+A|e|Originario del lugar donde vive|autóctono;autóctona
+B|e|Cuaderno con el diario de navegación de un barco|bitácora
+B|e|Relativo a la vida tranquila del campo|bucólico;bucólica
+B|e|Árbol africano de tronco enorme que almacena agua|baobab
+B|e|Que está en guerra o tiene ánimo de pelea|beligerante
+B|e|Amante de los libros, especialmente de los raros y antiguos|bibliófilo;bibliófila
+B|e|Que habla dos idiomas|bilingüe
+B|e|Escudo de armas de una familia|blasón
+B|e|De vida libre y poco convencional, como los artistas de París|bohemio;bohemia
+B|e|Tiempo de prosperidad; también, mar en calma|bonanza
+B|e|Relativo al norte: aurora …|boreal
+B|e|Fanfarronada, amenaza arrogante|bravata
+B|e|Parte más alta de una casa, bajo el tejado|buhardilla;bohardilla
+B|e|Exceso de trámites y papeleo|burocracia
+B|e|Pirata que asaltaba barcos en el Caribe en el siglo XVII|bucanero
+C|e|Sonido desagradable por la repetición de sílabas o la mezcla de ruidos|cacofonía
+C|e|Persona que escribe a mano con letra artística|calígrafo;calígrafa
+C|e|Período más caluroso del verano|canícula
+C|e|Barco ligero de vela de los descubridores, como la Pinta|carabela
+C|e|Liberación emocional que produce el arte, según Aristóteles|catarsis
+C|e|Punto del cielo justo sobre nuestra cabeza|cenit
+C|e|Reunión de cardenales para elegir al papa|cónclave
+C|e|Cuerno lleno de frutas, símbolo de la abundancia|cornucopia
+C|e|Que se siente ciudadano del mundo|cosmopolita
+C|e|Estado de la oruga antes de ser mariposa|crisálida
+C|e|Recipiente para fundir metales; también, prueba difícil|crisol
+C|e|Animal de cuatro patas|cuadrúpedo
+C|e|Techo semiesférico, como el de una catedral|cúpula
+C|e|Galería subterránea usada como cementerio, como las de Roma|catacumba
+D|e|Dispersión de un pueblo fuera de su tierra de origen|diáspora
+D|e|Pieza horizontal sobre una puerta o ventana|dintel
+D|e|Variedad regional de una lengua|dialecto
+D|e|Conjunto de diez normas, como los mandamientos|decálogo
+D|e|Laberinto; en el mito, el constructor del de Creta|dédalo
+D|e|Desembocadura de un río en forma de triángulo, como la del Nilo|delta
+D|e|Situación en que hay que elegir entre dos opciones difíciles|dilema
+D|e|Discurso o escrito violento contra alguien|diatriba
+D|e|División en dos partes opuestas|dicotomía
+D|e|Aficionado a un arte que lo practica sin profundidad|diletante
+D|e|Verdad que se acepta sin discusión|dogma
+D|e|Monumento prehistórico de una gran piedra sobre otras verticales|dolmen
+D|e|Techo de tela que cubre una cama o un trono|dosel
+D|e|Que se puede estirar en hilos, como el cobre|dúctil
+E|e|Que dura muy poco tiempo|efímero;efímera
+E|e|Inscripción sobre una tumba|epitafio
+E|e|Palabra suave para decir algo duro, como «pasar a mejor vida»|eufemismo
+E|e|Momento del año en que el día y la noche duran lo mismo|equinoccio
+E|e|Formación de roca que cuelga del techo de una cueva|estalactita
+E|e|Que combina estilos de distinto origen|ecléctico;ecléctica
+E|e|Poema triste por la muerte de alguien|elegía
+E|e|Punto de la superficie sobre el origen de un terremoto|epicentro
+E|e|Revelación repentina; también, fiesta de los Reyes Magos|epifanía
+E|e|Parte final que se agrega a una obra|epílogo
+E|e|Carta, especialmente las de los apóstoles|epístola
+E|e|Persona de gran sabiduría y conocimientos|erudito;erudita
+E|e|Que soporta la adversidad con serenidad|estoico;estoica
+E|e|Estudio del origen de las palabras|etimología
+F|e|Razonamiento falso que parece válido|falacia
+F|e|Unidad mínima de sonido de una lengua|fonema
+F|e|Copia exacta de un documento antiguo|facsímil;facsímile
+F|e|Lujoso y ostentoso|fastuoso;fastuosa
+F|e|Que tiene fiebre o una agitación intensa|febril
+F|e|Que da fe, que es prueba indiscutible|fehaciente
+F|e|Traición, deslealtad grave|felonía
+F|e|Trabajo de hilos finos de oro o plata entrelazados|filigrana
+F|e|Ciencia que estudia las lenguas a través de sus textos|filología
+F|e|Que ocurre por casualidad|fortuito;fortuita
+F|e|Figura geométrica que repite su forma a cualquier escala|fractal
+F|e|Entusiasmo o agitación desenfrenada|frenesí
+F|e|Sobrio en la comida y la bebida|frugal
+F|e|Brillo intenso|fulgor
+G|e|Palabra que indica el origen, como «chileno»|gentilicio
+G|e|Fuente termal que lanza chorros de vapor, como los del Tatio|géiser
+G|e|Lista de palabras difíciles con su explicación|glosario
+G|e|Varilla de un reloj de sol que proyecta la sombra|gnomon
+G|e|Gran barco de vela de los siglos XVI y XVII|galeón
+G|e|Lenguaje confuso que no se entiende|galimatías
+G|e|Figura monstruosa de piedra en los techos de las catedrales|gárgola
+G|e|Historia de los antepasados de una familia|genealogía
+G|e|Piedra hueca con cristales en su interior|geoda
+G|e|Hazaña heroica; cantar de …|gesta
+G|e|Estilo medieval de catedrales con arcos en punta|gótico
+G|e|Que vive en grupo|gregario;gregaria
+G|e|Signo que representa un número; cifra|guarismo
+G|e|Sonido emitido desde la garganta|gutural
+H|e|Figura que exagera, como «te lo dije un millón de veces»|hipérbole
+H|e|Encuentro de dos vocales que se pronuncian en sílabas distintas|hiato
+H|e|Palabra que se escribe o suena igual que otra pero significa distinto|homónimo
+H|e|Suposición que se comprueba con experimentos|hipótesis
+H|e|Supremacía de un pueblo o un Estado sobre otros|hegemonía
+H|e|Archivo de diarios y revistas|hemeroteca
+H|e|Arte de los escudos de armas|heráldica
+H|e|Animal que solo come plantas|herbívoro;herbívora
+H|e|Cerrado completamente, sin dejar pasar el aire|hermético;hermética
+H|e|Pasar el invierno en letargo, como el oso|hibernar
+H|e|Noble de bajo rango, como el Quijote|hidalgo
+H|e|Que resulta de cruzar dos especies o de mezclar dos tecnologías|híbrido;híbrida
+H|e|Caballito de mar; también, parte del cerebro ligada a la memoria|hipocampo
+H|e|Contrario, enemigo, poco amistoso|hostil
+I|e|Figura que da a entender lo contrario de lo que se dice|ironía
+I|e|Tendencia de un cuerpo a seguir en reposo o en movimiento|inercia
+I|e|Franja de tierra que une dos continentes, como el de Panamá|istmo
+I|e|Alza general y sostenida de los precios|inflación
+I|e|Placentero e ideal, como un paisaje de ensueño|idílico;idílica
+I|e|Persona que destruye imágenes sagradas o se opone a lo establecido|iconoclasta
+I|e|Dicho de una roca, formada por magma enfriado|ígneo;ígnea
+I|e|Que no tiene miedo ante el peligro|impávido;impávida
+I|e|Tan maravilloso que no se puede explicar con palabras|inefable
+I|e|Que no se puede evitar ni detener|inexorable
+I|e|Que no hace daño|inocuo;inocua
+I|e|Ilustre, famoso|insigne
+I|e|Que no teme el peligro, audaz|intrépido;intrépida
+I|e|Que brilla con los colores del arcoíris, como una pompa de jabón|iridiscente
+J|e|Orden de niveles de mayor a menor importancia|jerarquía
+J|e|Lenguaje propio de un oficio o de un grupo|jerga
+J|e|Período geológico de los grandes dinosaurios|jurásico
+J|e|Presunción, alabanza de uno mismo|jactancia
+J|e|Grupo de perros que cazan juntos|jauría
+J|e|Jefe de una tribu árabe|jeque
+J|e|Lenguaje complicado y difícil de entender|jerigonza
+J|e|Gracioso, que causa risa|jocoso;jocosa
+J|e|Fiesta muy animada y bulliciosa|jolgorio
+J|e|Alegre y de buen humor|jovial
+J|e|Alegría muy intensa|júbilo
+J|e|Ciencia del derecho y conjunto de sentencias de los tribunales|jurisprudencia
+J|e|Lanza que se arroja en atletismo|jabalina
+J|e|Hito o momento importante en un proceso|jalón
+L|e|Breve y conciso al hablar|lacónico;lacónica
+L|e|Exponente al que hay que elevar una base para obtener un número|logaritmo
+L|e|Período de cinco años|lustro
+L|e|Glóbulo blanco|leucocito
+L|e|Sueño profundo y prolongado, adormecimiento|letargo
+L|e|Oración de invocaciones repetidas; también, lista larga y aburrida|letanía
+L|e|Monstruo marino de la Biblia|leviatán
+L|e|Texto de una ópera|libreto
+L|e|Estado de indefinición: estar en el …|limbo
+L|e|Pleito ante un tribunal|litigio
+L|e|Que habla mucho|locuaz
+L|e|Que vive muchos años|longevo;longeva
+L|e|Relativo al juego|lúdico;lúdica
+L|e|Triste y sombrío|lúgubre
+M|e|Figura que identifica dos cosas, como «tus ojos son luceros»|metáfora
+M|e|Orgánulo que produce la energía de la célula|mitocondria
+M|e|Línea imaginaria que va de polo a polo|meridiano
+M|e|Viento estacional del sur de Asia que trae lluvias|monzón
+M|e|Elefante prehistórico cubierto de pelo|mamut
+M|e|Sepulcro monumental, como el de Halicarnaso|mausoleo
+M|e|Monumento prehistórico hecho de grandes piedras|megalito
+M|e|Persona que protege y financia a los artistas|mecenas
+M|e|Piedra larga clavada verticalmente en el suelo, como los de Bretaña|menhir
+M|e|Aparato que marca el ritmo a los músicos|metrónomo
+M|e|Persona que rechaza el trato con los demás|misántropo;misántropa
+M|e|Monumento tallado en una sola piedra, como los moáis|monolito
+M|e|Que critica con ironía hiriente|mordaz
+M|e|Generoso y noble de espíritu|magnánimo;magnánima
+N|e|Preferencia por familiares al dar cargos|nepotismo
+N|e|Palabra nueva en un idioma|neologismo
+N|e|En el budismo, liberación total del sufrimiento|nirvana
+N|e|Planta acuática de hojas flotantes que pintó Monet|nenúfar
+N|e|Punto del cielo opuesto al cenit|nadir
+N|e|Ninfa de los ríos y las fuentes|náyade
+N|e|Cementerio de la Antigüedad|necrópolis
+N|e|Desgraciado, que trae mala suerte|nefasto;nefasta
+N|e|Persona que se inicia en algo|neófito;neófita
+N|e|Postura que niega todo valor o creencia|nihilismo
+N|e|Insignificante, sin importancia|nimio;nimia
+N|e|Blanco como la nieve|níveo;nívea
+N|e|Nube gris y baja que trae lluvia|nimbo
+N|e|Estudio y colección de monedas|numismática
+Ñ|c|Nostalgia por algo ausente|añoranza
+Ñ|c|Persona que vive aislada en soledad|ermitaño;ermitaña
+Ñ|c|Discordia que se siembra entre otros|cizaña
+Ñ|c|Animal dañino para la caza o el ganado|alimaña
+Ñ|c|Pedazos pequeños: hacerse …|añicos
+Ñ|e|Antílope africano que migra en manadas por el Serengueti|ñu
+Ñ|c|Acción heroica|hazaña
+Ñ|c|Mentira inventada para engañar|patraña
+Ñ|c|Carne en descomposición de la que se alimentan los buitres|carroña
+Ñ|c|Brote nuevo de una planta; también, hijo pequeño|retoño
+Ñ|c|Ave de …: ave rapaz que caza a otros animales|rapiña
+Ñ|c|Novato, sin experiencia|bisoño;bisoña
+Ñ|c|Roca grande y elevada|peñasco
+Ñ|c|Asiento de un parlamentario en el Congreso|escaño
+O|e|Gobierno de unos pocos|oligarquía
+O|e|Palabra que imita un sonido, como «tic tac»|onomatopeya
+O|e|Vidrio volcánico negro|obsidiana
+O|e|Mamífero australiano con pico de pato que pone huevos|ornitorrinco
+O|e|Exclusión de la vida pública|ostracismo
+O|e|Trayectoria de un astro alrededor de otro|órbita
+O|e|Monumento egipcio con forma de pilar que termina en punta|obelisco
+O|e|Paso de un líquido a través de una membrana|ósmosis;osmosis
+O|e|Pasado de moda, en desuso|obsoleto;obsoleta
+O|e|Puesta del sol; también, decadencia|ocaso
+O|e|Nombre científico de las serpientes|ofidio;ofidios
+O|e|Que anuncia algo malo|ominoso;ominosa
+O|e|Que lo sabe todo|omnisciente
+O|e|Muy rico, abundante|opulento;opulenta
+P|e|Idea que parece contradictoria pero encierra una verdad|paradoja
+P|e|Palabra que se lee igual al derecho y al revés, como «reconocer»|palíndromo
+P|e|Remedio que serviría para todos los males|panacea
+P|e|Monumento funerario para varias personas|panteón
+P|e|Relato breve que deja una enseñanza moral, como el del hijo pródigo|parábola
+P|e|Explicación de un texto con otras palabras|paráfrasis
+P|e|Que presume de saber mucho|pedante
+P|e|Que dura siempre; hoja … de algunos árboles|perenne
+P|e|Marea alta|pleamar
+P|e|Votación popular para aprobar o rechazar una propuesta|plebiscito
+P|e|Grupo de personas destacadas; también, cúmulo de estrellas|pléyade
+P|e|Puro, como en su estado original|prístino;prístina
+P|e|Texto que va antes del comienzo de un libro|prólogo
+P|e|Cobarde, falto de ánimo|pusilánime
+Q|e|Monstruo griego con partes de distintos animales; también, ilusión|quimera
+Q|e|Cuerdas con nudos que usaban los incas para registrar datos|quipu
+Q|e|Lengua del Imperio inca|quechua;quichua
+Q|e|Número mínimo de presentes para que una votación sea válida|quórum;quorum
+Q|e|Ave centroamericana de plumaje verde, símbolo de Guatemala|quetzal
+Q|e|Planta parásita chilena de flores rojas que vive sobre otros árboles|quintral
+Q|e|Armadillo andino con cuyo caparazón se hace el charango|quirquincho
+Q|e|Adivinación por las líneas de la mano|quiromancia;quiromancía
+Q|e|Que se ofende o se queja por cualquier cosa|quisquilloso;quisquillosa
+Q|e|Idealista, que defiende causas nobles como el personaje de Cervantes|quijotesco;quijotesca
+Q|e|Lámpara antigua de aceite con tubo de vidrio|quinqué
+Q|e|Lo más puro y refinado de algo|quintaesencia
+Q|e|Ángel representado como un niño alado|querubín
+Q|c|Antigua práctica que buscaba convertir metales en oro|alquimia
+R|e|Arte de hablar con elocuencia|retórica
+R|e|Composición musical por los difuntos|réquiem
+R|e|Tallo subterráneo horizontal|rizoma
+R|e|Trazo que se agrega a la firma|rúbrica
+R|e|Animal que vuelve a masticar lo que tragó|rumiante
+R|e|Escondido, muy apartado|recóndito;recóndita
+R|e|Repetición innecesaria|redundancia
+R|e|Recuerdo vago de algo pasado|reminiscencia
+R|e|Rápido, veloz|raudo;rauda
+R|e|Que insiste obstinadamente en su error|recalcitrante
+R|e|Que muestra reserva o desconfianza|reticente
+R|e|Muy ostentoso y llamativo|rimbombante
+R|e|Dicho del arte prehistórico, pintado sobre las rocas|rupestre
+R|e|Que brilla mucho, resplandeciente|rutilante
+S|e|Mezcla de sensaciones de distintos sentidos, como «un color chillón»|sinestesia
+S|e|Argumento falso con apariencia de verdad para engañar|sofisma
+S|e|Día más largo o más corto del año|solsticio
+S|e|Asociación de dos especies en que ambas se benefician|simbiosis
+S|e|Material que se deposita en el fondo de un líquido|sedimento
+S|e|Ataúd de piedra de los faraones|sarcófago
+S|e|Obra que critica algo burlándose|sátira
+S|e|Cómplice, seguidor incondicional de alguien|secuaz
+S|e|Eterno, que dura para siempre|sempiterno;sempiterna
+S|e|Vejez|senectud
+S|e|Hallazgo afortunado por casualidad|serendipia
+S|e|Razonamiento de dos premisas y una conclusión|silogismo
+S|e|Que tiene muchas curvas|sinuoso;sinuosa
+S|e|Lujoso y espléndido|suntuoso;suntuosa
+T|e|Repetición innecesaria de una idea con otras palabras|tautología
+T|e|Rama de la geología que estudia las placas de la corteza|tectónica
+T|e|Bioma frío sin árboles, de suelo congelado|tundra
+T|e|Conjunto de tres obras relacionadas|trilogía
+T|e|Callado y melancólico|taciturno;taciturna
+T|e|Objeto al que se le atribuyen poderes mágicos|talismán
+T|e|Aburrimiento profundo|tedio
+T|e|Imprudente, que se expone sin pensar al peligro|temerario;temeraria
+T|e|Torcer el sentido de lo que alguien dijo|tergiversar
+T|e|Situación o circunstancia; también, rango de una voz|tesitura
+T|e|Muy caluroso|tórrido;tórrida
+T|e|Terco, obstinado|tozudo;tozuda
+T|e|Dicho del ganado, que cambia de pastos según la estación|trashumante
+T|e|Cruel, que exagera los detalles violentos|truculento;truculenta
+U|e|Sociedad ideal que parece imposible|utopía
+U|e|Historia alternativa construida a partir de hechos que no ocurrieron|ucronía
+U|e|Emitir su voz el búho|ulular
+U|e|Orgulloso, satisfecho de sí mismo|ufano;ufana
+U|e|Que está en todas partes|ubicuo;ubicua
+U|e|Última advertencia antes de tomar medidas|ultimátum
+U|e|Quinto sabor básico, asociado al glutamato|umami
+U|e|Aprobado por todos sin excepción|unánime
+U|e|Grasoso, aceitoso|untuoso;untuosa
+U|e|Cortesía y buenos modales|urbanidad
+U|e|Conjunto de hilos de un tejido; también, trama de una intriga|urdimbre
+U|e|Derecho a usar bienes ajenos sin ser su dueño|usufructo
+U|e|Interés excesivo en un préstamo|usura
+U|e|Elemento radiactivo de las centrales nucleares|uranio
+V|e|Que parece verdadero|verosímil
+V|e|Persona sujeta a un señor feudal|vasallo;vasalla
+V|e|Remolino violento; también, agitación intensa|vorágine
+V|e|Unidad de potencia eléctrica|vatio
+V|e|Piel de carnero de oro que buscaban Jasón y los argonautas|vellocino
+V|e|Apasionado e impetuoso|vehemente
+V|e|Lengua propia de un lugar|vernáculo;vernácula
+V|e|Que se adapta con facilidad a muchas tareas|versátil
+V|e|Huella o resto que queda de algo antiguo|vestigio
+V|e|Muy viejo, antiguo|vetusto;vetusta
+V|e|Cambio de la suerte; sucesión de altibajos|vicisitud;vicisitudes
+V|e|De vidrio o parecido a él|vítreo;vítrea
+V|e|Que cambia de opinión con facilidad|voluble
+V|e|Que come con avidez|voraz
+X|c|Figura que une dos palabras opuestas, como «silencio atronador»|oxímoron
+X|c|Verdad evidente que se acepta sin demostración|axioma
+X|e|Rechazo hacia los extranjeros|xenofobia
+X|e|Gas noble usado en los faros de los autos|xenón
+X|c|Parte de la gramática que estudia el orden de las palabras|sintaxis
+X|c|Vocabulario de una lengua|léxico
+X|c|Arte de disecar animales|taxidermia
+X|c|Escaso, insuficiente|exiguo;exigua
+X|c|Agravar, irritar aún más|exacerbar
+X|c|Excesivo, desmedido, como un precio|exorbitante
+X|c|Fuera de tiempo, inoportuno|extemporáneo;extemporánea
+X|c|Que sigue fielmente una doctrina|ortodoxo;ortodoxa
+X|c|Muy abundante, como la vegetación del trópico|exuberante
+X|e|Grabado hecho sobre madera|xilografía
+Y|e|Casco de las armaduras medievales|yelmo
+Y|e|Caimán sudamericano|yacaré
+Y|e|Unidad de longitud anglosajona de unos 91 centímetros|yarda
+Y|e|Lugar donde hay minerales o restos arqueológicos|yacimiento
+Y|e|Pieza que une a los bueyes por el cuello; también, opresión|yugo
+Y|e|Terreno deshabitado y sin cultivar|yermo
+Y|e|Equivocación, error|yerro
+Y|e|Material seco que prende fácilmente|yesca
+Y|e|Fibra vegetal con que se hacen los sacos de arpillera|yute
+Y|e|Poner una cosa junto a otra|yuxtaponer
+Y|c|Texto en prosa en que el autor reflexiona|ensayo
+Y|c|Persona del pueblo llano, no noble|plebeyo;plebeya
+Y|c|Maquinaria del escenario de un teatro; también, enredo|tramoya
+Y|c|Abstención de comer|ayuno
+Z|e|Género teatral español con partes habladas y cantadas|zarzuela
+Z|e|Franja del cielo dividida en doce signos|zodíaco;zodiaco
+Z|e|Franja inferior de una pared; en México, la plaza principal|zócalo
+Z|e|Cosecha de la caña de azúcar|zafra
+Z|e|Salir un barco del puerto|zarpar
+Z|e|Enfermedad que pasa de los animales al ser humano|zoonosis
+Z|e|Inquietud, angustia; también, naufragio|zozobra
+Z|e|Que adula con palabras dulces para conseguir algo|zalamero;zalamera
+Z|e|Macho de la abeja; también, holgazán|zángano
+Z|e|Coser un roto de la ropa|zurcir
+Z|e|Persona cualquiera: fulano, mengano y …|zutano
+Z|e|Riña o desorden; también, limpieza general|zafarrancho
+Z|e|Persona que dice descubrir agua bajo tierra|zahorí
+Z|c|Flor blanca del naranjo|azahar

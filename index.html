@@ -486,7 +486,7 @@ input.ans::placeholder{color:rgba(168,155,212,.55)}
   <div class="card">
     <h3>Banco de juegos</h3>
     <p class="mut small" id="cfg-bank"></p>
-    <div class="row" style="margin-top:10px"><button id="b-reset-bank">Reiniciar roscos jugados</button></div>
+    <div class="row" style="margin-top:10px"><button id="b-reset-bank">Olvidar palabras vistas</button></div>
     <div class="row" style="margin-top:10px"><button id="b-preset">Restaurar valores del nivel</button></div>
   </div>
   <p class="mut small" style="text-align:center" id="cfg-ver"></p>
@@ -504,7 +504,7 @@ input.ans::placeholder{color:rgba(168,155,212,.55)}
 <section class="screen" id="s-help">
   <div class="top"><h2>Cómo se juega</h2><button class="icon" id="b-help-close" aria-label="Cerrar"><svg class="i"><use href="#i-close"/></svg></button></div>
   <div class="card"><h3>La partida</h3><p>Primero juegas <b>3 juegos previos</b>, sorteados entre ocho: Una de cuatro, La pista, Palabras encadenadas, Letras desordenadas, Verdadero o falso, Completa el refrán, La intrusa y Letra a letra. El sorteo prioriza los que hace más tiempo no te tocan. Cada acierto suma segundos a tu <b>bolsa de tiempo</b>. Al final llega <b>el rosco</b>: una definición por cada letra, con el tiempo base más todo lo que ganaste.</p></div>
-  <div class="card"><h3>El rosco</h3><p>«Empieza con» o «Contiene» la letra. Si no sabes, di <b>«paso»</b> y la letra vuelve en la siguiente vuelta. Termina cuando respondes todas o se acaba el tiempo. Completarlo sin errores es el gran premio.</p></div>
+  <div class="card"><h3>El rosco</h3><p>Cada rosco se arma en el momento, letra por letra, con las palabras que menos se han visto. «Empieza con» o «Contiene» la letra. Si no sabes, di <b>«paso»</b> y la letra vuelve en la siguiente vuelta. Termina cuando respondes todas o se acaba el tiempo. Completarlo sin errores es el gran premio.</p></div>
   <div class="card"><h3>Modos</h3><p><b>Solo:</b> escribes la respuesta; se aceptan tildes omitidas y pequeños errores según la tolerancia.<br><br><b>Presentador:</b> otra persona tiene el celular, lee en voz alta y marca bien o mal. Con «Ver respuesta» puede revisar sin que el jugador mire.</p></div>
   <div class="card"><h3>Instalar en el teléfono</h3><p><b>iPhone:</b> abre la página en Safari, toca Compartir y elige «Agregar a pantalla de inicio». Si no escuchas sonidos, revisa el interruptor de silencio.<br><br><b>Android:</b> abre la página en Chrome y toca «Instalar la app» en el inicio, o usa el menú ⋮ y elige «Instalar app». Si mantienes presionado el ícono, aparecen accesos directos a Jugar solo y Jugar en familia.<br><br>Una vez instalada, el modo solo funciona sin internet.</p></div>
 </section>
@@ -526,7 +526,7 @@ input.ans::placeholder{color:rgba(168,155,212,.55)}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
 "use strict";
-const APP_VERSION = '2.5.0';
+const APP_VERSION = '3.0.0';
 const $ = s => document.querySelector(s);
 const LET = 'ABCDEFGHIJLMNÑOPQRSTUVXYZ'.split('');
 const B = window.BANCO;
@@ -547,8 +547,23 @@ const DEF = Object.assign({nivel:2,modo:'solo',nPrevios:3,pausaPaso:false,
 let cfg = Object.assign({}, DEF, LS.get('cfg', {}));
 cfg.g = Object.assign({}, DEF.g, cfg.g||{});
 const saveCfg = () => LS.set('cfg', cfg);
-let used = LS.get('used', {});           // id -> true
-const markUsed = id => { used._n = (used._n||0) + 1; used[id] = used._n; LS.set('used', used); };  // guarda el orden en que se vio cada pregunta
+/* historial por palabra o pregunta: clave → fecha en que se vio por última vez */
+let seen = LS.get('seen4', {});
+try{ localStorage.removeItem('rosco.used'); }catch(e){}
+const markSeen = (k, t=Date.now()) => { if(!k) return; if(!(seen[k] >= t)) seen[k] = t; clearTimeout(markSeen.t); markSeen.t = setTimeout(()=>LS.set('seen4', seen), 300); };
+window.SEEN_EXT = {};   // historial de los demás teléfonos de la sala (lo llena el modo familia)
+const seenAt = k => Math.max(seen[k]||0, window.SEEN_EXT[k]||0);
+/* clave estable de cada palabra o pregunta, basada en su contenido */
+function keyOf(kind, it){
+  switch(kind){
+    case 'rosco': case 'pista': return 'w:'+norm(it.r[0]);
+    case 'anagramas': case 'letras': return 'w:'+norm(it.r);
+    case 'refran': return 'f:'+norm(it.t).slice(0,48);
+    case 'encadenadas': return 'c:'+it.w.map(w=>norm(w.r)).join('-');
+    case 'intrusa': return 'i:'+it.o.map(norm).join('-');
+    default: return kind[0]+':'+norm(it.p).slice(0,48);
+  }
+}
 
 /* ---------- utilidades ---------- */
 const shuffle = a => { a = a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.random()*(i+1)|0; [a[i],a[j]]=[a[j],a[i]]; } return a; };
@@ -713,17 +728,29 @@ function ringSVG(r=130, cr=14){ let h=`<circle class="rtrack" cx="150" cy="150" 
   LET.forEach((l,i)=>{ const a=-Math.PI/2+i*2*Math.PI/25, x=150+r*Math.cos(a), y=150+r*Math.sin(a);
     h+=`<g class="rl" style="--i:${i}"><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${cr}"/><text x="${x.toFixed(1)}" y="${(y+.5).toFixed(1)}">${l}</text></g>`; });
   return h; }
-function roscosDe(n){ return B.roscos.filter(r=>r.nivel===n); }
+/* ---------- rosco dinámico: cada letra se sortea por separado ---------- */
+const RBY = {}; B.rosco.forEach(e=>{ (RBY[e.l] = RBY[e.l] || []).push(e); });
+function roscoStats(n){ const all=B.rosco.filter(e=>e.n===n); return {total:all.length, fresh:all.filter(e=>!seenAt(keyOf('rosco',e))).length}; }
+function buildRosco(lvl, ex=new Set()){
+  const p = LET.map(l=>{
+    const all = (RBY[l]||[]).filter(e=>!ex.has(keyOf('rosco',e)));
+    const oldest = arr => shuffle(arr).sort((a,b)=>seenAt(keyOf('rosco',a))-seenAt(keyOf('rosco',b)));
+    const same = all.filter(e=>e.n===lvl), fresh = shuffle(same.filter(e=>!seenAt(keyOf('rosco',e))));
+    const nearFresh = shuffle(all.filter(e=>Math.abs(e.n-lvl)===1 && !seenAt(keyOf('rosco',e))));
+    const pick = fresh[0] || nearFresh[0] || oldest(same)[0] || oldest(all)[0] || (RBY[l]||[])[0];
+    ex.add(keyOf('rosco',pick)); return pick;
+  });
+  return {id:'dyn', nivel:lvl, p};
+}
 const LVL_D = {1:'Palabras de todos los días',2:'Cultura general',3:'Para expertos en palabras'};
 function renderHome(){
-  $('#home-lvl').innerHTML = [1,2,3].map(n=>{ const all=roscosDe(n), free=all.filter(r=>!used[r.id]).length;
-    return `<button class="opt ${cfg.nivel===n?'sel':''}" data-n="${n}"><span class="meter">${[1,2,3].map(k=>`<i class="${k<=n?'on':''}"></i>`).join('')}</span><span class="o-t">${LVL[n]}</span><span class="o-c">${free} de ${all.length}<br>sin jugar</span><span class="o-d">${LVL_D[n]}</span></button>`; }).join('');
+  $('#home-lvl').innerHTML = [1,2,3].map(n=>{ const st=roscoStats(n);
+    return `<button class="opt ${cfg.nivel===n?'sel':''}" data-n="${n}"><span class="meter">${[1,2,3].map(k=>`<i class="${k<=n?'on':''}"></i>`).join('')}</span><span class="o-t">${LVL[n]}</span><span class="o-c">${st.fresh} de ${st.total}<br>palabras nuevas</span><span class="o-d">${LVL_D[n]}</span></button>`; }).join('');
   $('#home-mode').innerHTML = [['solo','pen','Yo mismo','Escribo y el juego corrige'],['presentador','mic','Presentador','Otra persona lee y marca']].map(([k,i,t,d])=>`<button class="tile-opt ${cfg.modo===k?'sel':''}" data-m="${k}">${ic(i)}<span class="o-t">${t}</span><span class="o-d">${d}</span></button>`).join('');
-  const all = roscosDe(cfg.nivel), free = all.filter(r=>!used[r.id]).length;
-  $('#home-avail').innerHTML = free ? '' : `Ya jugaste todos los roscos de este nivel. Pide una nueva tanda o reinicia el banco en Ajustes.`;
+  const st = roscoStats(cfg.nivel);
+  $('#home-avail').innerHTML = st.fresh >= 25 ? '' : `Quedan pocas palabras nuevas en este nivel: el rosco usará las que viste hace más tiempo y algunas de niveles vecinos.`;
   const np = Math.min(cfg.nPrevios, Object.keys(cfg.g).filter(k=>cfg.g[k]).length);
   $('#home-prev').textContent = np ? `Antes del rosco juegas ${np} ${np===1?'juego previo':'juegos previos'} al azar. Puedes cambiarlo en Ajustes.` : 'Vas directo al rosco, sin juegos previos.';
-  $('#b-play').disabled = !free;
   $('#home-lvl').querySelectorAll('button').forEach(b=>b.onclick=()=>{ cfg.nivel=+b.dataset.n; Object.assign(cfg, PRESET[cfg.nivel]); saveCfg(); renderHome(); });
   $('#home-mode').querySelectorAll('button').forEach(b=>b.onclick=()=>{ cfg.modo=b.dataset.m; saveCfg(); renderHome(); });
 }
@@ -740,15 +767,15 @@ const GAMES = {
   intrusa:{name:'La intrusa',ico:ic('odd'),rules:'De las cuatro palabras, una no pertenece al grupo. Tócala.'},
   letras:{name:'Letra a letra',ico:ic('type'),rules:'La palabra se va destapando letra por letra. Mientras antes la adivines, más segundos ganas.'}
 };
-function pickItems(key){
-  // primero lo nunca visto del nivel, luego lo nunca visto de niveles vecinos y al final lo visto hace más tiempo
-  const lvl = cfg.nivel, list = B[key] || [];
-  const byAge = arr => shuffle(arr).sort((a,b)=>(used[a.id]||0)-(used[b.id]||0));
+function pickItems(kind, ex){
+  // primero lo nunca visto del nivel, luego lo nunca visto de niveles vecinos y al final lo visto hace más tiempo (por cualquiera de la sala)
+  const lvl = cfg.nivel, list = (B[kind] || []).filter(x=>!ex || !ex.has(keyOf(kind,x)));
+  const at = x => seenAt(keyOf(kind,x));
   const same = list.filter(x=>x.n===lvl);
-  const fresh = shuffle(same.filter(x=>!used[x.id]));
-  const near = shuffle(list.filter(x=>x.n!==lvl && Math.abs(x.n-lvl)<=1 && !used[x.id]));
-  const seen = byAge(same.filter(x=>used[x.id]));
-  return fresh.concat(fresh.length < 8 ? near : [], seen);
+  const fresh = shuffle(same.filter(x=>!at(x)));
+  const near = shuffle(list.filter(x=>x.n!==lvl && Math.abs(x.n-lvl)<=1 && !at(x)));
+  const old = shuffle(same.filter(x=>at(x))).sort((a,b)=>at(a)-at(b));
+  return fresh.concat(near, old);
 }
 /* sorteo de juegos previos: prioriza los que hace más tiempo no salen */
 function pickGames(n){
@@ -764,9 +791,7 @@ function pickGames(n){
 let G = null; // partida actual
 function newGame(){
   SFX.init();
-  const pool = roscosDe(cfg.nivel).filter(r=>!used[r.id]);
-  if(!pool.length){ toast('No quedan roscos en este nivel'); return; }
-  const rosco = shuffle(pool)[0];
+  const rosco = buildRosco(cfg.nivel);
   const previos = pickGames(cfg.nPrevios);
   G = {rosco, previos, idx:0, earned:0, perGame:[], start:Date.now()};
   keepAwake(true);
@@ -862,7 +887,7 @@ function nextItem(){
   if(!P || !P.clock.running) return;
   if(P.key==='encadenadas') return renderChain();
   if(P.i >= P.items.length){ endPrevio(); return; }
-  const it = P.items[P.i]; markUsed(it.id); clearInterval(P.tick);
+  const it = P.items[P.i]; markSeen(keyOf(P.key,it)); clearInterval(P.tick);
   ({cuatro:renderCuatro, pista:renderPista, anagramas:renderAnagrama, vof:renderVof, refran:renderRefran, intrusa:renderIntrusa, letras:renderLetras})[P.key](it);
 }
 function renderVof(it){
@@ -949,7 +974,7 @@ function renderAnagrama(it){
 function renderChain(){
   if(!P.chain || P.wi >= P.chain.w.length){
     if(P.i >= P.items.length){ endPrevio(); return; }
-    P.chain = P.items[P.i]; P.wi = 0; markUsed(P.chain.id);
+    P.chain = P.items[P.i]; P.wi = 0; markSeen(keyOf('encadenadas',P.chain));
   }
   const c=P.chain, w=c.w[P.wi];
   const start = P.wi===0 ? norm(w.r)[0].toUpperCase() : c.k[P.wi-1].toUpperCase();
@@ -991,7 +1016,6 @@ function drawRing(){
   $('#r-bad').textContent = R.state.filter(s=>s==='bad').length;
 }
 function runRosco(){
-  markUsed(G.rosco.id);
   R = {p:G.rosco.p, state:Array(25).fill('pen'), given:Array(25).fill(''), q:[...Array(25).keys()], vuelta:1, pauseT:null};
   R.total = cfg.tRosco + G.earned;
   $('#r-mode').textContent = `${LVL[G.rosco.nivel]} · ${cfg.modo==='solo'?'Solo':'Presentador'}`;
@@ -1000,7 +1024,7 @@ function runRosco(){
 }
 function showLetter(){
   if(!R.q.length){ endRosco('done'); return; }
-  const i=R.q[0], p=R.p[i]; drawRing();
+  const i=R.q[0], p=R.p[i]; drawRing(); markSeen(keyOf('rosco',p));
   const tag=$('#r-tag'); tag.innerHTML = `<span class="L">${p.l}</span>${p.t==='e'?'Empieza con':'Contiene'}`; tag.className = 'tag'+(p.t==='c'?' c':'');
   $('#r-def').textContent = p.d;
   say(letraTxt(p));
@@ -1064,12 +1088,13 @@ function renderCfg(){
   ['sonido','tictac','vibrar','pausaPaso','voz'].forEach(k=>{ const el=$('#c-'+k); el.checked=!!cfg[k]; el.onchange=()=>{ cfg[k]=el.checked; saveCfg(); }; });
   Object.keys(GAMES).forEach(k=>{ const el=$('#c-g-'+k); el.checked=!!cfg.g[k]; el.onchange=()=>{ cfg.g[k]=el.checked; saveCfg(); }; });
   const t=$('#c-tolerancia'); t.value=cfg.tolerancia; t.onchange=()=>{ cfg.tolerancia=+t.value; saveCfg(); };
-  const tot=n=>roscosDe(n).length, fr=n=>roscosDe(n).filter(r=>!used[r.id]).length;
-  $('#cfg-bank').innerHTML = `Roscos sin jugar: Fácil <b>${fr(1)}/${tot(1)}</b> · Medio <b>${fr(2)}/${tot(2)}</b> · Difícil <b>${fr(3)}/${tot(3)}</b><br>Preguntas de juegos previos: ${['cuatro','pista','encadenadas','anagramas'].reduce((a,k)=>a+B[k].length,0)} (se reciclan al agotarse)`;
+  const st=n=>roscoStats(n), PK=['cuatro','vof','intrusa','refran','letras','anagramas','pista','encadenadas'];
+  const pTot=PK.reduce((a,k)=>a+B[k].length,0), pFresh=PK.reduce((a,k)=>a+B[k].filter(x=>!seenAt(keyOf(k,x))).length,0);
+  $('#cfg-bank').innerHTML = `Palabras del rosco sin ver: Fácil <b>${st(1).fresh}/${st(1).total}</b>, Medio <b>${st(2).fresh}/${st(2).total}</b>, Difícil <b>${st(3).fresh}/${st(3).total}</b><br>Preguntas de juegos previos sin ver: <b>${pFresh}/${pTot}</b><br>El rosco se arma letra por letra con las palabras que menos has visto.`;
   $('#cfg-ver').textContent = `Versión ${APP_VERSION} · banco v${B.version}`;
 }
 $('#b-test-sound').onclick=()=>{ SFX.init(); SFX.ok(); setTimeout(()=>SFX.bad(),700); setTimeout(()=>SFX.pass(),1400); setTimeout(()=>{SFX.tick(0,0);},2000); setTimeout(()=>{SFX.tick(1,0);},2500); setTimeout(()=>SFX.tick(0,1),3000); setTimeout(()=>SFX.tick(0,2),3500); setTimeout(()=>SFX.alarm(),4200); setTimeout(()=>VOZ.say('Con la a. Insecto que fabrica miel y vive en colmenas.'),5600); };
-$('#b-reset-bank').onclick=()=>{ if(confirm('¿Marcar todos los roscos y preguntas como no jugados?')){ used={}; LS.set('used',used); renderCfg(); toast('Banco reiniciado'); } };
+$('#b-reset-bank').onclick=()=>{ if(confirm('¿Olvidar todas las palabras y preguntas vistas en este teléfono?')){ seen={}; LS.set('seen4',seen); renderCfg(); toast('Historial de palabras borrado'); } };
 $('#b-preset').onclick=()=>{ Object.assign(cfg, PRESET[cfg.nivel]); saveCfg(); renderCfg(); toast('Valores de '+LVL[cfg.nivel]+' restaurados'); };
 
 /* ---------- historial ---------- */
@@ -1179,7 +1204,7 @@ window.addEventListener('load', ()=>{ const ir=new URLSearchParams(location.sear
   const gs=[...$('#sp-ring').querySelectorAll('.rl')], wordEl=$('#sp-word');
   let ro=null, i=0, round=0;
   const later=(f,ms)=>{ idleT=setTimeout(()=>{ if(!gone) f(); }, ms); };
-  const newRound=()=>{ const pool=B.roscos.filter(r=>r.nivel===1+(round%3)); ro=pool[Math.random()*pool.length|0]; i=0; round++;
+  const newRound=()=>{ const lv=1+(round%3); ro={p:LET.map(l=>{ const c=(RBY[l]||[]).filter(e=>e.n===lv); return c[Math.random()*c.length|0]; })}; i=0; round++;
     gs.forEach(g=>g.classList.remove('s-ok','s-bad','s-cur')); step(); };
   const step=()=>{
     if(i>=25){ wordEl.classList.remove('on'); sp.classList.add('party'); later(()=>{ sp.classList.remove('party'); later(newRound, 500); }, 1600); return; }

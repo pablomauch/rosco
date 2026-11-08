@@ -1,0 +1,351 @@
+# 2
+A|e|Ave rapaz de gran tamaño que aparece en muchos escudos|águila
+A|e|Pieza de hierro que se lanza al fondo para sujetar el barco|ancla
+A|e|Fruto pequeño del olivo, verde o negro|aceituna
+A|e|Objeto plegable para darse aire en el calor|abanico
+A|e|Camélido andino criado por su lana|alpaca
+A|e|Ave más grande del mundo, que no vuela pero corre muy rápido|avestruz
+A|e|Instrumento con fuelle y teclas|acordeón
+A|e|Aguja con cabeza para sujetar telas|alfiler
+A|e|Oficina de frontera que controla lo que entra a un país|aduana
+A|e|Aparato que capta señales de radio o televisión|antena
+A|e|Persona que cría abejas|apicultor;apicultora
+A|e|Roca que gira alrededor del Sol, más chica que un planeta|asteroide
+A|e|Libro de mapas|atlas
+A|e|Terraza en el techo de un edificio|azotea
+B|e|Prenda larga que abriga el cuello|bufanda
+B|e|Ave nocturna de ojos grandes que gira mucho la cabeza|búho
+B|e|Pelo que crece sobre el labio superior|bigote
+B|e|Lugar donde se guardan y prestan libros|biblioteca
+B|e|Gran bóvido de las praderas norteamericanas|bisonte
+B|e|Instrumento con una aguja que apunta al norte|brújula
+B|e|Persona que se sumerge con traje y tanque de oxígeno|buzo
+B|e|Instrumento para pesar|balanza
+B|e|Instrumento de fuelle típico del tango|bandoneón
+B|e|Instrumento que mide la presión atmosférica|barómetro
+B|e|Hortaliza de raíz morada con que se hace una ensalada roja|betarraga
+B|e|Árbol en miniatura cultivado en maceta, arte japonés|bonsái;bonsai
+B|e|Pincel grueso para pintar paredes|brocha
+B|e|Palo en que se apoya alguien al caminar|bastón
+C|e|Animal del desierto con dos jorobas|camello
+C|e|Fortaleza con torres y murallas de los reyes|castillo
+C|e|Animal africano de rayas blancas y negras|cebra
+C|e|Planta del desierto con espinas|cactus
+C|e|Marsupial australiano que salta|canguro
+C|e|Gran ave de los Andes que está en el escudo de Chile|cóndor
+C|e|Caída de agua de un río|cascada
+C|e|Hoyo que deja un meteorito al chocar|cráter
+C|e|Ave blanca de cuello largo y elegante que nada en lagunas|cisne
+C|e|Pájaro diminuto que aletea muy rápido para tomar néctar|colibrí
+C|e|Instrumento para trazar circunferencias|compás
+C|e|Baile nacional de Chile|cueca
+C|e|Fruta de cáscara verde con escamas y pulpa blanca con pepas negras|chirimoya
+C|e|Arte de hacer objetos de barro cocido|cerámica
+D|e|Lugar muy seco y con poca vida, como el de Atacama|desierto
+D|e|La piedra preciosa más dura|diamante
+D|e|Camello de una sola joroba|dromedario
+D|e|Persona que investiga casos, como Sherlock Holmes|detective
+D|e|Libro con el significado de las palabras|diccionario
+D|e|Profesional que cuida los dientes|dentista
+D|e|Explosivo inventado por Alfred Nobel|dinamita
+D|e|Conjunto de doce|docena
+D|e|Persona del circo que entrena leones|domador;domadora
+D|e|Ser pequeño y travieso de los cuentos|duende
+D|e|Joya en forma de media corona para el pelo|diadema
+D|e|Flecha pequeña que se lanza a un tablero redondo|dardo
+D|e|Prenda que se pone para no mancharse al cocinar|delantal
+D|e|Globo gigante con motor, como el Hindenburg|dirigible
+E|e|Ocultación del Sol por la Luna|eclipse
+E|e|Línea imaginaria que divide la Tierra en dos mitades|ecuador
+E|e|Piedra preciosa verde|esmeralda
+E|e|Arácnido con pinzas y aguijón venenoso|escorpión
+E|e|Artista que hace estatuas|escultor;escultora
+E|e|Figura de piedra o bronce que representa a alguien|estatua
+E|e|Soberano de un imperio|emperador;emperatriz
+E|e|Conjunto de ruedas dentadas de un mecanismo|engranaje
+E|e|Maletas y bolsos que se llevan de viaje|equipaje
+E|e|Recinto con graderías donde se juega fútbol|estadio
+E|e|Paso angosto de mar entre dos tierras, como el de Magallanes|estrecho
+E|e|Salida violenta de lava de un volcán|erupción
+E|e|Hielo blanco que cubre el pasto en las mañanas frías|escarcha
+E|e|Monumento egipcio con cuerpo de león y cabeza humana|esfinge
+F|e|Ave rosada que se para en una pata|flamenco
+F|e|Tienda donde se venden remedios|farmacia
+F|e|Brazo de mar entre montañas, como los de la Patagonia|fiordo
+F|e|Proyectil que se dispara con un arco|flecha
+F|e|Límite entre dos países|frontera
+F|e|Resto de un ser vivo convertido en piedra|fósil
+F|e|Construcción con chorros de agua en una plaza|fuente
+F|e|Ave de cola larga y plumaje vistoso, apreciada en la caza|faisán
+F|e|Lámpara de la calle|farol
+F|e|Conjunto de animales de un lugar|fauna
+F|e|Tradiciones, música y bailes de un pueblo|folclore;folklore;folclor
+F|e|Barco de guerra de tamaño mediano|fragata
+F|e|Fruto rojo pequeño parecido a la mora|frambuesa
+F|e|Salida de vapor por las grietas de un volcán|fumarola
+G|e|Gran masa de hielo que baja por las montañas|glaciar
+G|e|Lluvia de bolitas de hielo|granizo
+G|e|Ave migratoria de cola en forma de tijera|golondrina
+G|e|El mayor de los simios|gorila
+G|e|El animal terrestre más rápido del mundo|guepardo
+G|e|Ciencia que estudia la superficie de la Tierra|geografía
+G|e|Lugar para hacer ejercicio con máquinas|gimnasio
+G|e|Luchador del circo romano|gladiador
+G|e|Antílope ágil y esbelto de África|gacela
+G|e|Legumbre redonda con que se hace el hummus|garbanzo
+G|e|Hombre de campo de las pampas argentinas|gaucho
+G|e|Bote alargado que recorre los canales de Venecia|góndola
+G|e|Camélido salvaje de la Patagonia y los Andes|guanaco
+G|e|Corona de flores u hojas para adornar|guirnalda
+H|e|Tormenta tropical de vientos en espiral|huracán
+H|e|Aeronave con aspas que giran sobre el techo|helicóptero
+H|e|Cada mitad de la Tierra separada por el ecuador|hemisferio
+H|e|Ser vivo como el champiñón|hongo
+H|e|Animal africano carroñero famoso por su «risa»|hiena
+H|e|Mamífero africano enorme que vive en ríos|hipopótamo
+H|e|Ave rapaz muy veloz usada en cetrería|halcón
+H|e|Galpón donde se guardan los aviones|hangar
+H|e|Pieza de hierro en forma de U que se clava en el casco del caballo|herradura
+H|e|Árbol que da higos|higuera
+H|e|Ciervo andino que aparece en el escudo de Chile|huemul
+H|e|Zona pantanosa con aves y plantas acuáticas|humedal
+H|e|Pieza con aspas que gira y mueve un barco o un avión|hélice
+H|e|Herramienta con filo y mango largo para cortar leña|hacha
+I|e|Invento de Gutenberg para reproducir textos|imprenta
+I|e|Bloque de hielo que flota en el mar|iceberg
+I|e|Profesional que diseña puentes o máquinas|ingeniero;ingeniera
+I|e|Lugar cubierto para cultivar plantas|invernadero
+I|e|Persona que arrienda una casa|inquilino;inquilina
+I|e|Persona que hace los dibujos de un libro|ilustrador;ilustradora
+I|e|Resina aromática que se quema en las iglesias|incienso
+I|e|Lista de capítulos al comienzo o al final de un libro|índice
+I|e|Cuando el agua cubre calles y casas|inundación
+I|e|Ruta detallada de un viaje|itinerario
+I|e|Conjunto de territorios gobernados por un emperador|imperio
+I|e|Tributo que se paga al Estado, como el IVA|impuesto
+I|e|Aparato que mantiene calientes los huevos hasta que nacen los pollos|incubadora
+I|e|Unión de una rama de una planta en otra para que crezca|injerto
+J|e|Gran felino americano de piel con manchas|jaguar
+J|e|Selva tropical muy espesa|jungla
+J|e|Cerdo salvaje con colmillos|jabalí
+J|e|Instrumento con aguja para inyectar|jeringa
+J|e|Flor blanca muy perfumada|jazmín
+J|e|Signo de la escritura del antiguo Egipto|jeroglífico
+J|e|Duración del trabajo de un día|jornada
+J|e|Persona que ya no trabaja y recibe pensión|jubilado;jubilada
+J|e|Artista medieval que recitaba y cantaba de pueblo en pueblo|juglar
+J|e|Grupo que evalúa un concurso|jurado
+J|e|Medicamento líquido y dulce para la tos|jarabe
+J|e|Árbol de flores lilas que tiñe las calles en primavera|jacarandá
+J|e|Raíz picante usada en la cocina asiática|jengibre
+J|e|Pájaro cantor de cara roja|jilguero
+L|e|Lugar de caminos enredados del que cuesta salir|laberinto
+L|e|Reptil pequeño que toma sol en los muros|lagartija
+L|e|Roca fundida que sale del volcán|lava
+L|e|Lugar donde se hacen experimentos|laboratorio
+L|e|Ave nocturna de cara blanca|lechuza
+L|e|Distancia de un lugar al ecuador medida en grados|latitud
+L|e|Crustáceo marino de antenas largas, muy apreciado en Juan Fernández|langosta
+L|e|Tela sobre la que pinta el artista|lienzo
+L|e|Barra de oro o plata|lingote
+L|e|Flor elegante, símbolo de la realeza francesa|lirio
+L|e|Franja de costa junto al mar|litoral
+L|e|Gusano que vive en la tierra y la airea|lombriz
+L|e|Insecto que brilla en la oscuridad|luciérnaga
+L|e|Embarcación pequeña con motor|lancha
+M|e|Animal marino gelatinoso que puede picar|medusa
+M|e|Roca del espacio que cae a la Tierra|meteorito
+M|e|Cuerpo conservado durante siglos, como las de Chinchorro|momia
+M|e|Máquina que muele granos movida por el viento o el agua|molino
+M|e|Mamífero que vuela de noche|murciélago
+M|e|Edificio donde se exhiben obras de arte|museo
+M|e|Animal de antifaz negro que lava su comida|mapache
+M|e|Palo vertical que sostiene las velas del barco|mástil
+M|e|Molusco negro de dos conchas, como el choro|mejillón
+M|e|Instrumento para ver cosas muy pequeñas|microscopio
+M|e|Varillas flexibles con que se tejen canastos|mimbre
+M|e|Lugar alto con vista panorámica|mirador
+M|e|Dibujo hecho con pequeñas piedras de colores|mosaico
+M|e|Espiga de maíz con sus granos|mazorca
+N|e|Rueda de goma del auto|neumático
+N|e|Obra literaria extensa en prosa|novela
+N|e|Información sobre algo que acaba de pasar|noticia
+N|e|Mamífero acuático de pelo suave que come peces|nutria
+N|e|Cartas para jugar|naipes;naipe
+N|e|Cetáceo del Ártico con un largo colmillo en espiral|narval
+N|e|Persona que sobrevive a un barco hundido|náufrago;náufraga
+N|e|Cuchillo cuya hoja se dobla en el mango|navaja
+N|e|Líquido dulce de las flores que toman las abejas|néctar
+N|e|Niebla poco espesa|neblina
+N|e|Árbol que da nueces|nogal
+N|e|Profesional que da fe de contratos y escrituras|notario;notaria
+N|e|Parte de atrás del cuello|nuca
+N|e|Fruta pequeña y anaranjada de pepas grandes|níspero
+Ñ|e|Ave corredora sudamericana parecida al avestruz|ñandú
+Ñ|c|Ave migratoria que, según la leyenda, trae a los bebés|cigüeña
+Ñ|c|Red que teje la araña|telaraña
+Ñ|c|Pelo del borde del párpado|pestaña
+Ñ|c|Fruto del castaño que se come asado|castaña
+Ñ|c|Arma pesada que dispara balas grandes|cañón
+Ñ|c|Figura de cartón llena de dulces que se rompe a palos|piñata
+Ñ|c|Obrero que construye con ladrillos|albañil
+Ñ|c|Tina para bañarse|bañera
+Ñ|c|Grupo de ovejas|rebaño
+Ñ|c|Flauta andina de varios tubos|zampoña
+Ñ|c|Plantación de uvas para hacer vino|viñedo;viña
+Ñ|c|Casita rústica de madera|cabaña
+Ñ|e|Pasta de papa que en Argentina se come el día 29|ñoquis;ñoqui
+O|e|Flor exótica muy apreciada|orquídea
+O|e|Cetáceo blanco y negro, llamado ballena asesina|orca
+O|e|Lugar con agua y vegetación en medio del desierto|oasis
+O|e|Instrumento de tubos de las iglesias|órgano
+O|e|Lugar con telescopios para mirar el cielo|observatorio
+O|e|Molusco que puede guardar una perla|ostra
+O|e|Instrumento de viento de madera y sonido agudo|oboe
+O|e|Agujero de la ropa por donde pasa el botón|ojal
+O|e|Movimiento continuo de las olas|oleaje
+O|e|Árbol que da aceitunas|olivo
+O|e|Artesano que trabaja el oro y la plata|orfebre
+O|e|Borde de un río o del mar|orilla
+O|e|Obra de teatro cantada con orquesta|ópera
+O|e|Lugar donde los griegos consultaban el futuro, como el de Delfos|oráculo
+P|e|Ave que no vuela y vive en zonas frías del sur|pingüino
+P|e|Ladrón del mar con parche en el ojo|pirata
+P|e|Animal marino de ocho brazos|pulpo
+P|e|Felino americano llamado león de montaña|puma
+P|e|Construcción egipcia de base cuadrada y caras triangulares|pirámide
+P|e|Documento para viajar al extranjero|pasaporte
+P|e|Ave marina con una bolsa bajo el pico|pelícano
+P|e|Utensilio con pelos en la punta para pintar|pincel
+P|e|Astro que gira alrededor del Sol|planeta
+P|e|Construcción para cruzar un río|puente
+P|e|Instrumento de percusión con sonajas que se agita y golpea|pandereta
+P|e|Ave tropical de colores, parecida al loro|papagayo
+P|e|Cada hoja de color de una flor|pétalo
+P|e|Utensilio de dos brazos para tomar cosas pequeñas|pinzas;pinza
+Q|e|Sala del hospital donde se opera|quirófano
+Q|e|Pieza que recorre el fondo del barco de proa a popa|quilla
+Q|e|Grano andino muy nutritivo|quinoa;quinua;quínoa
+Q|e|Sombrilla grande de playa|quitasol
+Q|e|Ave chilena de los potreros que grita de noche ante cualquier intruso|queltehue
+Q|e|Árbol chileno cuya corteza hace espuma como el jabón|quillay
+Q|e|Flauta andina de caña|quena
+Q|e|Paso estrecho entre montañas por donde corre un río|quebrada
+Q|e|Tortilla mexicana rellena de queso derretido|quesadilla
+Q|e|Hueso de la mandíbula|quijada
+Q|e|Puesto pequeño de la calle que vende diarios y dulces|quiosco
+Q|c|Comida espléndida para celebrar con muchos invitados|banquete
+Q|c|Jugador que defiende el arco en el fútbol|arquero;arquera
+Q|c|Piscina pequeña de un parque, a veces con patos|estanque
+R|e|Mamífero grande con cuernos sobre la nariz|rinoceronte
+R|e|Destello de luz en una tormenta|relámpago
+R|e|Ciervo que tira el trineo del Viejito Pascuero|reno
+R|e|Pala larga para mover un bote|remo
+R|e|Edificio altísimo de muchos pisos|rascacielos
+R|e|Piedra preciosa roja|rubí
+R|e|Máquina programable que hace tareas sola|robot
+R|e|Parte de la planta que está bajo tierra|raíz
+R|e|Herramienta con dientes para juntar hojas|rastrillo
+R|e|Instrucciones para preparar una comida|receta
+R|e|Lugar donde uno se protege de una tormenta en la montaña|refugio
+R|e|Juego de casino con una rueda que gira|ruleta
+R|e|Gotitas de agua sobre las plantas al amanecer|rocío
+R|e|Juego de piezas que encajan|rompecabezas
+S|e|Astro que gira alrededor de un planeta|satélite
+S|e|Barco que navega bajo el agua|submarino
+S|e|Pez rosado que remonta los ríos|salmón
+S|e|Pez pequeño que se vende en lata|sardina
+S|e|Largo período sin lluvias|sequía
+S|e|Obra extensa para orquesta|sinfonía
+S|e|Espada curva y de un solo filo|sable
+S|e|Aro que flota para salvar a quien se ahoga|salvavidas
+S|e|Árbol de ramas colgantes junto al agua, llamado llorón|sauce
+S|e|Luz de tres colores que ordena el tránsito|semáforo
+S|e|Herramienta de dientes para cortar madera|serrucho
+S|e|Pito que usan los árbitros|silbato
+S|e|Aparato que se envía al espacio para explorar|sonda
+S|e|Voz femenina más aguda|soprano
+T|e|Pez grande de dientes afilados|tiburón
+T|e|Instrumento de metal con tres pistones|trompeta
+T|e|Ave tropical de pico enorme y colorido|tucán
+T|e|Instrumento para mirar astros lejanos|telescopio
+T|e|Insecto que se come la madera|termita
+T|e|Instrumento que mide la temperatura|termómetro
+T|e|Torbellino de viento violento con forma de embudo|tornado
+T|e|Cereal con cuya harina se hace el pan|trigo
+T|e|Baile típico de Buenos Aires|tango
+T|e|Vehículo agrícola que tira el arado|tractor
+T|e|Vehículo que se desliza sobre la nieve|trineo
+T|e|Paso subterráneo a través de un cerro|túnel
+T|e|Piedra azul verdosa usada en joyería|turquesa
+T|e|Corona pequeña que usan las princesas|tiara
+U|e|Ave blanca y negra que se lleva objetos brillantes|urraca
+U|e|Caja donde se depositan los votos|urna
+U|e|Parte inferior de la puerta, entrada de una casa|umbral
+U|e|Pequeña guitarra hawaiana de cuatro cuerdas|ukelele;ukulele
+U|e|Pomada que se aplica sobre la piel|ungüento
+U|e|Herramienta de cocina|utensilio
+U|e|Institución donde se estudia una carrera|universidad
+U|e|Ave grande de los bosques europeos de cortejo ruidoso|urogallo
+U|e|Al mismo tiempo y con la misma voz: al …|unísono
+U|e|Persona nacida en Montevideo|uruguayo;uruguaya
+U|e|Ciudad grande y populosa|urbe
+U|e|Rayos del sol que broncean y queman la piel|ultravioleta
+U|e|Países del otro lado del mar: de …|ultramar
+U|e|Apoderarse de algo que pertenece a otro|usurpar
+V|e|Guerrero nórdico de los barcos con cabeza de dragón|vikingo
+V|e|Sustancia necesaria en la dieta, como la C de la naranja|vitamina
+V|e|Barco que avanza con el viento|velero
+V|e|Figura giratoria del techo que indica de dónde sopla el viento|veleta
+V|e|Viento muy fuerte con lluvia|vendaval
+V|e|Puente largo que cruza un valle|viaducto
+V|e|Instrumento grande de cuerda que se toca sentado|violonchelo;violoncelo
+V|e|Serpiente venenosa|víbora
+V|e|Ventana de vidrios de colores de una iglesia|vitral
+V|e|Juguete de papel que se encumbra en septiembre|volantín
+V|e|Cada carro de un tren|vagón
+V|e|Tierra baja entre montañas|valle
+V|e|Recipiente de barro|vasija
+V|e|Persona que vigila desde un lugar alto|vigía
+X|c|Aparato rojo para apagar incendios pequeños|extintor
+X|c|Persona que recorre lugares desconocidos|explorador;exploradora
+X|c|Prueba que se hace en ciencias para comprobar algo|experimento
+X|c|Polígono de seis lados|hexágono
+X|c|Enorme conjunto de estrellas, como la Vía Láctea|galaxia
+X|c|Parte del cuerpo entre el cuello y el abdomen|tórax
+X|c|País de los mariachis|méxico
+X|c|Viaje organizado para explorar o investigar|expedición
+X|c|Máquina que cava la tierra en las construcciones|excavadora
+X|e|Instrumento de percusión de láminas de madera|xilófono
+X|c|Persona que conduce un taxi|taxista
+X|c|Relativo a las telas y los tejidos|textil
+X|c|Que es venenoso|tóxico;tóxica
+X|c|Documento que se agrega al final de un informe|anexo
+Y|e|Bloque de hierro donde el herrero golpea el metal|yunque
+Y|e|Raíz tropical comestible, también llamada mandioca|yuca
+Y|e|Elemento químico usado para desinfectar heridas|yodo
+Y|e|Esposo de tu hija|yerno
+Y|e|Abominable hombre de las nieves del Himalaya|yeti
+Y|e|Hojas secas con que se prepara el mate|yerba
+Y|e|Disciplina india de posturas y respiración|yoga
+Y|e|Par de bueyes que tiran juntos el arado|yunta
+Y|c|Cánido salvaje de Norteamérica, parecido al lobo|coyote
+Y|c|Relato tradicional que mezcla lo real y lo fantástico|leyenda
+Y|c|Juego de saltar en casillas dibujadas en el suelo, también llamado luche|rayuela
+Y|c|Fruta tropical anaranjada que en La Serena se come en conserva|papaya
+Y|c|Río pequeño|arroyo
+Y|c|Cantor popular chileno que improvisa versos con guitarra|payador;payadora
+Z|e|Pájaro común de los jardines chilenos que come lombrices|zorzal
+Z|e|Nombre que se le da en Chile al mosquito grande|zancudo
+Z|e|Piedra preciosa azul|zafiro
+Z|e|Línea quebrada que va de un lado a otro|zigzag
+Z|e|Calzado de madera típico de Holanda|zueco
+Z|e|Excavación larga y angosta en el suelo|zanja
+Z|e|Arbusto espinoso que da moras|zarza;zarzamora
+Z|e|Ruido que hacen las abejas al volar|zumbido
+Z|e|Metal gris azulado que cubre los techos de muchas casas|zinc
+Z|e|Globo dirigible alemán con forma de puro|zepelín
+Z|e|Pasillo de entrada de las casas antiguas|zaguán
+Z|e|Palo largo para caminar en altura, como en el circo|zanco;zancos
+Z|c|Salsa amarilla y picante del completo|mostaza
+Z|c|Cereal de granos amarillos con que se hace la humita|maíz

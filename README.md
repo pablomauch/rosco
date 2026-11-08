@@ -20,12 +20,8 @@ Instalada, se abre a pantalla completa como una app. El modo solo funciona sin i
 Settings → Pages → Source: *Deploy from a branch* → `main` / `(root)` → Save.
 
 ## Contenido
-- `data.json`: banco editable (roscos, Una de cuatro, La pista, Encadenadas, Letras desordenadas).
-- `tools/tanda2.txt` + `tools/agregar_tanda.py`: roscos nuevos en formato de texto simple (`LETRA|e/c|definición|respuesta;alternativa`). `python3 tools/agregar_tanda.py tools/tandaN.txt` los suma a `data.json`.
-- `tools/validar.py`: valida letras, sílabas y que ninguna respuesta se repita, y genera `data.js`.
-  ```
-  python3 tools/validar.py
-  ```
-- Al publicar una tanda nueva, sube `CACHE` en `sw.js` (por ejemplo `rosco-v2`) para que el teléfono la descargue.
-
-Los roscos jugados quedan guardados en el teléfono y no se repiten; la pantalla de inicio muestra cuántos quedan por nivel.
+- `tools/banco/rosco_1.txt`, `rosco_2.txt`, `rosco_3.txt`: palabras del rosco por nivel (`LETRA|e/c|definición|respuesta;alternativa`), 14 por letra y nivel. El rosco se arma en el momento, letra por letra.
+- `tools/banco/previos.txt`: preguntas de los 8 juegos previos.
+- `python3 tools/generar_banco.py && python3 tools/validar.py`: genera `data.json` y `data.js`, y verifica que ninguna palabra se repita en todo el banco.
+- El historial es por palabra y con fecha. En el modo familia, los teléfonos de la sala comparten su historial.
+- Al publicar contenido nuevo, sube `CACHE` en `sw.js` para que los teléfonos lo descarguen.

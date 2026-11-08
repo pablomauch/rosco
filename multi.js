@@ -62,7 +62,7 @@ document.querySelector('#app').insertAdjacentHTML('beforeend', `
   <div id="mp-body" style="display:flex;flex-direction:column;gap:14px"></div>
 </section>`);
 document.querySelector('#b-help') && document.querySelector('#s-help').insertAdjacentHTML('beforeend', `
-  <div class="card"><h3>Jugar en familia</h3><p>Uno crea la sala y los demás entran con el código de 4 letras o escaneando el QR. Todos responden la misma pregunta a la vez: se gana por acertar y por rapidez. Al final de cada ronda quedan eliminados los últimos (si hay empate, pregunta de desempate). Los dos finalistas juegan el rosco por turnos, como en la tele: al fallar o pasar, se detiene su reloj y juega el otro. El celular del anfitrión debe quedar con la pantalla encendida.</p></div>`);
+  <div class="card"><h3>Jugar en familia</h3><p>Uno crea la sala y los demás entran con el código de 4 letras o escaneando el QR. Al entrar, cada teléfono comparte las palabras que ya vio, para que no se repitan para nadie. Todos responden la misma pregunta a la vez: se gana por acertar y por rapidez. Al final de cada ronda quedan eliminados los últimos (si hay empate, pregunta de desempate). Los dos finalistas juegan el rosco por turnos, como en la tele: al fallar o pasar, se detiene su reloj y juega el otro. El celular del anfitrión debe quedar con la pantalla encendida.</p></div>`);
 
 /* ---------- transporte ---------- */
 const TEST_BC = /[?&]bc=1/.test(location.search);
@@ -131,7 +131,7 @@ function hostCreate(){
     join(conn){
       let pid=null;
       conn.onData(m=>{
-        if(m && m.t==='hola'){ pid = m.pid; hJoin(pid, m.name, conn); }
+        if(m && m.t==='hola'){ pid = m.pid; mergeSeen(m.seen); hJoin(pid, m.name, conn); }
         else if(pid) hRecv(pid, m);
       });
       conn.onClose(()=>{ const p=H && H.players.find(x=>x.pid===pid && x.conn===conn); if(p){ p.online=false; p.conn=null; bc(); checkAllAnswered(); } });
@@ -148,6 +148,15 @@ function uniqueName(name, pid){
   while(H.players.some(p=>p.pid!==pid && p.name.toLowerCase()===n.toLowerCase())) n = name+' '+(i++);
   return n;
 }
+/* historial compartido de la sala: lo que cualquiera vio cuenta como visto */
+function mergeSeen(obj){ if(!obj || typeof obj!=='object') return; const X=window.SEEN_EXT;
+  for(const k in obj){ const t=+obj[k]; if(t && !(X[k]>=t)) X[k]=t; } }
+function hMark(keys){
+  keys = keys.filter(Boolean); if(!keys.length || !H) return;
+  const t = Date.now(); keys.forEach(k=>{ markSeen(k, t); H.usedKeys.add(k); });
+  H.players.forEach(p=>{ if(p.conn && p.online) p.conn.send({t:'seen', k:keys, at:t}); });
+}
+function recentSeen(){ const lim = Date.now() - 400*864e5, o = {}; for(const k in seen){ if(seen[k] > lim) o[k] = seen[k]; } return o; }
 function hJoin(pid, name, conn){
   let p = H.players.find(x=>x.pid===pid);
   if(p){ p.conn=conn; p.online=true; }
@@ -183,23 +192,22 @@ function hStart(){
   const N = playing.length; let R = H.set.rondas; if(N>2 && R<1) R=1;
   const games = pickGames(R);
   const elim = r => Math.floor((N-2)*(r+1)/R) - Math.floor((N-2)*r/R);
-  H.plan = games.map((g,r)=>({g, elim:elim(r), qs:buildQs(g, H.set.preg)}));
-  const pool = roscosDe(cfg.nivel); let free = shuffle(pool.filter(r=>!used[r.id]));
-  if(free.length<2) free = free.concat(shuffle(pool.filter(r=>!free.includes(r))));
-  H.roscos = free.slice(0,2); H.roscos.forEach(r=>markUsed(r.id));
+  H.usedKeys = new Set(); const ex = new Set();
+  H.plan = games.map((g,r)=>({g, elim:elim(r), qs:buildQs(g, H.set.preg, ex)}));
+  const rx = new Set(); H.roscos = [buildRosco(cfg.nivel, rx), buildRosco(cfg.nivel, rx)];
   H.r = 0; SFX.init();
   if(!H.plan.length) return hDuelIntro();
   hIntro();
 }
-function buildQs(g, n){
-  const items = pickItems(g), out=[];
+function buildQs(g, n, ex){
+  const items = pickItems(g, ex), out=[];
   if(g==='encadenadas'){
-    for(const c of items){ markUsed(c.id);
-      c.w.forEach((w,i)=>out.push({g, start:(i? c.k[i-1] : norm(w.r)[0]).toUpperCase(), text:w.d, ans:[w.r], prev: i? c.w[i-1].r : null}));
+    for(const c of items){ const key=keyOf(g,c); ex && ex.add(key);
+      c.w.forEach((w,i)=>out.push({g, key, start:(i? c.k[i-1] : norm(w.r)[0]).toUpperCase(), text:w.d, ans:[w.r], prev: i? c.w[i-1].r : null}));
       if(out.length>=n) break; }
     return out.slice(0,n);
   }
-  for(const it of items.slice(0,n)){ markUsed(it.id);
+  for(const it of items.slice(0,n)){ const key=keyOf(g,it); ex && ex.add(key); const before=out.length;
     if(g==='cuatro') out.push({g, text:it.p, opts:it.o, c:it.c, ans:[it.o[it.c]]});
     else if(g==='vof') out.push({g, text:it.p, opts:['Verdadero','Falso'], c:it.v?0:1, ans:[it.v?'Verdadero':'Falso']});
     else if(g==='intrusa'){ const ord=shuffle([0,1,2,3]); out.push({g, text:'¿Cuál no pertenece al grupo?', opts:ord.map(i=>it.o[i]), c:ord.indexOf(it.c), ans:[it.o[it.c]], why:it.x}); }
@@ -207,6 +215,7 @@ function buildQs(g, n){
     else if(g==='letras'){ const w=norm(it.r); out.push({g, word:w, hint:it.h, len:w.length, order:shuffle([...w].map((_,i)=>i).slice(1)), ans:[it.r]}); }
     else if(g==='pista') out.push({g, clues:it.h, ans:it.r});
     else out.push({g, tiles:scrambleTiles(it.r), hint:it.h, len:norm(it.r).length, ans:[it.r]});
+    if(out.length>before) out[out.length-1].key = key;
   }
   return out;
 }
@@ -224,7 +233,7 @@ function hCountdown(next){ clearTimers(); setPhase('count'); bc(); later(next, 3
 /* --- preguntas simultáneas --- */
 function hAskQ(q, who, onEnd, label){
   clearTimers();
-  H.q=q; H.who=new Set(who.map(p=>p.pid)); H.onQEnd=onEnd; H.qLabel=label;
+  H.q=q; H.who=new Set(who.map(p=>p.pid)); H.onQEnd=onEnd; H.qLabel=label; hMark([q.key]);
   H.players.forEach(p=>p.ans=null);
   H.clues = 1; H.shown = 1;
   const dur = (q.g==='pista' || q.g==='letras' ? H.set.tPreg*1.6 : q.g==='vof' ? Math.max(8, H.set.tPreg*.6) : H.set.tPreg) * 1000;
@@ -294,8 +303,8 @@ function hRoundEnd(){
   const below = alive.filter(p=>!group.includes(p) && !safe.includes(p));
   const surviveN = alive.length - k - safe.length;
   H.tie = {group, surviveN, below};
-  const pick = shuffle(B.cuatro)[0];
-  const q = {g:'cuatro', text:pick.p, opts:pick.o, c:pick.c, ans:[pick.o[pick.c]]};
+  const pick = pickItems('cuatro', H.usedKeys)[0] || shuffle(B.cuatro)[0];
+  const q = {g:'cuatro', key:keyOf('cuatro',pick), text:pick.p, opts:pick.o, c:pick.c, ans:[pick.o[pick.c]]};
   setPhase('tieIntro'); bc();
   fx('alarm', 'Hay empate. Pregunta de desempate para ' + group.map(p=>p.name).join(', '));
   later(()=>hAskQ(q, group, ()=>{
@@ -336,7 +345,7 @@ function hDuelTurn(i){
   setPhase('duel'); bc(); fx(null, 'Turno de '+D.pl[i].name);
   later(()=>{ D.running=true; D.t0=Date.now(); H.key++; bc(); sayLetter(); }, 1800);
 }
-function sayLetter(){ const D=H.D, p=D.pl[D.turn]; fx(null, letraTxt(p.ro.p[p.q[0]])); }
+function sayLetter(){ const D=H.D, p=D.pl[D.turn], it=p.ro.p[p.q[0]]; hMark([keyOf('rosco',it)]); fx(null, letraTxt(it)); }
 function hDuelAnswer(pid, m){
   const D=H.D; if(!D || H.phase!=='duel' || !D.running || m.key!==H.key) return;
   const p=D.pl[D.turn], isHost = pid===HOST_PID || pid==='tv';
@@ -436,8 +445,8 @@ function connect(){
   if(CL.net) CL.net.destroy();
   CL.net = clientConnect(CL.code, {
     open(conn){ CL.conn=conn; CL.retry=0;
-      conn.send({t:'hola', pid:myPid(), name:cfg.nombre});
-      conn.onData(m=>{ if(!m) return; if(m.t==='view') CL.view(m.v); else if(m.t==='fx'){ if(m.s && SFX[m.s]) SFX[m.s](); if(m.say) VOZ.say(m.say); } else if(m.t==='bye'){ CL.closed=true; lost('El anfitrión cerró la sala'); } });
+      conn.send({t:'hola', pid:myPid(), name:cfg.nombre, seen:recentSeen()});
+      conn.onData(m=>{ if(!m) return; if(m.t==='view') CL.view(m.v); else if(m.t==='seen'){ (m.k||[]).forEach(k=>markSeen(k, m.at||Date.now())); } else if(m.t==='fx'){ if(m.s && SFX[m.s]) SFX[m.s](); if(m.say) VOZ.say(m.say); } else if(m.t==='bye'){ CL.closed=true; lost('El anfitrión cerró la sala'); } });
       conn.onClose(()=>{ if(!CL.closed) reconnect(); });
     },
     error(e){ if(CL.closed) return; if(CL.v) reconnect(); else { lost(e && e.type==='peer-unavailable' ? 'No existe una sala con ese código' : e && e.type==='nolib' ? 'Sin internet' : 'No se pudo conectar'); } }
@@ -654,7 +663,7 @@ const upd = {
 function planTxt(){
   const el=$('#mp-plan'); if(!el || !H) return;
   const N = H.players.filter(p=>p.online).length, R = Math.max(N>2?1:0, H.set.rondas);
-  el.textContent = N<2 ? 'Esperando jugadores… (mínimo 2)' : `${N} jugadores · ${R} ronda${R===1?'':'s'} · ${N>2?`se eliminan ${N-2} antes de la final`:'pasan los 2 a la final'} · ${roscosDe(cfg.nivel).filter(r=>!used[r.id]).length} roscos nuevos de nivel ${LVL[cfg.nivel]}`;
+  el.textContent = N<2 ? 'Esperando jugadores… (mínimo 2)' : `${N} jugadores · ${R} ronda${R===1?'':'s'} · ${N>2?`se eliminan ${N-2} antes de la final`:'pasan los 2 a la final'} · ${roscoStats(cfg.nivel).fresh} palabras de rosco nuevas en nivel ${LVL[cfg.nivel]}`;
 }
 function drawClues(v){
   const el=$('#mp-clues'); if(!el || !v.q.clues) return;
